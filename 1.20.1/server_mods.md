@@ -166,6 +166,18 @@ Puzzles Lib - https://cdn.modrinth.com/data/QAGBst4M/versions/FWuIR2cX/PuzzlesLi
 Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-Forge-1.20.1-20.2.13.jar
 GroovyModLoader (GML) - https://mediafilez.forgecdn.net/files/4761/874/gml-4.0.9-all.jar
 Resourceful Lib - https://cdn.modrinth.com/data/G1hIVOrD/versions/XO3P1hbK/resourcefullib-forge-1.20.1-2.1.25.jar
+Moonlight Lib - https://cdn.modrinth.com/data/twkfQtEc/versions/CEQdHBs1/moonlight-1.20-2.12.1-forge.jar
+Radiant Gear - https://cdn.modrinth.com/data/AtT9wm5O/versions/97i06Z6R/radiantgear-forge-2.1.5%2B1.20.1.jar
+Resourceful Config - https://cdn.modrinth.com/data/M1953qlQ/versions/irREd1ZJ/resourcefulconfig-forge-1.20.1-2.1.2.jar
+TerraBlender - https://cdn.modrinth.com/data/kkmrDlKT/versions/HI0iCUpi/TerraBlender-forge-1.20.1-3.0.1.7.jar
+Pehkui - https://cdn.modrinth.com/data/t5W7Jfwy/versions/SQpqSgAE/Pehkui-3.8.2%2B1.20.1-forge.jar
+Cloth Config API - https://cdn.modrinth.com/data/9s6osm5g/versions/nr1znv5v/cloth-config-11.1.118-forge.jar
+CraftTweaker - https://cdn.modrinth.com/data/Xg35A4rS/versions/76pCM25G/CraftTweaker-forge-1.20.1-14.0.40.jar
+Kiwi 🥝 - https://cdn.modrinth.com/data/ufdDoWPd/versions/D7i9bX9a/Kiwi-1.20.1-Forge-11.8.11.jar
+[Let's Do] API - https://cdn.modrinth.com/data/4XJZeZbM/versions/BmhJdIDe/letsdo-API-forge-1.2.13-forge.jar
+Citadel - https://cdn.modrinth.com/data/jJfV67b1/versions/ssXkoBKk/citadel-2.5.4-1.20.1.jar
+AzureLib - https://cdn.modrinth.com/data/7zlUOZvb/versions/ZrepbGhL/azurelib-neo-1.20.1-2.0.26.jar
+Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-all.jar
 
 ## Optimization
 Noisium - https://cdn.modrinth.com/data/KuNKN7d2/versions/EuQErqo9/noisium-forge-2.0.3%2Bmc1.20-1.20.1.jar
