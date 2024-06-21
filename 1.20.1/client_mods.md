@@ -142,6 +142,8 @@ CreativeCore - https://cdn.modrinth.com/data/OsZiaDHq/versions/mbMcQfan/Creative
 Citadel - https://cdn.modrinth.com/data/jJfV67b1/versions/ssXkoBKk/citadel-2.5.4-1.20.1.jar
 AzureLib - https://cdn.modrinth.com/data/7zlUOZvb/versions/ZrepbGhL/azurelib-neo-1.20.1-2.0.26.jar
 Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-all.jar
+Framework - https://mediafilez.forgecdn.net/files/5388/226/framework-forge-1.20.1-0.7.6.jar
+Sophisticated Core - https://mediafilez.forgecdn.net/files/5326/245/sophisticatedcore-1.20.1-0.6.22.611.jar
 
 ## Optional
 
