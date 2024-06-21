@@ -84,7 +84,6 @@ Chalk - https://cdn.modrinth.com/data/YWGP4Y1d/versions/YhueAXpz/chalk-1.20.1-1.
 Carpet Trapdoors [Forge] - https://mediafilez.forgecdn.net/files/4960/618/CarpetTrapdoors_1.20.1-2.0.jar
 Useless Sword - https://mediafilez.forgecdn.net/files/4723/656/useless-sword-furtos-edition-1.20.1-1.0.1.jar
 Chimes - https://mediafilez.forgecdn.net/files/4671/986/Chimes-v2.0.1-1.20.1.jar
-Curious Lanterns - https://mediafilez.forgecdn.net/files/5245/133/curiouslanterns-1.20.1-1.3.2.jar
 Book Fishing - https://mediafilez.forgecdn.net/files/5352/686/Book%20Fishing%201.0.0%20-%201.20.1.jar
 More Music Discs - https://cdn.modrinth.com/data/pXYChc1a/versions/tugTpNIa/morediscs-1.20.1-33-forge.jar
 Immersive Aircraft - https://cdn.modrinth.com/data/x3HZvrj6/versions/Tju2o3p2/immersive_aircraft-1.0.1%2B1.20.1-forge.jar
