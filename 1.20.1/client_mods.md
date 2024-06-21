@@ -43,7 +43,6 @@ Regions Unexplored - https://cdn.modrinth.com/data/Tkikq67H/versions/Vrzha1ED/Re
 [Let's Do] Beachparty - https://cdn.modrinth.com/data/GyKzAh3l/versions/cC6RhoPZ/letsdo-beachparty-forge-1.1.5.jar
 Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/VAmFHF3n/supplementaries-1.20-2.8.15.jar
 
-
 MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmmy-1.20-1.8.17b.jar
 
 Deeper and Darker - https://cdn.modrinth.com/data/fnAffV0n/versions/tqPSIRGd/deeperdarker-forge-1.20.1-1.2.1.jar
@@ -128,6 +127,7 @@ Puzzles Lib - https://cdn.modrinth.com/data/QAGBst4M/versions/FWuIR2cX/PuzzlesLi
 Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-Forge-1.20.1-20.2.13.jar
 WATERMeDIA - https://cdn.modrinth.com/data/G922NeHS/versions/uJ9tqF7n/watermedia-2.0.63.jar
 GroovyModLoader (GML) - https://mediafilez.forgecdn.net/files/4761/874/gml-4.0.9-all.jar
+Resourceful Lib - https://cdn.modrinth.com/data/G1hIVOrD/versions/XO3P1hbK/resourcefullib-forge-1.20.1-2.1.25.jar
 
 ## Optional
 
