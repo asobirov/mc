@@ -13,7 +13,7 @@ Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/Natu
 Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/VAmFHF3n/supplementaries-1.20-2.8.15.jar
 
 Edibles - https://cdn.modrinth.com/data/Rjl8pCZ9/versions/9vPGP4PO/edibles-1.20.1-4.3.jar
-Fish on the Line - https://modrinth.com/mod/fish-on-the-line/version/1.20.1-3.2-fabric+forge+neo
+Fish on the Line - https://cdn.modrinth.com/data/R6PYx1PW/versions/5CJoqJSY/fishontheline-1.20.1-3.2.jar
 Skeleton Horse Spawn - https://cdn.modrinth.com/data/ZcqNoW8j/versions/xkY8ly76/skeletonhorsespawn-1.20.1-3.8.jar
 Villager Names - https://cdn.modrinth.com/data/gqRXDo8B/versions/lZ8iWdzV/villagernames-1.20.1-7.3.jar
 Inventory Totem - https://cdn.modrinth.com/data/yQj7xqEM/versions/NL5pcN5e/inventorytotem-1.20.1-3.2.jar
@@ -30,7 +30,7 @@ Configurable Despawn Timer -
 
 Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voicechat-forge-1.20.1-2.5.17.jar
 
-Trading Post - https://modrinth.com/mod/trading-post/version/v8.0.2-1.20.1-Forge
+Trading Post - https://cdn.modrinth.com/data/8pcjMDgj/versions/LvveFy3w/TradingPost-v8.0.2-1.20.1-Forge.jar
 Enchanting Infuser - https://cdn.modrinth.com/data/ePv85y52/versions/1NgJmHTq/EnchantingInfuser-v8.0.2-1.20.1-Forge.jar
 Dramatic Doors - https://cdn.modrinth.com/data/aQ7h7gal/versions/OoGrXof5/DramaticDoors-QuiFabrge-1.20.1-3.2.2.jar
 

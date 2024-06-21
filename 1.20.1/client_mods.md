@@ -34,7 +34,7 @@ Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/Natu
 Better Archeology - https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-1.20.1.jar
 Visual Workbench - https://cdn.modrinth.com/data/kfqD1JRw/versions/c22Z4rsv/VisualWorkbench-v8.0.0-1.20.1-Forge.jar
 Just Hammers - https://cdn.modrinth.com/data/edU0NbZZ/versions/JafXa7hr/justhammers-forge-2.0.3%2Bmc1.20.1.jar
-Trading Post - https://modrinth.com/mod/trading-post/version/v8.0.2-1.20.1-Forge
+Trading Post - https://cdn.modrinth.com/data/8pcjMDgj/versions/LvveFy3w/TradingPost-v8.0.2-1.20.1-Forge.jar
 Enchanting Infuser - https://cdn.modrinth.com/data/ePv85y52/versions/1NgJmHTq/EnchantingInfuser-v8.0.2-1.20.1-Forge.jar
 Dramatic Doors - https://cdn.modrinth.com/data/aQ7h7gal/versions/OoGrXof5/DramaticDoors-QuiFabrge-1.20.1-3.2.2.jar
 Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
