@@ -61,7 +61,6 @@ Twilight's Flavors and Delight - https://cdn.modrinth.com/data/d6cSefpO/versions
 Death Knell - https://cdn.modrinth.com/data/WNdd2blX/versions/KwUk8tcm/DeathKnell-Forge-1.20.1-10.0.4.jar
 Not Enough Recipe Book [NERB] - https://cdn.modrinth.com/data/bQh7xzFq/versions/hRhjlsGv/nerb-1.20.1-0.3-FORGE.jar
 Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
-JEITweaker - https://mediafilez.forgecdn.net/files/4781/713/JeiTweaker-forge-1.20.1-8.0.6.jar
 Sky Structures - https://mediafilez.forgecdn.net/files/5025/376/Sky%20Structures%201.0.0%20-%201.20.1.jar
 Extra Zombie Drops - https://mediafilez.forgecdn.net/files/4762/841/Extra%20Zombie%20Drops%201.20.1%20v4.jar
 Eating Animation [Forge] - https://mediafilez.forgecdn.net/files/4576/4/eatinganimation-1.20-5.0.0.jar
