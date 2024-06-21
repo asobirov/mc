@@ -119,8 +119,8 @@ Tectonic - https://cdn.modrinth.com/data/lWDHr9jE/versions/rktqBfn4/tectonic-for
 Infinity Cave - https://cdn.modrinth.com/data/DEq97NAA/versions/Lg0gTgfj/infinity_cave-0.4-1.20.1-FORGE.jar
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Towns and Towers - https://cdn.modrinth.com/data/DjLobEOy/versions/7ZwnSrVW/Towns-and-Towers-1.12-Fabric%2BForge.jar
-Stellarity - https://cdn.modrinth.com/data/bZgeDzN8/versions/RKcXZAPf/Stellarity-v2-0e.jar
 Biomes O' Plenty - https://cdn.modrinth.com/data/HXF82T3G/versions/peO5lWzX/BiomesOPlenty-1.20.1-18.0.0.598.jar
+Twilight Forest - https://mediafilez.forgecdn.net/files/5071/19/twilightforest-1.20.1-4.3.2145-universal.jar
 
 YUNG's Bridges - https://cdn.modrinth.com/data/Ht4BfYp6/versions/KgO1gfM2/YungsBridges-1.20-Forge-4.0.3.jar
 YUNG's Better Nether Fortresses - https://cdn.modrinth.com/data/Z2mXHnxP/versions/2nUEz0zq/YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar
@@ -175,11 +175,13 @@ Cloth Config API - https://cdn.modrinth.com/data/9s6osm5g/versions/nr1znv5v/clot
 CraftTweaker - https://cdn.modrinth.com/data/Xg35A4rS/versions/76pCM25G/CraftTweaker-forge-1.20.1-14.0.40.jar
 Kiwi 🥝 - https://cdn.modrinth.com/data/ufdDoWPd/versions/D7i9bX9a/Kiwi-1.20.1-Forge-11.8.11.jar
 [Let's Do] API - https://cdn.modrinth.com/data/4XJZeZbM/versions/BmhJdIDe/letsdo-API-forge-1.2.13-forge.jar
+CreativeCore - https://cdn.modrinth.com/data/OsZiaDHq/versions/mbMcQfan/CreativeCore_FORGE_v2.11.30_mc1.20.1.jar
 Citadel - https://cdn.modrinth.com/data/jJfV67b1/versions/ssXkoBKk/citadel-2.5.4-1.20.1.jar
 AzureLib - https://cdn.modrinth.com/data/7zlUOZvb/versions/ZrepbGhL/azurelib-neo-1.20.1-2.0.26.jar
 Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-all.jar
 Framework - https://mediafilez.forgecdn.net/files/5388/226/framework-forge-1.20.1-0.7.6.jar
 Sophisticated Core - https://mediafilez.forgecdn.net/files/5326/245/sophisticatedcore-1.20.1-0.6.22.611.jar
+Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 
 ## Optimization
 Noisium - https://cdn.modrinth.com/data/KuNKN7d2/versions/EuQErqo9/noisium-forge-2.0.3%2Bmc1.20-1.20.1.jar

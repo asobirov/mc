@@ -144,6 +144,7 @@ AzureLib - https://cdn.modrinth.com/data/7zlUOZvb/versions/ZrepbGhL/azurelib-neo
 Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-all.jar
 Framework - https://mediafilez.forgecdn.net/files/5388/226/framework-forge-1.20.1-0.7.6.jar
 Sophisticated Core - https://mediafilez.forgecdn.net/files/5326/245/sophisticatedcore-1.20.1-0.6.22.611.jar
+Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 
 ## Optional
 
