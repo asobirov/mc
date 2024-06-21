@@ -54,7 +54,7 @@ Smarter Farmers (farmers replant) - https://cdn.modrinth.com/data/Bh6ZOMvp/versi
 JEITweaker - https://mediafilez.forgecdn.net/files/4781/713/JeiTweaker-forge-1.20.1-8.0.6.jar
 Eating Animation [Forge] - https://mediafilez.forgecdn.net/files/4576/4/eatinganimation-1.20-5.0.0.jar
 
-Journey Map -
+JourneyMap - https://cdn.modrinth.com/data/lfHFW1mp/versions/NuCCufCG/journeymap-1.20.1-5.9.23-forge.jar
 
 ## Items
 

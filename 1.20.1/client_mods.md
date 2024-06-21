@@ -1,6 +1,7 @@
 # Client Mods for Minecraft 1.20.1
 
 ## QoL/Visuals
+
 3D Skin Layers - https://cdn.modrinth.com/data/zV5r3pPn/versions/qgzIF2oI/skinlayers3d-forge-1.6.6-mc1.20.1.jar
 Sound Physics Remastered - https://cdn.modrinth.com/data/qyVF9oeo/versions/WC9KAg08/sound-physics-remastered-forge-1.20.1-1.4.2.jar
 Model Gap Fix - https://cdn.modrinth.com/data/QdG47OkI/versions/GkLb4bRl/modelfix-1.15-fabric.jar
@@ -18,6 +19,7 @@ Pop! - https://cdn.modrinth.com/data/nlFgvj7M/versions/QZezsdyT/pop-1.20.1-1.0.0
 Better Advancements - https://cdn.modrinth.com/data/Q2OqKxDG/versions/E1pOIPhV/BetterAdvancements-Forge-1.20.1-0.4.2.10.jar
 
 ## Required
+
 JEI - https://cdn.modrinth.com/data/u6dRKJwZ/versions/C3OE8nXl/jei-1.20.1-forge-15.3.0.8.jar
 AppleSkin - https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-forge-mc1.20.1-2.5.1.jar
 Clumps - https://cdn.modrinth.com/data/Wnxd13zP/versions/nAHGB5ls/Clumps-forge-1.20.1-12.0.0.4.jar
@@ -64,6 +66,7 @@ JEITweaker - https://mediafilez.forgecdn.net/files/4781/713/JeiTweaker-forge-1.2
 Sky Structures - https://mediafilez.forgecdn.net/files/5025/376/Sky%20Structures%201.0.0%20-%201.20.1.jar
 Extra Zombie Drops - https://mediafilez.forgecdn.net/files/4762/841/Extra%20Zombie%20Drops%201.20.1%20v4.jar
 Eating Animation [Forge] - https://mediafilez.forgecdn.net/files/4576/4/eatinganimation-1.20-5.0.0.jar
+JourneyMap - https://cdn.modrinth.com/data/lfHFW1mp/versions/NuCCufCG/journeymap-1.20.1-5.9.23-forge.jar
 
 ## Items
 
