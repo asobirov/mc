@@ -104,7 +104,7 @@ Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/end
 Guard Villagers - https://cdn.modrinth.com/data/H1sntfo8/versions/svrJar40/guardvillagers-1.20.1-1.6.6.jar
 Critters and Companions - https://cdn.modrinth.com/data/Yd4wb5wZ/versions/PmF7dGGM/crittersandcompanions-1.20.1-2.1.6.jar
 Mob Catalog - https://cdn.modrinth.com/data/mzD0SMDk/versions/xuMt3nEc/mobcatalog-1.0.8%2B1.20.1.jar
-Duckling - https://cdn.modrinth.com/data/jkb861Ih/versions/IwtFizop/duckling-neoforge-1.20.4-4.0.0.jar
+Duckling - https://cdn.modrinth.com/data/jkb861Ih/versions/UT330hC2/duckling-3.0.0-forge.jar
 Alex's Mobs - https://cdn.modrinth.com/data/2cMuAZAp/versions/oaRqJ7uM/alexsmobs-1.22.8.jar
 Goblin Traders - https://mediafilez.forgecdn.net/files/4802/505/goblintraders-forge-1.20.1-1.9.3.jar
 Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar
