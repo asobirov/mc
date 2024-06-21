@@ -166,7 +166,6 @@ Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-F
 GroovyModLoader (GML) - https://mediafilez.forgecdn.net/files/4761/874/gml-4.0.9-all.jar
 Resourceful Lib - https://cdn.modrinth.com/data/G1hIVOrD/versions/XO3P1hbK/resourcefullib-forge-1.20.1-2.1.25.jar
 Moonlight Lib - https://cdn.modrinth.com/data/twkfQtEc/versions/CEQdHBs1/moonlight-1.20-2.12.1-forge.jar
-Radiant Gear - https://cdn.modrinth.com/data/AtT9wm5O/versions/97i06Z6R/radiantgear-forge-2.1.5%2B1.20.1.jar
 Resourceful Config - https://cdn.modrinth.com/data/M1953qlQ/versions/irREd1ZJ/resourcefulconfig-forge-1.20.1-2.1.2.jar
 TerraBlender - https://cdn.modrinth.com/data/kkmrDlKT/versions/HI0iCUpi/TerraBlender-forge-1.20.1-3.0.1.7.jar
 Pehkui - https://cdn.modrinth.com/data/t5W7Jfwy/versions/SQpqSgAE/Pehkui-3.8.2%2B1.20.1-forge.jar
@@ -181,6 +180,7 @@ Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotl
 Framework - https://mediafilez.forgecdn.net/files/5388/226/framework-forge-1.20.1-0.7.6.jar
 Sophisticated Core - https://mediafilez.forgecdn.net/files/5326/245/sophisticatedcore-1.20.1-0.6.22.611.jar
 Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
+Curios API - https://cdn.modrinth.com/data/vvuO3ImH/versions/moWmAnjY/curios-forge-5.9.1%2B1.20.1.jar
 
 ## Optimization
 Noisium - https://cdn.modrinth.com/data/KuNKN7d2/versions/EuQErqo9/noisium-forge-2.0.3%2Bmc1.20-1.20.1.jar

@@ -145,6 +145,7 @@ Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotl
 Framework - https://mediafilez.forgecdn.net/files/5388/226/framework-forge-1.20.1-0.7.6.jar
 Sophisticated Core - https://mediafilez.forgecdn.net/files/5326/245/sophisticatedcore-1.20.1-0.6.22.611.jar
 Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
+Curios API - https://cdn.modrinth.com/data/vvuO3ImH/versions/moWmAnjY/curios-forge-5.9.1%2B1.20.1.jar
 
 ## Optional
 
