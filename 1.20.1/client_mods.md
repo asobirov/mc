@@ -18,6 +18,10 @@ Do a Barrel Roll - https://cdn.modrinth.com/data/6FtRfnLg/versions/VH8QpKA5/do_a
 Pop! - https://cdn.modrinth.com/data/nlFgvj7M/versions/QZezsdyT/pop-1.20.1-1.0.0.jar
 Better Advancements - https://cdn.modrinth.com/data/Q2OqKxDG/versions/E1pOIPhV/BetterAdvancements-Forge-1.20.1-0.4.2.10.jar
 
+## Optional
+
+Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voicechat-forge-1.20.1-2.5.17.jar
+
 ## Required
 
 Just Enough Items - https://cdn.modrinth.com/data/u6dRKJwZ/versions/C3OE8nXl/jei-1.20.1-forge-15.3.0.8.jar
@@ -143,10 +147,8 @@ Framework - https://mediafilez.forgecdn.net/files/5388/226/framework-forge-1.20.
 Sophisticated Core - https://mediafilez.forgecdn.net/files/5326/245/sophisticatedcore-1.20.1-0.6.22.611.jar
 Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 Curios API - https://cdn.modrinth.com/data/vvuO3ImH/versions/moWmAnjY/curios-forge-5.9.1%2B1.20.1.jar
-
-## Optional
-
-Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voicechat-forge-1.20.1-2.5.17.jar
+Iceberg - https://cdn.modrinth.com/data/5faXoLqX/versions/boNnPeth/Iceberg-1.20.1-forge-1.1.21.jar
+Searchables - https://cdn.modrinth.com/data/fuuu3xnx/versions/PM9yAW1G/Searchables-forge-1.20.1-1.0.3.jar
 
 ## Optimization
 
