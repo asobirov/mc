@@ -25,7 +25,7 @@ services:
         
       VERSION: "1.20.1"
       MODS_FILE: /extras/mods.txt
-      DATAPACKS_FILE: /extras/datapacks.txt
+      # DATAPACKS_FILE: /extras/datapacks.txt
 
       OVERRIDE_SERVER_PROPERTIES: "TRUE"
       MOTD: "A Minecraft Server"
