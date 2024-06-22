@@ -13,6 +13,7 @@ Beautify - https://cdn.modrinth.com/data/9BPuv4vL/versions/v9NnLuyB/beautify-2.0
 Bow Infinity Fix - https://cdn.modrinth.com/data/BFENfScW/versions/DrWutox9/bowinfinityfix-1.20.x-forge-2.6.0.jar
 Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/NaturesCompass-1.20.1-1.11.2-forge.jar
 Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/VAmFHF3n/supplementaries-1.20-2.8.15.jar
+Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/t9cTGwLm/amendments-1.20-1.2.5.jar
 
 Edibles - https://cdn.modrinth.com/data/Rjl8pCZ9/versions/9vPGP4PO/edibles-1.20.1-4.3.jar
 Fish on the Line - https://cdn.modrinth.com/data/R6PYx1PW/versions/5CJoqJSY/fishontheline-1.20.1-3.2.jar
