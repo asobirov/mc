@@ -67,7 +67,6 @@ https://cdn.modrinth.com/data/YaTcrHqS/versions/PdfbnB3Z/Dice-%5BMC-1.20.1%5D-1.
 https://cdn.modrinth.com/data/jR6HKqHv/versions/a1svxw83/curious_armor_stands-1.20-5.1.0.jar
 https://cdn.modrinth.com/data/b3w1XM9H/versions/antfC9D5/sootychimneys-1.20.1-1.2.1.jar
 https://cdn.modrinth.com/data/oiuNWinn/versions/41diddrx/camera-forge-1.20.1-1.0.8.jar
-https://cdn.modrinth.com/data/eBzFuVTM/versions/nwxwL9cU/waterframes-1.20.1-2.0.10.jar
 https://cdn.modrinth.com/data/lFGQ4Hnk/versions/8Wb8Gq7c/DarkPaintings-Forge-1.20.1-17.0.4.jar
 https://cdn.modrinth.com/data/YWGP4Y1d/versions/YhueAXpz/chalk-1.20.1-1.6.4.jar
 https://mediafilez.forgecdn.net/files/4711/140/nocube%27s_villagers_sell_animals_1.2.1_forge_1.20.1.jar

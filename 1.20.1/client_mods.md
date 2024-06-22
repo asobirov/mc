@@ -87,7 +87,6 @@ Storage Drawers - https://cdn.modrinth.com/data/guitPqEi/versions/HxmL9PcX/stora
 Rare Ice - https://cdn.modrinth.com/data/uSi0tajU/versions/IY9d6y5G/rare-ice-0.6.0.jar
 Skinned Carts - https://cdn.modrinth.com/data/UbOVzELJ/versions/ZfXlvclQ/SkinnedCarts-1.20.1-2.0.1.jar
 Camera Mod - https://cdn.modrinth.com/data/oiuNWinn/versions/41diddrx/camera-forge-1.20.1-1.0.8.jar
-WATERFrAMES: Media Displays - https://cdn.modrinth.com/data/eBzFuVTM/versions/nwxwL9cU/waterframes-1.20.1-2.0.10.jar
 Dark Paintings - https://cdn.modrinth.com/data/lFGQ4Hnk/versions/8Wb8Gq7c/DarkPaintings-Forge-1.20.1-17.0.4.jar
 Chalk - https://cdn.modrinth.com/data/YWGP4Y1d/versions/YhueAXpz/chalk-1.20.1-1.6.4.jar
 NoCube's Villagers Sell Animals - https://mediafilez.forgecdn.net/files/4711/140/nocube%27s_villagers_sell_animals_1.2.1_forge_1.20.1.jar
@@ -134,7 +133,6 @@ Collective - https://cdn.modrinth.com/data/e0M1UDsY/versions/xzRso0Yk/collective
 GeckoLib - https://cdn.modrinth.com/data/8BmcQJ2H/versions/iS7jylhp/geckolib-forge-1.20.1-4.4.6.jar
 Puzzles Lib - https://cdn.modrinth.com/data/QAGBst4M/versions/FWuIR2cX/PuzzlesLib-v8.1.20-1.20.1-Forge.jar
 Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-Forge-1.20.1-20.2.13.jar
-WATERMeDIA - https://cdn.modrinth.com/data/G922NeHS/versions/uJ9tqF7n/watermedia-2.0.63.jar
 GroovyModLoader (GML) - https://mediafilez.forgecdn.net/files/4761/874/gml-4.0.9-all.jar
 Resourceful Lib - https://cdn.modrinth.com/data/G1hIVOrD/versions/XO3P1hbK/resourcefullib-forge-1.20.1-2.1.25.jar
 Moonlight Lib - https://cdn.modrinth.com/data/twkfQtEc/versions/CEQdHBs1/moonlight-1.20-2.12.1-forge.jar
