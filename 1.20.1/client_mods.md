@@ -47,8 +47,6 @@ Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Regions Unexplored - https://cdn.modrinth.com/data/Tkikq67H/versions/Vrzha1ED/RegionsUnexploredForge-0.5.5%2B1.20.1.jar
 [Let's Do] Beachparty - https://cdn.modrinth.com/data/GyKzAh3l/versions/cC6RhoPZ/letsdo-beachparty-forge-1.1.5.jar
-Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/VAmFHF3n/supplementaries-1.20-2.8.15.jar
-Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/t9cTGwLm/amendments-1.20-1.2.5.jar
 
 MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmmy-1.20-1.8.17b.jar
 
