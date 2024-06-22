@@ -78,9 +78,7 @@ JourneyMap - https://cdn.modrinth.com/data/lfHFW1mp/versions/NuCCufCG/journeymap
 ## Items
 
 Macaw's Fences and Walls - https://cdn.modrinth.com/data/GmwLse2I/versions/1wrqNArj/mcw-fences-1.1.2-mc1.20.1forge.jar
-Macaw's Fences - Biomes O' Plenty - https://cdn.modrinth.com/data/Tanquv9C/versions/fMtjBGG6/mcwfencesbop-1.20-1.0.jar
 Macaw's Bridges - https://cdn.modrinth.com/data/GURcjz8O/versions/wJ0BHouQ/mcw-bridges-3.0.0-mc1.20.1forge.jar
-Macaw's Bridges - Biome O' Plenty - https://cdn.modrinth.com/data/4d7eGKIA/versions/haxyYSU2/macawsbridgesbop-1.20-1.2.jar
 
 Tom's Trading Network - https://cdn.modrinth.com/data/x5iQ3NM5/versions/3VM21fbD/toms_trading_network-1.20-0.2.3.jar
 Storage Drawers - https://cdn.modrinth.com/data/guitPqEi/versions/HxmL9PcX/storagedrawers-1.20.1-12.0.3.jar
@@ -121,7 +119,6 @@ Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_
 ## Biomes
 
 Twilight Forest - https://mediafilez.forgecdn.net/files/5071/19/twilightforest-1.20.1-4.3.2145-universal.jar
-Biomes O' Plenty - https://cdn.modrinth.com/data/HXF82T3G/versions/peO5lWzX/BiomesOPlenty-1.20.1-18.0.0.598.jar
 
 ## Libs
 

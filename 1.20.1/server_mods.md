@@ -59,9 +59,7 @@ MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmm
 Just Hammers - https://cdn.modrinth.com/data/edU0NbZZ/versions/JafXa7hr/justhammers-forge-2.0.3%2Bmc1.20.1.jar
 
 Macaw's Fences and Walls - https://cdn.modrinth.com/data/GmwLse2I/versions/1wrqNArj/mcw-fences-1.1.2-mc1.20.1forge.jar
-Macaw's Fences - Biomes O' Plenty - https://cdn.modrinth.com/data/Tanquv9C/versions/fMtjBGG6/mcwfencesbop-1.20-1.0.jar
 Macaw's Bridges - https://cdn.modrinth.com/data/GURcjz8O/versions/wJ0BHouQ/mcw-bridges-3.0.0-mc1.20.1forge.jar
-Macaw's Bridges - Biome O' Plenty - https://cdn.modrinth.com/data/4d7eGKIA/versions/haxyYSU2/macawsbridgesbop-1.20-1.2.jar
 
 Tom's Trading Network - https://cdn.modrinth.com/data/x5iQ3NM5/versions/3VM21fbD/toms_trading_network-1.20-0.2.3.jar
 Storage Drawers - https://cdn.modrinth.com/data/guitPqEi/versions/HxmL9PcX/storagedrawers-1.20.1-12.0.3.jar
@@ -114,7 +112,6 @@ Tectonic - https://cdn.modrinth.com/data/lWDHr9jE/versions/rktqBfn4/tectonic-for
 Infinity Cave - https://cdn.modrinth.com/data/DEq97NAA/versions/Lg0gTgfj/infinity_cave-0.4-1.20.1-FORGE.jar
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Towns and Towers - https://cdn.modrinth.com/data/DjLobEOy/versions/7ZwnSrVW/Towns-and-Towers-1.12-Fabric%2BForge.jar
-Biomes O' Plenty - https://cdn.modrinth.com/data/HXF82T3G/versions/peO5lWzX/BiomesOPlenty-1.20.1-18.0.0.598.jar
 Twilight Forest - https://mediafilez.forgecdn.net/files/5071/19/twilightforest-1.20.1-4.3.2145-universal.jar
 
 YUNG's Bridges - https://cdn.modrinth.com/data/Ht4BfYp6/versions/KgO1gfM2/YungsBridges-1.20-Forge-4.0.3.jar
