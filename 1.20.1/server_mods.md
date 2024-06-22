@@ -149,7 +149,6 @@ Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlL
 Immersive structures - https://cdn.modrinth.com/data/CVBAErky/versions/C1fCIQSh/imst-2.1.0.jar
 Blossom Blade - https://cdn.modrinth.com/data/UMmSTwE0/versions/uVqeOjPT/blossom-blade-1.2.jar
 Camps. Castles. Carriages. - https://cdn.modrinth.com/data/h9XxzZxe/versions/jVMIyq3x/camps_castles_carriages-2.3.3.jar
-Deeper and Darker - https://cdn.modrinth.com/data/fnAffV0n/versions/tqPSIRGd/deeperdarker-forge-1.20.1-1.2.1.jar
 Sky Structures - https://mediafilez.forgecdn.net/files/5025/376/Sky%20Structures%201.0.0%20-%201.20.1.jar
 
 ## Libs

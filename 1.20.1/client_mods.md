@@ -52,7 +52,6 @@ Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/t9cTGwLm/amendments
 
 MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmmy-1.20-1.8.17b.jar
 
-Deeper and Darker - https://cdn.modrinth.com/data/fnAffV0n/versions/tqPSIRGd/deeperdarker-forge-1.20.1-1.2.1.jar
 Corpse - https://cdn.modrinth.com/data/WrpuIfhw/versions/x5gi94YI/corpse-forge-1.20.1-1.0.12.jar
 Aquaculture 2 - https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 Snow! Real Magic! ⛄ - https://cdn.modrinth.com/data/iJNje1E8/versions/OJbCqWFs/SnowRealMagic-1.20.1-forge-10.4.3.jar
