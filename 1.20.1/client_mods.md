@@ -38,9 +38,11 @@ Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/Natu
 Better Archeology - https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-1.20.1.jar
 Visual Workbench - https://cdn.modrinth.com/data/kfqD1JRw/versions/c22Z4rsv/VisualWorkbench-v8.0.0-1.20.1-Forge.jar
 Just Hammers - https://cdn.modrinth.com/data/edU0NbZZ/versions/JafXa7hr/justhammers-forge-2.0.3%2Bmc1.20.1.jar
+
 Trading Post - https://cdn.modrinth.com/data/8pcjMDgj/versions/LvveFy3w/TradingPost-v8.0.2-1.20.1-Forge.jar
 Enchanting Infuser - https://cdn.modrinth.com/data/ePv85y52/versions/1NgJmHTq/EnchantingInfuser-v8.0.2-1.20.1-Forge.jar
 Dramatic Doors - https://cdn.modrinth.com/data/aQ7h7gal/versions/OoGrXof5/DramaticDoors-QuiFabrge-1.20.1-3.2.2.jar
+
 Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Regions Unexplored - https://cdn.modrinth.com/data/Tkikq67H/versions/Vrzha1ED/RegionsUnexploredForge-0.5.5%2B1.20.1.jar
@@ -55,6 +57,11 @@ Aquaculture 2 - https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.
 Snow! Real Magic! ⛄ - https://cdn.modrinth.com/data/iJNje1E8/versions/OJbCqWFs/SnowRealMagic-1.20.1-forge-10.4.3.jar
 Dangerous Stone Cutter - https://cdn.modrinth.com/data/jSFfBGeF/versions/jGhax5lY/dangerousstonecutter-forge-mc1.19.4-1.8.0.jar
 Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlights-1.20.1-1.1.jar
+
+Curious Armor Stands - https://cdn.modrinth.com/data/jR6HKqHv/versions/a1svxw83/curious_armor_stands-1.20-5.1.0.jar
+Heartstone - https://cdn.modrinth.com/data/NBY6AFje/versions/CU7DW2ln/heartstone-1.20-1.3.0.jar
+Dice - https://cdn.modrinth.com/data/YaTcrHqS/versions/PdfbnB3Z/Dice-%5BMC-1.20.1%5D-1.0.1.jar
+Sooty Chimneys - https://cdn.modrinth.com/data/b3w1XM9H/versions/antfC9D5/sootychimneys-1.20.1-1.2.1.jar
 
 Farmer's Delight - https://cdn.modrinth.com/data/R2OftAxM/versions/AxgOboGq/FarmersDelight-1.20.1-1.2.4.jar
 Chef's Delight - https://cdn.modrinth.com/data/pvcsfne4/versions/5tGfF2Ok/chefs-delight-1.0.3-forge-1.20.1.jar
@@ -85,6 +92,7 @@ Camera Mod - https://cdn.modrinth.com/data/oiuNWinn/versions/41diddrx/camera-for
 WATERFrAMES: Media Displays - https://cdn.modrinth.com/data/eBzFuVTM/versions/nwxwL9cU/waterframes-1.20.1-2.0.10.jar
 Dark Paintings - https://cdn.modrinth.com/data/lFGQ4Hnk/versions/8Wb8Gq7c/DarkPaintings-Forge-1.20.1-17.0.4.jar
 Chalk - https://cdn.modrinth.com/data/YWGP4Y1d/versions/YhueAXpz/chalk-1.20.1-1.6.4.jar
+NoCube's Villagers Sell Animals - https://mediafilez.forgecdn.net/files/4711/140/nocube%27s_villagers_sell_animals_1.2.1_forge_1.20.1.jar
 Carpet Trapdoors [Forge] - https://mediafilez.forgecdn.net/files/4960/618/CarpetTrapdoors_1.20.1-2.0.jar
 Useless Sword - https://mediafilez.forgecdn.net/files/4723/656/useless-sword-furtos-edition-1.20.1-1.0.1.jar
 Chimes - https://mediafilez.forgecdn.net/files/4671/986/Chimes-v2.0.1-1.20.1.jar
@@ -116,6 +124,7 @@ Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_
 ## Biomes
 
 Twilight Forest - https://mediafilez.forgecdn.net/files/5071/19/twilightforest-1.20.1-4.3.2145-universal.jar
+Biomes O' Plenty - https://cdn.modrinth.com/data/HXF82T3G/versions/peO5lWzX/BiomesOPlenty-1.20.1-18.0.0.598.jar
 
 ## Libs
 
