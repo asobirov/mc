@@ -85,6 +85,7 @@ Puzzles Lib - https://cdn.modrinth.com/data/QAGBst4M/versions/z0kHAGDv/PuzzlesLi
 YUNG's API - https://cdn.modrinth.com/data/Ua7DFN59/versions/aMs83SRk/YungsApi-1.20-Forge-4.0.5.jar
 Cupboard - https://mediafilez.forgecdn.net/files/5470/32/cupboard-1.20.1-2.7.jar
 Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-all.jar
+Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
