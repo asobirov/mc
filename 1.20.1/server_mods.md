@@ -3,6 +3,8 @@
 Visual Workbench - https://cdn.modrinth.com/data/kfqD1JRw/versions/c22Z4rsv/VisualWorkbench-v8.0.0-1.20.1-Forge.jar
 Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voicechat-forge-1.20.1-2.5.17.jar
 
+Dynmap® - https://cdn.modrinth.com/data/fRQREgAc/versions/RtI5TFAi/Dynmap-3.7-beta-6-forge-1.20.jar
+
 # QoL
 Inventory Totem - https://cdn.modrinth.com/data/yQj7xqEM/versions/NL5pcN5e/inventorytotem-1.20.1-3.2.jar
 Snow Under Trees - https://cdn.modrinth.com/data/Q3vyMuj2/versions/jaKOCf56/snowundertrees-1.20.1-1.4.4.jar
@@ -17,7 +19,8 @@ Grabby Mobs - https://cdn.modrinth.com/data/O6Sh7btX/versions/xAyaBcFP/grabbymob
 Villager Names - https://cdn.modrinth.com/data/gqRXDo8B/versions/lZ8iWdzV/villagernames-1.20.1-7.3.jar
 AppleSkin - https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-forge-mc1.20.1-2.5.1.jar
 Jade - https://cdn.modrinth.com/data/nvQzSEkH/versions/NruPjXIH/Jade-1.20.1-forge-11.9.3.jar
-JourneyMap - https://cdn.modrinth.com/data/lfHFW1mp/versions/NuCCufCG/journeymap-1.20.1-5.9.23-forge.jar
+
+
 
 # Mobs & Items
 Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/endermanoverhaul-forge-1.20.1-1.0.4.jar
