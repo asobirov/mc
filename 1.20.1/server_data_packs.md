@@ -1,6 +1,3 @@
-# General
-Chunklock - https://cdn.modrinth.com/data/Z5JdfNas/versions/4vBzFz1b/chunklock.zip
-
 # World Gen
 Dungeons and Taverns - https://cdn.modrinth.com/data/tpehi7ww/versions/J9ojWPrx/Dungeons%20and%20Taverns%203.0.3.fix.zip
 Tectonic - https://cdn.modrinth.com/data/lWDHr9jE/versions/stwi8gQ3/tectonic-datapack-v2.2.2.zip
