@@ -30,7 +30,6 @@ Immersive Melodies - https://cdn.modrinth.com/data/TaSmHw8V/versions/zjMy2oFH/im
 Comforts - https://cdn.modrinth.com/data/SaCpeal4/versions/KgzjTw3n/comforts-forge-6.3.5%2B1.20.1.jar
 Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/KAx6eLAF/supplementaries-1.20-2.8.17.jar
 [Let's Do] Beachparty - https://cdn.modrinth.com/data/GyKzAh3l/versions/cC6RhoPZ/letsdo-beachparty-forge-1.1.5.jar
-Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Aquaculture 2 - https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar
 
