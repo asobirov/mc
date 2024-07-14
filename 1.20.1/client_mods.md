@@ -79,6 +79,7 @@ Collective - https://cdn.modrinth.com/data/e0M1UDsY/versions/4PHvK72M/collective
 Resourceful Config - https://cdn.modrinth.com/data/M1953qlQ/versions/irREd1ZJ/resourcefulconfig-forge-1.20.1-2.1.2.jar
 Puzzles Lib - https://cdn.modrinth.com/data/QAGBst4M/versions/z0kHAGDv/PuzzlesLib-v8.1.21-1.20.1-Forge.jar
 YUNG's API - https://cdn.modrinth.com/data/Ua7DFN59/versions/aMs83SRk/YungsApi-1.20-Forge-4.0.5.jar
+Cupboard - https://mediafilez.forgecdn.net/files/5470/32/cupboard-1.20.1-2.7.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
