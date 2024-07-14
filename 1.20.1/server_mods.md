@@ -20,8 +20,6 @@ Villager Names - https://cdn.modrinth.com/data/gqRXDo8B/versions/lZ8iWdzV/villag
 AppleSkin - https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-forge-mc1.20.1-2.5.1.jar
 Jade - https://cdn.modrinth.com/data/nvQzSEkH/versions/NruPjXIH/Jade-1.20.1-forge-11.9.3.jar
 
-
-
 # Mobs & Items
 Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/endermanoverhaul-forge-1.20.1-1.0.4.jar
 Creeper Overhaul - https://cdn.modrinth.com/data/MI1LWe93/versions/Ap1DSAzz/creeperoverhaul-3.0.2-forge.jar
@@ -54,6 +52,9 @@ Chimes - https://mediafilez.forgecdn.net/files/4671/986/Chimes-v2.0.1-1.20.1.jar
 More Music Discs - https://cdn.modrinth.com/data/pXYChc1a/versions/tugTpNIa/morediscs-1.20.1-33-forge.jar
 MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmmy-1.20-1.8.17b.jar
 Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlights-1.20.1-1.1.jar
+Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/NaturesCompass-1.20.1-1.11.2-forge.jar
+
+Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
 
 # World Gen
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar

@@ -9,7 +9,6 @@ Eugene's Wealthy Plains Village - https://cdn.modrinth.com/data/XYcNKW0i/version
 Blossom Blade - https://cdn.modrinth.com/data/UMmSTwE0/versions/DlSnHsIz/blossom%20%281%29.zip
 Stellarity - https://cdn.modrinth.com/data/bZgeDzN8/versions/RPPPTt19/Stellarity-v2-0d.zip
 
-Camps. Castles. Carriages. - https://cdn.modrinth.com/data/h9XxzZxe/versions/Qf6FnstZ/Camps.%20Castles.%20Carrigaes.%202.3.1.zip
 Ships - https://cdn.modrinth.com/data/M185nxi6/versions/nsNIMxs5/Ships%203.0.1%20for%201.20.zip
 qrafty's Japanese Villages - https://cdn.modrinth.com/data/6vWz8dzn/versions/3LJ8TpIa/qrafty%27s-japanese-villages.zip
 
@@ -20,6 +19,7 @@ More Mobs - https://cdn.modrinth.com/data/HJR6V0I2/versions/X2PxV2qg/more_mobs-v
 Villager Transportation - https://cdn.modrinth.com/data/vLUPqRLH/versions/3Dg114tw/Villager%20Transportation%20v1.3.1%201.20%20-%201.20.4.zip
 Loyal Items - https://cdn.modrinth.com/data/YhRug9vd/versions/LpyuvHWV/Loyal%20Items%201.0.1.zip
 Server Sleep - https://cdn.modrinth.com/data/Cw8IlnGM/versions/smQOT3XO/ServerSleep.zip
+Dynamic Lights - https://cdn.modrinth.com/data/7YjclEGc/versions/ZGEjOvYo/dynamiclights-v1.8.3-mc1.17x-1.21x-datapack.zip
 
 # Other
 From The Fog - https://cdn.modrinth.com/data/p1WH6sHr/versions/BfjQlgpU/From-The-Fog-1.20-v1.9.2-Data-Resource-Pack.zip.zip
