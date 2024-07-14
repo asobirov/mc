@@ -19,5 +19,4 @@ https://cdn.modrinth.com/data/YhRug9vd/versions/LpyuvHWV/Loyal%20Items%201.0.1.z
 https://cdn.modrinth.com/data/Cw8IlnGM/versions/smQOT3XO/ServerSleep.zip
 
 https://cdn.modrinth.com/data/p1WH6sHr/versions/BfjQlgpU/From-The-Fog-1.20-v1.9.2-Data-Resource-Pack.zip.zip
-https://cdn.modrinth.com/data/gWO6Zqey/versions/mJeePxHx/vanillarefresh-v1.4.19h_1.20.x.zip
 https://cdn.modrinth.com/data/cCStmVIN/versions/LDksmBZX/banner-flags-v2-3.zip

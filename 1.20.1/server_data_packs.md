@@ -23,5 +23,4 @@ Server Sleep - https://cdn.modrinth.com/data/Cw8IlnGM/versions/smQOT3XO/ServerSl
 
 # Other
 From The Fog - https://cdn.modrinth.com/data/p1WH6sHr/versions/BfjQlgpU/From-The-Fog-1.20-v1.9.2-Data-Resource-Pack.zip.zip
-Vanilla Refresh - https://cdn.modrinth.com/data/gWO6Zqey/versions/mJeePxHx/vanillarefresh-v1.4.19h_1.20.x.zip
 Banner Flags - https://cdn.modrinth.com/data/cCStmVIN/versions/LDksmBZX/banner-flags-v2-3.zip
