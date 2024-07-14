@@ -9,25 +9,52 @@ const mdFilePath = path.resolve(__dirname, "../1.20.1/client_mods.md");
 // Output directory
 const outputDir = path.resolve(__dirname, "./client-mods");
 
-const main = async () => {
+(async () => {
   try {
     const urls = await parseMarkdownFile(mdFilePath);
 
     fs.ensureDirSync(outputDir);
 
+    const downloadedFiles = new Set<string>();
+    let reusedCount = 0;
+    let downloadedCount = 0;
+    let deletedCount = 0;
+
     for (const url of urls) {
       const fileName = path.basename(url);
       const outputPath = path.join(outputDir, fileName);
+
+      downloadedFiles.add(fileName);
+
+      if (fs.existsSync(outputPath)) {
+        console.log(`SKIP: File ${fileName} already exists.`);
+        reusedCount++;
+        continue;
+      }
+
       console.log(`Downloading ${url} to ${outputPath}`);
       await downloadFile(url, outputPath);
-      console.log(`Downloaded ${fileName}`);
+      console.log(`DOWNLOAD: ${fileName}`);
+      downloadedCount++;
     }
 
-    console.log("All mods downloaded successfully.");
+    // Delete old mods not listed in the markdown file
+    const filesInOutputDir = fs.readdirSync(outputDir);
+    for (const file of filesInOutputDir) {
+      if (!downloadedFiles.has(file)) {
+        const filePath = path.join(outputDir, file);
+        console.warn(`DELETE: old mod ${file}`);
+        fs.unlinkSync(filePath);
+        deletedCount++;
+      }
+    }
+
+    console.log("----------");
+    console.log("All mods downloaded and cleaned up successfully.");
+    console.log(
+      `Summary: ${downloadedCount} downloaded, ${reusedCount} reused, ${deletedCount} deleted.`
+    );
   } catch (error) {
     console.error("Error:", error);
   }
-};
-
-// Run the main function
-main();
+})();
