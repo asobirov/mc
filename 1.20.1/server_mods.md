@@ -52,10 +52,14 @@ More Music Discs - https://cdn.modrinth.com/data/pXYChc1a/versions/tugTpNIa/more
 MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmmy-1.20-1.8.17b.jar
 Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlights-1.20.1-1.1.jar
 
-
 # World Gen
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
+
+YUNG's Better Witch Huts - https://cdn.modrinth.com/data/t5FRdP87/versions/mwlYB7rq/YungsBetterWitchHuts-1.20-Forge-3.0.3.jar
+YUNG's Bridges - https://cdn.modrinth.com/data/Ht4BfYp6/versions/KgO1gfM2/YungsBridges-1.20-Forge-4.0.3.jar
+YUNG's Better Desert Temples - https://cdn.modrinth.com/data/XNlO7sBv/versions/lRK2ZA9U/YungsBetterDesertTemples-1.20-Forge-3.0.3.jar
+YUNG's Extras - https://cdn.modrinth.com/data/ZYgyPyfq/versions/h4m8J7w8/YungsExtras-1.20-Forge-4.0.3.jar
 
 # Biomes/Dimensions
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
@@ -74,6 +78,7 @@ Cloth Config API - https://cdn.modrinth.com/data/9s6osm5g/versions/nr1znv5v/clot
 Collective - https://cdn.modrinth.com/data/e0M1UDsY/versions/4PHvK72M/collective-1.20.1-7.71.jar
 Resourceful Config - https://cdn.modrinth.com/data/M1953qlQ/versions/irREd1ZJ/resourcefulconfig-forge-1.20.1-2.1.2.jar
 Puzzles Lib - https://cdn.modrinth.com/data/QAGBst4M/versions/z0kHAGDv/PuzzlesLib-v8.1.21-1.20.1-Forge.jar
+YUNG's API - https://cdn.modrinth.com/data/Ua7DFN59/versions/aMs83SRk/YungsApi-1.20-Forge-4.0.5.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
