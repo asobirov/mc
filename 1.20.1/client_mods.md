@@ -11,6 +11,7 @@ Falling leaves - https://cdn.modrinth.com/data/2JAUNCL4/versions/qCMwYRMZ/Fallin
 Do a Barrel Roll - https://cdn.modrinth.com/data/6FtRfnLg/versions/VH8QpKA5/do_a_barrel_roll-forge-3.5.6%2B1.20.1.jar
 Pop! - https://cdn.modrinth.com/data/nlFgvj7M/versions/QZezsdyT/pop-1.20.1-1.0.0.jar
 Better Advancements - https://cdn.modrinth.com/data/Q2OqKxDG/versions/E1pOIPhV/BetterAdvancements-Forge-1.20.1-0.4.2.10.jar
+Model Gap Fix - https://cdn.modrinth.com/data/QdG47OkI/versions/og4A1nN8/modelfix-1.15.jar
 
 # Server and Client Mods
 
@@ -84,3 +85,6 @@ Cupboard - https://mediafilez.forgecdn.net/files/5470/32/cupboard-1.20.1-2.7.jar
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
 Better Fps Render Distance - https://mediafilez.forgecdn.net/files/5333/766/betterfpsdist-1.20.1-4.4.jar
+Entity Culling - https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar
+Memory Leak Fix - https://cdn.modrinth.com/data/NRjRiSSD/versions/3w0IxNtk/memoryleakfix-forge-1.17%2B-1.1.5.jar
+ModernFix - https://cdn.modrinth.com/data/nmDcB62a/versions/QroNBg6X/modernfix-forge-5.18.6%2Bmc1.20.1.jar
