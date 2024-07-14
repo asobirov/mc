@@ -1,6 +1,5 @@
 # World Gen
 Dungeons and Taverns - https://cdn.modrinth.com/data/tpehi7ww/versions/J9ojWPrx/Dungeons%20and%20Taverns%203.0.3.fix.zip
-Tectonic - https://cdn.modrinth.com/data/lWDHr9jE/versions/stwi8gQ3/tectonic-datapack-v2.2.2.zip
 Explorify - https://cdn.modrinth.com/data/HSfsxuTo/versions/haQCGB8I/Explorify%20v1.6.0%20f10-48.zip
 Create: Structures - https://cdn.modrinth.com/data/IAnP4np7/versions/GHYR6eCT/Create%20Structures%20-%20v0.1.1%20-%201.20.1.zip
 Tidal Towns - https://cdn.modrinth.com/data/EEIwvQVo/versions/kyK3ZfPm/tidal.zip
