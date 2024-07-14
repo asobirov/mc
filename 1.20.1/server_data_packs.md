@@ -1,7 +1,6 @@
 # World Gen
 Dungeons and Taverns - https://cdn.modrinth.com/data/tpehi7ww/versions/J9ojWPrx/Dungeons%20and%20Taverns%203.0.3.fix.zip
 Explorify - https://cdn.modrinth.com/data/HSfsxuTo/versions/haQCGB8I/Explorify%20v1.6.0%20f10-48.zip
-Create: Structures - https://cdn.modrinth.com/data/IAnP4np7/versions/GHYR6eCT/Create%20Structures%20-%20v0.1.1%20-%201.20.1.zip
 Tidal Towns - https://cdn.modrinth.com/data/EEIwvQVo/versions/kyK3ZfPm/tidal.zip
 Hopo Better Ruined Portals - https://cdn.modrinth.com/data/hIpLSyga/versions/PlfAUAli/HopoBetterRuinedPortals-%5B1.20-1.20.2%5D-1.3.7.jar
 Eugene's Wealthy Plains Village - https://cdn.modrinth.com/data/XYcNKW0i/versions/IdgrV67J/Eugene%27s%20Wealthy%20Plains%20Village%201.0.1.zip
