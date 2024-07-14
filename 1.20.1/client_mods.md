@@ -12,7 +12,6 @@ Do a Barrel Roll - https://cdn.modrinth.com/data/6FtRfnLg/versions/VH8QpKA5/do_a
 Pop! - https://cdn.modrinth.com/data/nlFgvj7M/versions/QZezsdyT/pop-1.20.1-1.0.0.jar
 Better Advancements - https://cdn.modrinth.com/data/Q2OqKxDG/versions/E1pOIPhV/BetterAdvancements-Forge-1.20.1-0.4.2.10.jar
 
-
 # Server and Client Mods
 
 # QoL
