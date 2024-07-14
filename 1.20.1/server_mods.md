@@ -20,7 +20,6 @@ Jade - https://cdn.modrinth.com/data/nvQzSEkH/versions/NruPjXIH/Jade-1.20.1-forg
 JourneyMap - https://cdn.modrinth.com/data/lfHFW1mp/versions/NuCCufCG/journeymap-1.20.1-5.9.23-forge.jar
 
 # Mobs & Items
-Alex's Mobs - https://cdn.modrinth.com/data/2cMuAZAp/versions/oaRqJ7uM/alexsmobs-1.22.8.jar
 Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/endermanoverhaul-forge-1.20.1-1.0.4.jar
 Creeper Overhaul - https://cdn.modrinth.com/data/MI1LWe93/versions/Ap1DSAzz/creeperoverhaul-3.0.2-forge.jar
 
