@@ -2,7 +2,7 @@ import axios from "axios";
 import * as fs from "fs-extra";
 import * as path from "path";
 
-import { parseMarkdownFile } from "./open_urls_in_file";
+import { parseMarkdownFile, downloadFile } from "./open_urls_in_file";
 
 // Path to the markdown file
 const mdFilePath = path.resolve(__dirname, "../1.20.1/client_mods.md");
