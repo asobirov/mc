@@ -82,3 +82,4 @@ YUNG's API - https://cdn.modrinth.com/data/Ua7DFN59/versions/aMs83SRk/YungsApi-1
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
+Better Fps Render Distance - https://mediafilez.forgecdn.net/files/5333/766/betterfpsdist-1.20.1-4.4.jar

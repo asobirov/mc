@@ -83,3 +83,4 @@ YUNG's API - https://cdn.modrinth.com/data/Ua7DFN59/versions/aMs83SRk/YungsApi-1
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
+Chunky - https://cdn.modrinth.com/data/fALzjamp/versions/4FTDk9wv/Chunky-1.3.146.jar 
