@@ -66,6 +66,7 @@ Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6
 # World Gen
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
+Hopo Better Ruined Portals - https://cdn.modrinth.com/data/hIpLSyga/versions/PlfAUAli/HopoBetterRuinedPortals-%5B1.20-1.20.2%5D-1.3.7.jar
 
 YUNG's Better Witch Huts - https://cdn.modrinth.com/data/t5FRdP87/versions/mwlYB7rq/YungsBetterWitchHuts-1.20-Forge-3.0.3.jar
 YUNG's Bridges - https://cdn.modrinth.com/data/Ht4BfYp6/versions/KgO1gfM2/YungsBridges-1.20-Forge-4.0.3.jar

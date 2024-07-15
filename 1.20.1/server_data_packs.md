@@ -3,7 +3,6 @@ Dungeons and Taverns - https://cdn.modrinth.com/data/tpehi7ww/versions/J9ojWPrx/
 Dungeons and Taverns Stronghold - https://cdn.modrinth.com/data/rYocd2LE/versions/FvrTLmTF/DnT%20Stronghold%20Overhaul%20v1.1.zip
 Explorify - https://cdn.modrinth.com/data/HSfsxuTo/versions/haQCGB8I/Explorify%20v1.6.0%20f10-48.zip
 Tidal Towns - https://cdn.modrinth.com/data/EEIwvQVo/versions/kyK3ZfPm/tidal.zip
-Hopo Better Ruined Portals - https://cdn.modrinth.com/data/hIpLSyga/versions/PlfAUAli/HopoBetterRuinedPortals-%5B1.20-1.20.2%5D-1.3.7.jar
 Eugene's Wealthy Plains Village - https://cdn.modrinth.com/data/XYcNKW0i/versions/IdgrV67J/Eugene%27s%20Wealthy%20Plains%20Village%201.0.1.zip
 Blossom Blade - https://cdn.modrinth.com/data/UMmSTwE0/versions/DlSnHsIz/blossom%20%281%29.zip
 Stellarity - https://cdn.modrinth.com/data/bZgeDzN8/versions/RPPPTt19/Stellarity-v2-0d.zip
