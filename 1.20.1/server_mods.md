@@ -43,6 +43,7 @@ Epic Samurai's - https://cdn.modrinth.com/data/lMWJDrbO/versions/dFf90NU8/epicsa
 Immersive Armors - https://cdn.modrinth.com/data/eE2Db4YU/versions/g70ZMcU2/immersive_armors-1.6.1%2B1.20.1-forge.jar
 
 Guard Villagers - https://cdn.modrinth.com/data/H1sntfo8/versions/svrJar40/guardvillagers-1.20.1-1.6.6.jar
+The Wandering Gambler - https://mediafilez.forgecdn.net/files/5312/771/the_wandering_gambler_ii-1.1.0.jar
 
 Farmer's Delight - https://cdn.modrinth.com/data/R2OftAxM/versions/AxgOboGq/FarmersDelight-1.20.1-1.2.4.jar
 Chef's Delight - https://cdn.modrinth.com/data/pvcsfne4/versions/5tGfF2Ok/chefs-delight-1.0.3-forge-1.20.1.jar
@@ -59,6 +60,7 @@ Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlig
 Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/NaturesCompass-1.20.1-1.11.2-forge.jar
 
 Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
+
 
 # World Gen
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar
