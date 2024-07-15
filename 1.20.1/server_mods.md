@@ -60,7 +60,6 @@ Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6
 
 # World Gen
 Terralith - https://cdn.modrinth.com/data/8oi3bsk5/versions/WeYhEb5d/Terralith_1.20.x_v2.5.4.jar
-Tectonic - https://cdn.modrinth.com/data/lWDHr9jE/versions/rktqBfn4/tectonic-forge-1.19.3-2.3.5a.jar
 
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
