@@ -38,7 +38,6 @@ https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-
 
 https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar
-https://mediafilez.forgecdn.net/files/4616/373/aquamirae-6.API15.jar
 
 https://cdn.modrinth.com/data/lMWJDrbO/versions/dFf90NU8/epicsamurai-0.0.46-1.20.1-neo.jar
 https://cdn.modrinth.com/data/eE2Db4YU/versions/g70ZMcU2/immersive_armors-1.6.1%2B1.20.1-forge.jar
@@ -113,4 +112,3 @@ https://cdn.modrinth.com/data/NRjRiSSD/versions/3w0IxNtk/memoryleakfix-forge-1.1
 https://cdn.modrinth.com/data/nmDcB62a/versions/QroNBg6X/modernfix-forge-5.18.6%2Bmc1.20.1.jar
 https://cdn.modrinth.com/data/KuNKN7d2/versions/EuQErqo9/noisium-forge-2.0.3%2Bmc1.20-1.20.1.jar
 https://cdn.modrinth.com/data/c7m1mi73/versions/AScUisZl/packetfixer-forge-1.4.2-1.19-to-1.20.1.jar
-https://cdn.modrinth.com/data/vE2FN5qn/versions/Z136Eles/letmedespawn-forge-1.20.1-1.20.4-1.2.1.jar

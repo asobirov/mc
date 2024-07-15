@@ -41,7 +41,6 @@ Better Archeology - https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/bet
 
 Aquaculture 2 - https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar
-Aquamirae - https://mediafilez.forgecdn.net/files/4616/373/aquamirae-6.API15.jar
 
 Epic Samurai's - https://cdn.modrinth.com/data/lMWJDrbO/versions/dFf90NU8/epicsamurai-0.0.46-1.20.1-neo.jar
 Immersive Armors - https://cdn.modrinth.com/data/eE2Db4YU/versions/g70ZMcU2/immersive_armors-1.6.1%2B1.20.1-forge.jar
