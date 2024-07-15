@@ -27,14 +27,21 @@ services:
       DATAPACKS_FILE: /extras/datapacks.txt
 
       OVERRIDE_SERVER_PROPERTIES: "TRUE"
-      MOTD: "[TEST SERVER] Will be wiped"
+
+      SERVER_NAME: "${SERVER_NAME:-Minecraft Server}"
+      MOTD: "${MOTD:-Welcome to the Minecraft Server! Explore and have fun!}"
+      SEED: "${SEED:-}"
       DIFFICULTY: "normal"
       PVP: "true"
       MODE: "survival"
+
       MAX_PLAYERS: 15
       ANNOUNCE_PLAYER_ACHIEVEMENTS: true
       ONLINE_MODE: false
-      VIEW_DISTANCE: 18
+
+
+      SIMULATION_DISTANCE: 6
+      VIEW_DISTANCE: 16
      
       MAX_TICK_TIME: -1
 
@@ -42,11 +49,11 @@ services:
 
       OPS_FILE: /extras/ops.json
     volumes:
-    # use a named, managed volume for data volume
-    - mc_forge:/data
-    - ./mods:/mods:ro
-    - ./extras:/extras:ro
- 
+      # use a named, managed volume for data volume
+      - mc_forge:/data
+      - ./mods:/mods:ro
+      - ./extras:/extras:ro
+    restart: unless-stopped
 volumes:
   # declared the named volume, but use default/local storage engine
   mc_forge: {}
