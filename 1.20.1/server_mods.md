@@ -120,3 +120,4 @@ Memory Leak Fix - https://cdn.modrinth.com/data/NRjRiSSD/versions/3w0IxNtk/memor
 ModernFix - https://cdn.modrinth.com/data/nmDcB62a/versions/QroNBg6X/modernfix-forge-5.18.6%2Bmc1.20.1.jar
 Noisium - https://cdn.modrinth.com/data/KuNKN7d2/versions/EuQErqo9/noisium-forge-2.0.3%2Bmc1.20-1.20.1.jar
 Packet Fixer - https://cdn.modrinth.com/data/c7m1mi73/versions/AScUisZl/packetfixer-forge-1.4.2-1.19-to-1.20.1.jar
+Let Me Despawn - https://cdn.modrinth.com/data/vE2FN5qn/versions/Z136Eles/letmedespawn-forge-1.20.1-1.20.4-1.2.1.jar
