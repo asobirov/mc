@@ -65,6 +65,7 @@ More Music Discs - https://cdn.modrinth.com/data/pXYChc1a/versions/tugTpNIa/more
 MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmmy-1.20-1.8.17b.jar
 Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlights-1.20.1-1.1.jar
 Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/NaturesCompass-1.20.1-1.11.2-forge.jar
+Traveler's Backpack - https://cdn.modrinth.com/data/rlloIFEV/versions/FDqFhZfz/travelersbackpack-forge-1.20.1-9.1.15.jar
 
 Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
 
