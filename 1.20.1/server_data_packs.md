@@ -20,5 +20,4 @@ Server Sleep - https://cdn.modrinth.com/data/Cw8IlnGM/versions/smQOT3XO/ServerSl
 Dynamic Lights - https://cdn.modrinth.com/data/7YjclEGc/versions/ZGEjOvYo/dynamiclights-v1.8.3-mc1.17x-1.21x-datapack.zip
 
 # Other
-From The Fog - https://cdn.modrinth.com/data/p1WH6sHr/versions/BfjQlgpU/From-The-Fog-1.20-v1.9.2-Data-Resource-Pack.zip.zip
 Banner Flags - https://cdn.modrinth.com/data/cCStmVIN/versions/LDksmBZX/banner-flags-v2-3.zip
