@@ -81,7 +81,6 @@ More Totems of Undying - https://cdn.modrinth.com/data/Xt0pMhSq/versions/A68awho
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
 
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
-Explorations - https://cdn.modrinth.com/data/pcGnjJ39/versions/p6rfGUTW/explorations-forge-1.20.1-1.5.2.jar
 
 Bygone Nether - https://cdn.modrinth.com/data/kt3BLgXB/versions/RA38ax2z/bygonenether-1.3.2-1.20.x.jar
 
