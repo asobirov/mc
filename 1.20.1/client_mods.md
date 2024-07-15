@@ -5,7 +5,7 @@ Just Enough Items - https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei
 Sound Physics Remastered - https://cdn.modrinth.com/data/qyVF9oeo/versions/AGRkYn5p/sound-physics-remastered-forge-1.20.1-1.4.5.jar
 Chat Heads - https://cdn.modrinth.com/data/Wb5oqrBJ/versions/RdqwbuyP/chat_heads-0.12.3-forge-1.20.jar
 ClearDespawn - https://cdn.modrinth.com/data/yoJJjRRE/versions/gFc6mJW2/ClearDespawn-forge-1.20.2-1.1.15.jar
-Traveler's Titles - https://cdn.modrinth.com/data/JtifUr64/versions/oUSK4sOQ/TravelersTitles-1.20-Forge-4.0.2.jar
+
 Pick up Notifier - https://cdn.modrinth.com/data/ZX66K16c/versions/LojgSWbd/PickUpNotifier-v8.0.0-1.20.1-Forge.jar
 Falling leaves - https://cdn.modrinth.com/data/2JAUNCL4/versions/qCMwYRMZ/Fallingleaves-1.20.1-2.1.0.jar
 Do a Barrel Roll - https://cdn.modrinth.com/data/6FtRfnLg/versions/VH8QpKA5/do_a_barrel_roll-forge-3.5.6%2B1.20.1.jar
@@ -13,6 +13,10 @@ Pop! - https://cdn.modrinth.com/data/nlFgvj7M/versions/QZezsdyT/pop-1.20.1-1.0.0
 Better Advancements - https://cdn.modrinth.com/data/Q2OqKxDG/versions/E1pOIPhV/BetterAdvancements-Forge-1.20.1-0.4.2.10.jar
 Model Gap Fix - https://cdn.modrinth.com/data/QdG47OkI/versions/og4A1nN8/modelfix-1.15.jar
 3D Skin Layers - https://cdn.modrinth.com/data/zV5r3pPn/versions/qgzIF2oI/skinlayers3d-forge-1.6.6-mc1.20.1.jar
+
+# General
+Traveler's Titles - https://cdn.modrinth.com/data/JtifUr64/versions/oUSK4sOQ/TravelersTitles-1.20-Forge-4.0.2.jar
+Legendary Tooltips - https://cdn.modrinth.com/data/atHH8NyV/versions/JhxD2e6J/LegendaryTooltips-1.20.1-forge-1.4.5.jar
 
 # Server and Client Mods
 
@@ -32,6 +36,7 @@ Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.
 # Mobs & Items
 Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/endermanoverhaul-forge-1.20.1-1.0.4.jar
 Creeper Overhaul - https://cdn.modrinth.com/data/MI1LWe93/versions/Ap1DSAzz/creeperoverhaul-3.0.2-forge.jar
+More Mob Variants - https://cdn.modrinth.com/data/JiEhJ3WG/versions/qtpseir7/moremobvariants-forge%2B1.20.1-1.3.0.1.jar
 
 Waystones - https://cdn.modrinth.com/data/LOpKHB2A/versions/Rbp8Hzck/waystones-forge-1.20-14.1.4.jar
 Immersive Melodies - https://cdn.modrinth.com/data/TaSmHw8V/versions/zjMy2oFH/immersive_melodies-0.3.0%2B1.20.1-forge.jar
@@ -69,7 +74,8 @@ Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlig
 Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/NaturesCompass-1.20.1-1.11.2-forge.jar
 Traveler's Backpack - https://cdn.modrinth.com/data/rlloIFEV/versions/FDqFhZfz/travelersbackpack-forge-1.20.1-9.1.15.jar
 Grappling Hook Mod - https://cdn.modrinth.com/data/hGWjTxOA/versions/RGcgyxBt/grappling_hook_mod-1.20.1-1.20.1-v13.jar
-
+Magnum Torch - https://cdn.modrinth.com/data/jorDmSKv/versions/LrsjuUiA/MagnumTorch-v8.0.2-1.20.1-Forge.jar
+More Totems of Undying - https://cdn.modrinth.com/data/Xt0pMhSq/versions/A68awhoI/More%20Totems%20of%20Undying-forge-1.20.1-2.16.0.jar
 
 # Biomes/Dimensions/World Gen
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
@@ -105,3 +111,4 @@ Better Fps Render Distance - https://mediafilez.forgecdn.net/files/5333/766/bett
 Entity Culling - https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar
 Memory Leak Fix - https://cdn.modrinth.com/data/NRjRiSSD/versions/3w0IxNtk/memoryleakfix-forge-1.17%2B-1.1.5.jar
 ModernFix - https://cdn.modrinth.com/data/nmDcB62a/versions/QroNBg6X/modernfix-forge-5.18.6%2Bmc1.20.1.jar
+Packet Fixer - https://cdn.modrinth.com/data/c7m1mi73/versions/AScUisZl/packetfixer-forge-1.4.2-1.19-to-1.20.1.jar

@@ -6,8 +6,6 @@ Tidal Towns - https://cdn.modrinth.com/data/EEIwvQVo/versions/kyK3ZfPm/tidal.zip
 Eugene's Wealthy Plains Village - https://cdn.modrinth.com/data/XYcNKW0i/versions/IdgrV67J/Eugene%27s%20Wealthy%20Plains%20Village%201.0.1.zip
 Blossom Blade - https://cdn.modrinth.com/data/UMmSTwE0/versions/DlSnHsIz/blossom%20%281%29.zip
 
-qrafty's Japanese Villages - https://cdn.modrinth.com/data/6vWz8dzn/versions/3LJ8TpIa/qrafty%27s-japanese-villages.zip
-
 No More Floating Islands - https://cdn.modrinth.com/data/mxvtRtX2/versions/ZI7E2yi5/NoMoreFloatingIslands-1.20.4.zip
 
 # Mobs
