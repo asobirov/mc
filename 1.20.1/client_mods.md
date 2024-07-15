@@ -41,6 +41,7 @@ Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/KAx6eLAF/suppl
 Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/rygiK2go/amendments-1.20-1.2.8.jar
 [Let's Do] Beachparty - https://cdn.modrinth.com/data/GyKzAh3l/versions/cC6RhoPZ/letsdo-beachparty-forge-1.1.5.jar
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
+Better Archeology - https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-1.20.1.jar
 
 Aquaculture 2 - https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar
@@ -58,6 +59,7 @@ End's Delight - https://cdn.modrinth.com/data/yHN0njMr/versions/X03B5YHy/ends_de
 Ocean's Delight - https://cdn.modrinth.com/data/DGiq4ZSW/versions/9jLLNENb/oceansdelight-1.0.2-1.20.jar
 Twilight's Flavors and Delight - https://cdn.modrinth.com/data/d6cSefpO/versions/aIcJkUxQ/twilightdelight-2.0.11.jar
 
+Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
 Chalk - https://cdn.modrinth.com/data/YWGP4Y1d/versions/YhueAXpz/chalk-1.20.1-1.6.4.jar
 Just Hammers - https://cdn.modrinth.com/data/edU0NbZZ/versions/JafXa7hr/justhammers-forge-2.0.3%2Bmc1.20.1.jar
 Chimes - https://mediafilez.forgecdn.net/files/4671/986/Chimes-v2.0.1-1.20.1.jar
@@ -66,13 +68,16 @@ MmmMmmMmmMmm - https://cdn.modrinth.com/data/Adega8YN/versions/dGifKxWx/dummmmmm
 Night Lights - https://cdn.modrinth.com/data/s7pMb898/versions/7QFRIFZg/nightlights-1.20.1-1.1.jar
 Nature's Compass - https://cdn.modrinth.com/data/fPetb5Kh/versions/Og40jCNX/NaturesCompass-1.20.1-1.11.2-forge.jar
 Traveler's Backpack - https://cdn.modrinth.com/data/rlloIFEV/versions/FDqFhZfz/travelersbackpack-forge-1.20.1-9.1.15.jar
+Grappling Hook Mod - https://cdn.modrinth.com/data/hGWjTxOA/versions/RGcgyxBt/grappling_hook_mod-1.20.1-1.20.1-v13.jar
 
-Bountiful - https://cdn.modrinth.com/data/BpwWFOVM/versions/j44RssVC/Bountiful-6.0.3%2B1.20.1-forge.jar
 
-# Biomes/Dimensions
+# Biomes/Dimensions/World Gen
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
 
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
+Explorations - https://cdn.modrinth.com/data/pcGnjJ39/versions/p6rfGUTW/explorations-forge-1.20.1-1.5.2.jar
+
+Bygone Nether - https://cdn.modrinth.com/data/kt3BLgXB/versions/RA38ax2z/bygonenether-1.3.2-1.20.x.jar
 
 # Libs
 Copper Bulbs - https://mediafilez.forgecdn.net/files/4803/197/copper_bulb.jar
