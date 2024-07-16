@@ -6,6 +6,7 @@ Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voi
 Dynmap® - https://cdn.modrinth.com/data/fRQREgAc/versions/RtI5TFAi/Dynmap-3.7-beta-6-forge-1.20.jar
 
 # QoL
+Just Enough Items - https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar
 Inventory Totem - https://cdn.modrinth.com/data/yQj7xqEM/versions/NL5pcN5e/inventorytotem-1.20.1-3.2.jar
 Snow Under Trees - https://cdn.modrinth.com/data/Q3vyMuj2/versions/jaKOCf56/snowundertrees-1.20.1-1.4.4.jar
 Smarter Farmers (farmers replant) - https://cdn.modrinth.com/data/Bh6ZOMvp/versions/pYx0klMs/smarterfarmers-1.20-1.8.3.jar
