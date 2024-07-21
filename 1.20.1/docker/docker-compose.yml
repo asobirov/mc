@@ -31,14 +31,13 @@ services:
       SERVER_NAME: "${SERVER_NAME:-Minecraft Server}"
       MOTD: "${MOTD:-Welcome to the Minecraft Server! Explore and have fun!}"
       SEED: "${SEED:-}"
-      DIFFICULTY: "normal"
+      DIFFICULTY: "hard"
       PVP: "true"
       MODE: "survival"
 
       MAX_PLAYERS: 15
       ANNOUNCE_PLAYER_ACHIEVEMENTS: true
       ONLINE_MODE: false
-
 
       SIMULATION_DISTANCE: 6
       VIEW_DISTANCE: 16
