@@ -23,6 +23,7 @@ Jade - https://cdn.modrinth.com/data/nvQzSEkH/versions/NruPjXIH/Jade-1.20.1-forg
 Patchouli - https://cdn.modrinth.com/data/nU0bVIaL/versions/JMtc0mTS/Patchouli-1.20.1-84-FORGE.jar
 
 Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
+Elytra Slot - https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslot-forge-6.4.1%2B1.20.1.jar
 
 # Mobs & Items
 From The Fog - https://cdn.modrinth.com/data/p1WH6sHr/versions/JTd3TFcc/From-The-Fog-1.20-v1.9.2-Forge-Fabric.jar
@@ -113,6 +114,7 @@ Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotl
 Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 Cristel Lib - https://cdn.modrinth.com/data/cl223EMc/versions/amI1oyGG/cristellib-1.1.5-forge.jar
+Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar

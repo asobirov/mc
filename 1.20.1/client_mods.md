@@ -22,6 +22,7 @@ Legendary Tooltips - https://cdn.modrinth.com/data/atHH8NyV/versions/JhxD2e6J/Le
 
 # QoL
 Death Knell - https://cdn.modrinth.com/data/WNdd2blX/versions/KwUk8tcm/DeathKnell-Forge-1.20.1-10.0.4.jar
+Elytra Slot - https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslot-forge-6.4.1%2B1.20.1.jar
 
 # General
 1.21 update | Tricky Trials - https://cdn.modrinth.com/data/tfIEEV4w/versions/qC3w1lD6/tricky_trials-1.6.0.jar
@@ -103,6 +104,7 @@ Cupboard - https://mediafilez.forgecdn.net/files/5470/32/cupboard-1.20.1-2.7.jar
 Kotlin for Forge - https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-all.jar
 Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
+Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar

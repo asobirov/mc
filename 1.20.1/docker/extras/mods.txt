@@ -21,6 +21,7 @@ https://cdn.modrinth.com/data/nvQzSEkH/versions/NruPjXIH/Jade-1.20.1-forge-11.9.
 https://cdn.modrinth.com/data/nU0bVIaL/versions/JMtc0mTS/Patchouli-1.20.1-84-FORGE.jar
 
 https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
+https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslot-forge-6.4.1%2B1.20.1.jar
 
 https://cdn.modrinth.com/data/p1WH6sHr/versions/JTd3TFcc/From-The-Fog-1.20-v1.9.2-Forge-Fabric.jar
 
@@ -107,6 +108,7 @@ https://cdn.modrinth.com/data/ordsPcFz/versions/hmeyC41q/kotlinforforge-4.11.0-a
 https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar
 https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 https://cdn.modrinth.com/data/cl223EMc/versions/amI1oyGG/cristellib-1.1.5-forge.jar
+https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 
 https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
 https://cdn.modrinth.com/data/fALzjamp/versions/4FTDk9wv/Chunky-1.3.146.jar
@@ -114,3 +116,4 @@ https://cdn.modrinth.com/data/NRjRiSSD/versions/3w0IxNtk/memoryleakfix-forge-1.1
 https://cdn.modrinth.com/data/nmDcB62a/versions/QroNBg6X/modernfix-forge-5.18.6%2Bmc1.20.1.jar
 https://cdn.modrinth.com/data/KuNKN7d2/versions/EuQErqo9/noisium-forge-2.0.3%2Bmc1.20-1.20.1.jar
 https://cdn.modrinth.com/data/c7m1mi73/versions/AScUisZl/packetfixer-forge-1.4.2-1.19-to-1.20.1.jar
+https://cdn.modrinth.com/data/vE2FN5qn/versions/Z136Eles/letmedespawn-forge-1.20.1-1.20.4-1.2.1.jar
