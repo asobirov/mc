@@ -69,6 +69,7 @@ Traveler's Backpack - https://cdn.modrinth.com/data/rlloIFEV/versions/FDqFhZfz/t
 Grappling Hook Mod - https://cdn.modrinth.com/data/hGWjTxOA/versions/RGcgyxBt/grappling_hook_mod-1.20.1-1.20.1-v13.jar
 Magnum Torch - https://cdn.modrinth.com/data/jorDmSKv/versions/LrsjuUiA/MagnumTorch-v8.0.2-1.20.1-Forge.jar
 More Totems of Undying - https://cdn.modrinth.com/data/Xt0pMhSq/versions/A68awhoI/More%20Totems%20of%20Undying-forge-1.20.1-2.16.0.jar
+Item Filters - https://mediafilez.forgecdn.net/files/4838/266/item-filters-forge-2001.1.0-build.59.jar
 
 # World Gen
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar
