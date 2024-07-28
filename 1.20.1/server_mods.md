@@ -3,7 +3,7 @@
 Visual Workbench - https://cdn.modrinth.com/data/kfqD1JRw/versions/c22Z4rsv/VisualWorkbench-v8.0.0-1.20.1-Forge.jar
 Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voicechat-forge-1.20.1-2.5.17.jar
 
-Dynmap® - https://cdn.modrinth.com/data/fRQREgAc/versions/RtI5TFAi/Dynmap-3.7-beta-6-forge-1.20.jar
+BlueMap - https://cdn.modrinth.com/data/swbUV1cr/versions/aHbq9KFB/BlueMap-5.3-forge-1.20.jar
 
 # QoL
 Just Enough Items - https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar
