@@ -65,6 +65,12 @@ const getOutputDir = () => {
         continue;
       }
 
+      if (file.startsWith("tl_")) {
+        console.log(`SKIP: Ignoring TL mod ${file}`);
+        continue;
+      }
+
+
       if (!downloadedFiles.has(file) ) {
         const filePath = path.join(outputDir, file);
         console.warn(`DELETE: old mod ${file}`);
