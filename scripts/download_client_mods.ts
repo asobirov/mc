@@ -1,17 +1,35 @@
-import axios from "axios";
 import * as fs from "fs-extra";
 import * as path from "path";
 
 import { parseMarkdownFile, downloadFile } from "./open_urls_in_file";
 
+const DOWNLOAD_INTO_MINECRAFT_FOLDER = true;
+const MINECRAFT_MODS_DIR =
+  "/Users/asobirov/Library/Application Support/minecraft/mods";
+
 // Path to the markdown file
 const mdFilePath = path.resolve(__dirname, "../1.20.1/client_mods.md");
-// Output directory
-const outputDir = path.resolve(__dirname, "./client-mods");
+
+const getOutputDir = () => {
+  if (DOWNLOAD_INTO_MINECRAFT_FOLDER) {
+    console.log("Downloading mods into the specified Minecraft mods folder.");
+    const dir = path.resolve(__dirname, MINECRAFT_MODS_DIR);
+
+    if (!fs.existsSync(dir)) {
+      console.error(`Directory ${dir} does not exist.`);
+      process.exit(1);
+    }
+
+    return dir;
+  }
+
+  return path.resolve(__dirname, "./client-mods");
+};
 
 (async () => {
   try {
     const urls = await parseMarkdownFile(mdFilePath);
+    const outputDir = getOutputDir();
 
     fs.ensureDirSync(outputDir);
 
