@@ -59,7 +59,13 @@ const getOutputDir = () => {
     // Delete old mods not listed in the markdown file
     const filesInOutputDir = fs.readdirSync(outputDir);
     for (const file of filesInOutputDir) {
-      if (!downloadedFiles.has(file)) {
+      // ignore ".connector" folder
+      if (file === ".connector") {
+        console.log(`SKIP: Folder ${file} is ignored.`);
+        continue;
+      }
+
+      if (!downloadedFiles.has(file) ) {
         const filePath = path.join(outputDir, file);
         console.warn(`DELETE: old mod ${file}`);
         fs.unlinkSync(filePath);
