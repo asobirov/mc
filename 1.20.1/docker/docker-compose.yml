@@ -72,7 +72,7 @@ services:
       INITIAL_DELAY: 0
     volumes:
       - ./mc_forge:/data:ro
-      - backups:/backups
+      - ./backups:/backups
 volumes:
   # declared the named volume, but use default/local storage engine
   mc_forge: {}
