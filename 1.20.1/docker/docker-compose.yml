@@ -53,6 +53,24 @@ services:
       - ./mods:/mods:ro
       - ./extras:/extras:ro
     restart: unless-stopped
+
+  bluemap:
+    image: ghcr.io/bluemap-minecraft/bluemap:v5.2
+    container_name: bluemap
+    depends_on:
+      - mc
+    ports:
+      - "8100:8100"
+    volumes:
+      - mc_forge:/data
+      - ./bluemap/web:/bluemap/web
+      - ./bluemap/config:/bluemap/config
+    environment:
+      WEB_PORT: 8100
+      RCON_PORT: 25575
+      RCON_PASSWORD: ${RCON_PASSWORD}
+    restart: unless-stopped
+
 volumes:
   # declared the named volume, but use default/local storage engine
   mc_forge: {}
