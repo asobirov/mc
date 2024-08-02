@@ -13,6 +13,7 @@ Smarter Farmers (farmers replant) - https://cdn.modrinth.com/data/Bh6ZOMvp/versi
 NetherPortalFix - https://cdn.modrinth.com/data/nPZr02ET/versions/cWPAnu7u/netherportalfix-forge-1.20-13.0.1.jar
 Death Knell - https://cdn.modrinth.com/data/WNdd2blX/versions/KwUk8tcm/DeathKnell-Forge-1.20.1-10.0.4.jar
 Not Enough Recipe Book [NERB] - https://cdn.modrinth.com/data/bQh7xzFq/versions/hRhjlsGv/nerb-1.20.1-0.3-FORGE.jar
+Infinity With Mending - https://cdn.modrinth.com/data/TToG3iVN/versions/14iMIbRe/infwithmend-forge-1.20.x-1.0.2.jar
 
 Softer Hay Bales - https://cdn.modrinth.com/data/RtmujAUl/versions/XpjSUCI8/softerhaybales-1.20.1-3.2.jar
 Fish on the Line - https://cdn.modrinth.com/data/R6PYx1PW/versions/5CJoqJSY/fishontheline-1.20.1-3.2.jar

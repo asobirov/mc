@@ -24,6 +24,7 @@ Enchantment Descriptions - https://cdn.modrinth.com/data/UVtY3ZAC/versions/zzrCQ
 # QoL
 Death Knell - https://cdn.modrinth.com/data/WNdd2blX/versions/KwUk8tcm/DeathKnell-Forge-1.20.1-10.0.4.jar
 Elytra Slot - https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslot-forge-6.4.1%2B1.20.1.jar
+Infinity With Mending - https://cdn.modrinth.com/data/TToG3iVN/versions/14iMIbRe/infwithmend-forge-1.20.x-1.0.2.jar
 
 # General
 1.21 update | Tricky Trials - https://cdn.modrinth.com/data/tfIEEV4w/versions/qC3w1lD6/tricky_trials-1.6.0.jar
