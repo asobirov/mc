@@ -53,6 +53,25 @@ services:
       - ./mods:/mods:ro
       - ./extras:/extras:ro
     restart: unless-stopped
+
+  backups:
+    image: itzg/mc-backup
+    user: "1000"
+    depends_on:
+      mc:
+        condition: service_healthy
+    environment:
+      BACKUP_METHOD: rsync
+      PRUNE_BACKUPS_COUNT: 10
+      PRUNE_BACKUPS_DAYS: 30
+      BACKUP_INTERVAL: "12h"
+      RCON_HOST: mc
+      # since this service waits for mc to be healthy, no initial delay is needed
+      INITIAL_DELAY: 0
+    volumes:
+      - ./mc_forge:/data:ro
+      - backups:/backups
 volumes:
   # declared the named volume, but use default/local storage engine
   mc_forge: {}
+  backups: {}
