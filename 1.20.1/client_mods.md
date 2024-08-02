@@ -87,6 +87,8 @@ When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/D
 
 Bygone Nether - https://cdn.modrinth.com/data/kt3BLgXB/versions/RA38ax2z/bygonenether-1.3.2-1.20.x.jar
 
+Better End - https://cdn.modrinth.com/data/gc8OEnCC/versions/7QwyTILr/better-end-4.0.11.jar
+
 # Libs
 Copper Bulbs - https://mediafilez.forgecdn.net/files/4803/197/copper_bulb.jar
 GeckoLib - https://cdn.modrinth.com/data/8BmcQJ2H/versions/iS7jylhp/geckolib-forge-1.20.1-4.4.6.jar
@@ -108,6 +110,13 @@ Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-Forge-1.20.1-20.2.13.jar
+
+<!-- Fabric Mods -->
+Forgified Fabric API - https://cdn.modrinth.com/data/Aqlf1Shp/versions/D3EZO1Kr/fabric-api-0.92.2%2B1.11.8%2B1.20.1.jar
+Sinytra Connector - https://cdn.modrinth.com/data/u58R1TMW/versions/74Z0Kmgx/Connector-1.0.0-beta.44%2B1.20.1.jar
+Connector Extras - https://cdn.modrinth.com/data/FYpiwiBR/versions/d28gpPn6/ConnectorExtras-1.11.2%2B1.20.1.jar
+
+BCLib - https://cdn.modrinth.com/data/BgNRHReB/versions/TPC86Pyz/bclib-3.0.14.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar

@@ -92,6 +92,7 @@ Formations (Structure Library) - https://cdn.modrinth.com/data/tPe4xnPd/versions
 
 Nullscape - https://cdn.modrinth.com/data/LPjGiSO4/versions/IGSIk1BM/Nullscape_1.20.x_v1.2.7.jar
 YUNG's Better End Island - https://cdn.modrinth.com/data/2BwBOmBQ/versions/Izqhg3Va/YungsBetterEndIsland-1.20-Forge-2.0.6.jar
+Better End - https://cdn.modrinth.com/data/gc8OEnCC/versions/7QwyTILr/better-end-4.0.11.jar
 
 # Biomes/Dimensions
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
@@ -116,6 +117,13 @@ Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 Cristel Lib - https://cdn.modrinth.com/data/cl223EMc/versions/amI1oyGG/cristellib-1.1.5-forge.jar
 Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
+
+<!-- Fabric Mods -->
+Forgified Fabric API - https://cdn.modrinth.com/data/Aqlf1Shp/versions/D3EZO1Kr/fabric-api-0.92.2%2B1.11.8%2B1.20.1.jar
+Sinytra Connector - https://cdn.modrinth.com/data/u58R1TMW/versions/74Z0Kmgx/Connector-1.0.0-beta.44%2B1.20.1.jar
+Connector Extras - https://cdn.modrinth.com/data/FYpiwiBR/versions/d28gpPn6/ConnectorExtras-1.11.2%2B1.20.1.jar
+
+BCLib - https://cdn.modrinth.com/data/BgNRHReB/versions/TPC86Pyz/bclib-3.0.14.jar
 
 # Optimization
 FerriteCore - https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar
