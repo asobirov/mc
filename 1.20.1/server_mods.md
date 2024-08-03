@@ -26,6 +26,8 @@ Patchouli - https://cdn.modrinth.com/data/nU0bVIaL/versions/JMtc0mTS/Patchouli-1
 Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
 Elytra Slot - https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslot-forge-6.4.1%2B1.20.1.jar
 
+Actually Unbreaking - https://cdn.modrinth.com/data/ClQLN4h7/versions/Mz0y30zQ/actuallyunbreaking-1.20.1-0.2.1.jar
+
 # Mobs & Items
 From The Fog - https://cdn.modrinth.com/data/p1WH6sHr/versions/JTd3TFcc/From-The-Fog-1.20-v1.9.2-Forge-Fabric.jar
 
