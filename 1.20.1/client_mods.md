@@ -87,8 +87,11 @@ The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightfor
 
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
 
+## Nether
 Bygone Nether - https://cdn.modrinth.com/data/kt3BLgXB/versions/RA38ax2z/bygonenether-1.3.2-1.20.x.jar
+Better Nether - https://cdn.modrinth.com/data/MpzVLzy5/versions/IG7kgtJH/better-nether-9.0.10.jar
 
+## End
 Better End - https://cdn.modrinth.com/data/gc8OEnCC/versions/7QwyTILr/better-end-4.0.11.jar
 
 # Libs

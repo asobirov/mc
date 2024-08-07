@@ -86,12 +86,15 @@ YUNG's Better Desert Temples - https://cdn.modrinth.com/data/XNlO7sBv/versions/l
 YUNG's Better Mineshafts - https://cdn.modrinth.com/data/HjmxVlSr/versions/kVO57zxB/YungsBetterMineshafts-1.20-Forge-4.0.4.jar
 YUNG's Better Dungeons - https://cdn.modrinth.com/data/o1C1Dkj5/versions/kPiQ6v4q/YungsBetterDungeons-1.20-Forge-4.0.4.jar
 
+## Nether
 YUNG's Better Nether Fortresses - https://cdn.modrinth.com/data/Z2mXHnxP/versions/2nUEz0zq/YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar
 Bygone Nether - https://cdn.modrinth.com/data/kt3BLgXB/versions/RA38ax2z/bygonenether-1.3.2-1.20.x.jar
+Better Nether - https://cdn.modrinth.com/data/MpzVLzy5/versions/IG7kgtJH/better-nether-9.0.10.jar
 
 Formations Nether - https://cdn.modrinth.com/data/cGvQGRls/versions/OuVh7nTj/formationsnether-1.0.4.jar
 Formations (Structure Library) - https://cdn.modrinth.com/data/tPe4xnPd/versions/coW5xpTI/formations-1.0.2-forge-mc1.20.jar
 
+## End
 Nullscape - https://cdn.modrinth.com/data/LPjGiSO4/versions/IGSIk1BM/Nullscape_1.20.x_v1.2.7.jar
 YUNG's Better End Island - https://cdn.modrinth.com/data/2BwBOmBQ/versions/Izqhg3Va/YungsBetterEndIsland-1.20-Forge-2.0.6.jar
 Better End - https://cdn.modrinth.com/data/gc8OEnCC/versions/7QwyTILr/better-end-4.0.11.jar
