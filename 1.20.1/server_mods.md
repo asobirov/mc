@@ -29,8 +29,6 @@ Elytra Slot - https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslo
 Actually Unbreaking - https://cdn.modrinth.com/data/ClQLN4h7/versions/Mz0y30zQ/actuallyunbreaking-1.20.1-0.2.1.jar
 
 # Mobs & Items
-From The Fog - https://cdn.modrinth.com/data/p1WH6sHr/versions/JTd3TFcc/From-The-Fog-1.20-v1.9.2-Forge-Fabric.jar
-
 Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/endermanoverhaul-forge-1.20.1-1.0.4.jar
 Creeper Overhaul - https://cdn.modrinth.com/data/MI1LWe93/versions/Ap1DSAzz/creeperoverhaul-3.0.2-forge.jar
 More Mob Variants - https://cdn.modrinth.com/data/JiEhJ3WG/versions/qtpseir7/moremobvariants-forge%2B1.20.1-1.3.0.1.jar
@@ -42,6 +40,10 @@ Comforts - https://cdn.modrinth.com/data/SaCpeal4/versions/KgzjTw3n/comforts-for
 Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/KAx6eLAF/supplementaries-1.20-2.8.17.jar
 Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/rygiK2go/amendments-1.20-1.2.8.jar
 [Let's Do] Beachparty - https://cdn.modrinth.com/data/GyKzAh3l/versions/cC6RhoPZ/letsdo-beachparty-forge-1.1.5.jar
+[Let's Do] Bakery - https://cdn.modrinth.com/data/WFwYiVoG/versions/Jo8EwiDR/letsdo-bakery-forge-1.1.15.jar
+[Let's Do] Vinery - https://cdn.modrinth.com/data/1DWmBJVA/versions/XPGuV4sB/letsdo-vinery-forge-1.4.27.jar
+[Let's Do] NetherVinery - https://cdn.modrinth.com/data/4TTDxtOx/versions/CeoWrWDK/letsdo-nethervinery-forge-1.2.14.jar
+[Let's Do] Brewery - https://cdn.modrinth.com/data/cV5LQXKx/versions/vqYszE4F/letsdo-brewery-forge-1.1.9.jar
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Better Archeology - https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-1.20.1.jar
 
