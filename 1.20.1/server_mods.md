@@ -101,6 +101,7 @@ Formations (Structure Library) - https://cdn.modrinth.com/data/tPe4xnPd/versions
 Nullscape - https://cdn.modrinth.com/data/LPjGiSO4/versions/IGSIk1BM/Nullscape_1.20.x_v1.2.7.jar
 YUNG's Better End Island - https://cdn.modrinth.com/data/2BwBOmBQ/versions/Izqhg3Va/YungsBetterEndIsland-1.20-Forge-2.0.6.jar
 Better End - https://cdn.modrinth.com/data/gc8OEnCC/versions/7QwyTILr/better-end-4.0.11.jar
+Better End Cities for BetterEnd - https://cdn.modrinth.com/data/DlcfxdlN/versions/EtaLjbuT/betterendcitiesbetterend-1.20.1.jar
 
 # Biomes/Dimensions
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar

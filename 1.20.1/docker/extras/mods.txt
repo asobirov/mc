@@ -95,6 +95,7 @@ https://cdn.modrinth.com/data/tPe4xnPd/versions/coW5xpTI/formations-1.0.2-forge-
 https://cdn.modrinth.com/data/LPjGiSO4/versions/IGSIk1BM/Nullscape_1.20.x_v1.2.7.jar
 https://cdn.modrinth.com/data/2BwBOmBQ/versions/Izqhg3Va/YungsBetterEndIsland-1.20-Forge-2.0.6.jar
 https://cdn.modrinth.com/data/gc8OEnCC/versions/7QwyTILr/better-end-4.0.11.jar
+https://cdn.modrinth.com/data/DlcfxdlN/versions/EtaLjbuT/betterendcitiesbetterend-1.20.1.jar
 
 https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
 
