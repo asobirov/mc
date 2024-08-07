@@ -60,7 +60,8 @@ const getOutputDir = () => {
     const filesInOutputDir = fs.readdirSync(outputDir);
     for (const file of filesInOutputDir) {
       // ignore ".connector" folder
-      if (file === ".connector") {
+      const ignoreFolders = [".connector", "_bclib_deactivated"];
+      if (ignoreFolders.includes(file)) {
         console.log(`SKIP: Folder ${file} is ignored.`);
         continue;
       }
