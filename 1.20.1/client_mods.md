@@ -51,6 +51,7 @@ Comforts - https://cdn.modrinth.com/data/SaCpeal4/versions/KgzjTw3n/comforts-for
 Supplementaries - https://cdn.modrinth.com/data/fFEIiSDQ/versions/KAx6eLAF/supplementaries-1.20-2.8.17.jar
 Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/rygiK2go/amendments-1.20-1.2.8.jar
 [Let's Do] Beachparty - https://cdn.modrinth.com/data/GyKzAh3l/versions/cC6RhoPZ/letsdo-beachparty-forge-1.1.5.jar
+[Let's Do] Furniture - https://cdn.modrinth.com/data/3JQDJrYW/versions/IN7ZYtXf/letsdo-furniture-forge-1.0.0.jar
 [Let's Do] Bakery - https://cdn.modrinth.com/data/WFwYiVoG/versions/Jo8EwiDR/letsdo-bakery-forge-1.1.15.jar
 [Let's Do] Vinery - https://cdn.modrinth.com/data/1DWmBJVA/versions/XPGuV4sB/letsdo-vinery-forge-1.4.27.jar
 [Let's Do] NetherVinery - https://cdn.modrinth.com/data/4TTDxtOx/versions/CeoWrWDK/letsdo-nethervinery-forge-1.2.14.jar
