@@ -65,13 +65,18 @@ const getOutputDir = () => {
         continue;
       }
 
+      const systemFiles = [".DS_Store"];
+      if (systemFiles.includes(file)) {
+        console.log(`SKIP: System file ${file}`);
+        continue;
+      }
+
       if (file.startsWith("tl_")) {
         console.log(`SKIP: Ignoring TL mod ${file}`);
         continue;
       }
 
-
-      if (!downloadedFiles.has(file) ) {
+      if (!downloadedFiles.has(file)) {
         const filePath = path.join(outputDir, file);
         console.warn(`DELETE: old mod ${file}`);
         fs.unlinkSync(filePath);
