@@ -47,6 +47,7 @@ Amendments - https://cdn.modrinth.com/data/6iTJugQR/versions/rygiK2go/amendments
 [Let's Do] Brewery - https://cdn.modrinth.com/data/cV5LQXKx/versions/vqYszE4F/letsdo-brewery-forge-1.1.9.jar
 Artifacts - https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 Better Archeology - https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-1.20.1.jar
+Beautify! - https://cdn.modrinth.com/data/9BPuv4vL/versions/v9NnLuyB/beautify-2.0.2.jar
 
 Aquaculture 2 - https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 Fish of Thieves - https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar

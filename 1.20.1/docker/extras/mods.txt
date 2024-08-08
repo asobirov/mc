@@ -44,6 +44,7 @@ https://cdn.modrinth.com/data/4TTDxtOx/versions/CeoWrWDK/letsdo-nethervinery-for
 https://cdn.modrinth.com/data/cV5LQXKx/versions/vqYszE4F/letsdo-brewery-forge-1.1.9.jar
 https://cdn.modrinth.com/data/P0Mu4wcQ/versions/jDAjEp8X/artifacts-forge-9.5.11.jar
 https://cdn.modrinth.com/data/zCh7omyG/versions/8f9j7B3i/betterarcheology-1.1.9-1.20.1.jar
+https://cdn.modrinth.com/data/9BPuv4vL/versions/v9NnLuyB/beautify-2.0.2.jar
 
 https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar
 https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar
