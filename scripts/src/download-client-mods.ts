@@ -125,8 +125,9 @@ const getOutputDir = () => {
         "All mods have been downloaded and cleaned up successfully."
       )
     );
+    console.log(`${chalk.bold("Directory")}: ${outputDir}`);
     console.log(
-      chalk.green(
+      chalk(
         `${chalk.bold("Reused")}: ${count.reused}\n` +
           `${chalk.bold("Downloaded")}: ${count.downloaded}\n` +
           `${chalk.bold("Deleted")}: ${count.deleted}`
