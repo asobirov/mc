@@ -1,10 +1,9 @@
 import axios from "axios";
 import * as fs from "fs-extra";
-import * as path from "path";
 
 /**
  * Function to parse a markdown file and extract URLs
- * 
+ *
  * @returns {Promise<string[]>} - Array of URLs
  */
 export const parseMarkdownFile = async (filePath: string) => {
