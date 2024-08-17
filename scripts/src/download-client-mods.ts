@@ -134,6 +134,6 @@ const getOutputDir = () => {
       )
     );
   } catch (error) {
-    console.error("Error:", error);
+    console.error(chalk.red("Failed to download mods:"), error);
   }
 })();
