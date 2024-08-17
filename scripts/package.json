@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "download-mods": "tsx download-client-mods.ts"
   },
   "keywords": [],
   "author": "",

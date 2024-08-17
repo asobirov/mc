@@ -1,7 +1,7 @@
 import * as fs from "fs-extra";
 import * as path from "path";
 
-import { parseMarkdownFile, downloadFile } from "./open_urls_in_file";
+import { parseMarkdownFile, downloadFile } from "./open-urls-in-file";
 
 const DOWNLOAD_INTO_MINECRAFT_FOLDER = true;
 const MINECRAFT_MODS_DIR =
