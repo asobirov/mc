@@ -1,10 +1,8 @@
 import axios from "axios";
-import * as fs from "fs-extra";
+import { promises as fs, createWriteStream } from "fs";
 
 /**
  * Function to parse a markdown file and extract URLs
- *
- * @returns {Promise<string[]>} - Array of URLs
  */
 export const parseMarkdownFile = async (filePath: string) => {
   const fileContent = await fs.readFile(filePath, "utf-8");
@@ -15,7 +13,7 @@ export const parseMarkdownFile = async (filePath: string) => {
 
 // Function to download a file
 export const downloadFile = async (url: string, outputPath: string) => {
-  const writer = fs.createWriteStream(outputPath);
+  const writer = createWriteStream(outputPath);
   const response = await axios({
     url,
     method: "GET",
