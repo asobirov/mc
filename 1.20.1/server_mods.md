@@ -133,7 +133,6 @@ Cristel Lib - https://cdn.modrinth.com/data/cl223EMc/versions/amI1oyGG/cristelli
 Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 HammerLib - https://cdn.modrinth.com/data/PlkSuVtM/versions/MNK2BJRV/HammerLib-1.20.1-20.1.32.jar
 CreativeCore - https://cdn.modrinth.com/data/OsZiaDHq/versions/aI5XI1xQ/CreativeCore_FORGE_v2.11.37_mc1.20.1.jar
-WATERMeDIA - https://cdn.modrinth.com/data/G922NeHS/versions/mBD3v45M/watermedia-2.0.70.jar 
 
 <!-- Fabric Mods -->
 Forgified Fabric API - https://cdn.modrinth.com/data/Aqlf1Shp/versions/D3EZO1Kr/fabric-api-0.92.2%2B1.11.8%2B1.20.1.jar
