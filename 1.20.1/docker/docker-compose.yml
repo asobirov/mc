@@ -47,6 +47,9 @@ services:
       SPAWN_PROTECTION: 0
 
       OPS_FILE: /extras/ops.json
+    depends_on:
+      restore-backup:
+        condition: service_completed_successfully
     volumes:
       # use a named, managed volume for data volume
       - mc_forge:/data
