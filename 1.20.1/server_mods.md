@@ -5,6 +5,8 @@ Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voi
 
 BlueMap - https://cdn.modrinth.com/data/swbUV1cr/versions/aHbq9KFB/BlueMap-5.3-forge-1.20.jar
 
+Improvable Skills - https://cdn.modrinth.com/data/9fT7HUaI/versions/Jtz5n9yR/ImprovableSkills-1.20.1-20.1.9.jar
+
 # QoL
 Just Enough Items - https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar
 Inventory Totem - https://cdn.modrinth.com/data/yQj7xqEM/versions/NL5pcN5e/inventorytotem-1.20.1-3.2.jar
@@ -77,6 +79,8 @@ Grappling Hook Mod - https://cdn.modrinth.com/data/hGWjTxOA/versions/RGcgyxBt/gr
 Magnum Torch - https://cdn.modrinth.com/data/jorDmSKv/versions/LrsjuUiA/MagnumTorch-v8.0.2-1.20.1-Forge.jar
 More Totems of Undying - https://cdn.modrinth.com/data/Xt0pMhSq/versions/A68awhoI/More%20Totems%20of%20Undying-forge-1.20.1-2.16.0.jar
 
+WATERFrAMES - https://cdn.modrinth.com/data/eBzFuVTM/versions/7dq3p9A0/waterframes-FORGE-mc1.20.1-v2.1.3.jar
+
 # World Gen
 Towers of the Wild Modded - https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar
 When Dungeons Arise - https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar
@@ -127,6 +131,9 @@ Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 Cristel Lib - https://cdn.modrinth.com/data/cl223EMc/versions/amI1oyGG/cristellib-1.1.5-forge.jar
 Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
+HammerLib - https://cdn.modrinth.com/data/PlkSuVtM/versions/mrkG631Q/HammerLib-1.20.1-20.1.29.jar
+CreativeCore - https://cdn.modrinth.com/data/OsZiaDHq/versions/aI5XI1xQ/CreativeCore_FORGE_v2.11.37_mc1.20.1.jar
+WATERMeDIA - https://cdn.modrinth.com/data/G922NeHS/versions/mBD3v45M/watermedia-2.0.70.jar 
 
 <!-- Fabric Mods -->
 Forgified Fabric API - https://cdn.modrinth.com/data/Aqlf1Shp/versions/D3EZO1Kr/fabric-api-0.92.2%2B1.11.8%2B1.20.1.jar

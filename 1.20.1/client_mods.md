@@ -27,6 +27,7 @@ Enchantment Descriptions - https://cdn.modrinth.com/data/UVtY3ZAC/versions/zzrCQ
 Death Knell - https://cdn.modrinth.com/data/WNdd2blX/versions/KwUk8tcm/DeathKnell-Forge-1.20.1-10.0.4.jar
 Elytra Slot - https://cdn.modrinth.com/data/mSQF1NpT/versions/8MFnfKqj/elytraslot-forge-6.4.1%2B1.20.1.jar
 Infinity With Mending - https://cdn.modrinth.com/data/TToG3iVN/versions/14iMIbRe/infwithmend-forge-1.20.x-1.0.2.jar
+Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
 
 # General
 1.21 update | Tricky Trials - https://cdn.modrinth.com/data/tfIEEV4w/versions/qC3w1lD6/tricky_trials-1.6.0.jar
@@ -37,7 +38,7 @@ AppleSkin - https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-f
 Jade - https://cdn.modrinth.com/data/nvQzSEkH/versions/NruPjXIH/Jade-1.20.1-forge-11.9.3.jar
 Patchouli - https://cdn.modrinth.com/data/nU0bVIaL/versions/JMtc0mTS/Patchouli-1.20.1-84-FORGE.jar
 
-Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
+Improvable Skills - https://cdn.modrinth.com/data/9fT7HUaI/versions/Jtz5n9yR/ImprovableSkills-1.20.1-20.1.9.jar
 
 # Mobs & Items
 Enderman Overhaul - https://cdn.modrinth.com/data/Lq6ojcWv/versions/yjxych8u/endermanoverhaul-forge-1.20.1-1.0.4.jar
@@ -88,6 +89,8 @@ Grappling Hook Mod - https://cdn.modrinth.com/data/hGWjTxOA/versions/RGcgyxBt/gr
 Magnum Torch - https://cdn.modrinth.com/data/jorDmSKv/versions/LrsjuUiA/MagnumTorch-v8.0.2-1.20.1-Forge.jar
 More Totems of Undying - https://cdn.modrinth.com/data/Xt0pMhSq/versions/A68awhoI/More%20Totems%20of%20Undying-forge-1.20.1-2.16.0.jar
 
+WATERFrAMES - https://cdn.modrinth.com/data/eBzFuVTM/versions/7dq3p9A0/waterframes-FORGE-mc1.20.1-v2.1.3.jar
+
 # Biomes/Dimensions/World Gen
 The Twilight Forest - https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar
 
@@ -121,6 +124,9 @@ Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-Forge-1.20.1-20.2.13.jar
+HammerLib - https://cdn.modrinth.com/data/PlkSuVtM/versions/mrkG631Q/HammerLib-1.20.1-20.1.29.jar
+CreativeCore - https://cdn.modrinth.com/data/OsZiaDHq/versions/aI5XI1xQ/CreativeCore_FORGE_v2.11.37_mc1.20.1.jar
+WATERMeDIA - https://cdn.modrinth.com/data/G922NeHS/versions/mBD3v45M/watermedia-2.0.70.jar 
 
 <!-- Fabric Mods -->
 Forgified Fabric API - https://cdn.modrinth.com/data/Aqlf1Shp/versions/D3EZO1Kr/fabric-api-0.92.2%2B1.11.8%2B1.20.1.jar
