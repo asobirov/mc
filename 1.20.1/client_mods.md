@@ -124,7 +124,7 @@ Kambrik - https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1
 Obscure API - https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar
 Caelus API - https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar
 Bookshelf - https://cdn.modrinth.com/data/uy4Cnpcm/versions/tNwsir0K/Bookshelf-Forge-1.20.1-20.2.13.jar
-HammerLib - https://cdn.modrinth.com/data/PlkSuVtM/versions/mrkG631Q/HammerLib-1.20.1-20.1.29.jar
+HammerLib - https://cdn.modrinth.com/data/PlkSuVtM/versions/MNK2BJRV/HammerLib-1.20.1-20.1.32.jar
 CreativeCore - https://cdn.modrinth.com/data/OsZiaDHq/versions/aI5XI1xQ/CreativeCore_FORGE_v2.11.37_mc1.20.1.jar
 WATERMeDIA - https://cdn.modrinth.com/data/G922NeHS/versions/mBD3v45M/watermedia-2.0.70.jar 
 
