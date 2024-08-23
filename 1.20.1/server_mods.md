@@ -5,8 +5,6 @@ Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voi
 
 BlueMap - https://cdn.modrinth.com/data/swbUV1cr/versions/aHbq9KFB/BlueMap-5.3-forge-1.20.jar
 
-Improvable Skills - https://cdn.modrinth.com/data/9fT7HUaI/versions/Jtz5n9yR/ImprovableSkills-1.20.1-20.1.9.jar
-
 # QoL
 Just Enough Items - https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar
 Inventory Totem - https://cdn.modrinth.com/data/yQj7xqEM/versions/NL5pcN5e/inventorytotem-1.20.1-3.2.jar
