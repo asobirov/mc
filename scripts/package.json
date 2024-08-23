@@ -2,11 +2,11 @@
   "name": "scripts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "download-mods": "tsx src/download-client-mods.ts",
-    "dcm": "tsx src/download-client-mods.ts"
+    "download-mods": "pnpm with-env tsx src/download-client-mods.ts",
+    "dcm": "pnpm with-env tsx src/download-client-mods.ts",
+    "with-env": "dotenv -e .env --"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
+    "dotenv-cli": "^7.4.2",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   }
