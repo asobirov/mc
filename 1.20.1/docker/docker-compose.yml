@@ -63,8 +63,8 @@ services:
     restart: no
     entrypoint: restore-rsync-backup
     volumes:
-      - ./mc_forge:/data:ro
-      - ./backups:/backups
+      - ./mc_forge:/data
+      - ./backups:/backups:ro
 
   backups:
     image: itzg/mc-backup
