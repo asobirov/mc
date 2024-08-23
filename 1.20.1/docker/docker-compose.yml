@@ -54,6 +54,15 @@ services:
       - ./extras:/extras:ro
     restart: unless-stopped
 
+  restore-backup:
+    image: itzg/mc-backup
+    user: "1000"
+    restart: no
+    entrypoint: restore-rsync-backup
+    volumes:
+      - ./mc_forge:/data:ro
+      - ./backups:/backups
+
   backups:
     image: itzg/mc-backup
     user: "1000"
