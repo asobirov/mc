@@ -2,9 +2,13 @@ services:
   mc:
     # FTBA support is only available in non-Alpine images
     image: itzg/minecraft-server:java17
+    env_file:
+      - .env
     ports:
       # expose the Minecraft server port outside of container
       - 25565:25565
+      - "25575:25575"
+      - "24454:24454/udp" # Simple Voice Chat mod
     environment:
       # REQUIRED for all types
       EULA: "TRUE"
@@ -30,6 +34,8 @@ services:
       # Use Pack ID from https://ftb.neptunepowered.org/pack/ftb-presents-direwolf20-1-12/
       FTB_MODPACK_ID: "119"
       FTB_MODPACK_VERSION_ID: "12252"
+
+      # MODS_FILE: /extras/mods.txt
     volumes:
       - ftb:/data
     restart: unless-stopped
