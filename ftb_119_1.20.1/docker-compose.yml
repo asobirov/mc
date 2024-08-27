@@ -35,7 +35,7 @@ services:
       FTB_MODPACK_ID: "119"
       FTB_MODPACK_VERSION_ID: "12252"
 
-      # MODS_FILE: /extras/mods.txt
+      MODS_FILE: /extras/mods.txt
     volumes:
       - ftb:/data
     restart: unless-stopped
