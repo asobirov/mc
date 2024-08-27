@@ -38,6 +38,7 @@ services:
       MODS_FILE: /extras/mods.txt
     volumes:
       - mc-data:/data
+      - ./extras:/extras:ro
     restart: unless-stopped
 
 volumes:
