@@ -9,11 +9,30 @@ services:
       # REQUIRED for all types
       EULA: "TRUE"
       TYPE: FTBA
+
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      DEBUG: "true"
+
+      MEMORY: 18G
+      MAX_MEMORY: 20G
+
+      MAX_PLAYERS: 15
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: true
+      ONLINE_MODE: false
+
+      SIMULATION_DISTANCE: 6
+      VIEW_DISTANCE: 16
+     
+      MAX_TICK_TIME: -1
+
+      SPAWN_PROTECTION: 0
+
       # Use Pack ID from https://ftb.neptunepowered.org/pack/ftb-presents-direwolf20-1-12/
       FTB_MODPACK_ID: "119"
       FTB_MODPACK_VERSION_ID: "12252"
     volumes:
       - ftb:/data
+    restart: unless-stopped
 
 volumes:
   ftb: {}
