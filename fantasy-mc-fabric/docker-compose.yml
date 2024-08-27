@@ -12,7 +12,6 @@ services:
     environment:
       # REQUIRED for all types
       EULA: "TRUE"
-      TYPE: FTBA
 
       RCON_PASSWORD: ${RCON_PASSWORD}
       DEBUG: "true"
