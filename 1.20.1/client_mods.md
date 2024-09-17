@@ -4,7 +4,7 @@
 
 ### QoL
 
-- [Just Enough Items](https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar)
+- [Just Enough Items](https://cdn.modrinth.com/data/u6dRKJwZ/versions/AU7r69Dw/jei-1.20.1-forge-15.19.0.88.jar)
 - [Sound Physics Remastered](https://cdn.modrinth.com/data/qyVF9oeo/versions/AGRkYn5p/sound-physics-remastered-forge-1.20.1-1.4.5.jar)
 - [Chat Heads](https://cdn.modrinth.com/data/Wb5oqrBJ/versions/RdqwbuyP/chat_heads-0.12.3-forge-1.20.jar)
 - [ClearDespawn](https://cdn.modrinth.com/data/yoJJjRRE/versions/gFc6mJW2/ClearDespawn-forge-1.20.2-1.1.15.jar)
@@ -68,11 +68,12 @@
 - [Aquaculture 2](https://mediafilez.forgecdn.net/files/4921/323/Aquaculture-1.20.1-2.5.1.jar)
 - [Fish of Thieves](https://cdn.modrinth.com/data/BzOTnuqM/versions/cTmbFZC1/fish_of_thieves-mc1.20.1-v3.0.5-forge.jar)
 
-- [Epic Samurai's](https://cdn.modrinth.com/data/lMWJDrbO/versions/dFf90NU8/epicsamurai-0.0.46-1.20.1-neo.jar)
+- [Samurai Dynasty](https://cdn.modrinth.com/data/lMWJDrbO/versions/WCO7ysG0/samurai_dynasty-0.0.48-1.20.1-neo.jar)
 - [Immersive Armors](https://cdn.modrinth.com/data/eE2Db4YU/versions/g70ZMcU2/immersive_armors-1.6.1%2B1.20.1-forge.jar)
 
 - [Guard Villagers](https://cdn.modrinth.com/data/H1sntfo8/versions/svrJar40/guardvillagers-1.20.1-1.6.6.jar)
 - [The Wandering Gambler](https://mediafilez.forgecdn.net/files/5312/771/the_wandering_gambler_ii-1.1.0.jar)
+- [Goblin Traders](https://mediafilez.forgecdn.net/files/4802/505/goblintraders-forge-1.20.1-1.9.3.jar)
 
 - [Farmer's Delight](https://cdn.modrinth.com/data/R2OftAxM/versions/AxgOboGq/FarmersDelight-1.20.1-1.2.4.jar)
 - [Chef's Delight](https://cdn.modrinth.com/data/pvcsfne4/versions/5tGfF2Ok/chefs-delight-1.0.3-forge-1.20.1.jar)
@@ -151,3 +152,4 @@
 - [Packet Fixer](https://cdn.modrinth.com/data/c7m1mi73/versions/AScUisZl/packetfixer-forge-1.4.2-1.19-to-1.20.1.jar)
 - [Prism](https://cdn.modrinth.com/data/1OE8wbN0/versions/FFyss87M/Prism-1.20.1-forge-1.0.5.jar)
 - [Iceberg](https://cdn.modrinth.com/data/5faXoLqX/versions/boNnPeth/Iceberg-1.20.1-forge-1.1.21.jar)
+- [Framework](https://mediafilez.forgecdn.net/files/5692/398/framework-forge-1.20.1-0.7.8.jar)
