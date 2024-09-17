@@ -159,3 +159,4 @@
 - [Prism](https://cdn.modrinth.com/data/1OE8wbN0/versions/FFyss87M/Prism-1.20.1-forge-1.0.5.jar)
 - [Iceberg](https://cdn.modrinth.com/data/5faXoLqX/versions/boNnPeth/Iceberg-1.20.1-forge-1.1.21.jar)
 - [Framework](https://mediafilez.forgecdn.net/files/5692/398/framework-forge-1.20.1-0.7.8.jar)
+- [Not Enough Crashes](https://cdn.modrinth.com/data/yM94ont6/versions/W6W0bVtN/notenoughcrashes-4.4.7%2B1.20.1-forge.jar)
