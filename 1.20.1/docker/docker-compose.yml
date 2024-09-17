@@ -80,8 +80,7 @@ services:
       PRUNE_BACKUPS_DAYS: 30
       BACKUP_INTERVAL: "12h"
       RCON_HOST: mc
-      # since this service waits for mc to be healthy, no initial delay is needed
-      INITIAL_DELAY: 0
+      INITIAL_DELAY: "2m"
     volumes:
       - mc_forge:/data:ro
       - ./backups:/backups
