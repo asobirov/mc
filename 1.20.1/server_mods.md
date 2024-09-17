@@ -140,7 +140,6 @@
 - [Obscure API](https://mediafilez.forgecdn.net/files/4616/364/obscure_api-15.jar)
 - [Cristel Lib](https://cdn.modrinth.com/data/cl223EMc/versions/amI1oyGG/cristellib-1.1.5-forge.jar)
 - [Caelus API](https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar)
-- [HammerLib](https://cdn.modrinth.com/data/PlkSuVtM/versions/MNK2BJRV/HammerLib-1.20.1-20.1.32.jar)
 - [CreativeCore](https://cdn.modrinth.com/data/OsZiaDHq/versions/aI5XI1xQ/CreativeCore_FORGE_v2.11.37_mc1.20.1.jar)
 - [Framework](https://mediafilez.forgecdn.net/files/5692/398/framework-forge-1.20.1-0.7.8.jar)
 
