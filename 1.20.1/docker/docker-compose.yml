@@ -63,7 +63,7 @@ services:
     restart: no
     entrypoint: restore-rsync-backup
     volumes:
-      - ./mc_forge:/data
+      - mc_forge:/data
       - ./backups:/backups:ro
 
   backups:
@@ -83,9 +83,8 @@ services:
       # since this service waits for mc to be healthy, no initial delay is needed
       INITIAL_DELAY: 0
     volumes:
-      - ./mc_forge:/data:ro
+      - mc_forge:/data:ro
       - ./backups:/backups
 volumes:
   # declared the named volume, but use default/local storage engine
   mc_forge: {}
-  backups: {}
