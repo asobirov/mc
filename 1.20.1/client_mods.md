@@ -30,7 +30,6 @@ Infinity With Mending - https://cdn.modrinth.com/data/TToG3iVN/versions/14iMIbRe
 Sit - https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar
 
 # General
-1.21 update | Tricky Trials - https://cdn.modrinth.com/data/tfIEEV4w/versions/qC3w1lD6/tricky_trials-1.6.0.jar
 Visual Workbench - https://cdn.modrinth.com/data/kfqD1JRw/versions/c22Z4rsv/VisualWorkbench-v8.0.0-1.20.1-Forge.jar
 Simple Voice Chat - https://cdn.modrinth.com/data/9eGKb6K1/versions/ysN9tXTh/voicechat-forge-1.20.1-2.5.17.jar
 Not Enough Recipe Book [NERB] - https://cdn.modrinth.com/data/bQh7xzFq/versions/hRhjlsGv/nerb-1.20.1-0.3-FORGE.jar
