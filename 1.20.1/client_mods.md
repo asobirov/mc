@@ -4,7 +4,7 @@
 
 ### QoL
 
-- [Just Enough Items](https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar )
+- [Just Enough Items](https://cdn.modrinth.com/data/u6dRKJwZ/versions/WJCJaJce/jei-1.20.1-forge-15.4.0.9.jar)
 - [Sound Physics Remastered](https://cdn.modrinth.com/data/qyVF9oeo/versions/AGRkYn5p/sound-physics-remastered-forge-1.20.1-1.4.5.jar)
 - [Chat Heads](https://cdn.modrinth.com/data/Wb5oqrBJ/versions/RdqwbuyP/chat_heads-0.12.3-forge-1.20.jar)
 - [ClearDespawn](https://cdn.modrinth.com/data/yoJJjRRE/versions/gFc6mJW2/ClearDespawn-forge-1.20.2-1.1.15.jar)
