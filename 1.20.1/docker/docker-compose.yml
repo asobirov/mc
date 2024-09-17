@@ -75,7 +75,7 @@ services:
       mc:
         condition: service_healthy
     environment:
-      BACKUP_METHOD: tar
+      BACKUP_METHOD: rsync
       BACKUP_INTERVAL: "12h"
       INITIAL_DELAY: "2m"
 
