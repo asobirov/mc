@@ -42,8 +42,10 @@ const getOutputDir = () => {
 (async () => {
   try {
     console.log(chalk.green.bold("Starting the download process..."));
-    const urls = await parseMarkdownFile(mdFilePath);
-    console.log(chalk.dim(`Found ${urls.length} URLs in the markdown file.\n`));
+    let links = await parseMarkdownFile(mdFilePath);
+    console.log(
+      chalk.dim(`Found ${links.length} URLs in the markdown file.\n`)
+    );
 
     const outputDir = getOutputDir();
 
@@ -60,7 +62,11 @@ const getOutputDir = () => {
       deleted: 0,
     };
 
-    for (const url of urls) {
+    if (env.SORT_MODS) {
+      links = links.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    for (const { name, url } of links) {
       const fileName = path.basename(url);
       const outputPath = path.join(outputDir, fileName);
 
@@ -68,7 +74,7 @@ const getOutputDir = () => {
 
       if (fs.existsSync(outputPath)) {
         console.log(
-          `${chalk.cyan("SKIP:")} File ${chalk.italic(
+          `${chalk.cyan(`SKIP (${chalk.cyan.dim(name)}):`)} File ${chalk.italic(
             fileName
           )} already exists.`
         );
@@ -78,16 +84,16 @@ const getOutputDir = () => {
 
       console.log(
         chalk.dim(
-          `Downloading ${chalk.italic(url)} to ${chalk.blueBright.bold(
-            outputPath
-          )}...`
+          `Downloading ${name} - ${chalk.italic(
+            url
+          )} to ${chalk.blueBright.bold(outputPath)}...`
         )
       );
 
       await downloadFile(url, outputPath);
       count.downloaded++;
 
-      console.log(`${chalk.green(`DOWNLOAD COMPLETE:`)} ${fileName}`);
+      console.log(`${chalk.green(`DOWNLOAD COMPLETE (${name}):`)} ${fileName}`);
     }
 
     // Delete old mods not listed in the markdown file

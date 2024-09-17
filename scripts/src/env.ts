@@ -4,6 +4,7 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     MINECRAFT_MODS_DIR: z.string().optional(),
+    SORT_MODS: z.boolean().default(false),
   },
   emptyStringAsUndefined: true,
 

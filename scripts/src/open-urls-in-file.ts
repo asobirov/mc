@@ -6,9 +6,19 @@ import { promises as fs, createWriteStream } from "fs";
  */
 export const parseMarkdownFile = async (filePath: string) => {
   const fileContent = await fs.readFile(filePath, "utf-8");
-  const urlPattern = /(https?:\/\/[^\s]+)/g;
-  const urls = fileContent.match(urlPattern);
-  return urls || [];
+
+  // Regular expression to match markdown links: [name](url)
+  const markdownLinkPattern = /\[((?:[^\[\]]|\[[^\[\]]*\])*)\]\((https?:\/\/[^\s)]+)\s*\)/g;
+
+  const links: { name: string; url: string }[] = [];
+  let match;
+
+  while ((match = markdownLinkPattern.exec(fileContent)) !== null) {
+    const [_, name, url] = match;
+    links.push({ name, url });
+  }
+
+  return links
 };
 
 // Function to download a file

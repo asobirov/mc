@@ -2,5 +2,4 @@
 
 ## Install client mods
 
-1. `cd ./scripts`
-2. `./scripts/install-client-mods.sh`
+1. `./scripts/install-client-mods.sh`
