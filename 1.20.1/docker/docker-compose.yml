@@ -75,12 +75,14 @@ services:
       mc:
         condition: service_healthy
     environment:
-      BACKUP_METHOD: rsync
-      PRUNE_BACKUPS_COUNT: 10
-      PRUNE_BACKUPS_DAYS: 30
+      BACKUP_METHOD: tar
       BACKUP_INTERVAL: "12h"
-      RCON_HOST: mc
       INITIAL_DELAY: "2m"
+
+      RCON_HOST: mc
+
+      PRUNE_BACKUPS_COUNT: 10
+      PRUNE_BACKUPS_DAYS: 30      
     volumes:
       - mc_forge:/data:ro
       - ./backups:/backups
