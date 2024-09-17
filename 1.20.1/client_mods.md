@@ -101,6 +101,10 @@
 - [The Twilight Forest](https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar)
 - [When Dungeons Arise](https://cdn.modrinth.com/data/8DfbfASn/versions/wiCQJUDT/DungeonsArise-1.20.1-2.1.57-release.jar)
 
+#### Ad Astra
+
+- [Ad Astra](https://cdn.modrinth.com/data/3ufwT9JF/versions/WUGYX9Me/ad_astra-forge-1.20.1-1.15.18.jar)
+
 #### Nether
 
 - [Bygone Nether](https://cdn.modrinth.com/data/kt3BLgXB/versions/RA38ax2z/bygonenether-1.3.2-1.20.x.jar)
@@ -124,6 +128,8 @@
 - [Cloth Config API](https://cdn.modrinth.com/data/9s6osm5g/versions/nr1znv5v/cloth-config-11.1.118-forge.jar)
 - [Collective](https://cdn.modrinth.com/data/e0M1UDsY/versions/4PHvK72M/collective-1.20.1-7.71.jar)
 - [Resourceful Config](https://cdn.modrinth.com/data/M1953qlQ/versions/irREd1ZJ/resourcefulconfig-forge-1.20.1-2.1.2.jar)
+- [Resourceful Lib](https://cdn.modrinth.com/data/G1hIVOrD/versions/OhsHaCcW/resourcefullib-forge-1.20.1-2.1.29.jar)
+- [Botarium](https://cdn.modrinth.com/data/2u6LRnMa/versions/O7D6FTfW/botarium-forge-1.20.1-2.3.4.jar)
 - [Puzzles Lib](https://cdn.modrinth.com/data/QAGBst4M/versions/z0kHAGDv/PuzzlesLib-v8.1.21-1.20.1-Forge.jar)
 - [YUNG's API](https://cdn.modrinth.com/data/Ua7DFN59/versions/aMs83SRk/YungsApi-1.20-Forge-4.0.5.jar)
 - [Cupboard](https://mediafilez.forgecdn.net/files/5470/32/cupboard-1.20.1-2.7.jar)
