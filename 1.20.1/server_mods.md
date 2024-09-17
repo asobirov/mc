@@ -82,6 +82,16 @@
 
 - [WATERFrAMES](https://cdn.modrinth.com/data/eBzFuVTM/versions/7dq3p9A0/waterframes-FORGE-mc1.20.1-v2.1.3.jar)
 
+### Create
+
+- [Create](https://cdn.modrinth.com/data/LNytGWDc/versions/ZZW2y7nG/create-1.20.1-0.5.1.h.jar)
+- [Create Crafts & Additions](https://cdn.modrinth.com/data/kU1G12Nn/versions/4DW3pAsX/createaddition-1.20.1-1.2.4e.jar)
+- [Create: New Age](https://cdn.modrinth.com/data/FTeXqI9v/versions/2BEeSV7E/create-new-age-forge-1.20.1-1.1.2.jar)
+- [Create: Steam 'n' Rails](https://cdn.modrinth.com/data/ZzjhlDgM/versions/XPsaJuGp/Steam_Rails-1.6.5%2Bforge-mc1.20.1.jar)
+- [Create Deco](https://cdn.modrinth.com/data/sMvUb4Rb/versions/lcpO5tBr/createdeco-2.0.2-1.20.1-forge.jar)
+
+- [Applied Energistics 2](https://cdn.modrinth.com/data/XxWD5pD3/versions/VGMDHpdE/appliedenergistics2-forge-15.2.13.jar)
+
 ## World Gen
 
 - [Towers of the Wild Modded](https://cdn.modrinth.com/data/54eqfZSC/versions/kYlLoQ9i/totw_modded-forge-1.20.1-1.0.5.jar)
@@ -160,3 +170,4 @@
 - [Packet Fixer](https://cdn.modrinth.com/data/c7m1mi73/versions/AScUisZl/packetfixer-forge-1.4.2-1.19-to-1.20.1.jar)
 - [Let Me Despawn](https://cdn.modrinth.com/data/vE2FN5qn/versions/Z136Eles/letmedespawn-forge-1.20.1-1.20.4-1.2.1.jar)
 - [Not Enough Crashes](https://cdn.modrinth.com/data/yM94ont6/versions/W6W0bVtN/notenoughcrashes-4.4.7%2B1.20.1-forge.jar)
+- [No Chat Reports](https://cdn.modrinth.com/data/qQyHxfxd/versions/ksEG6N5E/NoChatReports-FORGE-1.20.1-v2.2.2.jar)
