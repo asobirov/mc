@@ -5,6 +5,8 @@
 
 - [BlueMap](https://cdn.modrinth.com/data/swbUV1cr/versions/aHbq9KFB/BlueMap-5.3-forge-1.20.jar)
 
+- [HuskHomes (Fabric)](https://cdn.modrinth.com/data/J6U9o3JG/versions/cA0nmJeA/HuskHomes-Fabric-4.7%2Bmc.1.20.1.jar)
+
 ## QoL
 
 - [Just Enough Items](https://cdn.modrinth.com/data/u6dRKJwZ/versions/AU7r69Dw/jei-1.20.1-forge-15.19.0.88.jar)
