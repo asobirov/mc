@@ -105,7 +105,16 @@
 - [Create: Steam 'n' Rails](https://cdn.modrinth.com/data/ZzjhlDgM/versions/XPsaJuGp/Steam_Rails-1.6.5%2Bforge-mc1.20.1.jar)
 - [Create Deco](https://cdn.modrinth.com/data/sMvUb4Rb/versions/lcpO5tBr/createdeco-2.0.2-1.20.1-forge.jar)
 
+#### Applied Energistics
+
 - [Applied Energistics 2](https://cdn.modrinth.com/data/XxWD5pD3/versions/VGMDHpdE/appliedenergistics2-forge-15.2.13.jar)
+- [Applied Energistics 2 Wireless Terminals](https://cdn.modrinth.com/data/pNabrMMw/versions/O1Gg7y6z/ae2wtlib-15.2.3-forge.jar)
+- [AE2 QoL Recipes](https://cdn.modrinth.com/data/K7VSm2YY/versions/ewhus5uA/ae2qolrecipes-forge-1.18.x-1.20.x-1.2.0.jar)
+- [AE2 Import Export Card](https://cdn.modrinth.com/data/qelfSMnn/versions/v8c3El4q/ae2insertexportcard-1.20.1-1.3.0.jar)
+- [AE2 Things [Forge]](https://mediafilez.forgecdn.net/files/4616/683/AE2-Things-1.2.1.jar)
+- [Applied Flux](https://mediafilez.forgecdn.net/files/5392/513/AppliedFlux-1.20-1.1.8-forge.jar)
+- [Flux Networks](https://mediafilez.forgecdn.net/files/5234/697/FluxNetworks-1.20.1-7.2.1.15.jar)
+- [Applied Mekanistics](https://cdn.modrinth.com/data/IiATswDj/versions/d9GM663Q/Applied-Mekanistics-1.4.2.jar)
 
 ### Biomes/Dimensions/World Gen
 
