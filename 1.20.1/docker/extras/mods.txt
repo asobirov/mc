@@ -91,7 +91,10 @@ https://cdn.modrinth.com/data/qelfSMnn/versions/v8c3El4q/ae2insertexportcard-1.2
 https://mediafilez.forgecdn.net/files/4616/683/AE2-Things-1.2.1.jar
 https://mediafilez.forgecdn.net/files/5392/513/AppliedFlux-1.20-1.1.8-forge.jar
 https://mediafilez.forgecdn.net/files/5234/697/FluxNetworks-1.20.1-7.2.1.15.jar
+
+https://cdn.modrinth.com/data/Ce6I4WUE/versions/CteEUDph/Mekanism-1.20.1-10.4.9.61.jar
 https://cdn.modrinth.com/data/IiATswDj/versions/d9GM663Q/Applied-Mekanistics-1.4.2.jar
+https://cdn.modrinth.com/data/OFVYKsAk/versions/rgMq9U8j/MekanismGenerators-1.20.1-10.4.9.61.jar
 
 https://cdn.modrinth.com/data/gu7yAYhd/versions/a457666C/cc-tweaked-1.20.1-forge-1.113.1.jar
 https://cdn.modrinth.com/data/fXt291FO/versions/sPKVzUaW/cccbridge-mc1.20.1-forge-1.6.3.jar

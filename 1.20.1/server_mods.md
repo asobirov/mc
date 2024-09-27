@@ -101,7 +101,12 @@
 - [AE2 Things [Forge]](https://mediafilez.forgecdn.net/files/4616/683/AE2-Things-1.2.1.jar)
 - [Applied Flux](https://mediafilez.forgecdn.net/files/5392/513/AppliedFlux-1.20-1.1.8-forge.jar)
 - [Flux Networks](https://mediafilez.forgecdn.net/files/5234/697/FluxNetworks-1.20.1-7.2.1.15.jar)
+
+### Mekanism
+
+- [Mekanism](https://cdn.modrinth.com/data/Ce6I4WUE/versions/CteEUDph/Mekanism-1.20.1-10.4.9.61.jar)
 - [Applied Mekanistics](https://cdn.modrinth.com/data/IiATswDj/versions/d9GM663Q/Applied-Mekanistics-1.4.2.jar)
+- [Mekanism Generators](https://cdn.modrinth.com/data/OFVYKsAk/versions/rgMq9U8j/MekanismGenerators-1.20.1-10.4.9.61.jar)
 
 ### ComputerCraft
 
