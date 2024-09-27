@@ -81,8 +81,10 @@
 - [Grappling Hook Mod](https://cdn.modrinth.com/data/hGWjTxOA/versions/RGcgyxBt/grappling_hook_mod-1.20.1-1.20.1-v13.jar)
 - [Magnum Torch](https://cdn.modrinth.com/data/jorDmSKv/versions/LrsjuUiA/MagnumTorch-v8.0.2-1.20.1-Forge.jar)
 - [More Totems of Undying](https://cdn.modrinth.com/data/Xt0pMhSq/versions/A68awhoI/More%20Totems%20of%20Undying-forge-1.20.1-2.16.0.jar)
+- [Ender Storage](https://cdn.modrinth.com/data/BbrHg80P/versions/pTEnM5jC/EnderStorage-1.20.1-2.11.0.188-universal.jar)
 
 - [WATERFrAMES](https://cdn.modrinth.com/data/eBzFuVTM/versions/7dq3p9A0/waterframes-FORGE-mc1.20.1-v2.1.3.jar)
+- [Camera Mod](https://cdn.modrinth.com/data/oiuNWinn/versions/gxHVd72o/camera-forge-1.20.1-1.0.14.jar)
 
 ### Create
 
@@ -174,6 +176,8 @@
 - [Caelus API](https://cdn.modrinth.com/data/40FYwb4z/versions/fs9CeXYZ/caelus-forge-3.1.0%2B1.20.jar)
 - [CreativeCore](https://cdn.modrinth.com/data/OsZiaDHq/versions/aI5XI1xQ/CreativeCore_FORGE_v2.11.37_mc1.20.1.jar)
 - [Framework](https://mediafilez.forgecdn.net/files/5692/398/framework-forge-1.20.1-0.7.8.jar)
+- [CodeChicken Lib](https://cdn.modrinth.com/data/2gq0ALnz/versions/pxajg7Ob/CodeChickenLib-1.20.1-4.4.0.516-universal.jar)
+- [Glodium](https://mediafilez.forgecdn.net/files/5226/922/Glodium-1.20-1.5-forge.jar)
 
 <!-- Fabric Mods -->
 - [Forgified Fabric API](https://cdn.modrinth.com/data/Aqlf1Shp/versions/D3EZO1Kr/fabric-api-0.92.2%2B1.11.8%2B1.20.1.jar)
@@ -182,7 +186,6 @@
 
 - [BCLib](https://cdn.modrinth.com/data/BgNRHReB/versions/TPC86Pyz/bclib-3.0.14.jar)
 
-- [Glodium](https://mediafilez.forgecdn.net/files/5226/922/Glodium-1.20-1.5-forge.jar)
 
 ## Optimization
 
