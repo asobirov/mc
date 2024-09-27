@@ -116,6 +116,12 @@
 - [Flux Networks](https://mediafilez.forgecdn.net/files/5234/697/FluxNetworks-1.20.1-7.2.1.15.jar)
 - [Applied Mekanistics](https://cdn.modrinth.com/data/IiATswDj/versions/d9GM663Q/Applied-Mekanistics-1.4.2.jar)
 
+#### ComputerCraft
+
+- [CC: Tweaked](https://cdn.modrinth.com/data/gu7yAYhd/versions/a457666C/cc-tweaked-1.20.1-forge-1.113.1.jar)
+- [CC:C Bridge](https://cdn.modrinth.com/data/fXt291FO/versions/sPKVzUaW/cccbridge-mc1.20.1-forge-1.6.3.jar)
+- [Advanced Peripherals](https://cdn.modrinth.com/data/SOw6jD6x/versions/79TFdBOE/AdvancedPeripherals-1.20.1-0.7.40r.jar)
+
 ### Biomes/Dimensions/World Gen
 
 - [The Twilight Forest](https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar)
