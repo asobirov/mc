@@ -177,6 +177,8 @@
 
 - [BCLib](https://cdn.modrinth.com/data/BgNRHReB/versions/TPC86Pyz/bclib-3.0.14.jar)
 
+- [Glodium](https://mediafilez.forgecdn.net/files/5226/922/Glodium-1.20-1.5-forge.jar)
+
 ## Optimization
 
 - [FerriteCore](https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar)
