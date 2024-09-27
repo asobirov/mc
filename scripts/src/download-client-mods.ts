@@ -108,7 +108,7 @@ const getOutputDir = () => {
 
       const systemFiles = [".DS_Store"];
       if (systemFiles.includes(file)) {
-        console.log(chalk.cyan.dim(`SKIP: System file ${file}`));
+        console.log(chalk.cyan.dim(`SKIP: System file ${file} is ignored.`));
         continue;
       }
 
@@ -131,7 +131,7 @@ const getOutputDir = () => {
         "All mods have been downloaded and cleaned up successfully."
       )
     );
-    console.log(`${chalk.bold("Directory")}: ${outputDir}`);
+    console.log(`${chalk.bold("Directory")}: file://${outputDir.replace(/ /g, '%20')}`);
     console.log(
       chalk(
         `${chalk.bold("Reused")}: ${count.reused}\n` +

@@ -6,7 +6,7 @@
   "scripts": {
     "download-mods": "pnpm with-env tsx src/download-client-mods.ts",
     "dcm": "pnpm with-env tsx src/download-client-mods.ts",
-    "with-env": "dotenv -e .env --"
+    "with-env": "dotenv -e ./.env --"
   },
   "keywords": [],
   "author": "",
