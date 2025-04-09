@@ -614,6 +614,10 @@ export const mods: Mod[] = [
     slug: "obscure-api",
     previewUrl: "https://modrinth.com/mod/obscure-api"
   },
+  {
+    slug: "kubejs",
+    previewUrl: "https://modrinth.com/mod/kubejs"
+  },
 
   // Fabric support
   {

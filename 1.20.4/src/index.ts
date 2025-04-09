@@ -16,7 +16,8 @@ const MODS_LIST = mods.map((mod) => ({
   loader: mod.loader,
 }));
 
-const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
+// const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
+const CLIENT_MODS_OUTPUT_DIR = undefined;
 const EXTRAS_DIR = path.join(process.cwd(), "extras");
 const MODS_TXT_PATH = path.join(EXTRAS_DIR, "mods.txt");
 
