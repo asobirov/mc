@@ -296,4 +296,8 @@ export const mods: Mod[] = [
     fileUrl:
       "https://cdn.modrinth.com/data/M1953qlQ/versions/ny6XS6Da/resourcefulconfig-neoforge-1.20.4-2.4.8.jar",
   },
+  {
+    slug: "botarium",
+    previewUrl: "https://modrinth.com/mod/botarium",
+  },
 ];

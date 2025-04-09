@@ -14,8 +14,10 @@ const ACTIVE_LOADER = GAME_LOADER.NEOFORGE;
 const MOD_SLUGS = mods.map(
   (mod) => mod.slug || mod.previewUrl.split("/").pop()
 );
+
 const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
-const SERVER_MODS_OUTPUT_DIR = path.join(process.cwd(), "extras");
+const EXTRAS_DIR = path.join(process.cwd(), "extras");
+const MODS_TXT_PATH = path.join(EXTRAS_DIR, "mods.txt");
 
 type DOWNLOAD_FILE = ModVersionFile & {
   slug: string;
@@ -23,6 +25,11 @@ type DOWNLOAD_FILE = ModVersionFile & {
 };
 
 const main = async () => {
+  // Ensure extras directory exists
+  fs.mkdirSync(EXTRAS_DIR, { recursive: true });
+  // Clear the mods.txt file
+  fs.writeFileSync(MODS_TXT_PATH, "");
+
   const dependencies: ProjectVersion["dependencies"] = [];
 
   for (const slug of MOD_SLUGS) {
@@ -156,15 +163,9 @@ const downloadMod = async (file: DOWNLOAD_FILE) => {
       filename: file.filename,
       slug: file.slug,
       url: file.url,
-      outputDirs: [CLIENT_MODS_OUTPUT_DIR]
+      outputDirs: [CLIENT_MODS_OUTPUT_DIR],
     });
   }
-  
-  const EXTRAS_DIR = path.join(process.cwd(), "extras");
-  const MODS_TXT_PATH = path.join(EXTRAS_DIR, "mods.txt");
-
-  // Ensure extras directory exists
-  fs.mkdirSync(EXTRAS_DIR, { recursive: true });
 
   if (file.platforms.includes("server")) {
     // Append server mod URL to mods.txt

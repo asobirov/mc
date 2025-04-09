@@ -31,3 +31,4 @@ https://cdn.modrinth.com/data/nU0bVIaL/versions/f1ECC2xk/Patchouli-1.20.4-85-NEO
 https://cdn.modrinth.com/data/8BmcQJ2H/versions/jK2C8NsI/geckolib-neoforge-1.20.4-4.4.4.jar
 https://cdn.modrinth.com/data/G1hIVOrD/versions/fEbWd9vt/resourcefullib-neoforge-1.20.4-2.4.10.jar
 https://cdn.modrinth.com/data/M1953qlQ/versions/ny6XS6Da/resourcefulconfig-neoforge-1.20.4-2.4.8.jar
+https://cdn.modrinth.com/data/2u6LRnMa/versions/5vM3ynEW/botarium-neoforge-1.20.4-3.2.1.jar
