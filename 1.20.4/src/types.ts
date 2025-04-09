@@ -1,3 +1,5 @@
+import { GAME_LOADER } from "@/constants";
+
 type ModEnvironment = "client" | "server" | "both";
 
 export type Mod = {
@@ -6,5 +8,5 @@ export type Mod = {
   fileUrl?: `${string}.jar`;
   previewUrl: string;
   environment?: ModEnvironment;
-  platform?: "neoforge" | "fabric";
+  loader?: GAME_LOADER;
 };

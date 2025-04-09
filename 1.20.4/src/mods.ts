@@ -1,3 +1,4 @@
+import { GAME_LOADER } from "@/constants";
 import { Mod } from "./types";
 
 export const INCOMPATIBLE_MODS = [
@@ -334,6 +335,7 @@ export const mods: Mod[] = [
   {
     slug: "applied-mekanistics",
     previewUrl: "https://modrinth.com/mod/applied-mekanistics",
+    loader: GAME_LOADER.NEOFORGE,
   },
   {
     slug: "mekanism-generators",
@@ -429,7 +431,7 @@ export const mods: Mod[] = [
   },
   {
     slug: "better-end-cities-for-betterend",
-    platform: "fabric",
+    loader: GAME_LOADER.FABRIC,
     previewUrl: "https://modrinth.com/mod/better-end-cities-for-betterend",
   },
   {
@@ -582,13 +584,12 @@ export const mods: Mod[] = [
   },
   {
     slug: "kambrik",
-    previewUrl: "https://modrinth.com/mod/kambrik"
+    previewUrl: "https://modrinth.com/mod/kambrik",
   },
   {
     slug: "bclib",
-    previewUrl: "https://modrinth.com/mod/bclib"
+    previewUrl: "https://modrinth.com/mod/bclib",
   },
-  
 
   // Fabric support
   {

@@ -11,9 +11,10 @@ import * as path from "path";
 
 const GAME_VERSION = "1.20.1";
 const ACTIVE_LOADER = GAME_LOADER.FORGE;
-const MOD_SLUGS = mods.map(
-  (mod) => mod.slug || mod.previewUrl.split("/").pop()
-);
+const MODS_LIST = mods.map((mod) => ({
+  slug: mod.slug || mod.previewUrl.split("/").pop(),
+  loader: mod.loader,
+}));
 
 const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
 const EXTRAS_DIR = path.join(process.cwd(), "extras");
@@ -32,7 +33,7 @@ const main = async () => {
 
   const dependencies: ProjectVersion["dependencies"] = [];
 
-  for (const slug of MOD_SLUGS) {
+  for (const { slug, loader = ACTIVE_LOADER } of MODS_LIST) {
     try {
       if (!slug) {
         console.error(`No slug found for ${slug}`);
@@ -41,9 +42,15 @@ const main = async () => {
 
       const mod = await client.getProject(slug);
 
-      const { loader } = validateModCompatibility(mod);
+      const { loader: validLoader } = validateModCompatibility(mod, loader);
 
-      const { files, dependencies } = await getLatestVersion(mod, loader);
+      const { files, dependencies } = await getLatestVersion(mod, validLoader);
+
+      if (!files.length) {
+        console.error(`No files found for mod ${mod.title}`);
+        continue;
+      }
+
       const primaryFile = files.find((file) => file.primary);
 
       if (!primaryFile) {
@@ -64,14 +71,14 @@ const main = async () => {
 
       console.log(chalk.green(`✅ Finished ${mod.title} (${slug})`));
     } catch (error) {
-      console.error(`Error fetching mod ${slug}`, error);
+      console.error(chalk.red(`Error fetching mod ${slug}`), error);
     }
   }
 };
 
-const validateModCompatibility = (mod: Project) => {
+const validateModCompatibility = (mod: Project, loaderOverride?: GAME_LOADER) => {
   const _meta = {
-    loader: ACTIVE_LOADER,
+    loader: loaderOverride || ACTIVE_LOADER,
   };
 
   if (mod.project_type !== "mod") {
@@ -96,9 +103,7 @@ const validateModCompatibility = (mod: Project) => {
       throw new Error(
         `${mod.title} (${mod.slug}) does not have support for ${
           GAME_LOADER.FABRIC
-        } and ${
-          ACTIVE_LOADER
-        }. Please resolve this mod. Supported loaders: ${JSON.stringify(
+        } and ${ACTIVE_LOADER}. Please resolve this mod. Supported loaders: ${JSON.stringify(
           mod.loaders
         )}`
       );
