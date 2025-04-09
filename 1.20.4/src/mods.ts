@@ -490,6 +490,8 @@ export const mods: Mod[] = [
   // Utility mods
   {
     slug: "chunky",
+    // forge version kept breaking
+    loader: GAME_LOADER.FABRIC,
     previewUrl: "https://modrinth.com/plugin/chunky",
   },
 
