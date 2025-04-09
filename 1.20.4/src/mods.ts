@@ -580,6 +580,10 @@ export const mods: Mod[] = [
     slug: "kotlin-for-forge",
     previewUrl: "https://modrinth.com/mod/kotlin-for-forge",
   },
+  {
+    slug: "kambrik",
+    previewUrl: "https://modrinth.com/mod/kambrik"
+  }
 
   // Fabric support
   {
