@@ -14,7 +14,7 @@ services:
       # REQUIRED for all types
       EULA: "TRUE"
       # Set server type (vs the default of vanilla)
-      TYPE: NEOFORGE
+      TYPE: FORGE
      
       RCON_PASSWORD: ${RCON_PASSWORD}
       DEBUG: "true"
@@ -22,7 +22,7 @@ services:
       MEMORY: 18G
       MAX_MEMORY: 20G
         
-      VERSION: "1.20.4"
+      VERSION: "1.20.1"
       MODS_FILE: /extras/mods.txt
 
       OVERRIDE_SERVER_PROPERTIES: "TRUE"
@@ -38,8 +38,8 @@ services:
       ANNOUNCE_PLAYER_ACHIEVEMENTS: true
       ONLINE_MODE: false
 
-      SIMULATION_DISTANCE: 6
-      VIEW_DISTANCE: 16
+      SIMULATION_DISTANCE: 12
+      VIEW_DISTANCE: 30
      
       MAX_TICK_TIME: -1
 

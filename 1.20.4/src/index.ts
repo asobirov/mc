@@ -9,8 +9,8 @@ import type { ModVersionFile, Project, ProjectVersion } from "@xmcl/modrinth";
 import { downloadModByUrl } from "@/helpers/download-mod-url";
 import * as path from "path";
 
-const GAME_VERSION = "1.20.4";
-const ACTIVE_LOADER = GAME_LOADER.NEOFORGE;
+const GAME_VERSION = "1.20.1";
+const ACTIVE_LOADER = GAME_LOADER.FORGE;
 const MOD_SLUGS = mods.map(
   (mod) => mod.slug || mod.previewUrl.split("/").pop()
 );
@@ -61,6 +61,8 @@ const main = async () => {
         slug,
         platforms,
       });
+
+      console.log(chalk.green(`✅ Finished ${mod.title} (${slug})`));
     } catch (error) {
       console.error(`Error fetching mod ${slug}`, error);
     }
