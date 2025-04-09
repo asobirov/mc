@@ -406,10 +406,6 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/yungs-better-mineshafts",
   },
   {
-    slug: "deeperdarker",
-    previewUrl: "https://modrinth.com/mod/deeperdarker"
-  },
-  {
     slug: "aquamirae",
     previewUrl: "https://modrinth.com/mod/aquamirae"
   },
