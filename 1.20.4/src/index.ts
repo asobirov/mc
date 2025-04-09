@@ -97,7 +97,7 @@ const validateModCompatibility = (mod: Project) => {
         `${mod.title} (${mod.slug}) does not have support for ${
           GAME_LOADER.FABRIC
         } and ${
-          GAME_LOADER.NEOFORGE
+          ACTIVE_LOADER
         }. Please resolve this mod. Supported loaders: ${JSON.stringify(
           mod.loaders
         )}`

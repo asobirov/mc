@@ -36,13 +36,6 @@ export const mods: Mod[] = [
     slug: "distanthorizons",
     previewUrl: "https://modrinth.com/mod/distanthorizons",
   },
-  // {
-  //   name: "Legendary Tooltips",
-  //   environment: "client",
-  //   previewUrl: "https://modrinth.com/mod/legendary-tooltips",
-  //   fileUrl:
-  //     "https://cdn.modrinth.com/data/atHH8NyV/versions/BabRJO04/LegendaryTooltips-1.21.1-neoforge-1.5.5.jar",
-  // },
 
   // Simple Voice Chat mods
   {
