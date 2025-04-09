@@ -294,7 +294,7 @@ export const mods: Mod[] = [
   },
   {
     slug: "immersive-armors",
-    previewUrl: "https://modrinth.com/mod/immersive-armors"
+    previewUrl: "https://modrinth.com/mod/immersive-armors",
   },
 
   // media
@@ -387,39 +387,37 @@ export const mods: Mod[] = [
   },
   {
     slug: "ae2-import-export-card",
-    previewUrl: "https://modrinth.com/mod/ae2-import-export-card"
+    previewUrl: "https://modrinth.com/mod/ae2-import-export-card",
   },
 
   // Mekanism
   {
     slug: "mekanism",
-    previewUrl: "https://modrinth.com/mod/mekanism"
+    previewUrl: "https://modrinth.com/mod/mekanism",
   },
 
   {
     slug: "applied-mekanistics",
-    previewUrl: "https://modrinth.com/mod/applied-mekanistics"
+    previewUrl: "https://modrinth.com/mod/applied-mekanistics",
   },
   {
     slug: "mekanism-generators",
-    previewUrl: "https://modrinth.com/mod/mekanism-generators"
+    previewUrl: "https://modrinth.com/mod/mekanism-generators",
   },
 
   // CC: Tweaked
   {
     slug: "cc-tweaked",
-    previewUrl: "https://modrinth.com/mod/cc-tweaked"
+    previewUrl: "https://modrinth.com/mod/cc-tweaked",
   },
   {
     slug: "cccbridge",
-    previewUrl: "https://modrinth.com/mod/cccbridge"
+    previewUrl: "https://modrinth.com/mod/cccbridge",
   },
   {
     slug: "advancedperipherals",
-    previewUrl: "https://modrinth.com/mod/advancedperipherals"
+    previewUrl: "https://modrinth.com/mod/advancedperipherals",
   },
-  
-  
 
   // World generation mods
   {
@@ -550,7 +548,7 @@ export const mods: Mod[] = [
   },
   {
     slug: "fish-of-thieves",
-    previewUrl: "https://modrinth.com/mod/fish-of-thieves"
+    previewUrl: "https://modrinth.com/mod/fish-of-thieves",
   },
 
   // Optimization mods
@@ -572,11 +570,8 @@ export const mods: Mod[] = [
 
   // Utility mods
   {
-    name: "Chunky",
-    environment: "server",
+    slug: "chunky",
     previewUrl: "https://modrinth.com/plugin/chunky",
-    fileUrl:
-      "https://cdn.modrinth.com/data/fALzjamp/versions/aA6rXoNB/Chunky-1.3.146.jar",
   },
 
   // Core/Dev API mods
@@ -667,6 +662,30 @@ export const mods: Mod[] = [
   {
     slug: "watermedia",
     previewUrl: "https://modrinth.com/mod/watermedia",
+  },
+  {
+    slug: "yungs-api",
+    previewUrl: "https://modrinth.com/mod/yungs-api",
+  },
+  {
+    slug: "creativecore",
+    previewUrl: "https://modrinth.com/mod/creativecore",
+  },
+  {
+    slug: "octo-lib",
+    previewUrl: "https://modrinth.com/mod/octo-lib",
+  },
+  {
+    slug: "terrablender",
+    previewUrl: "https://modrinth.com/mod/terrablender",
+  },
+  {
+    slug: "citadel",
+    previewUrl: "https://modrinth.com/mod/citadel",
+  },
+  {
+    slug: "kotlin-for-forge",
+    previewUrl: "https://modrinth.com/mod/kotlin-for-forge",
   },
 
   // Fabric support

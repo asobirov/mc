@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dcm": "pnpm with-env tsx src/download-client-mods.ts",
+    "generate": "tsx src/index.ts",
     "with-env": "dotenv -e ./.env --"
   },
   "keywords": [],
