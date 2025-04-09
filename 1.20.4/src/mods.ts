@@ -583,7 +583,12 @@ export const mods: Mod[] = [
   {
     slug: "kambrik",
     previewUrl: "https://modrinth.com/mod/kambrik"
-  }
+  },
+  {
+    slug: "bclib",
+    previewUrl: "https://modrinth.com/mod/bclib"
+  },
+  
 
   // Fabric support
   {
