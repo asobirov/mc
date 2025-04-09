@@ -275,10 +275,6 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/createaddition",
   },
   {
-    slug: "slice-and-dice",
-    previewUrl: "https://modrinth.com/mod/slice-and-dice",
-  },
-  {
     slug: "copycats",
     previewUrl: "https://modrinth.com/mod/copycats",
   },
