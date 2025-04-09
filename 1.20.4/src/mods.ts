@@ -405,6 +405,14 @@ export const mods: Mod[] = [
     slug: "yungs-better-mineshafts",
     previewUrl: "https://modrinth.com/mod/yungs-better-mineshafts",
   },
+  {
+    slug: "deeperdarker",
+    previewUrl: "https://modrinth.com/mod/deeperdarker"
+  },
+  {
+    slug: "aquamirae",
+    previewUrl: "https://modrinth.com/mod/aquamirae"
+  },
 
   // Nether
   {
@@ -488,12 +496,10 @@ export const mods: Mod[] = [
   },
 
   // Utility mods
-  {
-    slug: "chunky",
-    // forge version kept breaking
-    loader: GAME_LOADER.FABRIC,
-    previewUrl: "https://modrinth.com/plugin/chunky",
-  },
+  // {
+  //   slug: "chunky",
+  //   previewUrl: "https://modrinth.com/plugin/chunky",
+  // },
 
   // Core/Dev API mods
   {
@@ -591,6 +597,22 @@ export const mods: Mod[] = [
   {
     slug: "bclib",
     previewUrl: "https://modrinth.com/mod/bclib",
+  },
+  {
+    slug: "prism-lib",
+    previewUrl: "https://modrinth.com/mod/prism-lib",
+  },
+  {
+    slug: "iceberg",
+    previewUrl: "https://modrinth.com/mod/iceberg"
+  },
+  {
+    slug: "bookshelf-lib",
+    previewUrl: "https://modrinth.com/mod/bookshelf-lib"
+  },
+  {
+    slug: "obscure-api",
+    previewUrl: "https://modrinth.com/mod/obscure-api"
   },
 
   // Fabric support
