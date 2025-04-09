@@ -614,6 +614,10 @@ export const mods: Mod[] = [
     slug: "kubejs",
     previewUrl: "https://modrinth.com/mod/kubejs"
   },
+  {
+    slug: "rhino",
+    previewUrl: "https://modrinth.com/mod/rhino"
+  },
 
   // Fabric support
   {
