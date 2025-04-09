@@ -11,6 +11,9 @@ importers:
       '@t3-oss/env-core':
         specifier: ^0.11.0
         version: 0.11.1(typescript@5.8.2)(zod@3.24.2)
+      '@xmcl/modrinth':
+        specifier: ^2.4.0
+        version: 2.4.0
       axios:
         specifier: ^1.7.2
         version: 1.8.4
@@ -209,6 +212,10 @@ packages:
 
   '@types/node@22.13.17':
     resolution: {integrity: sha512-nAJuQXoyPj04uLgu+obZcSmsfOenUg6DxPKogeUy6yNCFwWaj5sBF8/G/pNo8EtBJjAfSVgfIlugR/BCOleO+g==}
+
+  '@xmcl/modrinth@2.4.0':
+    resolution: {integrity: sha512-Ih2coGGBCNCmUxnjYrFfL7ns6dsKeUz1mR3Xcw5DZSjXqR7Gz6m4PmkTyjeBSkcC3Ts+YfG4QLdOY7bPInnthQ==}
+    engines: {node: '>=16.4'}
 
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -418,6 +425,10 @@ packages:
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
+  undici@7.2.3:
+    resolution: {integrity: sha512-2oSLHaDalSt2/O/wHA9M+/ZPAOcU2yrSP/cdBYJ+YxZskiPYDSqHbysLSlD7gq3JMqOoJI5O31RVU3BxX/MnAA==}
+    engines: {node: '>=20.18.1'}
+
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
@@ -525,6 +536,10 @@ snapshots:
   '@types/node@22.13.17':
     dependencies:
       undici-types: 6.20.0
+
+  '@xmcl/modrinth@2.4.0':
+    dependencies:
+      undici: 7.2.3
 
   asynckit@0.4.0: {}
 
@@ -743,6 +758,8 @@ snapshots:
   typescript@5.8.2: {}
 
   undici-types@6.20.0: {}
+
+  undici@7.2.3: {}
 
   universalify@2.0.1: {}
 

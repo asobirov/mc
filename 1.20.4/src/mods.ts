@@ -7,26 +7,28 @@ export const INCOMPATIBLE_MODS = [
 export const mods: Mod[] = [
   {
     name: "Visual Workbench",
+    platform: "fabric",
     environment: "both",
     previewUrl: "https://modrinth.com/mod/visual-workbench",
     fileUrl:
-      "https://cdn.modrinth.com/data/kfqD1JRw/versions/fndrNbOK/VisualWorkbench-v20.4.2-1.20.4-NeoForge.jar",
+      "https://cdn.modrinth.com/data/kfqD1JRw/versions/vhuwOiNO/VisualWorkbench-v8.0.0-1.20.1-Fabric.jar",
   },
   {
     name: "Sit",
     environment: "both",
     previewUrl: "https://modrinth.com/mod/bl4cks-sit",
     fileUrl:
-      "https://cdn.modrinth.com/data/VKXzIykF/versions/gUzylvQV/sit-1.20.4-1.3.5.jar",
+      "https://cdn.modrinth.com/data/VKXzIykF/versions/VWROLSl8/sit-1.20.1-1.3.5.jar",
   },
 
   // Client-side only
   {
     name: "3D Skin Layers",
+    platform: "fabric",
     environment: "client",
     previewUrl: "https://modrinth.com/mod/3dskinlayers",
     fileUrl:
-      "https://cdn.modrinth.com/data/zV5r3pPn/versions/tKklXQuY/skinlayers3d-neoforge-1.7.5-mc1.20.4.jar",
+      "https://cdn.modrinth.com/data/zV5r3pPn/versions/KATG2kI3/skinlayers3d-fabric-1.7.5-mc1.20.1.jar",
   },
   {
     name: "Sound Physics Remastered",
@@ -41,6 +43,13 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/chat-heads",
     fileUrl:
       "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/KovNg7SU/chat_heads-0.13.13-neoforge-1.20.4.jar",
+  },
+  {
+    name: "Falling Leaves (NeoForge/Forge)",
+    environment: "client",
+    previewUrl: "https://modrinth.com/mod/fallingleavesforge",
+    fileUrl:
+      "https://cdn.modrinth.com/data/2JAUNCL4/versions/EYKnoDe8/fallingleaves-1.20.4-2.4.0.jar",
   },
   // {
   //   name: "Legendary Tooltips",
@@ -80,6 +89,10 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/jade",
     fileUrl:
       "https://cdn.modrinth.com/data/nvQzSEkH/versions/9rrZAORZ/Jade-1.20.4-neoforge-13.3.1.jar",
+  },
+  {
+    slug: "bluemap",
+    previewUrl: "https://modrinth.com/plugin/bluemap",
   },
 
   // Collective mods
@@ -179,6 +192,34 @@ export const mods: Mod[] = [
     fileUrl:
       "https://cdn.modrinth.com/data/EEIwvQVo/versions/aAa24NQe/tidal-towns-1.3.4.jar",
   },
+  {
+    slug: "ad-astra",
+    previewUrl: "https://modrinth.com/mod/ad-astra",
+  },
+
+  // Mobs
+  {
+    name: "Enderman Overhaul",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/enderman-overhaul",
+    fileUrl:
+      "https://cdn.modrinth.com/data/Lq6ojcWv/versions/YJg64yl5/endermanoverhaul-neoforge-1.20.4-1.1.8.jar",
+  },
+  {
+    name: "More Mob Variants",
+    platform: "fabric",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/more-mob-variants",
+    fileUrl:
+      "https://cdn.modrinth.com/data/JiEhJ3WG/versions/NifwSjfW/moremobvariants-fabric%2B1.20.4-1.3.1.jar",
+  },
+  {
+    name: "Comforsts",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/comforts",
+    fileUrl:
+      "https://cdn.modrinth.com/data/SaCpeal4/versions/eXcBRSHm/comforts-neoforge-7.2.2%2B1.20.4.jar",
+  },
 
   // Optimization mods
   {
@@ -226,5 +267,33 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/puzzles-lib",
     fileUrl:
       "https://cdn.modrinth.com/data/QAGBst4M/versions/smpYKI3H/PuzzlesLib-v20.4.52-1.20.4-NeoForge.jar",
+  },
+  {
+    name: "Patchouli",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/patchouli",
+    fileUrl:
+      "https://cdn.modrinth.com/data/nU0bVIaL/versions/f1ECC2xk/Patchouli-1.20.4-85-NEOFORGE.jar",
+  },
+  {
+    name: "Geckolib",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/geckolib",
+    fileUrl:
+      "https://cdn.modrinth.com/data/8BmcQJ2H/versions/jK2C8NsI/geckolib-neoforge-1.20.4-4.4.4.jar",
+  },
+  {
+    name: "Resourceful Lib",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/resourceful-lib",
+    fileUrl:
+      "https://cdn.modrinth.com/data/G1hIVOrD/versions/fEbWd9vt/resourcefullib-neoforge-1.20.4-2.4.10.jar",
+  },
+  {
+    name: "Resourceful Config",
+    environment: "both",
+    previewUrl: "https://modrinth.com/mod/resourceful-config",
+    fileUrl:
+      "https://cdn.modrinth.com/data/M1953qlQ/versions/ny6XS6Da/resourcefulconfig-neoforge-1.20.4-2.4.8.jar",
   },
 ];

@@ -1,8 +1,10 @@
 type ModEnvironment = "client" | "server" | "both";
 
 export type Mod = {
-  name: string;
-  fileUrl: `${string}.jar`;
+  name?: string;
+  slug?: string;
+  fileUrl?: `${string}.jar`;
   previewUrl: string;
-  environment: ModEnvironment;
+  environment?: ModEnvironment;
+  platform?: "neoforge" | "fabric";
 };

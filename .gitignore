@@ -4,3 +4,5 @@ node_modules
 .env
 scripts/mods
 scripts/client-mods
+
+1.20.4/mods
