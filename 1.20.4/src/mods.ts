@@ -401,10 +401,6 @@ export const mods: Mod[] = [
     slug: "yungs-better-mineshafts",
     previewUrl: "https://modrinth.com/mod/yungs-better-mineshafts",
   },
-  {
-    slug: "aquamirae",
-    previewUrl: "https://modrinth.com/mod/aquamirae"
-  },
 
   // Nether
   {
@@ -601,10 +597,6 @@ export const mods: Mod[] = [
   {
     slug: "bookshelf-lib",
     previewUrl: "https://modrinth.com/mod/bookshelf-lib"
-  },
-  {
-    slug: "obscure-api",
-    previewUrl: "https://modrinth.com/mod/obscure-api"
   },
   {
     slug: "kubejs",
