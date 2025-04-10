@@ -282,22 +282,6 @@ export const mods: Mod[] = [
     slug: "create-new-age",
     previewUrl: "https://modrinth.com/mod/create-new-age",
   },
-  {
-    slug: "create-goggles",
-    previewUrl: "https://modrinth.com/mod/create-goggles",
-  },
-  {
-    slug: "bellsandwhistles",
-    previewUrl: "https://modrinth.com/mod/bellsandwhistles",
-  },
-  {
-    slug: "create-enchantment-industry",
-    previewUrl: "https://modrinth.com/mod/create-enchantment-industry",
-  },
-  {
-    slug: "extended-cogwheels",
-    previewUrl: "https://modrinth.com/mod/extended-cogwheels",
-  },
 
   // AE2
   {
