@@ -233,6 +233,10 @@ export const mods: Mod[] = [
     slug: "immersive-armors",
     previewUrl: "https://modrinth.com/mod/immersive-armors",
   },
+  {
+    slug: "small-ships",
+    previewUrl: "https://modrinth.com/mod/small-ships"
+  },
 
   // media
   {
@@ -575,10 +579,6 @@ export const mods: Mod[] = [
   {
     slug: "octo-lib",
     previewUrl: "https://modrinth.com/mod/octo-lib",
-  },
-  {
-    slug: "terrablender",
-    previewUrl: "https://modrinth.com/mod/terrablender",
   },
   {
     slug: "citadel",
