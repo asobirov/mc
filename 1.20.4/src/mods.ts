@@ -270,38 +270,47 @@ export const mods: Mod[] = [
   {
     slug: "create-steam-n-rails",
     previewUrl: "https://modrinth.com/mod/create-steam-n-rails",
+    version: "1.6.7+forge-mc1.20.1"
   },
   {
     slug: "createaddition",
     previewUrl: "https://modrinth.com/mod/createaddition",
+    version: "1.20.1-1.2.5"
   },
   {
     slug: "copycats",
     previewUrl: "https://modrinth.com/mod/copycats",
+    version: "2.2.2+mc.1.20.1-forge"
   },
   {
     slug: "create-deco",
     previewUrl: "https://modrinth.com/mod/create-deco",
+    version: "2.0.2-1.20.1-forge"
   },
   {
     slug: "create-new-age",
     previewUrl: "https://modrinth.com/mod/create-new-age",
+    version: "2BEeSV7E"
   },
   {
     slug: "create-goggles",
     previewUrl: "https://modrinth.com/mod/create-goggles",
+    version: "1odF7ZI7"
   },
   {
     slug: "bellsandwhistles",
     previewUrl: "https://modrinth.com/mod/bellsandwhistles",
+    version: "0.4.3-mc1.20.x"
   },
   {
     slug: "create-enchantment-industry",
     previewUrl: "https://modrinth.com/mod/create-enchantment-industry",
+    version: "1.2.9.d"
   },
   {
     slug: "extended-cogwheels",
     previewUrl: "https://modrinth.com/mod/extended-cogwheels",
+    version: "2.1.1-1.20.1-0.5.1.f-forge"
   },
 
   // AE2

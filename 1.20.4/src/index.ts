@@ -77,7 +77,7 @@ const main = async () => {
 
       console.log(chalk.green(`✅ Finished ${mod.title} (${slug})`));
     } catch (error) {
-      console.error(chalk.red(`Error fetching mod ${slug}`), error);
+      console.error(chalk.red(`Error fetching mod ${slug}\n`), error);
     }
   }
 };
@@ -152,15 +152,24 @@ const getLatestVersion = async (
     return latestVersion;
   }
 
+  const version = versions.find(
+    (v) => v.version_number === versionOverride || v.id === versionOverride
+  );
+
+  if (!version) {
+    console.log(versions);
+    throw new Error(
+      `${mod.title} (${mod.slug}) using version override: ${versionOverride} not found`
+    );
+  }
+
   console.log(
     chalk.dim(
       `${mod.title} (${mod.slug}) using version override: ${versionOverride}`
     )
   );
 
-  return (
-    versions.find((v) => v.version_number === versionOverride) ?? latestVersion
-  );
+  return version;
 };
 
 const sortModByPlatform = (mod: Project) => {
