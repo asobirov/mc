@@ -191,7 +191,7 @@ export const mods: Mod[] = [
   {
     slug: "supplementaries",
     previewUrl: "https://modrinth.com/mod/supplementaries",
-    version: "1.20-3.1.20"
+    version: "1.20-3.1.18"
   },
   {
     slug: "artifacts",

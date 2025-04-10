@@ -33,7 +33,7 @@ https://cdn.modrinth.com/data/n2fvCDlM/versions/eyOMFyxY/mcw-trapdoors-1.1.4-mc1
 https://cdn.modrinth.com/data/VRLhWB91/versions/1Gry6fOe/mcw-paths-1.1.0forge-mc1.20.1.jar
 https://cdn.modrinth.com/data/w4an97C2/versions/zedTvpc3/mcw-lights-1.1.0-mc1.20.1forge.jar
 https://cdn.modrinth.com/data/okE6QVAY/versions/yaSdsps0/mcw-paintings-1.0.5-1.20.1forge.jar
-https://cdn.modrinth.com/data/fFEIiSDQ/versions/bHRxbeqq/supplementaries-1.20-3.1.20.jar
+https://cdn.modrinth.com/data/fFEIiSDQ/versions/S4IygZ9g/supplementaries-1.20-3.1.18.jar
 https://cdn.modrinth.com/data/P0Mu4wcQ/versions/NEtfVCxm/artifacts-forge-9.5.16.jar
 https://cdn.modrinth.com/data/zCh7omyG/versions/vsqxpUo3/betterarcheology-1.2.1-1.20.1.jar
 https://cdn.modrinth.com/data/9BPuv4vL/versions/v9NnLuyB/beautify-2.0.2.jar
