@@ -353,6 +353,7 @@ export const mods: Mod[] = [
   {
     slug: "cc-tweaked",
     previewUrl: "https://modrinth.com/mod/cc-tweaked",
+    version: "1.115.0" // 1.115.1 is for create v6
   },
   {
     slug: "cccbridge",
@@ -374,6 +375,7 @@ export const mods: Mod[] = [
   },
   {
     name: "Tidal Towns",
+    slug: "tidal-towns",
     previewUrl: "https://modrinth.com/datapack/tidal-towns",
   },
   {

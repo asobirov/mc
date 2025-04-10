@@ -67,7 +67,7 @@ https://cdn.modrinth.com/data/qelfSMnn/versions/v8c3El4q/ae2insertexportcard-1.2
 https://cdn.modrinth.com/data/Ce6I4WUE/versions/9iboPfea/Mekanism-1.20.1-10.4.15.75.jar
 https://cdn.modrinth.com/data/IiATswDj/versions/d9GM663Q/Applied-Mekanistics-1.4.2.jar
 https://cdn.modrinth.com/data/OFVYKsAk/versions/x9re7wt4/MekanismGenerators-1.20.1-10.4.15.75.jar
-https://cdn.modrinth.com/data/gu7yAYhd/versions/GYnSPc0b/cc-tweaked-1.20.1-forge-1.115.1.jar
+https://cdn.modrinth.com/data/gu7yAYhd/versions/rMtScs9u/cc-tweaked-1.20.1-forge-1.115.0.jar
 https://cdn.modrinth.com/data/fXt291FO/versions/sPKVzUaW/cccbridge-mc1.20.1-forge-1.6.3.jar
 https://cdn.modrinth.com/data/SOw6jD6x/versions/n4Npq89k/AdvancedPeripherals-1.20.1-0.7.41r.jar
 https://cdn.modrinth.com/data/8oi3bsk5/versions/WeYhEb5d/Terralith_1.20.x_v2.5.4.jar
