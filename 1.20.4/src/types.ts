@@ -9,4 +9,5 @@ export type Mod = {
   previewUrl: string;
   environment?: ModEnvironment;
   loader?: GAME_LOADER;
+  version?: string;
 };

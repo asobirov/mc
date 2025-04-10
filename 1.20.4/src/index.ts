@@ -14,6 +14,7 @@ const ACTIVE_LOADER = GAME_LOADER.FORGE;
 const MODS_LIST = mods.map((mod) => ({
   slug: mod.slug || mod.previewUrl.split("/").pop(),
   loader: mod.loader,
+  version: mod.version,
 }));
 
 // const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
@@ -34,7 +35,7 @@ const main = async () => {
 
   const dependencies: ProjectVersion["dependencies"] = [];
 
-  for (const { slug, loader = ACTIVE_LOADER } of MODS_LIST) {
+  for (const { slug, loader = ACTIVE_LOADER, version } of MODS_LIST) {
     try {
       if (!slug) {
         console.error(`No slug found for ${slug}`);
@@ -45,7 +46,11 @@ const main = async () => {
 
       const { loader: validLoader } = validateModCompatibility(mod, loader);
 
-      const { files, dependencies } = await getLatestVersion(mod, validLoader);
+      const { files, dependencies } = await getLatestVersion(
+        mod,
+        validLoader,
+        version
+      );
 
       if (!files.length) {
         console.error(`No files found for mod ${mod.title}`);
@@ -77,7 +82,10 @@ const main = async () => {
   }
 };
 
-const validateModCompatibility = (mod: Project, loaderOverride?: GAME_LOADER) => {
+const validateModCompatibility = (
+  mod: Project,
+  loaderOverride?: GAME_LOADER
+) => {
   const _meta = {
     loader: loaderOverride || ACTIVE_LOADER,
   };
@@ -128,16 +136,31 @@ const validateModCompatibility = (mod: Project, loaderOverride?: GAME_LOADER) =>
   return _meta;
 };
 
-const getLatestVersion = async (mod: Project, loader: GAME_LOADER) => {
+const getLatestVersion = async (
+  mod: Project,
+  loader: GAME_LOADER,
+  versionOverride?: string
+) => {
   const versions = await client.getProjectVersions(mod.slug, {
     gameVersions: [GAME_VERSION],
     loaders: [loader],
   });
 
-  // Assumed that the first version is the latest version
   const latestVersion = versions[0];
 
-  return latestVersion;
+  if (!versionOverride) {
+    return latestVersion;
+  }
+
+  console.log(
+    chalk.dim(
+      `${mod.title} (${mod.slug}) using version override: ${versionOverride}`
+    )
+  );
+
+  return (
+    versions.find((v) => v.version_number === versionOverride) ?? latestVersion
+  );
 };
 
 const sortModByPlatform = (mod: Project) => {

@@ -265,6 +265,7 @@ export const mods: Mod[] = [
   {
     slug: "create",
     previewUrl: "https://modrinth.com/mod/create",
+    version: "1.20.1-0.5.1.j" // not all Create addons currently support v6
   },
   {
     slug: "create-steam-n-rails",
@@ -275,12 +276,32 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/createaddition",
   },
   {
+    slug: "copycats",
+    previewUrl: "https://modrinth.com/mod/copycats",
+  },
+  {
     slug: "create-deco",
     previewUrl: "https://modrinth.com/mod/create-deco",
   },
   {
     slug: "create-new-age",
     previewUrl: "https://modrinth.com/mod/create-new-age",
+  },
+  {
+    slug: "create-goggles",
+    previewUrl: "https://modrinth.com/mod/create-goggles",
+  },
+  {
+    slug: "bellsandwhistles",
+    previewUrl: "https://modrinth.com/mod/bellsandwhistles",
+  },
+  {
+    slug: "create-enchantment-industry",
+    previewUrl: "https://modrinth.com/mod/create-enchantment-industry",
+  },
+  {
+    slug: "extended-cogwheels",
+    previewUrl: "https://modrinth.com/mod/extended-cogwheels",
   },
 
   // AE2
