@@ -191,7 +191,7 @@ export const mods: Mod[] = [
   {
     slug: "supplementaries",
     previewUrl: "https://modrinth.com/mod/supplementaries",
-    version: "1.20-3.1.18"
+    version: "1.20-3.1.18",
   },
   {
     slug: "artifacts",
@@ -266,52 +266,52 @@ export const mods: Mod[] = [
   {
     slug: "create",
     previewUrl: "https://modrinth.com/mod/create",
-    version: "1.20.1-0.5.1.j" // not all Create addons currently support v6
+    version: "1.20.1-0.5.1.j", // not all Create addons currently support v6
   },
   {
     slug: "create-steam-n-rails",
     previewUrl: "https://modrinth.com/mod/create-steam-n-rails",
-    version: "1.6.7+forge-mc1.20.1"
+    version: "1.6.7+forge-mc1.20.1",
   },
   {
     slug: "createaddition",
     previewUrl: "https://modrinth.com/mod/createaddition",
-    version: "1.20.1-1.2.5"
+    version: "1.20.1-1.2.5",
   },
   {
     slug: "copycats",
     previewUrl: "https://modrinth.com/mod/copycats",
-    version: "2.2.2+mc.1.20.1-forge"
+    version: "2.2.2+mc.1.20.1-forge",
   },
   {
     slug: "create-deco",
     previewUrl: "https://modrinth.com/mod/create-deco",
-    version: "2.0.2-1.20.1-forge"
+    version: "2.0.2-1.20.1-forge",
   },
   {
     slug: "create-new-age",
     previewUrl: "https://modrinth.com/mod/create-new-age",
-    version: "2BEeSV7E"
+    version: "2BEeSV7E",
   },
   {
     slug: "create-goggles",
     previewUrl: "https://modrinth.com/mod/create-goggles",
-    version: "1odF7ZI7"
+    version: "1odF7ZI7",
   },
   {
     slug: "bellsandwhistles",
     previewUrl: "https://modrinth.com/mod/bellsandwhistles",
-    version: "0.4.3-mc1.20.x"
+    version: "0.4.3-mc1.20.x",
   },
   {
     slug: "create-enchantment-industry",
     previewUrl: "https://modrinth.com/mod/create-enchantment-industry",
-    version: "1.2.9.d"
+    version: "1.2.9.d",
   },
   {
     slug: "extended-cogwheels",
     previewUrl: "https://modrinth.com/mod/extended-cogwheels",
-    version: "2.1.1-1.20.1-0.5.1.f-forge"
+    version: "2.1.1-1.20.1-0.5.1.f-forge",
   },
 
   // AE2
@@ -379,6 +379,7 @@ export const mods: Mod[] = [
   {
     slug: "ad-astra",
     previewUrl: "https://modrinth.com/mod/ad-astra",
+    version: "1.15.19", // 1.15.20 is for create v6
   },
   {
     slug: "regions-unexplored",
@@ -603,19 +604,19 @@ export const mods: Mod[] = [
   },
   {
     slug: "iceberg",
-    previewUrl: "https://modrinth.com/mod/iceberg"
+    previewUrl: "https://modrinth.com/mod/iceberg",
   },
   {
     slug: "bookshelf-lib",
-    previewUrl: "https://modrinth.com/mod/bookshelf-lib"
+    previewUrl: "https://modrinth.com/mod/bookshelf-lib",
   },
   {
     slug: "kubejs",
-    previewUrl: "https://modrinth.com/mod/kubejs"
+    previewUrl: "https://modrinth.com/mod/kubejs",
   },
   {
     slug: "rhino",
-    previewUrl: "https://modrinth.com/mod/rhino"
+    previewUrl: "https://modrinth.com/mod/rhino",
   },
 
   // Fabric support
