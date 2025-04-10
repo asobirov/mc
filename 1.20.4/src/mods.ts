@@ -275,10 +275,6 @@ export const mods: Mod[] = [
     previewUrl: "https://modrinth.com/mod/createaddition",
   },
   {
-    slug: "copycats",
-    previewUrl: "https://modrinth.com/mod/copycats",
-  },
-  {
     slug: "create-deco",
     previewUrl: "https://modrinth.com/mod/create-deco",
   },
