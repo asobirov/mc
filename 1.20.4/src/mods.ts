@@ -384,10 +384,6 @@ export const mods: Mod[] = [
     version: "1.15.19", // 1.15.20 is for create v6
   },
   {
-    slug: "regions-unexplored",
-    previewUrl: "https://modrinth.com/mod/regions-unexplored",
-  },
-  {
     slug: "totw-modded",
     previewUrl: "https://modrinth.com/mod/totw-modded",
   },

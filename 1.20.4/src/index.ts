@@ -17,8 +17,8 @@ const MODS_LIST = mods.map((mod) => ({
   version: mod.version,
 }));
 
-// const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
-const CLIENT_MODS_OUTPUT_DIR = undefined;
+const CLIENT_MODS_OUTPUT_DIR = path.join(process.cwd(), "mods");
+// const CLIENT_MODS_OUTPUT_DIR = undefined;
 const EXTRAS_DIR = path.join(process.cwd(), "extras");
 const MODS_TXT_PATH = path.join(EXTRAS_DIR, "mods.txt");
 
@@ -189,6 +189,16 @@ const sortModByPlatform = (mod: Project) => {
   if (mod.server_side === "required" || mod.server_side === "optional") {
     platforms.push("server");
   }
+
+  console.log(
+    chalk.dim(
+      `Mod compatibility: ${JSON.stringify({
+        client: mod.client_side,
+        server: mod.server_side,
+        platforms,
+      })}`
+    )
+  );
 
   if (platforms.length === 0) {
     throw new Error(`${mod.title} (${mod.slug}) has no platform`);
