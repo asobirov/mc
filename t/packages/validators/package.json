@@ -1,5 +1,5 @@
 {
-  "name": "@acme/validators",
+  "name": "@mc/validators",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -7,7 +7,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./src/index.ts"
-    }
+    },
+    "./*": "./src/*.ts"
   },
   "license": "MIT",
   "scripts": {
@@ -22,12 +23,12 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@mc/eslint-config": "workspace:*",
+    "@mc/prettier-config": "workspace:*",
+    "@mc/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@mc/prettier-config"
 }

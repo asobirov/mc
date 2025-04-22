@@ -1,5 +1,5 @@
 {
-  "name": "@acme/nebula",
+  "name": "@mc/nebula",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -16,12 +16,15 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@mc/eslint-config": "workspace:*",
+    "@mc/prettier-config": "workspace:*",
+    "@mc/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@mc/prettier-config",
+  "dependencies": {
+    "@mc/validators": "workspace:^"
+  }
 }
