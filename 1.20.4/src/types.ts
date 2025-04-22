@@ -10,4 +10,5 @@ export type Mod = {
   environment?: ModEnvironment;
   loader?: GAME_LOADER;
   version?: string;
+  provider?: "modrinth" | "cursforge"
 };
