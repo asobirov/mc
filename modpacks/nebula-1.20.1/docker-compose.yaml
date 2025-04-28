@@ -51,7 +51,7 @@ services:
         condition: service_completed_successfully
     volumes:
       # use a named, managed volume for data volume
-      - mc_forge:/data
+      - 1204_mc_forge:/data
       - ./mods:/mods:ro
       - ./extras:/extras:ro
     restart: unless-stopped
@@ -62,7 +62,7 @@ services:
     restart: no
     entrypoint: restore-rsync-backup
     volumes:
-      - mc_forge:/data
+      - 1204_mc_forge:/data
       - ./backups:/backups:ro
 
   backups:
@@ -83,8 +83,8 @@ services:
       PRUNE_BACKUPS_COUNT: 10
       PRUNE_BACKUPS_DAYS: 30      
     volumes:
-      - mc_forge:/data:ro
+      - 1204_mc_forge:/data:ro
       - ./backups:/backups
 volumes:
   # declared the named volume, but use default/local storage engine
-  mc_forge: {}
+  1204_mc_forge: {}
