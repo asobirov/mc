@@ -36,6 +36,7 @@ export const modList = ModList.parse({
         },
         {
           slug: "distanthorizons",
+          platforms: ["server"],
         },
         {
           slug: "mouse-tweaks",
@@ -405,6 +406,10 @@ export const modList = ModList.parse({
         },
         {
           slug: "modernfix",
+        },
+        {
+          slug: "chunky",
+          platforms: ["server"],
         },
 
         // Core/Dev API mods

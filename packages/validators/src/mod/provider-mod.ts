@@ -15,17 +15,6 @@ export const ProviderMod = z
     type: z.literal("provider").default("provider"),
     provider: Provider,
     slug: z.string(),
+    platforms: Platforms.optional(),
   })
   .merge(ProviderModOptions);
-
-export const ProviderModMetadata = z.object({
-  provider: Provider,
-  slug: z.string(),
-  dependencies: z.array(
-    z.object({
-      mod: z.string(),
-      version: z.string(),
-    }),
-  ),
-  platforms: Platforms,
-});
