@@ -35,15 +35,14 @@ export const modList = ModList.parse({
           slug: "fallingleavesforge",
         },
         {
-          slug: "distanthorizons",
-          platforms: ["server"],
-        },
-        {
           slug: "mouse-tweaks",
         },
         {
           slug: "ae2-mousetweaks-fix",
           loader: GameLoader.FABRIC,
+        },
+        {
+          slug: "betterf3"
         },
 
         // Simple Voice Chat mods
