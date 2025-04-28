@@ -63,6 +63,10 @@ export default tseslint.config(
         "warn",
         { prefer: "type-imports", fixStyle: "separate-type-imports" },
       ],
+      "@typescript-eslint/consistent-type-definitions": [
+        "warn",
+        { prefer: "type" },
+      ],
       "@typescript-eslint/no-misused-promises": [
         2,
         { checksVoidReturn: { attributes: false } },

@@ -1,16 +1,20 @@
-import type { ModList } from "@mc/validators/mods";
+import { GameLoader } from "@mc/validators/loader";
+import { ModList } from "@mc/validators/mod/list";
 
-import { GameLoaders } from "@mc/validators/mods";
-
-export const modList: ModList = {
-  baseLoader: GameLoaders.FORGE,
+// TODO: fix types for modlist input
+export const modList = ModList.parse({
+  baseLoader: GameLoader.FORGE,
   gameVersion: "1.20.1",
   mods: [
     {
       provider: "modrinth",
       mods: [
+        // General
         {
           slug: "visual-workbench",
+        },
+        {
+          slug: "bl4cks-sit",
         },
         {
           slug: "3dskinlayers",
@@ -22,6 +26,7 @@ export const modList: ModList = {
         },
         {
           slug: "immersivethunder",
+          loader: GameLoader.FABRIC,
         },
         {
           slug: "chat-heads",
@@ -37,7 +42,7 @@ export const modList: ModList = {
         },
         {
           slug: "ae2-mousetweaks-fix",
-          loader: GameLoaders.FABRIC,
+          loader: GameLoader.FABRIC,
         },
 
         // Simple Voice Chat mods
@@ -46,6 +51,7 @@ export const modList: ModList = {
         },
         {
           slug: "voice-chat-interaction",
+          loader: GameLoader.FABRIC,
         },
 
         // HUD stuff
@@ -56,10 +62,13 @@ export const modList: ModList = {
           slug: "jei",
         },
         {
-          slug: "nerb",
+          slug: "notenoughrecipebook",
         },
         {
           slug: "jade",
+        },
+        {
+          slug: "bluemap",
         },
         {
           slug: "journeymap",
@@ -279,7 +288,7 @@ export const modList: ModList = {
         },
         {
           slug: "applied-mekanistics",
-          loader: GameLoaders.NEOFORGE, // Doesn't have forge listed, however neoforge works
+          loader: GameLoader.NEOFORGE, // Doesn't have forge listed, however neoforge works
         },
         {
           slug: "mekanism-generators",
@@ -336,6 +345,7 @@ export const modList: ModList = {
         // Nether
         {
           slug: "betternether",
+          loader: GameLoader.FABRIC,
         },
         {
           slug: "yungs-better-nether-fortresses",
@@ -350,10 +360,11 @@ export const modList: ModList = {
         // End
         {
           slug: "betterend",
+          loader: GameLoader.FABRIC,
         },
         {
           slug: "better-end-cities-for-betterend",
-          loader: GameLoaders.FABRIC,
+          loader: GameLoader.FABRIC,
         },
         {
           slug: "nullscape",
@@ -465,6 +476,7 @@ export const modList: ModList = {
         },
         {
           slug: "bclib",
+          loader: GameLoader.FABRIC,
         },
         {
           slug: "prism-lib",
@@ -506,4 +518,4 @@ export const modList: ModList = {
     //   ],
     // },
   ],
-};
+});

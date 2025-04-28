@@ -4,7 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts",
+    "./modrinth": "./src/modrinth/index.ts",
+    "./modrinth/*": "./src/modrinth/*.ts",
+    "./curseforge": "./src/curseforge/index.ts",
+    "./curseforge/*": "./src/curseforge/*.ts"
   },
   "license": "MIT",
   "scripts": {
@@ -25,7 +30,10 @@
   },
   "prettier": "@mc/prettier-config",
   "dependencies": {
+    "@mc/validators": "workspace:^",
     "@xmcl/curseforge": "^2.2.0",
-    "@xmcl/modrinth": "^2.4.0"
+    "@xmcl/modrinth": "^2.4.0",
+    "axios": "^1.9.0",
+    "chalk": "^5.4.1"
   }
 }

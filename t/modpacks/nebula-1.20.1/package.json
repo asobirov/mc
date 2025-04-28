@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsc",
+    "dev": "npx tsx ./src/index.ts",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
@@ -25,6 +25,8 @@
   },
   "prettier": "@mc/prettier-config",
   "dependencies": {
-    "@mc/validators": "workspace:^"
+    "@mc/utils": "workspace:^",
+    "@mc/validators": "workspace:^",
+    "chalk": "^5.4.1"
   }
 }
