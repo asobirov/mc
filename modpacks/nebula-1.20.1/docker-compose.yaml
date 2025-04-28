@@ -3,7 +3,7 @@ services:
     image: itzg/minecraft-server
     # command: --forceUpgrade --eraseCache
     env_file:
-      - .env
+      - ../../.env
     ports:
     # expose the Minecraft server port outside of container
     - "25565:25565"
@@ -69,7 +69,7 @@ services:
     image: itzg/mc-backup
     user: "1000"
     env_file:
-      - .env
+      - ../../.env
     depends_on:
       mc:
         condition: service_healthy
