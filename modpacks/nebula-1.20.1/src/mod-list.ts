@@ -493,6 +493,9 @@ export const modList = ModList.parse({
         {
           slug: "rhino",
         },
+        {
+          slug: "deimos",
+        },
 
         // Fabric bridge
         {
