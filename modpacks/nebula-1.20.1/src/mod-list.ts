@@ -410,6 +410,14 @@ export const modList = ModList.parse({
           slug: "chunky",
           platforms: ["server"],
         },
+        {
+          slug: "lmd",
+          platforms: ["server"]
+        },
+        {
+          slug: "ai-improvements",
+          platforms: ["server"]
+        }
 
         // Core/Dev API mods
         {
