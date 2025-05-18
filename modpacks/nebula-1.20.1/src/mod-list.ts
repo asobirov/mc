@@ -367,6 +367,10 @@ export const modList = ModList.parse({
           loader: GameLoader.FABRIC,
         },
         {
+          slug: "betterend-crashed-ships-tweaks",
+          loader: GameLoader.FABRIC,
+        },
+        {
           slug: "nullscape",
         },
         {
