@@ -24,7 +24,6 @@ services:
       MAX_MEMORY: 20G
         
       VERSION: "1.20.1"
-      MODS_FILE: /extras/mods.txt
 
       OVERRIDE_SERVER_PROPERTIES: "TRUE"
 
@@ -46,7 +45,10 @@ services:
 
       SPAWN_PROTECTION: 0
 
+      MODS_FILE: /extras/mods.txt
       OPS_FILE: /extras/ops.json
+
+      SYNC_SKIP_NEWER_IN_DESTINATION: "false"
     depends_on:
       restore-backup:
         condition: service_completed_successfully
@@ -85,6 +87,7 @@ services:
       PRUNE_BACKUPS_DAYS: 30      
     volumes:
       - mc_forge:/data:ro
+      - ./config:/config:ro
       - ./backups:/backups
 volumes:
   # declared the named volume, but use default/local storage engine
