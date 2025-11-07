@@ -1,0 +1,4 @@
+https://cdn.modrinth.com/data/9eGKb6K1/versions/DSEhDki5/voicechat-neoforge-1.21.10-2.6.6.jar
+https://cdn.modrinth.com/data/kfqD1JRw/versions/itng3HTw/VisualWorkbench-v21.10.0%2Bmc1.21.10-NeoForge.jar
+https://cdn.modrinth.com/data/zV5r3pPn/versions/1M0oA70A/skinlayers3d-neoforge-1.9.2-mc1.21.10.jar
+https://cdn.modrinth.com/data/qyVF9oeo/versions/BTy2x7RS/sound-physics-remastered-neoforge-1.21.10-1.5.1.jar
