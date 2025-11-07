@@ -16,6 +16,7 @@ services:
       EULA: "TRUE"
       # Set server type (vs the default of vanilla)
       TYPE: NEOFORGE
+      NEOFORGE_VERSION: "beta"
      
       RCON_PASSWORD: ${RCON_PASSWORD}
       DEBUG: "true"
