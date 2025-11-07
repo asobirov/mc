@@ -70,7 +70,17 @@ importers:
         specifier: 'catalog:'
         version: 5.8.2
 
-  packages/types:
+  modpacks/vanilla-1.21.10:
+    dependencies:
+      '@mc/utils':
+        specifier: workspace:^
+        version: link:../../packages/utils
+      '@mc/validators':
+        specifier: workspace:^
+        version: link:../../packages/validators
+      chalk:
+        specifier: ^5.4.1
+        version: 5.4.1
     devDependencies:
       '@mc/eslint-config':
         specifier: workspace:*
