@@ -16,7 +16,7 @@ services:
       CF_PAGE_URL: "https://www.curseforge.com/minecraft/modpacks/cobblemon-academy"
       
       # Exclude client-only mods that cause issues
-      CF_EXCLUDE_MODS: "spiffyhud,fancymenu,blur,stylisheffects,modmenu,bendy-lib,fallingleaves,chat_heads,travelerstitles,zoomify,cubes-without-borders,tabtweaks,polytone,seasonhud,nbt_ac,resourcepackoverrides"
+      CF_EXCLUDE_MODS: "spiffyhud,fancymenu"
 
       MEMORY: 18G
       MAX_MEMORY: 20G
