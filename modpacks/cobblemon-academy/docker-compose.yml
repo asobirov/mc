@@ -1,0 +1,56 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: cobblemon-academy-server
+    env_file:
+      - ../../.env
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+      - "24454:24454/udp" # Simple Voice Chat mod
+    environment:
+      EULA: "TRUE"
+      TYPE: "CURSEFORGE"
+      CF_SLUG: "cobblemon-academy"
+      # Alternatively, you can use the project ID:
+      # CF_PAGE_URL: "https://www.curseforge.com/minecraft/modpacks/cobblemon-academy"
+      MEMORY: 18G
+      MAX_MEMORY: 20G
+      USE_AIKAR_FLAGS: "true"
+
+      # Server properties
+      SERVER_NAME: "Cobblemon Academy Server"
+      MOTD: "Welcome to Cobblemon Academy!"
+
+      DIFFICULTY: "normal"
+      MODE: "survival"
+      PVP: "true"
+      
+      MAX_PLAYERS: "20"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: true
+      ONLINE_MODE: false
+
+      VIEW_DISTANCE: "10"
+      SIMULATION_DISTANCE: "5"
+      # Performance settings
+      ENABLE_ROLLING_LOGS: "true"
+
+      MAX_TICK_TIME: -1
+
+      SPAWN_PROTECTION: 0
+
+      OPS_FILE: /extras/ops.json
+      # Backup settings (optional)
+      # ENABLE_AUTOPAUSE: "true"
+      # AUTOPAUSE_TIMEOUT_EST: "300"
+    volumes:
+      - ./data:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - minecraft
+
+networks:
+  minecraft:
+    driver: bridge
