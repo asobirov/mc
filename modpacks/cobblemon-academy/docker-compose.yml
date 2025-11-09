@@ -45,6 +45,7 @@ services:
       # AUTOPAUSE_TIMEOUT_EST: "300"
     volumes:
       - ./data:/data
+      - ./extras:/extras:ro
     stdin_open: true
     tty: true
     restart: unless-stopped
