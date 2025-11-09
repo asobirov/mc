@@ -41,8 +41,6 @@ services:
 
       MAX_TICK_TIME: -1
 
-      SPAWN_PROTECTION: 0
-
       OPS_FILE: /extras/ops.json
       # Backup settings (optional)
       # ENABLE_AUTOPAUSE: "true"
