@@ -11,9 +11,8 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "CURSEFORGE"
-      CF_SLUG: "cobblemon-academy"
-      # Alternatively, you can use the project ID:
-      # CF_PAGE_URL: "https://www.curseforge.com/minecraft/modpacks/cobblemon-academy"
+      CF_PAGE_URL: "https://www.curseforge.com/minecraft/modpacks/cobblemon-academy"
+      VERSION: "1.20.1"  # Cobblemon Academy uses Minecraft 1.20.1
       MEMORY: 18G
       MAX_MEMORY: 20G
       USE_AIKAR_FLAGS: "true"
