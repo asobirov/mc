@@ -27,6 +27,10 @@ const schema = z
       (value) => (value === "" ? undefined : value),
       z.string().min(1).optional(),
     ),
+    MINECRAFT_DATA_PATH: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().min(1).optional(),
+    ),
     MINECRAFT_RCON_HOST: z.preprocess(
       (value) => (value === "" ? undefined : value),
       z.string().min(1).optional(),

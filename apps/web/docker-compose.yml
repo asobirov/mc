@@ -5,17 +5,21 @@ services:
       dockerfile: apps/web/Dockerfile
     container_name: friends-mc-web
     restart: unless-stopped
+    group_add:
+      - "${MINECRAFT_DATA_GID:-987}"
     env_file: .env
     environment:
       NODE_ENV: production
       PORT: 3000
       SQLITE_PATH: /data/auth.sqlite
       MODPACK_PATH: /packs/Friends-MC.mrpack
+      MINECRAFT_DATA_PATH: /minecraft-data
       MINECRAFT_LOG_PATH: /minecraft-logs/latest.log
     volumes:
       - auth_data:/data
       - ${MODPACK_FILE:?Set MODPACK_FILE in .env}:/packs/Friends-MC.mrpack:ro
       - ${MINECRAFT_LOG_DIR:-/srv/minecraft/aeronautics/data/logs}:/minecraft-logs:ro
+      - ${MINECRAFT_DATA_DIR:-/srv/minecraft/aeronautics/data}:/minecraft-data:ro
     networks:
       - default
       - minecraft_bridge

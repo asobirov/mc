@@ -1660,6 +1660,158 @@ a {
   cursor: wait;
   opacity: 0.5;
 }
+.minecraft-admin {
+  margin-top: 72px;
+}
+.minecraft-admin-heading {
+  gap: 20px;
+}
+.minecraft-admin-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.refresh-button.icon-button {
+  width: 39px;
+  justify-content: center;
+  padding: 0;
+}
+.refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+.whitelist-state {
+  padding: 6px 9px;
+  border: 1px solid #673a37;
+  border-radius: 999px;
+  color: #eca7a2;
+  background: #291817;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.whitelist-state.enabled {
+  border-color: #3d5e2c;
+  color: #b9e563;
+  background: #182313;
+}
+.minecraft-admin-note {
+  max-width: 700px;
+  margin: -20px 0 26px;
+  color: #7f8878;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.whitelist-warning {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border: 1px solid #665d31;
+  border-radius: 10px;
+  color: #dbc970;
+  background: #242113;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.minecraft-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #292e26;
+  border-radius: 14px;
+  background: #111310;
+}
+.minecraft-table {
+  width: 100%;
+  min-width: 790px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.minecraft-table th {
+  padding: 12px 15px;
+  border-bottom: 1px solid #30352c;
+  color: #70786b;
+  background: #151814;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.minecraft-table td {
+  padding: 15px;
+  border-bottom: 1px solid #252a22;
+  color: #a3aa9d;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.minecraft-table tr:last-child td {
+  border-bottom: 0;
+}
+.minecraft-table td:first-child {
+  display: grid;
+  min-width: 210px;
+  gap: 4px;
+}
+.minecraft-table td:first-child strong {
+  color: #dfe5d7;
+  font-size: 14px;
+}
+.minecraft-table td:first-child span {
+  color: #646b60;
+  font-family: monospace;
+  font-size: 10px;
+}
+.minecraft-statuses,
+.minecraft-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.minecraft-chip {
+  padding: 5px 8px;
+  border: 1px solid #3d4339;
+  border-radius: 999px;
+  color: #959d8f;
+  background: #181b16;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.minecraft-chip.whitelisted {
+  border-color: #3d5e2c;
+  color: #b9e563;
+  background: #182313;
+}
+.minecraft-chip.banned {
+  border-color: #693836;
+  color: #f0a5a0;
+  background: #291817;
+}
+.minecraft-actions button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid #35402d;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #bcd588;
+  background: #171c14;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.minecraft-actions button.danger {
+  border-color: #563332;
+  color: #e9a09c;
+  background: #211615;
+}
+.minecraft-actions button:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
 .portal-shell footer {
   display: flex;
   width: min(1040px, calc(100% - 48px));
@@ -1802,11 +1954,29 @@ a {
     grid-column: 2 / -1;
     justify-content: flex-start;
   }
+  .minecraft-admin-heading {
+    align-items: flex-start;
+  }
+  .minecraft-admin-controls {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 540px) {
   .login-card {
     padding: 32px 24px;
+  }
+  .minecraft-admin {
+    margin-top: 56px;
+  }
+  .minecraft-admin-heading {
+    display: grid;
+  }
+  .minecraft-admin-controls {
+    justify-content: flex-start;
+  }
+  .minecraft-admin-note {
+    margin-top: -12px;
   }
   .topbar,
   .hero,

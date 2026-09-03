@@ -105,6 +105,7 @@ type LinkedAccount = {
 type AccessRole = "admin" | "member";
 type AccessStatus = "approved" | "blocked" | "pending";
 type AccessAction = "approve" | "block" | "reset" | "promote" | "demote";
+type MinecraftPlayerAction = "ban" | "pardon" | "unwhitelist" | "whitelist";
 
 type AccessUser = {
   accessStatus: AccessStatus;
@@ -117,6 +118,21 @@ type AccessUser = {
   protectedAdmin: boolean;
   role: AccessRole;
   verified: boolean;
+};
+
+type MinecraftPlayer = {
+  banReason: string | null;
+  banned: boolean;
+  lastActiveAt: string | null;
+  name: string | null;
+  uuid: string;
+  whitelisted: boolean;
+};
+
+type MinecraftRoster = {
+  kickUnlistedPlayers: boolean;
+  players: MinecraftPlayer[];
+  whitelistEnabled: boolean;
 };
 
 function GoogleIcon() {
@@ -905,6 +921,249 @@ function PackUpdates() {
   );
 }
 
+function MinecraftPlayersAdmin() {
+  const [roster, setRoster] = useState<MinecraftRoster | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [busyAction, setBusyAction] = useState<string | null>(null);
+
+  async function loadRoster() {
+    setError(null);
+    const response = await fetch("/api/admin/minecraft-players");
+    const data = (await response.json()) as MinecraftRoster & {
+      error?: string;
+    };
+    if (!response.ok) {
+      throw new Error(data.error ?? "Could not load Minecraft players");
+    }
+    setRoster(data);
+  }
+
+  useEffect(() => {
+    void loadRoster()
+      .catch((reason: unknown) =>
+        setError(
+          reason instanceof Error
+            ? reason.message
+            : "Could not load Minecraft players",
+        ),
+      )
+      .finally(() => setLoading(false));
+  }, []);
+
+  async function actOnPlayer(
+    player: MinecraftPlayer,
+    action: MinecraftPlayerAction,
+  ) {
+    if (
+      action === "ban" &&
+      !window.confirm(
+        `Ban ${player.name ?? "this player"}? They will be removed immediately if online.`,
+      )
+    ) {
+      return;
+    }
+    setBusyAction(`${player.uuid}:${action}`);
+    setError(null);
+    try {
+      const response = await fetch(
+        `/api/admin/minecraft-players/${player.uuid}`,
+        {
+          body: JSON.stringify({ action }),
+          headers: { "Content-Type": "application/json" },
+          method: "PATCH",
+        },
+      );
+      const data = (await response.json()) as MinecraftRoster & {
+        error?: string;
+      };
+      if (!response.ok) {
+        throw new Error(data.error ?? "Could not update this player");
+      }
+      setRoster(data);
+    } catch (reason) {
+      setError(
+        reason instanceof Error ? reason.message : "Could not update player",
+      );
+    } finally {
+      setBusyAction(null);
+    }
+  }
+
+  async function toggleWhitelist() {
+    const enabling = !roster?.whitelistEnabled;
+    const message = enabling
+      ? "Enable whitelist enforcement? Only players marked Whitelisted will be able to join."
+      : "Disable whitelist enforcement? Anyone with the server address will be able to join.";
+    if (!window.confirm(message)) return;
+
+    setBusyAction("whitelist-toggle");
+    setError(null);
+    try {
+      const response = await fetch("/api/admin/minecraft-whitelist", {
+        body: JSON.stringify({ action: enabling ? "enable" : "disable" }),
+        headers: { "Content-Type": "application/json" },
+        method: "PATCH",
+      });
+      const data = (await response.json()) as MinecraftRoster & {
+        error?: string;
+      };
+      if (!response.ok) {
+        throw new Error(data.error ?? "Could not change whitelist enforcement");
+      }
+      setRoster(data);
+    } catch (reason) {
+      setError(
+        reason instanceof Error
+          ? reason.message
+          : "Could not change whitelist enforcement",
+      );
+    } finally {
+      setBusyAction(null);
+    }
+  }
+
+  return (
+    <div className="minecraft-admin">
+      <div className="section-heading admin-heading minecraft-admin-heading">
+        <div>
+          <p className="eyebrow">Minecraft access</p>
+          <h2>Players ever joined</h2>
+        </div>
+        <div className="minecraft-admin-controls">
+          {roster ? (
+            <span
+              className={`whitelist-state ${roster.whitelistEnabled ? "enabled" : "disabled"}`}
+            >
+              Whitelist {roster.whitelistEnabled ? "on" : "off"}
+            </span>
+          ) : null}
+          <button
+            className="refresh-button"
+            disabled={!roster || busyAction !== null}
+            onClick={() => void toggleWhitelist()}
+            type="button"
+          >
+            <ShieldCheck size={16} />
+            {roster?.whitelistEnabled ? "Turn off" : "Turn on"}
+          </button>
+          <button
+            aria-label="Refresh Minecraft players"
+            className="refresh-button icon-button"
+            disabled={busyAction !== null}
+            onClick={() =>
+              void loadRoster().catch(() => setError("Refresh failed"))
+            }
+            type="button"
+          >
+            <RefreshCw size={16} />
+          </button>
+        </div>
+      </div>
+
+      <p className="minecraft-admin-note">
+        This is the world&apos;s real player history. Whitelisting controls
+        future joins; banning also removes an online player immediately. Changes
+        apply without restarting the server.
+      </p>
+      {roster && !roster.whitelistEnabled ? (
+        <p className="whitelist-warning">
+          The whitelist is currently off. Review the list, whitelist your
+          friends, then turn it on to block unknown joins.
+        </p>
+      ) : null}
+      {error ? <p className="admin-error">{error}</p> : null}
+      {loading ? (
+        <p className="admin-empty">Loading player history…</p>
+      ) : roster?.players.length ? (
+        <div className="minecraft-table-wrap">
+          <table className="minecraft-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Last activity</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {roster.players.map((player) => {
+                const isBusy =
+                  busyAction?.startsWith(`${player.uuid}:`) ?? false;
+                return (
+                  <tr key={player.uuid}>
+                    <td>
+                      <strong>{player.name ?? "Unknown player"}</strong>
+                      <span>{player.uuid}</span>
+                    </td>
+                    <td>
+                      {player.lastActiveAt
+                        ? new Date(player.lastActiveAt).toLocaleString([], {
+                            dateStyle: "medium",
+                            timeStyle: "short",
+                          })
+                        : "Unknown"}
+                    </td>
+                    <td>
+                      <div className="minecraft-statuses">
+                        {player.banned ? (
+                          <span className="minecraft-chip banned">Banned</span>
+                        ) : null}
+                        {player.whitelisted ? (
+                          <span className="minecraft-chip whitelisted">
+                            Whitelisted
+                          </span>
+                        ) : (
+                          <span className="minecraft-chip unlisted">
+                            Not whitelisted
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="minecraft-actions">
+                        <button
+                          disabled={isBusy || !player.name}
+                          onClick={() =>
+                            void actOnPlayer(
+                              player,
+                              player.whitelisted ? "unwhitelist" : "whitelist",
+                            )
+                          }
+                          type="button"
+                        >
+                          <UserCheck size={15} />
+                          {player.whitelisted ? "Remove" : "Whitelist"}
+                        </button>
+                        <button
+                          className={player.banned ? undefined : "danger"}
+                          disabled={isBusy || !player.name}
+                          onClick={() =>
+                            void actOnPlayer(
+                              player,
+                              player.banned ? "pardon" : "ban",
+                            )
+                          }
+                          type="button"
+                        >
+                          <UserX size={15} />
+                          {player.banned ? "Pardon" : "Ban"}
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p className="admin-empty">Nobody has joined this world yet.</p>
+      )}
+    </div>
+  );
+}
+
 function AccessAdmin({ currentUserId }: { currentUserId: string }) {
   const [users, setUsers] = useState<AccessUser[]>([]);
   const [loading, setLoading] = useState(true);
@@ -1057,6 +1316,7 @@ function AccessAdmin({ currentUserId }: { currentUserId: string }) {
           })}
         </div>
       )}
+      <MinecraftPlayersAdmin />
     </section>
   );
 }

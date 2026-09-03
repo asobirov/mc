@@ -23,6 +23,11 @@ import {
   minecraftTellraw,
   startMinecraftChatIngestion,
 } from "./minecraft-chat";
+import {
+  minecraftPlayerActions,
+  minecraftPlayerCommand,
+  readMinecraftRoster,
+} from "./minecraft-players";
 import { enrichModCatalog, readModCatalog } from "./mod-catalog";
 import { sendRconCommand } from "./rcon";
 
@@ -30,6 +35,12 @@ const app = new Hono();
 const accessActionSchema = z.object({ action: z.enum(accessActions) });
 const chatMessageSchema = z.object({
   body: z.string().trim().min(1).max(240),
+});
+const minecraftPlayerActionSchema = z.object({
+  action: z.enum(minecraftPlayerActions),
+});
+const whitelistActionSchema = z.object({
+  action: z.enum(["enable", "disable"]),
 });
 const trustedOrigin = new URL(env.BETTER_AUTH_URL).origin;
 const chatBridgeEnabled = Boolean(
@@ -100,6 +111,107 @@ app.patch("/api/admin/users/:id", async (c) => {
 
   const user = updateAccessUser(target.id, parsed.data.action);
   return c.json({ user });
+});
+
+app.get("/api/admin/minecraft-players", async (c) => {
+  const user = await authenticatedUser(c.req.raw.headers);
+  if (!user) return c.json({ error: "Unauthorized" }, 401);
+  if (!canAccessPortal(user) || user.role !== "admin") {
+    return c.json({ error: "Forbidden" }, 403);
+  }
+  if (!env.MINECRAFT_DATA_PATH) {
+    return c.json({ error: "Minecraft player history is not configured" }, 503);
+  }
+
+  try {
+    c.header("Cache-Control", "private, no-store");
+    return c.json(readMinecraftRoster(env.MINECRAFT_DATA_PATH));
+  } catch (error) {
+    console.error("Could not read Minecraft player history", error);
+    return c.json({ error: "Minecraft player history is unavailable" }, 503);
+  }
+});
+
+app.patch("/api/admin/minecraft-players/:uuid", async (c) => {
+  if (c.req.header("Origin") !== trustedOrigin) {
+    return c.json({ error: "Invalid origin" }, 403);
+  }
+  const actor = await authenticatedUser(c.req.raw.headers);
+  if (!actor) return c.json({ error: "Unauthorized" }, 401);
+  if (!canAccessPortal(actor) || actor.role !== "admin") {
+    return c.json({ error: "Forbidden" }, 403);
+  }
+  if (
+    !env.MINECRAFT_DATA_PATH ||
+    !env.MINECRAFT_RCON_HOST ||
+    !env.MINECRAFT_RCON_PASSWORD
+  ) {
+    return c.json({ error: "Minecraft controls are not configured" }, 503);
+  }
+  const parsed = minecraftPlayerActionSchema.safeParse(
+    await c.req.json().catch(() => null),
+  );
+  if (!parsed.success) return c.json({ error: "Invalid action" }, 400);
+
+  try {
+    const roster = readMinecraftRoster(env.MINECRAFT_DATA_PATH);
+    const player = roster.players.find(
+      (item) => item.uuid === c.req.param("uuid"),
+    );
+    if (!player) return c.json({ error: "Player not found" }, 404);
+    if (!player.name) {
+      return c.json(
+        { error: "This player's Minecraft name is unavailable" },
+        409,
+      );
+    }
+    await sendRconCommand({
+      command: minecraftPlayerCommand(player.name, parsed.data.action),
+      host: env.MINECRAFT_RCON_HOST,
+      password: env.MINECRAFT_RCON_PASSWORD,
+      port: env.MINECRAFT_RCON_PORT,
+    });
+    return c.json(readMinecraftRoster(env.MINECRAFT_DATA_PATH));
+  } catch (error) {
+    console.error("Could not update Minecraft player", error);
+    return c.json({ error: "Minecraft did not accept that change" }, 502);
+  }
+});
+
+app.patch("/api/admin/minecraft-whitelist", async (c) => {
+  if (c.req.header("Origin") !== trustedOrigin) {
+    return c.json({ error: "Invalid origin" }, 403);
+  }
+  const actor = await authenticatedUser(c.req.raw.headers);
+  if (!actor) return c.json({ error: "Unauthorized" }, 401);
+  if (!canAccessPortal(actor) || actor.role !== "admin") {
+    return c.json({ error: "Forbidden" }, 403);
+  }
+  if (
+    !env.MINECRAFT_DATA_PATH ||
+    !env.MINECRAFT_RCON_HOST ||
+    !env.MINECRAFT_RCON_PASSWORD
+  ) {
+    return c.json({ error: "Minecraft controls are not configured" }, 503);
+  }
+  const parsed = whitelistActionSchema.safeParse(
+    await c.req.json().catch(() => null),
+  );
+  if (!parsed.success) return c.json({ error: "Invalid action" }, 400);
+
+  try {
+    await sendRconCommand({
+      command:
+        parsed.data.action === "enable" ? "whitelist on" : "whitelist off",
+      host: env.MINECRAFT_RCON_HOST,
+      password: env.MINECRAFT_RCON_PASSWORD,
+      port: env.MINECRAFT_RCON_PORT,
+    });
+    return c.json(readMinecraftRoster(env.MINECRAFT_DATA_PATH));
+  } catch (error) {
+    console.error("Could not update the Minecraft whitelist", error);
+    return c.json({ error: "Minecraft did not accept that change" }, 502);
+  }
 });
 
 app.get("/api/modpack", async (c) => {

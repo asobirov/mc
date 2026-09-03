@@ -64,8 +64,12 @@ port 3001.
 
 ## Deployment
 
-Set `MODPACK_FILE` and `MINECRAFT_LOG_DIR` in `.env` to their absolute host
-paths. Set `MINECRAFT_RCON_HOST=friends-mc` and use the same
+Set `MODPACK_FILE`, `MINECRAFT_LOG_DIR`, and `MINECRAFT_DATA_DIR` in `.env` to
+their absolute host paths. The Minecraft data directory is mounted read-only so
+the admin page can list players who have actually joined. Set
+`MINECRAFT_DATA_GID` to the host group ID that owns the directory (for example,
+`stat -c %g "$MINECRAFT_DATA_DIR"`). Set
+`MINECRAFT_RCON_HOST=friends-mc` and use the same
 `MINECRAFT_RCON_PASSWORD` as the Minecraft stack. Create the shared network
 once, then start both Compose projects:
 
