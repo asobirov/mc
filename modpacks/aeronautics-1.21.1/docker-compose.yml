@@ -1,0 +1,144 @@
+name: aeronautics
+
+services:
+  restore-backup:
+    image: itzg/mc-backup:latest
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    restart: "no"
+    entrypoint: restore-tar-backup
+    volumes:
+      - ./data:/data
+      - ./backups:/backups:ro
+
+  mc:
+    image: itzg/minecraft-server:java21
+    container_name: friends-mc
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    stop_grace_period: 2m
+    env_file:
+      - .env
+    depends_on:
+      restore-backup:
+        condition: service_completed_successfully
+    ports:
+      - "25565:25565/tcp"
+      - "24454:24454/udp"
+    environment:
+      EULA: "TRUE"
+      TZ: Europe/London
+      UID: "${HOST_UID:-1000}"
+      GID: "${HOST_GID:-1000}"
+
+      MODPACK_PLATFORM: MODRINTH
+      MODRINTH_MODPACK: /modpacks/Friends-MC-1.0.1.mrpack
+      MODRINTH_LOADER: neoforge
+      MODRINTH_FORCE_SYNCHRONIZE: "true"
+      VERSION: "1.21.1"
+
+      # The source pack marks every mod as server-required, including client-only
+      # rendering/UI mods. Exclude those plus YUNG's Better End Island, which
+      # conflicts with BetterEnd world generation in this pack.
+      MODRINTH_EXCLUDE_FILES: |
+        AmbientSounds
+        appleskin
+        BetterAdvancements
+        DistantHorizons
+        emi-
+        emi_
+        EMIProfessions
+        entityculling
+        extra-mod-integrations
+        ImmediatelyFast
+        iris-
+        irisflw
+        justzoom
+        lambdynamiclights
+        modelfix
+        MouseTweaks
+        notenoughanimations
+        OverflowingBars
+        reeses-sodium-options
+        SimpleBackups
+        sodium-neoforge
+        sound-physics-remastered
+        xaerominimap
+        xaeroworldmap
+        YungsBetterEndIsland
+
+      INIT_MEMORY: 8G
+      MAX_MEMORY: 14G
+      USE_MEOWICE_FLAGS: "true"
+
+      OVERRIDE_SERVER_PROPERTIES: "true"
+      SERVER_NAME: "${SERVER_NAME:-Friends MC}"
+      MOTD: "${MOTD:-Create, magic, engineering and questionable flying machines}"
+      DIFFICULTY: hard
+      MODE: survival
+      PVP: "true"
+      ONLINE_MODE: "true"
+      ALLOW_FLIGHT: "true"
+      MAX_PLAYERS: 12
+      VIEW_DISTANCE: 10
+      SIMULATION_DISTANCE: 6
+      SPAWN_PROTECTION: 0
+
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+    volumes:
+      - ./data:/data
+      - ./pack:/modpacks:ro
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  backups:
+    image: itzg/mc-backup:latest
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      mc:
+        condition: service_healthy
+    environment:
+      TZ: Europe/London
+      RCON_HOST: mc
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      BACKUP_METHOD: tar
+      TAR_COMPRESS_METHOD: zstd
+      BACKUP_NAME: friends-mc
+      BACKUP_INTERVAL: 6h
+      INITIAL_DELAY: 15m
+      BACKUP_ON_STARTUP: "true"
+      PRUNE_BACKUPS_COUNT: 4
+      PRUNE_BACKUPS_DAYS: 7
+    volumes:
+      - ./data:/data:ro
+      - ./backups:/backups
+
+  offsite-backup:
+    image: curlimages/curl:8.16.0
+    user: "0:0"
+    restart: unless-stopped
+    profiles:
+      - offsite
+    env_file:
+      - .env
+    environment:
+      UPLOAD_INITIAL_DELAY: 30m
+      UPLOAD_INTERVAL: 24h
+    depends_on:
+      - backups
+    entrypoint:
+      - /bin/sh
+      - /scripts/upload-latest-backup.sh
+    volumes:
+      - ./backups:/backups:ro
+      - ./scripts:/scripts:ro
+      - offsite_state:/state
+
+volumes:
+  offsite_state:

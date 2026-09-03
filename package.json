@@ -13,6 +13,7 @@
     "db:push": "turbo -F @mc/db push",
     "db:studio": "turbo -F @mc/db studio",
     "dev": "turbo watch dev --continue",
+    "dev:web": "turbo watch dev -F @mc/web",
     "dev:next": "turbo watch dev -F @mc/nextjs...",
     "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
     "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
@@ -20,6 +21,7 @@
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "lint:ws": "pnpm dlx sherif@latest",
     "postinstall": "pnpm lint:ws",
+    "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "ui-add": "turbo run ui-add"
   },

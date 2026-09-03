@@ -1,0 +1,13 @@
+{
+  "name": "@mc/aeronautics-1.21.1",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "format": "prettier --check . --ignore-unknown --ignore-path ../../.gitignore"
+  },
+  "devDependencies": {
+    "@mc/prettier-config": "workspace:*",
+    "prettier": "catalog:"
+  },
+  "prettier": "@mc/prettier-config"
+}

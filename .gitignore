@@ -3,6 +3,9 @@
 # mods folder
 
 modpacks/nebula-1.20.1/mods
+modpacks/aeronautics-1.21.1/data/
+modpacks/aeronautics-1.21.1/backups/
+modpacks/aeronautics-1.21.1/pack/AaronPack-1.21.1.mrpack
 
 # dependencies
 node_modules
@@ -30,6 +33,10 @@ apps/expo/android
 
 # production
 build
+server-dist/
+
+# local application data
+apps/web/data/
 
 # misc
 .DS_Store

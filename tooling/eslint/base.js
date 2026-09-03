@@ -65,7 +65,7 @@ export default tseslint.config(
       ],
       "@typescript-eslint/consistent-type-definitions": [
         "warn",
-        { prefer: "type" },
+        "type",
       ],
       "@typescript-eslint/no-misused-promises": [
         2,

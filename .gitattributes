@@ -1,0 +1,1 @@
+modpacks/aeronautics-1.21.1/pack/Friends-MC-*.mrpack filter=lfs diff=lfs merge=lfs -text

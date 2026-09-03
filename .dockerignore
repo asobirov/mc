@@ -1,0 +1,9 @@
+.git
+.turbo
+**/.cache
+**/node_modules
+**/dist
+**/server-dist
+**/.env
+**/data
+modpacks/aeronautics-1.21.1/backups
