@@ -31,7 +31,7 @@ const launchers = {
     downloadLabel: "Get Prism",
     downloadUrl: "https://prismlauncher.org/download/",
     install:
-      "Download Prism for your computer, install it, then sign in with your Microsoft account.",
+      "Download Prism, install it, then sign in with the Microsoft account that owns Minecraft: Java Edition.",
     import:
       "Choose Add Instance → Import, then select the downloaded Friends MC .mrpack file.",
     launch:
@@ -43,7 +43,7 @@ const launchers = {
     downloadLabel: "Get Modrinth",
     downloadUrl: "https://modrinth.com/app",
     install:
-      "Download the official Modrinth App, install it, then sign in with your Microsoft account.",
+      "Download the official Modrinth App, install it, then sign in with the Microsoft account that owns Minecraft: Java Edition.",
     import:
       "Click + to create an instance, choose From file / Import, then select the Friends MC .mrpack file.",
     launch:
@@ -55,7 +55,7 @@ const launchers = {
     downloadLabel: "Get SKlauncher",
     downloadUrl: "https://next.skmedix.pl/downloads",
     install:
-      "Download SKlauncher 4 only from the official skmedix.pl site, install it, then add your Microsoft account.",
+      "Download SKlauncher 4 only from the official skmedix.pl site, install it, then add the Microsoft account that owns Minecraft: Java Edition.",
     import:
       "Drag the Friends MC .mrpack onto SKlauncher, or choose Import Modpack and select the file.",
     launch:
@@ -242,10 +242,16 @@ function SignIn() {
           ) : null}
         </div>
 
-        <p className="login-note">
-          <ShieldCheck size={16} /> Sign in to request access from the server
-          owner.
-        </p>
+        <div className="login-notes">
+          <p className="login-note">
+            <ShieldCheck size={16} /> Sign in to request access from the server
+            owner.
+          </p>
+          <p className="login-note requirement-note">
+            <Gamepad2 size={16} /> A licensed copy of Minecraft: Java Edition is
+            required to join.
+          </p>
+        </div>
       </section>
     </main>
   );
