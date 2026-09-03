@@ -18,7 +18,7 @@ import {
 } from "./access-store";
 import { auth } from "./auth";
 import { env } from "./env";
-import { readModCatalog } from "./mod-catalog";
+import { enrichModCatalog, readModCatalog } from "./mod-catalog";
 
 const app = new Hono();
 const accessActionSchema = z.object({ action: z.enum(accessActions) });
@@ -113,7 +113,7 @@ app.get("/api/modpack", async (c) => {
   });
 });
 
-let modCatalog: ReturnType<typeof readModCatalog> | null = null;
+let modCatalogPromise: Promise<ReturnType<typeof readModCatalog>> | null = null;
 
 app.get("/api/mods", async (c) => {
   const user = await authenticatedUser(c.req.raw.headers);
@@ -126,9 +126,20 @@ app.get("/api/mods", async (c) => {
   }
 
   try {
-    modCatalog ??= readModCatalog(env.MODPACK_PATH);
+    modCatalogPromise ??= (async () => {
+      const catalog = readModCatalog(env.MODPACK_PATH);
+      try {
+        return await enrichModCatalog(catalog);
+      } catch (error) {
+        console.warn(
+          "Could not enrich the mod catalog; using local fallbacks",
+          error,
+        );
+        return catalog;
+      }
+    })();
     c.header("Cache-Control", "private, max-age=300");
-    return c.json(modCatalog);
+    return c.json(await modCatalogPromise);
   } catch (error) {
     console.error("Could not read the mod catalog", error);
     return c.json({ error: "Mod list is temporarily unavailable" }, 503);

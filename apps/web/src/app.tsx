@@ -23,7 +23,9 @@ import {
   Utensils,
 } from "lucide-react";
 
+import type { ModCatalogResponse, ModCategory } from "./lib/mod-catalog";
 import { authClient } from "./lib/auth-client";
+import { MOD_CATEGORIES } from "./lib/mod-catalog";
 
 const SERVER_ADDRESS = "mc.xpr.im";
 
@@ -91,21 +93,6 @@ type AccessUser = {
   protectedAdmin: boolean;
   role: AccessRole;
   verified: boolean;
-};
-
-type ModCatalogItem = {
-  fileName: string;
-  name: string;
-  projectId: string | null;
-  source: "bundled" | "modrinth";
-};
-
-type ModCatalogResponse = {
-  loader: string;
-  minecraft: string;
-  mods: ModCatalogItem[];
-  name: string;
-  version: string;
 };
 
 function GoogleIcon() {
@@ -402,6 +389,12 @@ function ModsCatalog() {
   const [catalog, setCatalog] = useState<ModCatalogResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState<"all" | ModCategory>(
+    "all",
+  );
+  const [expandedCategories, setExpandedCategories] = useState<
+    Set<ModCategory>
+  >(() => new Set(["technology", "food"]));
 
   useEffect(() => {
     const controller = new AbortController();
@@ -424,10 +417,31 @@ function ModsCatalog() {
   const visibleMods =
     catalog?.mods.filter(
       (mod) =>
-        normalizedQuery.length === 0 ||
-        mod.name.toLowerCase().includes(normalizedQuery) ||
-        mod.fileName.toLowerCase().includes(normalizedQuery),
+        (activeCategory === "all" || mod.category === activeCategory) &&
+        (normalizedQuery.length === 0 ||
+          mod.name.toLowerCase().includes(normalizedQuery) ||
+          mod.description.toLowerCase().includes(normalizedQuery) ||
+          mod.fileName.toLowerCase().includes(normalizedQuery)),
     ) ?? [];
+  const categoryCounts = new Map(
+    MOD_CATEGORIES.map((category) => [
+      category.id,
+      catalog?.mods.filter((mod) => mod.category === category.id).length ?? 0,
+    ]),
+  );
+  const visibleGroups = MOD_CATEGORIES.map((category) => ({
+    ...category,
+    mods: visibleMods.filter((mod) => mod.category === category.id),
+  })).filter((category) => category.mods.length > 0);
+
+  function toggleCategory(category: ModCategory) {
+    setExpandedCategories((current) => {
+      const next = new Set(current);
+      if (next.has(category)) next.delete(category);
+      else next.add(category);
+      return next;
+    });
+  }
 
   return (
     <section className="mods-section">
@@ -455,6 +469,31 @@ function ModsCatalog() {
         {catalog ? <span>{visibleMods.length} shown</span> : null}
       </label>
 
+      {catalog ? (
+        <div aria-label="Filter mods by category" className="mods-filters">
+          <button
+            className={activeCategory === "all" ? "active" : undefined}
+            onClick={() => setActiveCategory("all")}
+            type="button"
+          >
+            All <span>{catalog.mods.length}</span>
+          </button>
+          {MOD_CATEGORIES.filter(
+            (category) => (categoryCounts.get(category.id) ?? 0) > 0,
+          ).map((category) => (
+            <button
+              className={activeCategory === category.id ? "active" : undefined}
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              type="button"
+            >
+              {category.label}{" "}
+              <span>{categoryCounts.get(category.id) ?? 0}</span>
+            </button>
+          ))}
+        </div>
+      ) : null}
+
       {error ? <p className="mods-state error">{error}</p> : null}
       {!catalog && !error ? (
         <p className="mods-state">Reading the modpack…</p>
@@ -463,31 +502,69 @@ function ModsCatalog() {
         <p className="mods-state">No mods match “{query}”.</p>
       ) : null}
 
-      {catalog && visibleMods.length > 0 ? (
-        <div className="mods-list">
-          {visibleMods.map((mod) => (
-            <article className="mod-row" key={mod.fileName}>
-              <span className="mod-icon">
-                <Box aria-hidden="true" size={17} />
-              </span>
-              <div>
-                <strong>{mod.name}</strong>
-                <span title={mod.fileName}>{mod.fileName}</span>
-              </div>
-              {mod.projectId ? (
-                <a
-                  aria-label={`Open ${mod.name} on Modrinth`}
-                  href={`https://modrinth.com/project/${mod.projectId}`}
-                  rel="noreferrer"
-                  target="_blank"
+      {catalog && visibleGroups.length > 0 ? (
+        <div className="mods-groups">
+          {visibleGroups.map((group) => {
+            const isExpanded =
+              normalizedQuery.length > 0 ||
+              activeCategory !== "all" ||
+              expandedCategories.has(group.id);
+
+            return (
+              <section
+                className={`mod-group${isExpanded ? " expanded" : ""}`}
+                key={group.id}
+              >
+                <button
+                  aria-expanded={isExpanded}
+                  className="mod-group-toggle"
+                  onClick={() => toggleCategory(group.id)}
+                  type="button"
                 >
-                  <ExternalLink size={15} />
-                </a>
-              ) : (
-                <span className="bundled-label">Bundled</span>
-              )}
-            </article>
-          ))}
+                  <div>
+                    <h3>{group.label}</h3>
+                    <p>{group.description}</p>
+                  </div>
+                  <span>{group.mods.length}</span>
+                </button>
+                {isExpanded ? (
+                  <div className="mods-list">
+                    {group.mods.map((mod) => (
+                      <article
+                        className="mod-row"
+                        key={mod.fileName}
+                        title={mod.fileName}
+                      >
+                        <span className="mod-icon">
+                          {mod.iconUrl ? (
+                            <img alt="" loading="lazy" src={mod.iconUrl} />
+                          ) : (
+                            <Box aria-hidden="true" size={17} />
+                          )}
+                        </span>
+                        <div>
+                          <strong>{mod.name}</strong>
+                          <p>{mod.description}</p>
+                        </div>
+                        {mod.projectId ? (
+                          <a
+                            aria-label={`Open ${mod.name} on Modrinth`}
+                            href={`https://modrinth.com/project/${mod.slug ?? mod.projectId}`}
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <ExternalLink size={15} />
+                          </a>
+                        ) : (
+                          <span className="bundled-label">Bundled</span>
+                        )}
+                      </article>
+                    ))}
+                  </div>
+                ) : null}
+              </section>
+            );
+          })}
         </div>
       ) : null}
     </section>

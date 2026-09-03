@@ -647,22 +647,115 @@ a {
   font-size: 11px;
   font-weight: 700;
 }
+.mods-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.mods-filters button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid #30362c;
+  border-radius: 999px;
+  color: #8d9785;
+  background: #141713;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 750;
+}
+.mods-filters button:hover,
+.mods-filters button.active {
+  border-color: #6f8b3d;
+  color: #d9e7bc;
+  background: #1c2517;
+}
+.mods-filters button span {
+  color: #697363;
+  font-size: 9px;
+}
+.mods-groups {
+  display: grid;
+  gap: 13px;
+}
+.mod-group {
+  overflow: hidden;
+  border: 1px solid #292f26;
+  border-radius: 15px;
+  background: #11140f;
+}
+.mod-group-toggle {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+.mod-group-toggle::after {
+  width: 18px;
+  color: #78816f;
+  content: "+";
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+}
+.mod-group.expanded .mod-group-toggle::after {
+  content: "–";
+}
+.mod-group-toggle:hover {
+  background: #151913;
+}
+.mod-group-toggle div {
+  display: grid;
+  gap: 3px;
+}
+.mod-group-toggle h3,
+.mod-group-toggle p {
+  margin: 0;
+}
+.mod-group-toggle h3 {
+  color: #e2e8d8;
+  font-size: 15px;
+}
+.mod-group-toggle p {
+  color: #727b6d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.mod-group-toggle > span {
+  display: grid;
+  min-width: 28px;
+  height: 24px;
+  place-items: center;
+  border-radius: 999px;
+  color: #aeca6b;
+  background: #20281a;
+  font-size: 10px;
+  font-weight: 800;
+}
 .mods-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-height: 590px;
-  overflow: auto;
   border-top: 1px solid #292e26;
-  border-bottom: 1px solid #292e26;
-  scrollbar-color: #424b3c transparent;
 }
 .mod-row {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  min-height: 72px;
-  align-items: center;
+  min-height: 104px;
+  align-items: start;
   gap: 12px;
-  padding: 12px 15px;
+  padding: 16px;
   border-bottom: 1px solid #242921;
 }
 .mod-row:nth-child(odd) {
@@ -670,32 +763,41 @@ a {
 }
 .mod-icon {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
   place-items: center;
   border: 1px solid #35402d;
-  border-radius: 9px;
+  border-radius: 11px;
   color: #b9df62;
   background: #192016;
+}
+.mod-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .mod-row > div {
   display: grid;
   min-width: 0;
-  gap: 4px;
+  gap: 6px;
 }
 .mod-row strong {
   overflow: hidden;
-  font-size: 13px;
+  color: #e1e6da;
+  font-size: 14px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.mod-row > div span {
+.mod-row > div p {
+  display: -webkit-box;
   overflow: hidden;
-  color: #697064;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin: 0;
+  color: #828a7b;
+  font-size: 11px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 .mod-row > a {
   display: grid;
@@ -711,6 +813,7 @@ a {
   color: #c0e761;
 }
 .bundled-label {
+  align-self: center;
   color: #737b6d;
   font-size: 9px;
   font-weight: 800;
@@ -1087,6 +1190,28 @@ a {
   }
   .quick-grid {
     margin-bottom: 78px;
+  }
+  .mods-filters {
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .mods-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .mods-filters button {
+    flex: 0 0 auto;
+  }
+  .mod-group-toggle {
+    padding: 16px;
+  }
+  .mod-group-toggle p {
+    display: none;
+  }
+  .mod-row {
+    min-height: 96px;
+    padding: 14px;
   }
   .section-heading {
     display: grid;
