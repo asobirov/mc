@@ -12,7 +12,10 @@ import { App } from "./app";
 
 import "./styles.css";
 
-const rootRoute = createRootRoute({ component: () => <Outlet /> });
+const rootRoute = createRootRoute({
+  component: () => <Outlet />,
+  notFoundComponent: App,
+});
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",

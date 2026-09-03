@@ -1,13 +1,17 @@
+import type { MouseEvent } from "react";
 import { useEffect, useState } from "react";
 import {
   Box,
+  Boxes,
   Check,
   ChevronRight,
+  CircleUserRound,
   Copy,
   Crown,
   Download,
   ExternalLink,
   Gamepad2,
+  House,
   Link2,
   LogOut,
   MessageCircle,
@@ -19,15 +23,25 @@ import {
   ShieldCheck,
   Sparkles,
   UserCheck,
+  UsersRound,
   UserX,
   Utensils,
 } from "lucide-react";
 
 import type { ModCatalogResponse, ModCategory } from "./lib/mod-catalog";
+import type { PortalPage } from "./lib/portal-navigation";
 import { authClient } from "./lib/auth-client";
 import { MOD_CATEGORIES } from "./lib/mod-catalog";
+import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
+const PAGE_TITLES: Record<PortalPage, string> = {
+  account: "Account",
+  admin: "Admin",
+  home: "Home",
+  mods: "Mods",
+  setup: "Setup",
+};
 
 const launchers = {
   prism: {
@@ -729,6 +743,7 @@ function AccessAdmin({ currentUserId }: { currentUserId: string }) {
 
 function Portal({ user }: { user: AccessUser }) {
   const [copied, setCopied] = useState(false);
+  const [pathname, setPathname] = useState(() => window.location.pathname);
   const [launcherId, setLauncherId] = useState<LauncherId>(() => {
     const saved = window.localStorage.getItem("friends-mc-launcher");
     return saved && saved in launchers ? (saved as LauncherId) : "prism";
@@ -736,6 +751,71 @@ function Portal({ user }: { user: AccessUser }) {
   const launcher = launchers[launcherId];
   const fallbackName = user.email.split("@")[0] ?? "Friend";
   const displayName = user.name.trim().length > 0 ? user.name : fallbackName;
+  const isAdmin = user.role === "admin";
+  const page = portalPageFromPath(pathname, isAdmin);
+  const navigationItems = [
+    {
+      href: PORTAL_PATHS.home,
+      icon: <House aria-hidden="true" />,
+      label: "Home",
+      page: "home" as PortalPage,
+    },
+    {
+      href: PORTAL_PATHS.setup,
+      icon: <Gamepad2 aria-hidden="true" />,
+      label: "Setup",
+      page: "setup" as PortalPage,
+    },
+    {
+      href: PORTAL_PATHS.mods,
+      icon: <Boxes aria-hidden="true" />,
+      label: "Mods",
+      page: "mods" as PortalPage,
+    },
+    {
+      href: PORTAL_PATHS.account,
+      icon: <CircleUserRound aria-hidden="true" />,
+      label: "Account",
+      page: "account" as PortalPage,
+    },
+    ...(isAdmin
+      ? [
+          {
+            href: PORTAL_PATHS.admin,
+            icon: <UsersRound aria-hidden="true" />,
+            label: "Admin",
+            page: "admin" as PortalPage,
+          },
+        ]
+      : []),
+  ];
+
+  useEffect(() => {
+    const handlePopState = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    document.title = `${PAGE_TITLES[page]} · Friends MC`;
+  }, [page]);
+
+  function navigate(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    window.history.pushState({}, "", href);
+    setPathname(href);
+    window.scrollTo({ behavior: "smooth", top: 0 });
+  }
 
   async function copyAddress() {
     await navigator.clipboard.writeText(SERVER_ADDRESS);
@@ -751,12 +831,29 @@ function Portal({ user }: { user: AccessUser }) {
   return (
     <main className="portal-shell">
       <header className="topbar">
-        <a className="wordmark" href="/">
+        <a
+          className="wordmark"
+          href={PORTAL_PATHS.home}
+          onClick={(event) => navigate(event, PORTAL_PATHS.home)}
+        >
           <span className="wordmark-icon">
             <Pickaxe size={20} />
           </span>
           Friends MC
         </a>
+        <nav aria-label="Main navigation" className="desktop-nav">
+          {navigationItems.map((item) => (
+            <a
+              aria-current={page === item.page ? "page" : undefined}
+              className={page === item.page ? "active" : undefined}
+              href={item.href}
+              key={item.page}
+              onClick={(event) => navigate(event, item.href)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
         <div className="account">
           <div>
             <strong>{displayName}</strong>
@@ -773,149 +870,246 @@ function Portal({ user }: { user: AccessUser }) {
         </div>
       </header>
 
-      <section className="hero">
-        <div className="hero-copy">
-          <div className="status-pill">
-            <span /> Server online
-          </div>
-          <p className="eyebrow">Aeronautics · Minecraft 1.21.1</p>
-          <h1>
-            Build strange things.
-            <br />
-            Bring snacks.
-          </h1>
-          <p>
-            One download gets you the exact mods and settings the server
-            expects. {launcher.name} handles the rest.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-button" href="/api/modpack">
-              <Download size={19} /> Download modpack
-            </a>
-            <button
-              className="server-button"
-              onClick={() => void copyAddress()}
-              type="button"
-            >
-              <span>{SERVER_ADDRESS}</span>
-              {copied ? <Check size={18} /> : <Copy size={18} />}
-            </button>
-          </div>
-        </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="block block-one" />
-          <div className="block block-two" />
-          <div className="block block-three" />
-          <Sparkles className="spark spark-one" />
-          <Sparkles className="spark spark-two" />
-        </div>
-      </section>
-
-      <section className="quick-grid">
-        <article>
-          <Mic2 />
-          <div>
-            <strong>Proximity voice</strong>
-            <span>Press V in-game to configure</span>
-          </div>
-        </article>
-        <article>
-          <Utensils />
-          <div>
-            <strong>Cooking expanded</strong>
-            <span>Farmer&apos;s Delight and friends</span>
-          </div>
-        </article>
-        <article>
-          <Gamepad2 />
-          <div>
-            <strong>Controller friendly</strong>
-            <span>Included in the client pack</span>
-          </div>
-        </article>
-      </section>
-
-      <section className="setup-section">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">Three short steps</p>
-            <h2>Get into the server</h2>
-          </div>
-          <div className="launcher-controls">
-            <label className="launcher-picker">
-              <span>Your launcher</span>
-              <select
-                onChange={(event) =>
-                  selectLauncher(event.target.value as LauncherId)
-                }
-                value={launcherId}
-              >
-                {Object.entries(launchers).map(([id, option]) => (
-                  <option key={id} value={id}>
-                    {option.optionLabel}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <span className="setup-time">Usually 5–10 minutes</span>
-          </div>
-        </div>
-        <ol className="steps">
-          <li>
-            <span className="step-number">01</span>
-            <div>
-              <h3>Install {launcher.name}</h3>
-              <p>{launcher.install}</p>
-            </div>
-            <a href={launcher.downloadUrl} rel="noreferrer" target="_blank">
-              {launcher.downloadLabel} <ChevronRight />
-            </a>
-          </li>
-          <li>
-            <span className="step-number">02</span>
-            <div>
-              <h3>Import the modpack</h3>
-              <p>{launcher.import}</p>
-            </div>
-            <a href="/api/modpack">
-              Download <Download />
-            </a>
-          </li>
-          <li>
-            <span className="step-number">03</span>
-            <div>
-              <h3>Launch and join</h3>
+      {page === "home" ? (
+        <>
+          <section className="hero">
+            <div className="hero-copy">
+              <div className="status-pill">
+                <span /> Server online
+              </div>
+              <p className="eyebrow">Aeronautics · Minecraft 1.21.1</p>
+              <h1>
+                Build strange things.
+                <br />
+                Bring snacks.
+              </h1>
               <p>
-                {launcher.launch} The multiplayer server is already saved in the
-                pack.
+                One download gets you the exact mods and settings the server
+                expects. {launcher.name} handles the rest.
+              </p>
+              <div className="hero-actions">
+                <a className="primary-button" href="/api/modpack">
+                  <Download size={19} /> Download modpack
+                </a>
+                <button
+                  className="server-button"
+                  onClick={() => void copyAddress()}
+                  type="button"
+                >
+                  <span>{SERVER_ADDRESS}</span>
+                  {copied ? <Check size={18} /> : <Copy size={18} />}
+                </button>
+              </div>
+            </div>
+            <div className="hero-art" aria-hidden="true">
+              <div className="block block-one" />
+              <div className="block block-two" />
+              <div className="block block-three" />
+              <Sparkles className="spark spark-one" />
+              <Sparkles className="spark spark-two" />
+            </div>
+          </section>
+
+          <section className="quick-grid">
+            <article>
+              <Mic2 />
+              <div>
+                <strong>Proximity voice</strong>
+                <span>Press V in-game to configure</span>
+              </div>
+            </article>
+            <article>
+              <Utensils />
+              <div>
+                <strong>Cooking expanded</strong>
+                <span>Farmer&apos;s Delight and friends</span>
+              </div>
+            </article>
+            <article>
+              <Gamepad2 />
+              <div>
+                <strong>Controller friendly</strong>
+                <span>Included in the client pack</span>
+              </div>
+            </article>
+          </section>
+
+          <section className="portal-links">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">Your portal</p>
+                <h2>Everything in its place</h2>
+              </div>
+            </div>
+            <div className="portal-link-grid">
+              {navigationItems
+                .filter((item) => item.page !== "home")
+                .map((item) => (
+                  <a
+                    href={item.href}
+                    key={item.page}
+                    onClick={(event) => navigate(event, item.href)}
+                  >
+                    <span>{item.icon}</span>
+                    <div>
+                      <strong>{item.label}</strong>
+                      <p>
+                        {
+                          {
+                            account:
+                              "Connect accounts and manage your identity.",
+                            admin: "Approve friends and manage server access.",
+                            home: "See the server overview and quick links.",
+                            mods: "Browse the full modpack by category.",
+                            setup: "Install the pack and join in three steps.",
+                          }[item.page]
+                        }
+                      </p>
+                    </div>
+                    <ChevronRight aria-hidden="true" />
+                  </a>
+                ))}
+            </div>
+          </section>
+
+          <section className="chat-card">
+            <div className="chat-icon">
+              <MessageCircle />
+            </div>
+            <div>
+              <p className="eyebrow">Coming next</p>
+              <h2>Server chat, wherever you are</h2>
+              <p>
+                Discord integration will keep game chat and the group channel in
+                sync.
               </p>
             </div>
-            <button onClick={() => void copyAddress()} type="button">
-              Copy address <Copy />
-            </button>
-          </li>
-        </ol>
-      </section>
-
-      <ModsCatalog />
-
-      <ConnectedAccounts />
-
-      <section className="chat-card">
-        <div className="chat-icon">
-          <MessageCircle />
-        </div>
-        <div>
-          <p className="eyebrow">Coming next</p>
-          <h2>Server chat, wherever you are</h2>
-          <p>
-            Discord integration will keep game chat and the group channel in
-            sync.
+          </section>
+        </>
+      ) : (
+        <section className="page-intro">
+          <p className="eyebrow">
+            {
+              {
+                account: "Your identity",
+                admin: "Owner controls",
+                mods: "Inside the pack",
+                setup: "Player guide",
+              }[page]
+            }
           </p>
-        </div>
-      </section>
+          <h1>
+            {
+              {
+                account: "Connected accounts",
+                admin: "Manage access",
+                mods: "Browse the modpack",
+                setup: "Join without the guesswork",
+              }[page]
+            }
+          </h1>
+          <p>
+            {
+              {
+                account:
+                  "Link the services you use and keep your Minecraft identity in one place.",
+                admin:
+                  "Approve new friends, block unknown accounts, and manage trusted admins.",
+                mods: "Search every included mod and see what it adds before you play.",
+                setup:
+                  "Pick your launcher, import one file, and use the settings that work well with this server.",
+              }[page]
+            }
+          </p>
+        </section>
+      )}
 
-      {user.role === "admin" ? <AccessAdmin currentUserId={user.id} /> : null}
+      {page === "setup" ? (
+        <section className="setup-section">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Three short steps</p>
+              <h2>Get into the server</h2>
+            </div>
+            <div className="launcher-controls">
+              <label className="launcher-picker">
+                <span>Your launcher</span>
+                <select
+                  onChange={(event) =>
+                    selectLauncher(event.target.value as LauncherId)
+                  }
+                  value={launcherId}
+                >
+                  {Object.entries(launchers).map(([id, option]) => (
+                    <option key={id} value={id}>
+                      {option.optionLabel}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <span className="setup-time">Usually 5–10 minutes</span>
+            </div>
+          </div>
+          <ol className="steps">
+            <li>
+              <span className="step-number">01</span>
+              <div>
+                <h3>Install {launcher.name}</h3>
+                <p>{launcher.install}</p>
+              </div>
+              <a href={launcher.downloadUrl} rel="noreferrer" target="_blank">
+                {launcher.downloadLabel} <ChevronRight />
+              </a>
+            </li>
+            <li>
+              <span className="step-number">02</span>
+              <div>
+                <h3>Import the modpack</h3>
+                <p>{launcher.import}</p>
+              </div>
+              <a href="/api/modpack">
+                Download <Download />
+              </a>
+            </li>
+            <li>
+              <span className="step-number">03</span>
+              <div>
+                <h3>Launch and join</h3>
+                <p>
+                  {launcher.launch} The multiplayer server is already saved in
+                  the pack.
+                </p>
+              </div>
+              <button onClick={() => void copyAddress()} type="button">
+                Copy address <Copy />
+              </button>
+            </li>
+          </ol>
+        </section>
+      ) : null}
+
+      {page === "mods" ? <ModsCatalog /> : null}
+
+      {page === "account" ? <ConnectedAccounts /> : null}
+
+      {page === "admin" && isAdmin ? (
+        <AccessAdmin currentUserId={user.id} />
+      ) : null}
+
+      <nav aria-label="Mobile navigation" className="mobile-nav">
+        {navigationItems.map((item) => (
+          <a
+            aria-current={page === item.page ? "page" : undefined}
+            className={page === item.page ? "active" : undefined}
+            href={item.href}
+            key={item.page}
+            onClick={(event) => navigate(event, item.href)}
+          >
+            {item.icon}
+            <span>{item.label}</span>
+          </a>
+        ))}
+      </nav>
 
       <footer>
         <span>Friends MC</span>
