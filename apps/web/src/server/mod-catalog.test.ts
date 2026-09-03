@@ -46,17 +46,28 @@ describe("mod catalog", () => {
     const catalog = readModCatalog(
       resolve(
         process.cwd(),
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.0.1.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.1.mrpack",
       ),
     );
 
     expect(catalog.minecraft).toBe("1.21.1");
-    expect(catalog.version).toBe("1.0.1");
-    expect(catalog.mods.length).toBeGreaterThan(190);
+    expect(catalog.version).toBe("1.1.1");
+    expect(catalog.mods.length).toBe(199);
     expect(catalog.mods.some((mod) => mod.name === "Farmers Delight")).toBe(
       true,
     );
     expect(catalog.mods.some((mod) => mod.name === "Voicechat")).toBe(true);
+    expect(catalog.mods.some((mod) => mod.name === "The Twilight Forest")).toBe(
+      true,
+    );
+    expect(
+      catalog.mods.some((mod) => mod.name === "Twilight Flavors & Delight"),
+    ).toBe(true);
+    expect(
+      catalog.mods.some(
+        (mod) => mod.name === "TwilightForest Thread Safety Addon",
+      ),
+    ).toBe(true);
     const refurbishedFurniture = catalog.mods.find((mod) =>
       mod.fileName.startsWith("refurbished_furniture-"),
     );
@@ -68,7 +79,7 @@ describe("mod catalog", () => {
     const catalog = readModCatalog(
       resolve(
         process.cwd(),
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.0.1.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.1.mrpack",
       ),
     );
     const farmersDelight = catalog.mods.find(

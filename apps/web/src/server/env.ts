@@ -23,10 +23,23 @@ const schema = z
       (value) => (value === "" ? undefined : value),
       z.string().min(1).optional(),
     ),
+    MINECRAFT_LOG_PATH: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().min(1).optional(),
+    ),
+    MINECRAFT_RCON_HOST: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().min(1).optional(),
+    ),
+    MINECRAFT_RCON_PASSWORD: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().min(1).optional(),
+    ),
+    MINECRAFT_RCON_PORT: z.coerce.number().int().positive().default(25575),
     MODPACK_PATH: z
       .string()
       .default(
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.0.1.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.1.mrpack",
       ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
@@ -55,6 +68,17 @@ const schema = z
         message:
           "Microsoft client ID and secret must either both be set or both be omitted",
         path: ["MICROSOFT_CLIENT_ID"],
+      });
+    }
+    if (
+      Boolean(values.MINECRAFT_RCON_HOST) !==
+      Boolean(values.MINECRAFT_RCON_PASSWORD)
+    ) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        message:
+          "Minecraft RCON host and password must either both be set or both be omitted",
+        path: ["MINECRAFT_RCON_HOST"],
       });
     }
   });

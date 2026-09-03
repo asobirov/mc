@@ -13,7 +13,7 @@ friends server.
 ## Start
 
 1. Copy `.env.example` to `.env` and replace the RCON secret.
-2. Pull Git LFS content so `pack/Friends-MC-1.0.1.mrpack` is present, then
+2. Pull Git LFS content so `pack/Friends-MC-1.1.1.mrpack` is present, then
    verify its SHA-256 against `pack/README.md`.
 3. Set `HOST_UID` and `HOST_GID` to the host account's IDs, then create writable
    `data/` and `backups/` directories owned by that account.
@@ -56,3 +56,13 @@ The community `.mrpack` incorrectly marks client rendering/UI mods as required
 on the server. The Compose file excludes those. It also excludes YUNG's Better
 End Island because that mod and BetterEnd conflict during End generation in
 the original pack.
+
+Friends MC `1.1.1` adds The Twilight Forest `4.8.3345`, Twilight Flavors &
+Delight `3.2.2`, and the TwilightForest Thread Safety Addon `0.1.3`. The
+thread-safety add-on is maintained by C2ME's author and keeps Twilight
+generation compatible with the pack's concurrent world-generation paths.
+
+Reliquified Twilight Forest was evaluated but intentionally left out: it needs
+the separate original Relics mod, while this pack already includes the
+unrelated Relics (RPG Series). Installing both would add a second overlapping
+relic system solely to support one integration add-on.

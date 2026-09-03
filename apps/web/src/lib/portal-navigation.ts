@@ -1,8 +1,17 @@
-export type PortalPage = "account" | "admin" | "home" | "mods" | "setup";
+export type PortalPage =
+  | "account"
+  | "admin"
+  | "chat"
+  | "faq"
+  | "home"
+  | "mods"
+  | "setup";
 
 export const PORTAL_PATHS: Record<PortalPage, string> = {
   account: "/account",
   admin: "/admin",
+  chat: "/chat",
+  faq: "/faq",
   home: "/",
   mods: "/mods",
   setup: "/setup",
@@ -16,6 +25,8 @@ export function portalPageFromPath(
 
   if (normalized === PORTAL_PATHS.setup) return "setup";
   if (normalized === PORTAL_PATHS.mods) return "mods";
+  if (normalized === PORTAL_PATHS.chat) return "chat";
+  if (normalized === PORTAL_PATHS.faq) return "faq";
   if (normalized === PORTAL_PATHS.account) return "account";
   if (normalized === PORTAL_PATHS.admin && isAdmin) return "admin";
   return "home";

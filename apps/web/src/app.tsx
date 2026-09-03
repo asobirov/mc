@@ -1,10 +1,11 @@
-import type { MouseEvent } from "react";
-import { useEffect, useState } from "react";
+import type { FormEvent, MouseEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Box,
   Boxes,
   Check,
   ChevronRight,
+  CircleHelp,
   CircleUserRound,
   Copy,
   Crown,
@@ -19,6 +20,7 @@ import {
   Pickaxe,
   RefreshCw,
   Search,
+  Send,
   Shield,
   ShieldCheck,
   Sparkles,
@@ -28,6 +30,7 @@ import {
   Utensils,
 } from "lucide-react";
 
+import type { ChatMessage, ChatResponse } from "./lib/chat";
 import type { ModCatalogResponse, ModCategory } from "./lib/mod-catalog";
 import type { PortalPage } from "./lib/portal-navigation";
 import { authClient } from "./lib/auth-client";
@@ -38,6 +41,8 @@ const SERVER_ADDRESS = "mc.xpr.im";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
+  chat: "Chat",
+  faq: "FAQ",
   home: "Home",
   mods: "Mods",
   setup: "Setup",
@@ -54,7 +59,7 @@ const launchers = {
     import:
       "Choose Add Instance → Import, then select the downloaded Friends MC .mrpack file.",
     launch:
-      "Open the Friends MC instance settings, give it 6–8 GB of memory, then launch.",
+      "Open the Friends MC instance settings, give it 8–10 GB of memory, then launch.",
   },
   modrinth: {
     name: "Modrinth App",
@@ -66,7 +71,7 @@ const launchers = {
     import:
       "Click + to create an instance, choose From file / Import, then select the Friends MC .mrpack file.",
     launch:
-      "Open the imported Friends MC profile, set its memory to 6–8 GB, then press Play.",
+      "Open the imported Friends MC profile, set its memory to 8–10 GB, then press Play.",
   },
   sklauncher: {
     name: "SKlauncher 4",
@@ -78,7 +83,7 @@ const launchers = {
     import:
       "Drag the Friends MC .mrpack onto SKlauncher, or choose Import Modpack and select the file.",
     launch:
-      "Open the imported Friends MC instance, set maximum memory to 6–8 GB, then launch.",
+      "Open the imported Friends MC instance, set maximum memory to 8–10 GB, then launch.",
   },
 } as const;
 
@@ -585,6 +590,226 @@ function ModsCatalog() {
   );
 }
 
+function ChatRoom() {
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [body, setBody] = useState("");
+  const [bridgeEnabled, setBridgeEnabled] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const lastId = useRef(0);
+  const scrollArea = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function load() {
+      const response = await fetch(`/api/chat?after=${lastId.current}`, {
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("Could not load chat");
+      const data = (await response.json()) as ChatResponse;
+      if (!active) return;
+      setBridgeEnabled(data.bridgeEnabled);
+      if (data.messages.length > 0) {
+        lastId.current = data.messages.at(-1)?.id ?? lastId.current;
+        setMessages((current) => {
+          const byId = new Map(current.map((message) => [message.id, message]));
+          for (const message of data.messages) byId.set(message.id, message);
+          return [...byId.values()].sort((left, right) => left.id - right.id);
+        });
+      }
+      setError(null);
+    }
+
+    void load().catch(() => setError("Chat is temporarily unavailable"));
+    const timer = window.setInterval(
+      () => void load().catch(() => setError("Chat is reconnecting…")),
+      3_000,
+    );
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    scrollArea.current?.scrollTo({
+      behavior: messages.length > 1 ? "smooth" : "auto",
+      top: scrollArea.current.scrollHeight,
+    });
+  }, [messages]);
+
+  async function sendMessage(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const messageBody = body.trim();
+    if (!messageBody || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/chat", {
+        body: JSON.stringify({ body: messageBody }),
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+      });
+      const data = (await response.json()) as {
+        error?: string;
+        message?: ChatMessage;
+        relayError?: string;
+      };
+      if (!response.ok || !data.message) {
+        throw new Error(data.error ?? "Could not send message");
+      }
+      const sentMessage = data.message;
+      lastId.current = Math.max(lastId.current, sentMessage.id);
+      setMessages((current) => [...current, sentMessage]);
+      setBody("");
+      if (data.relayError) setError(data.relayError);
+    } catch (reason) {
+      setError(
+        reason instanceof Error ? reason.message : "Could not send message",
+      );
+    } finally {
+      setSending(false);
+    }
+  }
+
+  return (
+    <section className="chat-section">
+      <div className="chat-panel">
+        <header>
+          <div>
+            <span className={`bridge-dot${bridgeEnabled ? " online" : ""}`} />
+            {bridgeEnabled ? "Connected to game chat" : "Portal chat"}
+          </div>
+          <span>Approved members only</span>
+        </header>
+        <div aria-live="polite" className="chat-messages" ref={scrollArea}>
+          {messages.length === 0 ? (
+            <div className="chat-empty">
+              <MessageCircle aria-hidden="true" />
+              <strong>No messages yet</strong>
+              <span>Say hello here or from inside Minecraft.</span>
+            </div>
+          ) : (
+            messages.map((message) => (
+              <article
+                className={`chat-message ${message.source}`}
+                key={message.id}
+              >
+                <div>
+                  <strong>{message.authorName}</strong>
+                  <span>{message.source === "game" ? "In game" : "Web"}</span>
+                  <time dateTime={new Date(message.createdAt).toISOString()}>
+                    {new Date(message.createdAt).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </time>
+                </div>
+                <p>{message.body}</p>
+              </article>
+            ))
+          )}
+        </div>
+        <form
+          className="chat-composer"
+          onSubmit={(event) => void sendMessage(event)}
+        >
+          <label>
+            <span className="sr-only">Message server chat</span>
+            <input
+              maxLength={240}
+              onChange={(event) => setBody(event.target.value)}
+              placeholder="Message friends in game…"
+              value={body}
+            />
+          </label>
+          <button disabled={sending || body.trim().length === 0} type="submit">
+            <Send aria-hidden="true" size={17} />
+            <span>{sending ? "Sending…" : "Send"}</span>
+          </button>
+        </form>
+        {error ? <p className="chat-error">{error}</p> : null}
+      </div>
+    </section>
+  );
+}
+
+function FrequentlyAskedQuestions({
+  launcher,
+  launcherId,
+  selectLauncher,
+}: {
+  launcher: (typeof launchers)[LauncherId];
+  launcherId: LauncherId;
+  selectLauncher: (id: LauncherId) => void;
+}) {
+  return (
+    <section className="faq-section">
+      <article className="faq-item">
+        <div className="faq-question">
+          <span>01</span>
+          <div>
+            <p className="eyebrow">Client updates</p>
+            <h2>How do I upgrade the modpack?</h2>
+          </div>
+        </div>
+        <div className="faq-answer">
+          <label className="launcher-picker">
+            <span>Your launcher</span>
+            <select
+              onChange={(event) =>
+                selectLauncher(event.target.value as LauncherId)
+              }
+              value={launcherId}
+            >
+              {Object.entries(launchers).map(([id, option]) => (
+                <option key={id} value={id}>
+                  {option.optionLabel}
+                </option>
+              ))}
+            </select>
+          </label>
+          <ol>
+            <li>
+              <strong>Download the newest pack</strong>
+              <p>
+                Use the button below so your client matches the live server.
+              </p>
+            </li>
+            <li>
+              <strong>Import it as a new Friends MC instance</strong>
+              <p>
+                In {launcher.name}, choose Import / From file and select the new
+                <code> .mrpack</code>. A fresh instance prevents removed mods
+                from lingering and causing a mismatch.
+              </p>
+            </li>
+            <li>
+              <strong>Set 8–10 GB of memory, then launch</strong>
+              <p>
+                Sign in with the licensed Microsoft account you normally use.
+                The server address is already included.
+              </p>
+            </li>
+            <li>
+              <strong>Delete the old instance after the new one works</strong>
+              <p>
+                Screenshots and personal map data can be copied first. Do not
+                copy the old <code>mods</code> or <code>config</code> folders
+                over.
+              </p>
+            </li>
+          </ol>
+          <a className="primary-button" href="/api/modpack">
+            <Download size={18} /> Download latest pack
+          </a>
+        </div>
+      </article>
+    </section>
+  );
+}
+
 function AccessAdmin({ currentUserId }: { currentUserId: string }) {
   const [users, setUsers] = useState<AccessUser[]>([]);
   const [loading, setLoading] = useState(true);
@@ -773,6 +998,18 @@ function Portal({ user }: { user: AccessUser }) {
       page: "mods" as PortalPage,
     },
     {
+      href: PORTAL_PATHS.chat,
+      icon: <MessageCircle aria-hidden="true" />,
+      label: "Chat",
+      page: "chat" as PortalPage,
+    },
+    {
+      href: PORTAL_PATHS.faq,
+      icon: <CircleHelp aria-hidden="true" />,
+      label: "FAQ",
+      page: "faq" as PortalPage,
+    },
+    {
       href: PORTAL_PATHS.account,
       icon: <CircleUserRound aria-hidden="true" />,
       label: "Account",
@@ -959,6 +1196,8 @@ function Portal({ user }: { user: AccessUser }) {
                             account:
                               "Connect accounts and manage your identity.",
                             admin: "Approve friends and manage server access.",
+                            chat: "Talk with friends here and inside the game.",
+                            faq: "Quick answers for installs and pack updates.",
                             home: "See the server overview and quick links.",
                             mods: "Browse the full modpack by category.",
                             setup: "Install the pack and join in three steps.",
@@ -972,19 +1211,24 @@ function Portal({ user }: { user: AccessUser }) {
             </div>
           </section>
 
-          <section className="chat-card">
+          <a
+            className="chat-card"
+            href={PORTAL_PATHS.chat}
+            onClick={(event) => navigate(event, PORTAL_PATHS.chat)}
+          >
             <div className="chat-icon">
               <MessageCircle />
             </div>
             <div>
-              <p className="eyebrow">Coming next</p>
+              <p className="eyebrow">Live now</p>
               <h2>Server chat, wherever you are</h2>
               <p>
-                Discord integration will keep game chat and the group channel in
-                sync.
+                Messages sent here appear in Minecraft, and in-game chat appears
+                here.
               </p>
             </div>
-          </section>
+            <ChevronRight aria-hidden="true" />
+          </a>
         </>
       ) : (
         <section className="page-intro">
@@ -993,6 +1237,8 @@ function Portal({ user }: { user: AccessUser }) {
               {
                 account: "Your identity",
                 admin: "Owner controls",
+                chat: "Members only",
+                faq: "Quick answers",
                 mods: "Inside the pack",
                 setup: "Player guide",
               }[page]
@@ -1003,6 +1249,8 @@ function Portal({ user }: { user: AccessUser }) {
               {
                 account: "Connected accounts",
                 admin: "Manage access",
+                chat: "Server chat, anywhere",
+                faq: "Frequently asked questions",
                 mods: "Browse the modpack",
                 setup: "Join without the guesswork",
               }[page]
@@ -1015,6 +1263,8 @@ function Portal({ user }: { user: AccessUser }) {
                   "Link the services you use and keep your Minecraft identity in one place.",
                 admin:
                   "Approve new friends, block unknown accounts, and manage trusted admins.",
+                chat: "Talk with people on the portal and players currently inside Minecraft.",
+                faq: "Short, practical instructions for keeping your client ready to join.",
                 mods: "Search every included mod and see what it adds before you play.",
                 setup:
                   "Pick your launcher, import one file, and use the settings that work well with this server.",
@@ -1089,6 +1339,16 @@ function Portal({ user }: { user: AccessUser }) {
       ) : null}
 
       {page === "mods" ? <ModsCatalog /> : null}
+
+      {page === "chat" ? <ChatRoom /> : null}
+
+      {page === "faq" ? (
+        <FrequentlyAskedQuestions
+          launcher={launcher}
+          launcherId={launcherId}
+          selectLauncher={selectLauncher}
+        />
+      ) : null}
 
       {page === "account" ? <ConnectedAccounts /> : null}
 

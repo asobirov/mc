@@ -17,12 +17,24 @@ import {
   updateAccessUser,
 } from "./access-store";
 import { auth } from "./auth";
+import { listChatMessages, recordWebMessage } from "./chat-store";
 import { env } from "./env";
+import {
+  minecraftTellraw,
+  startMinecraftChatIngestion,
+} from "./minecraft-chat";
 import { enrichModCatalog, readModCatalog } from "./mod-catalog";
+import { sendRconCommand } from "./rcon";
 
 const app = new Hono();
 const accessActionSchema = z.object({ action: z.enum(accessActions) });
+const chatMessageSchema = z.object({
+  body: z.string().trim().min(1).max(240),
+});
 const trustedOrigin = new URL(env.BETTER_AUTH_URL).origin;
+const chatBridgeEnabled = Boolean(
+  env.MINECRAFT_RCON_HOST && env.MINECRAFT_RCON_PASSWORD,
+);
 
 async function authenticatedUser(headers: Headers) {
   const session = await auth.api.getSession({ headers });
@@ -146,12 +158,78 @@ app.get("/api/mods", async (c) => {
   }
 });
 
+app.get("/api/chat", async (c) => {
+  const user = await authenticatedUser(c.req.raw.headers);
+  if (!user || !canAccessPortal(user)) {
+    return c.json({ error: "Unauthorized" }, 401);
+  }
+
+  const after = z.coerce
+    .number()
+    .int()
+    .nonnegative()
+    .catch(0)
+    .parse(c.req.query("after"));
+  return c.json({
+    bridgeEnabled: chatBridgeEnabled,
+    messages: listChatMessages(after),
+  });
+});
+
+app.post("/api/chat", async (c) => {
+  if (c.req.header("Origin") !== trustedOrigin) {
+    return c.json({ error: "Invalid origin" }, 403);
+  }
+
+  const user = await authenticatedUser(c.req.raw.headers);
+  if (!user || !canAccessPortal(user)) {
+    return c.json({ error: "Unauthorized" }, 401);
+  }
+  const parsed = chatMessageSchema.safeParse(
+    await c.req.json().catch(() => null),
+  );
+  if (!parsed.success) {
+    return c.json({ error: "Messages must be 1–240 characters" }, 400);
+  }
+
+  const preferredName = user.name.trim();
+  const authorName =
+    preferredName.length > 0
+      ? preferredName
+      : (user.email.split("@")[0] ?? "Friend");
+  const message = recordWebMessage({
+    authorId: user.id,
+    authorName,
+    body: parsed.data.body,
+  });
+  let relayError: string | undefined;
+
+  if (env.MINECRAFT_RCON_HOST && env.MINECRAFT_RCON_PASSWORD) {
+    try {
+      await sendRconCommand({
+        command: minecraftTellraw(authorName, message.body),
+        host: env.MINECRAFT_RCON_HOST,
+        password: env.MINECRAFT_RCON_PASSWORD,
+        port: env.MINECRAFT_RCON_PORT,
+      });
+    } catch (error) {
+      console.error("Could not relay web chat to Minecraft", error);
+      relayError = "Saved here, but the game relay is temporarily offline";
+    }
+  }
+
+  return c.json({ message, relayError }, 201);
+});
+
 app.use("/*", serveStatic({ root: "./dist" }));
 app.get("*", serveStatic({ path: "./dist/index.html" }));
 
 const { runMigrations } = await getMigrations(auth.options);
 await runMigrations();
 bootstrapAdminAccounts();
+if (env.MINECRAFT_LOG_PATH) {
+  startMinecraftChatIngestion(env.MINECRAFT_LOG_PATH);
+}
 
 serve({
   fetch: app.fetch,

@@ -61,6 +61,27 @@ type BundledMetadata = {
 
 const bundledMetadata: BundledMetadata[] = [
   {
+    category: "food",
+    description:
+      "Connects Twilight Forest with Farmer's Delight through 35 foods, four material knives, a faster maze stove, and useful exploration effects.",
+    matches: /^twilightdelight-/i,
+    name: "Twilight Flavors & Delight",
+  },
+  {
+    category: "performance",
+    description:
+      "Makes Twilight Forest generation thread-safe and faster when the pack's concurrent chunk engine is active.",
+    matches: /^tfthreadsafetyaddon-/i,
+    name: "TwilightForest Thread Safety Addon",
+  },
+  {
+    category: "exploration",
+    description:
+      "Adds a vast twilight dimension with a guided sequence of dungeons, bosses, creatures, treasure, and distinctive biomes.",
+    matches: /^twilightforest-/i,
+    name: "The Twilight Forest",
+  },
+  {
     category: "libraries",
     description: "Shared utilities used by several other mods in the pack.",
     matches: /^cupboard-/i,
@@ -362,10 +383,11 @@ export function readModCatalog(modpackPath: string): ModCatalog {
       continue;
     }
     const fileName = file.path.replace(/^mods\//, "");
-    const name = prettifyModName(fileName);
+    const bundled = bundledDetails(fileName);
+    const name = bundled?.name ?? prettifyModName(fileName);
     mods.set(fileName.toLowerCase(), {
-      category: categorizeMod({ fileName, name }),
-      description: fallbackDescription(name),
+      category: bundled?.category ?? categorizeMod({ fileName, name }),
+      description: bundled?.description ?? fallbackDescription(name),
       fileName,
       iconUrl: null,
       name,

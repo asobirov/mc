@@ -32,7 +32,7 @@ services:
       GID: "${HOST_GID:-1000}"
 
       MODPACK_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: /modpacks/Friends-MC-1.0.1.mrpack
+      MODRINTH_MODPACK: /modpacks/Friends-MC-1.1.1.mrpack
       MODRINTH_LOADER: neoforge
       MODRINTH_FORCE_SYNCHRONIZE: "true"
       VERSION: "1.21.1"
@@ -93,6 +93,9 @@ services:
       options:
         max-size: 10m
         max-file: "3"
+    networks:
+      - default
+      - portal_bridge
 
   backups:
     image: itzg/mc-backup:latest
@@ -152,3 +155,8 @@ services:
 
 volumes:
   offsite_state:
+
+networks:
+  portal_bridge:
+    external: true
+    name: friends_mc_bridge

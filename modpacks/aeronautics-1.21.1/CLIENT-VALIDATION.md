@@ -8,21 +8,34 @@ Last run: September 3, 2026
 - SKlauncher 3.2.18 with a licensed Microsoft/Minecraft account
 - Minecraft 1.21.1
 - NeoForge 21.1.248
-- Friends MC 1.0.1 with 196 mod JARs
-- 1 GB initial / 8 GB maximum Java heap
+- Friends MC 1.1.1 with 199 client mod JARs
+- 1 GB initial / 10 GB maximum Java heap
 - Server: `mc.xpr.im:25565`
 
 ## Passed
 
 - The client pack installs into an isolated launcher instance.
 - NeoForge and all required libraries download successfully.
-- The game reaches the main menu in about 55 seconds on the first launch.
+- The 1.1.1 client reaches the main menu in about 89 seconds on its first
+  launch with The Twilight Forest, Twilight Flavors & Delight, and the
+  TwilightForest Thread Safety Addon loaded.
+- A clean 1.1.1 server staging install reaches `Done` in about 14 seconds.
+- A forced Twilight Forest chunk loads successfully, and a 128-block Chunky
+  smoke run completes 289 chunks without a crash.
 - The client completes the full mod registry/config synchronization with the
   production server.
 - The licensed player authenticates and enters the production world.
+- The running JVM reports a 10 GiB maximum heap, and the client completes a
+  production login without the 8 GiB login-time out-of-memory failure.
 - Simple Voice Chat completes its UDP authentication and connection check on
   port 24454.
-- The server remains healthy during login and uses about 9.8 GiB of its 14 GiB
+- The production client changes from the Overworld to
+  `twilightforest:twilight_forest`, renders the dimension, and returns to the
+  original Overworld position without a disconnect or crash.
+- Portal chat works in both directions: an in-game player message appears on
+  the authenticated website, and a website message appears in the live
+  Minecraft chat overlay.
+- The server remains healthy during login and uses about 9.5 GiB of its 14 GiB
   maximum Java heap.
 
 ## Fixes made during validation
@@ -30,8 +43,10 @@ Last run: September 3, 2026
 - Changed the bundled `servers.dat` from gzip-compressed NBT to the uncompressed
   format Minecraft 1.21.1 reads. The Friends MC server now appears without
   requiring Direct Connect.
-- Configured the local SKlauncher instance to honor an 8 GB maximum heap instead
-  of its conservative 4 GB automatic limit.
+- Raised the recommended client maximum heap to 10 GB. An 8 GB client reached
+  the main menu but ran out of memory during one production login; SKlauncher's
+  per-installation memory setting must be used because it rewrites the standard
+  launcher profile file.
 - Added a bounded idle-only Chunky runner. It waits for zero players, pauses
   within 30 seconds of a join, and pauses again when its runtime window ends.
 - Changed local backups to archive an rsync-staged copy instead of the live data
@@ -60,7 +75,7 @@ Last run: September 3, 2026
 - Recheck join-time tick delay with several simultaneous players.
 - Review the 2,500-block idle Chunky run before deciding whether to expand the
   generated radius or enable ServerCore's dynamic limits.
-- Keep an eye on client heap use during long exploration sessions; 8 GB is the
-  recommended starting point for this pack.
+- Keep an eye on client heap use during long exploration sessions; 10 GB is the
+  recommended setting for machines with at least 16 GB of total RAM.
 - Periodically test both local and off-site restores, not only archive
   integrity.

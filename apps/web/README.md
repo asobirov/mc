@@ -29,6 +29,12 @@ Approved users can browse and search the complete mod catalog extracted from
 the mounted `.mrpack`. Both the catalog API and modpack download require portal
 access; the list is not included in the public sign-in bundle.
 
+The authenticated Chat page bridges portal messages into Minecraft with RCON
+and tails the game log so normal in-game chat appears back on the site. Chat is
+stored in the same persistent SQLite volume as authentication data. The web
+container only receives read-only access to Minecraft logs and reaches RCON on
+the private `friends_mc_bridge` Docker network; RCON is not published publicly.
+
 Signed-in users can explicitly connect additional providers from the portal.
 Google and Microsoft may also link automatically when their verified email
 matches an existing verified portal account, allowing either provider to be a
@@ -58,10 +64,15 @@ port 3001.
 
 ## Deployment
 
-Set `MODPACK_FILE` in `.env` to the absolute host path of the `.mrpack` file.
-Then, from this directory:
+Set `MODPACK_FILE` and `MINECRAFT_LOG_DIR` in `.env` to their absolute host
+paths. Set `MINECRAFT_RCON_HOST=friends-mc` and use the same
+`MINECRAFT_RCON_PASSWORD` as the Minecraft stack. Create the shared network
+once, then start both Compose projects:
 
 ```sh
+docker network inspect friends_mc_bridge >/dev/null 2>&1 || \
+  docker network create friends_mc_bridge
+docker compose -f ../../modpacks/aeronautics-1.21.1/docker-compose.yml up -d
 docker compose up -d --build
 ```
 
