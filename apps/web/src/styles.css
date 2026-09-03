@@ -114,6 +114,30 @@ a {
   letter-spacing: -0.055em;
   line-height: 0.95;
 }
+.access-state-card h1 {
+  max-width: 370px;
+  font-size: clamp(38px, 7vw, 52px);
+  line-height: 1;
+}
+.access-state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.secondary-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 20px;
+  border: 1px solid #343a30;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #e7e9df;
+  background: #191c17;
+  font-weight: 750;
+}
 .lede {
   margin: 21px 0 30px;
   color: #a4a99b;
@@ -548,6 +572,144 @@ a {
   color: #858d7e;
   line-height: 1.55;
 }
+.admin-section {
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto 110px;
+}
+.admin-heading {
+  align-items: center;
+}
+.refresh-button {
+  display: inline-flex;
+  min-height: 39px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 1px solid #30372b;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #aeb7a6;
+  background: #151814;
+  font-size: 12px;
+  font-weight: 700;
+}
+.admin-error,
+.admin-empty {
+  padding: 18px;
+  border: 1px solid #2c302a;
+  border-radius: 12px;
+  color: #9da496;
+  background: #121411;
+}
+.admin-error {
+  border-color: #753a38;
+  color: #ffc1bd;
+  background: #321b1a;
+}
+.people-list {
+  display: grid;
+  border-top: 1px solid #292e26;
+}
+.person-row {
+  display: grid;
+  grid-template-columns: auto minmax(170px, 1fr) auto minmax(260px, auto);
+  align-items: center;
+  gap: 15px;
+  min-height: 84px;
+  padding: 14px 0;
+  border-bottom: 1px solid #292e26;
+}
+.person-avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #39432f;
+  border-radius: 12px;
+  color: #c0e761;
+  background: #1b2117;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.person-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.person-copy {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+.person-copy div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.person-copy svg {
+  color: #c0e761;
+}
+.person-copy span {
+  overflow: hidden;
+  color: #73796e;
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+.access-chip {
+  padding: 6px 9px;
+  border: 1px solid #3b4138;
+  border-radius: 999px;
+  color: #9da496;
+  background: #181b16;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.access-chip.approved {
+  border-color: #3d5e2c;
+  color: #b9e563;
+  background: #182313;
+}
+.access-chip.blocked {
+  border-color: #693836;
+  color: #f0a5a0;
+  background: #291817;
+}
+.access-chip.pending {
+  border-color: #675d36;
+  color: #ead279;
+  background: #262214;
+}
+.person-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+}
+.person-actions button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid #35402d;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #bcd588;
+  background: #171c14;
+  font-size: 11px;
+  font-weight: 750;
+}
+.person-actions button.danger {
+  border-color: #563332;
+  color: #e9a09c;
+  background: #211615;
+}
+.person-actions button:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
 .portal-shell footer {
   display: flex;
   width: min(1040px, calc(100% - 48px));
@@ -588,6 +750,13 @@ a {
     grid-column: 2;
     justify-self: start;
   }
+  .person-row {
+    grid-template-columns: auto 1fr auto;
+  }
+  .person-actions {
+    grid-column: 2 / -1;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 540px) {
@@ -599,6 +768,7 @@ a {
   .quick-grid,
   .setup-section,
   .chat-card,
+  .admin-section,
   .portal-shell footer {
     width: min(100% - 28px, 1180px);
   }
@@ -630,6 +800,20 @@ a {
   .chat-card {
     grid-template-columns: 1fr;
     padding: 30px 24px;
+  }
+  .admin-heading {
+    display: flex;
+  }
+  .person-row {
+    grid-template-columns: auto 1fr;
+  }
+  .access-chip {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .person-actions {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
   }
   .portal-shell footer {
     display: grid;

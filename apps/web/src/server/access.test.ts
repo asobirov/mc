@@ -1,24 +1,80 @@
 import { describe, expect, it } from "vitest";
 
-import { isEmailAllowed, normalizeEmail, parseAllowedEmails } from "./access";
+import {
+  accessUpdateForAction,
+  canAccessPortal,
+  initialAccessForEmail,
+  normalizeAccessRecord,
+  normalizeEmail,
+  parseAdminEmails,
+} from "./access";
 
-describe("email access control", () => {
-  it("normalizes case and whitespace", () => {
-    expect(normalizeEmail("  Friend@Example.COM ")).toBe("friend@example.com");
+describe("access control", () => {
+  it("normalizes admin emails", () => {
+    expect(normalizeEmail("  Owner@Example.COM ")).toBe("owner@example.com");
+    expect([
+      ...parseAdminEmails("owner@example.com, ADMIN@example.com, "),
+    ]).toEqual(["owner@example.com", "admin@example.com"]);
   });
 
-  it("parses a comma-separated allowlist", () => {
-    const emails = parseAllowedEmails(
-      "owner@example.com, FRIEND@example.com, ",
-    );
+  it("bootstraps owners and puts everyone else in review", () => {
+    const admins = parseAdminEmails("owner@example.com");
 
-    expect([...emails]).toEqual(["owner@example.com", "friend@example.com"]);
+    expect(initialAccessForEmail("OWNER@example.com", admins)).toEqual({
+      accessStatus: "approved",
+      role: "admin",
+      verified: true,
+    });
+    expect(initialAccessForEmail("friend@example.com", admins)).toEqual({
+      accessStatus: "pending",
+      role: "member",
+      verified: false,
+    });
   });
 
-  it("only admits exact normalized addresses", () => {
-    const emails = parseAllowedEmails("friend@example.com");
+  it("treats legacy or malformed rows as untrusted", () => {
+    expect(normalizeAccessRecord({})).toEqual({
+      accessStatus: "pending",
+      role: "member",
+      verified: false,
+    });
+    expect(normalizeAccessRecord({ verified: 1 })).toEqual({
+      accessStatus: "pending",
+      role: "member",
+      verified: true,
+    });
+  });
 
-    expect(isEmailAllowed("FRIEND@example.com", emails)).toBe(true);
-    expect(isEmailAllowed("stranger@example.com", emails)).toBe(false);
+  it("requires both approval and owner verification", () => {
+    expect(
+      canAccessPortal({
+        accessStatus: "approved",
+        role: "member",
+        verified: true,
+      }),
+    ).toBe(true);
+    expect(
+      canAccessPortal({
+        accessStatus: "approved",
+        role: "member",
+        verified: false,
+      }),
+    ).toBe(false);
+  });
+
+  it("maps admin actions to minimal safe updates", () => {
+    expect(accessUpdateForAction("approve")).toEqual({
+      accessStatus: "approved",
+      verified: true,
+    });
+    expect(accessUpdateForAction("block")).toEqual({
+      accessStatus: "blocked",
+      verified: false,
+    });
+    expect(accessUpdateForAction("promote")).toEqual({
+      accessStatus: "approved",
+      role: "admin",
+      verified: true,
+    });
   });
 });

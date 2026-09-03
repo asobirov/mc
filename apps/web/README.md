@@ -6,10 +6,20 @@ and Zod. It stays on the Minecraft repo's existing pnpm/Turborepo toolchain.
 
 ## Authentication
 
-The app supports Google and Discord OAuth only. New accounts must have a
-provider-verified email present in `AUTH_ALLOWED_EMAILS`. Removing an email from
-that comma-separated list also blocks its existing sessions from protected app
-resources after the service is restarted.
+The app supports Google and Discord OAuth only. A new account must have a
+provider-verified email, then starts as `member / pending / unverified`. It can
+sign in but cannot see the portal or download the pack until an admin approves
+it. Admins can approve, block, reset, promote, and demote people from the access
+panel in the portal. Blocking takes effect on the next protected request even
+if the person still has a valid session cookie.
+
+`emailVerified` means Google or Discord owns the email assertion. The custom
+`verified` field separately means a server owner trusts the person. Roles are
+`admin` and `member`; access states are `pending`, `approved`, and `blocked`.
+
+`AUTH_ADMIN_EMAILS` is the break-glass owner list. Matching accounts are
+bootstrapped as approved, verified admins on every startup and cannot be
+blocked or demoted in the web UI.
 
 Sessions last 30 days, refresh daily while active, and are stored in the
 persistent SQLite volume. The cookie is HTTP-only, SameSite=Lax, and Secure in
@@ -21,7 +31,8 @@ OAuth callback URLs:
 - `https://mc.xpr.im/api/auth/callback/discord`
 
 Copy `.env.example` to `.env`, generate `BETTER_AUTH_SECRET` with
-`openssl rand -base64 48`, then fill in both providers and the invited emails.
+`openssl rand -base64 48`, then fill in Google, the owner emails, and optionally
+Discord.
 
 ## Local development
 

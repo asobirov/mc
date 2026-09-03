@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const schema = z
   .object({
-    AUTH_ALLOWED_EMAILS: z.string().min(3),
+    AUTH_ADMIN_EMAILS: z.string().min(3),
     BETTER_AUTH_SECRET: z.string().min(32),
     BETTER_AUTH_URL: z.string().url().default("http://localhost:5173"),
     DISCORD_CLIENT_ID: z.preprocess(

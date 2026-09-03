@@ -5,10 +5,9 @@ import { betterAuth } from "better-auth";
 import { APIError } from "better-auth/api";
 
 import {
-  isEmailAllowed,
-  parseAllowedEmails,
+  initialAccessForEmail,
+  parseAdminEmails,
   SIGNUP_EMAIL_UNVERIFIED,
-  SIGNUP_NOT_INVITED,
 } from "./access";
 import { env } from "./env";
 
@@ -18,10 +17,10 @@ mkdirSync(dirname(env.SQLITE_PATH), { recursive: true });
 // builtin to a third-party `sqlite` package.
 const sqliteSpecifier = ["node", "sqlite"].join(":");
 const { DatabaseSync } = (await import(sqliteSpecifier)) as typeof NodeSqlite;
-const database = new DatabaseSync(env.SQLITE_PATH);
+export const database = new DatabaseSync(env.SQLITE_PATH);
 database.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
 
-export const allowedEmails = parseAllowedEmails(env.AUTH_ALLOWED_EMAILS);
+export const adminEmails = parseAdminEmails(env.AUTH_ADMIN_EMAILS);
 
 const accountLinking = {
   enabled: true,
@@ -54,6 +53,28 @@ export const auth = betterAuth({
   emailAndPassword: { enabled: false },
   socialProviders,
   account: { accountLinking },
+  user: {
+    additionalFields: {
+      role: {
+        type: "string",
+        required: false,
+        defaultValue: "member",
+        input: false,
+      },
+      accessStatus: {
+        type: "string",
+        required: false,
+        defaultValue: "pending",
+        input: false,
+      },
+      verified: {
+        type: "boolean",
+        required: false,
+        defaultValue: false,
+        input: false,
+      },
+    },
+  },
   session: {
     expiresIn: 60 * 60 * 24 * 30,
     updateAge: 60 * 60 * 24,
@@ -66,19 +87,18 @@ export const auth = betterAuth({
     user: {
       create: {
         before: (user) => {
-          if (!isEmailAllowed(user.email, allowedEmails)) {
-            throw new APIError("FORBIDDEN", {
-              code: SIGNUP_NOT_INVITED,
-              message: "This email is not on the invite list.",
-            });
-          }
           if (!user.emailVerified) {
             throw new APIError("FORBIDDEN", {
               code: SIGNUP_EMAIL_UNVERIFIED,
               message: "The social provider did not verify this email address.",
             });
           }
-          return Promise.resolve();
+          return Promise.resolve({
+            data: {
+              ...user,
+              ...initialAccessForEmail(user.email, adminEmails),
+            },
+          });
         },
       },
     },

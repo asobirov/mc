@@ -3,20 +3,42 @@ import {
   Check,
   ChevronRight,
   Copy,
+  Crown,
   Download,
   Gamepad2,
   LogOut,
   MessageCircle,
   Mic2,
   Pickaxe,
+  RefreshCw,
+  Shield,
   ShieldCheck,
   Sparkles,
+  UserCheck,
+  UserX,
   Utensils,
 } from "lucide-react";
 
 import { authClient } from "./lib/auth-client";
 
 const SERVER_ADDRESS = "mc.xpr.im";
+
+type AccessRole = "admin" | "member";
+type AccessStatus = "approved" | "blocked" | "pending";
+type AccessAction = "approve" | "block" | "reset" | "promote" | "demote";
+
+type AccessUser = {
+  accessStatus: AccessStatus;
+  createdAt: number | string | null;
+  email: string;
+  emailVerified: boolean;
+  id: string;
+  image: string | null;
+  name: string;
+  protectedAdmin: boolean;
+  role: AccessRole;
+  verified: boolean;
+};
 
 function GoogleIcon() {
   return (
@@ -57,12 +79,11 @@ function SignIn() {
     null,
   );
   const error = new URLSearchParams(window.location.search).get("error");
-  const errorMessage =
-    error === "SIGNUP_NOT_INVITED"
-      ? "That account is not on the server invite list yet."
-      : error
-        ? "Sign-in did not finish. Please try again."
-        : null;
+  const errorMessage = error
+    ? error === "SIGNUP_EMAIL_UNVERIFIED"
+      ? "That login provider has not verified your email address."
+      : "Sign-in did not finish. Please try again."
+    : null;
   const [discordEnabled, setDiscordEnabled] = useState(false);
 
   useEffect(() => {
@@ -128,15 +149,174 @@ function SignIn() {
         </div>
 
         <p className="login-note">
-          <ShieldCheck size={16} /> Only invited, verified accounts can enter.
+          <ShieldCheck size={16} /> Sign in to request access from the server
+          owner.
         </p>
       </section>
     </main>
   );
 }
 
-function Portal({ name, email }: { name: string; email: string }) {
+function AccessAdmin({ currentUserId }: { currentUserId: string }) {
+  const [users, setUsers] = useState<AccessUser[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [busyId, setBusyId] = useState<string | null>(null);
+
+  async function loadUsers() {
+    setError(null);
+    const response = await fetch("/api/admin/users");
+    if (!response.ok) throw new Error("Could not load access requests");
+    const data = (await response.json()) as { users: AccessUser[] };
+    setUsers(data.users);
+  }
+
+  useEffect(() => {
+    void loadUsers()
+      .catch((reason: unknown) =>
+        setError(
+          reason instanceof Error ? reason.message : "Could not load users",
+        ),
+      )
+      .finally(() => setLoading(false));
+  }, []);
+
+  async function act(user: AccessUser, action: AccessAction) {
+    setBusyId(user.id);
+    setError(null);
+    try {
+      const response = await fetch(`/api/admin/users/${user.id}`, {
+        body: JSON.stringify({ action }),
+        headers: { "Content-Type": "application/json" },
+        method: "PATCH",
+      });
+      const data = (await response.json()) as {
+        error?: string;
+        user?: AccessUser;
+      };
+      if (!response.ok || !data.user) {
+        throw new Error(data.error ?? "Could not update this person");
+      }
+      setUsers((current) =>
+        current.map((item) => (item.id === data.user?.id ? data.user : item)),
+      );
+    } catch (reason) {
+      setError(
+        reason instanceof Error ? reason.message : "Could not update user",
+      );
+    } finally {
+      setBusyId(null);
+    }
+  }
+
+  const pendingCount = users.filter(
+    (user) => user.accessStatus === "pending",
+  ).length;
+
+  return (
+    <section className="admin-section">
+      <div className="section-heading admin-heading">
+        <div>
+          <p className="eyebrow">Owner controls</p>
+          <h2>Access requests</h2>
+        </div>
+        <button
+          aria-label="Refresh access requests"
+          className="refresh-button"
+          onClick={() =>
+            void loadUsers().catch(() => setError("Refresh failed"))
+          }
+          type="button"
+        >
+          <RefreshCw size={16} /> {pendingCount} pending
+        </button>
+      </div>
+
+      {error ? <p className="admin-error">{error}</p> : null}
+      {loading ? (
+        <p className="admin-empty">Loading people…</p>
+      ) : (
+        <div className="people-list">
+          {users.map((user) => {
+            const isBusy = busyId === user.id;
+            const isSelf = user.id === currentUserId;
+            return (
+              <article className="person-row" key={user.id}>
+                <div className="person-avatar">
+                  {user.image ? <img alt="" src={user.image} /> : user.name[0]}
+                </div>
+                <div className="person-copy">
+                  <div>
+                    <strong>{user.name || user.email.split("@")[0]}</strong>
+                    {user.role === "admin" ? <Crown size={14} /> : null}
+                  </div>
+                  <span>{user.email}</span>
+                </div>
+                <span className={`access-chip ${user.accessStatus}`}>
+                  {user.accessStatus}
+                </span>
+                <div className="person-actions">
+                  {user.accessStatus !== "approved" ? (
+                    <button
+                      disabled={isBusy}
+                      onClick={() => void act(user, "approve")}
+                      type="button"
+                    >
+                      <UserCheck size={15} /> Approve
+                    </button>
+                  ) : null}
+                  {user.accessStatus !== "blocked" &&
+                  !isSelf &&
+                  !user.protectedAdmin ? (
+                    <button
+                      className="danger"
+                      disabled={isBusy}
+                      onClick={() => void act(user, "block")}
+                      type="button"
+                    >
+                      <UserX size={15} /> Block
+                    </button>
+                  ) : null}
+                  {user.accessStatus === "blocked" && !user.protectedAdmin ? (
+                    <button
+                      disabled={isBusy}
+                      onClick={() => void act(user, "reset")}
+                      type="button"
+                    >
+                      Reset
+                    </button>
+                  ) : null}
+                  {user.role === "member" ? (
+                    <button
+                      disabled={isBusy}
+                      onClick={() => void act(user, "promote")}
+                      type="button"
+                    >
+                      <Shield size={15} /> Make admin
+                    </button>
+                  ) : !isSelf && !user.protectedAdmin ? (
+                    <button
+                      disabled={isBusy}
+                      onClick={() => void act(user, "demote")}
+                      type="button"
+                    >
+                      Make member
+                    </button>
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function Portal({ user }: { user: AccessUser }) {
   const [copied, setCopied] = useState(false);
+  const fallbackName = user.email.split("@")[0] ?? "Friend";
+  const displayName = user.name.trim().length > 0 ? user.name : fallbackName;
 
   async function copyAddress() {
     await navigator.clipboard.writeText(SERVER_ADDRESS);
@@ -155,8 +335,8 @@ function Portal({ name, email }: { name: string; email: string }) {
         </a>
         <div className="account">
           <div>
-            <strong>{name}</strong>
-            <span>{email}</span>
+            <strong>{displayName}</strong>
+            <span>{user.email}</span>
           </div>
           <button
             aria-label="Sign out"
@@ -300,12 +480,107 @@ function Portal({ name, email }: { name: string; email: string }) {
         </div>
       </section>
 
+      {user.role === "admin" ? <AccessAdmin currentUserId={user.id} /> : null}
+
       <footer>
         <span>Friends MC</span>
         <span>Private by design · {new Date().getFullYear()}</span>
       </footer>
     </main>
   );
+}
+
+function AccessState({
+  status,
+  refresh,
+}: {
+  status: "blocked" | "error" | "pending";
+  refresh: () => void;
+}) {
+  const copy = {
+    blocked: {
+      eyebrow: "Access blocked",
+      title: "This account can’t enter.",
+      body: "Ask the server owner if you think this was a mistake.",
+    },
+    error: {
+      eyebrow: "Connection issue",
+      title: "We couldn’t check access.",
+      body: "The server may be restarting. Try the check again in a moment.",
+    },
+    pending: {
+      eyebrow: "Request received",
+      title: "You’re waiting for approval.",
+      body: "The server owner can now see your account. Once approved, this page opens automatically when you check again.",
+    },
+  }[status];
+
+  return (
+    <main className="login-shell">
+      <div className="ambient ambient-one" />
+      <div className="ambient ambient-two" />
+      <section className="login-card access-state-card">
+        <div className="brand-mark" aria-hidden="true">
+          {status === "blocked" ? <UserX /> : <ShieldCheck />}
+        </div>
+        <p className="eyebrow">{copy.eyebrow}</p>
+        <h1>{copy.title}</h1>
+        <p className="lede">{copy.body}</p>
+        <div className="access-state-actions">
+          {status !== "blocked" ? (
+            <button className="primary-button" onClick={refresh} type="button">
+              <RefreshCw size={17} /> Check again
+            </button>
+          ) : null}
+          <button
+            className="secondary-button"
+            onClick={() => void authClient.signOut()}
+            type="button"
+          >
+            <LogOut size={17} /> Sign out
+          </button>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function AccessGate() {
+  const [user, setUser] = useState<AccessUser | null>(null);
+  const [state, setState] = useState<
+    "blocked" | "error" | "loading" | "pending"
+  >("loading");
+
+  function refresh() {
+    setState("loading");
+    void fetch("/api/access", { cache: "no-store" })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Access check failed");
+        return (await response.json()) as { user: AccessUser };
+      })
+      .then(({ user: nextUser }) => {
+        setUser(nextUser);
+        setState(nextUser.accessStatus === "blocked" ? "blocked" : "pending");
+      })
+      .catch(() => setState("error"));
+  }
+
+  useEffect(refresh, []);
+
+  if (state === "loading") {
+    return (
+      <main className="loading">
+        <div className="loader" />
+        <span>Checking your access…</span>
+      </main>
+    );
+  }
+
+  if (user?.accessStatus === "approved" && user.verified) {
+    return <Portal user={user} />;
+  }
+
+  return <AccessState refresh={refresh} status={state} />;
 }
 
 export function App() {
@@ -322,11 +597,5 @@ export function App() {
 
   if (!session.data?.user) return <SignIn />;
 
-  const fallbackName = session.data.user.email.split("@")[0] ?? "Friend";
-  const displayName =
-    session.data.user.name.trim().length > 0
-      ? session.data.user.name
-      : fallbackName;
-
-  return <Portal email={session.data.user.email} name={displayName} />;
+  return <AccessGate />;
 }
