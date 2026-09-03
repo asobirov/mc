@@ -145,12 +145,14 @@ a {
   line-height: 1.6;
 }
 .auth-error {
-  padding: 12px 14px;
+  margin: 0 0 16px;
+  padding: 14px 16px;
   border: 1px solid #753a38;
   border-radius: 10px;
   color: #ffc1bd;
   background: #321b1a;
   font-size: 14px;
+  line-height: 1.45;
 }
 .auth-buttons {
   display: grid;
