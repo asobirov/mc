@@ -15,6 +15,14 @@ const schema = z
     ),
     GOOGLE_CLIENT_ID: z.string().min(1),
     GOOGLE_CLIENT_SECRET: z.string().min(1),
+    MICROSOFT_CLIENT_ID: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().min(1).optional(),
+    ),
+    MICROSOFT_CLIENT_SECRET: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().min(1).optional(),
+    ),
     MODPACK_PATH: z
       .string()
       .default(
@@ -36,6 +44,17 @@ const schema = z
         message:
           "Discord client ID and secret must either both be set or both be omitted",
         path: ["DISCORD_CLIENT_ID"],
+      });
+    }
+    if (
+      Boolean(values.MICROSOFT_CLIENT_ID) !==
+      Boolean(values.MICROSOFT_CLIENT_SECRET)
+    ) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        message:
+          "Microsoft client ID and secret must either both be set or both be omitted",
+        path: ["MICROSOFT_CLIENT_ID"],
       });
     }
   });

@@ -36,6 +36,9 @@ app.get("/api/config", (c) =>
     authProviders: {
       discord: Boolean(env.DISCORD_CLIENT_ID && env.DISCORD_CLIENT_SECRET),
       google: true,
+      microsoft: Boolean(
+        env.MICROSOFT_CLIENT_ID && env.MICROSOFT_CLIENT_SECRET,
+      ),
     },
   }),
 );

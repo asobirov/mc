@@ -6,6 +6,7 @@ import {
   Crown,
   Download,
   Gamepad2,
+  Link2,
   LogOut,
   MessageCircle,
   Mic2,
@@ -63,6 +64,14 @@ const launchers = {
 } as const;
 
 type LauncherId = keyof typeof launchers;
+type AuthProvider = "discord" | "google" | "microsoft";
+
+type AuthProviderConfig = Record<AuthProvider, boolean>;
+
+type LinkedAccount = {
+  accountId: string;
+  providerId: string;
+};
 
 type AccessRole = "admin" | "member";
 type AccessStatus = "approved" | "blocked" | "pending";
@@ -115,32 +124,63 @@ function DiscordIcon() {
   );
 }
 
-function SignIn() {
-  const [busyProvider, setBusyProvider] = useState<"discord" | "google" | null>(
-    null,
+function MicrosoftIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path fill="#f35325" d="M2 2h9.5v9.5H2z" />
+      <path fill="#81bc06" d="M12.5 2H22v9.5h-9.5z" />
+      <path fill="#05a6f0" d="M2 12.5h9.5V22H2z" />
+      <path fill="#ffba08" d="M12.5 12.5H22V22h-9.5z" />
+    </svg>
   );
+}
+
+function ProviderIcon({ provider }: { provider: AuthProvider }) {
+  if (provider === "discord") return <DiscordIcon />;
+  if (provider === "microsoft") return <MicrosoftIcon />;
+  return <GoogleIcon />;
+}
+
+async function loadAuthProviders(
+  signal?: AbortSignal,
+): Promise<AuthProviderConfig> {
+  const response = await fetch("/api/config", { signal });
+  if (!response.ok) throw new Error("Could not load sign-in options");
+  const config = (await response.json()) as {
+    authProviders?: Partial<AuthProviderConfig>;
+  };
+  return {
+    discord: config.authProviders?.discord === true,
+    google: config.authProviders?.google === true,
+    microsoft: config.authProviders?.microsoft === true,
+  };
+}
+
+function SignIn() {
+  const [busyProvider, setBusyProvider] = useState<AuthProvider | null>(null);
   const error = new URLSearchParams(window.location.search).get("error");
   const errorMessage = error
     ? error === "SIGNUP_EMAIL_UNVERIFIED"
       ? "That login provider has not verified your email address."
       : "Sign-in did not finish. Please try again."
     : null;
-  const [discordEnabled, setDiscordEnabled] = useState(false);
+  const [providers, setProviders] = useState<AuthProviderConfig>({
+    discord: false,
+    google: true,
+    microsoft: false,
+  });
 
   useEffect(() => {
     const controller = new AbortController();
 
-    void fetch("/api/config", { signal: controller.signal })
-      .then((response) => response.json())
-      .then((config: { authProviders?: { discord?: boolean } }) => {
-        setDiscordEnabled(config.authProviders?.discord === true);
-      })
+    void loadAuthProviders(controller.signal)
+      .then(setProviders)
       .catch(() => undefined);
 
     return () => controller.abort();
   }, []);
 
-  async function signIn(provider: "discord" | "google") {
+  async function signIn(provider: AuthProvider) {
     setBusyProvider(provider);
     await authClient.signIn.social({ provider, callbackURL: "/" });
     setBusyProvider(null);
@@ -174,7 +214,7 @@ function SignIn() {
               ? "Opening Google…"
               : "Continue with Google"}
           </button>
-          {discordEnabled ? (
+          {providers.discord ? (
             <button
               className="auth-button discord"
               disabled={busyProvider !== null}
@@ -187,6 +227,19 @@ function SignIn() {
                 : "Continue with Discord"}
             </button>
           ) : null}
+          {providers.microsoft ? (
+            <button
+              className="auth-button microsoft"
+              disabled={busyProvider !== null}
+              onClick={() => void signIn("microsoft")}
+              type="button"
+            >
+              <MicrosoftIcon />
+              {busyProvider === "microsoft"
+                ? "Opening Microsoft…"
+                : "Continue with Microsoft"}
+            </button>
+          ) : null}
         </div>
 
         <p className="login-note">
@@ -195,6 +248,135 @@ function SignIn() {
         </p>
       </section>
     </main>
+  );
+}
+
+function ConnectedAccounts() {
+  const [accounts, setAccounts] = useState<LinkedAccount[]>([]);
+  const [providers, setProviders] = useState<AuthProviderConfig>({
+    discord: false,
+    google: true,
+    microsoft: false,
+  });
+  const [loading, setLoading] = useState(true);
+  const [busyProvider, setBusyProvider] = useState<AuthProvider | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    void Promise.all([authClient.listAccounts(), loadAuthProviders()])
+      .then(([accountResult, providerConfig]) => {
+        if (!active) return;
+        if (accountResult.error) {
+          throw new Error(
+            accountResult.error.message ?? "Could not load connected accounts",
+          );
+        }
+        setAccounts(accountResult.data);
+        setProviders(providerConfig);
+      })
+      .catch((reason: unknown) => {
+        if (!active) return;
+        setError(
+          reason instanceof Error
+            ? reason.message
+            : "Could not load connected accounts",
+        );
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  async function connect(provider: AuthProvider) {
+    setBusyProvider(provider);
+    setError(null);
+    const result = await authClient.linkSocial({
+      callbackURL: "/",
+      provider,
+    });
+    if (result.error) {
+      setError(result.error.message ?? `Could not connect ${provider}`);
+      setBusyProvider(null);
+    }
+  }
+
+  const availableProviders = (
+    ["google", "discord", "microsoft"] as const
+  ).filter((provider) => providers[provider]);
+
+  return (
+    <section className="connections-section">
+      <div className="section-heading connections-heading">
+        <div>
+          <p className="eyebrow">Your account</p>
+          <h2>Connected sign-ins</h2>
+        </div>
+        <p>
+          Use any connected provider to get back into this same Friends MC
+          account.
+        </p>
+      </div>
+
+      {error ? <p className="admin-error">{error}</p> : null}
+      {loading ? (
+        <p className="admin-empty">Checking connections…</p>
+      ) : (
+        <div className="connections-list">
+          {availableProviders.map((provider) => {
+            const connected = accounts.some(
+              (account) => account.providerId === provider,
+            );
+            const label =
+              provider === "google"
+                ? "Google"
+                : provider === "discord"
+                  ? "Discord"
+                  : "Microsoft";
+            return (
+              <article className={`connection-row ${provider}`} key={provider}>
+                <span className="connection-icon">
+                  <ProviderIcon provider={provider} />
+                </span>
+                <div>
+                  <strong>{label}</strong>
+                  <span>
+                    {connected
+                      ? "Connected"
+                      : provider === "microsoft"
+                        ? "Connect the Microsoft account you use for Minecraft"
+                        : "Add another way to sign in"}
+                  </span>
+                </div>
+                {connected ? (
+                  <span className="connected-chip">
+                    <Check size={14} /> Connected
+                  </span>
+                ) : (
+                  <button
+                    disabled={busyProvider !== null}
+                    onClick={() => void connect(provider)}
+                    type="button"
+                  >
+                    <Link2 size={15} />
+                    {busyProvider === provider ? "Opening…" : "Connect"}
+                  </button>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      )}
+      <p className="connections-note">
+        Linking Microsoft identifies your account here. Automatic Minecraft
+        whitelist syncing will be added separately.
+      </p>
+    </section>
   );
 }
 
@@ -523,6 +705,8 @@ function Portal({ user }: { user: AccessUser }) {
           </li>
         </ol>
       </section>
+
+      <ConnectedAccounts />
 
       <section className="chat-card">
         <div className="chat-icon">

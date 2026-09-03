@@ -6,7 +6,7 @@ and Zod. It stays on the Minecraft repo's existing pnpm/Turborepo toolchain.
 
 ## Authentication
 
-The app supports Google and Discord OAuth only. A new account must have a
+The app supports Google, Discord, and Microsoft OAuth. A new account must have a
 provider-verified email, then starts as `member / pending / unverified`. It can
 sign in but cannot see the portal or download the pack until an admin approves
 it. Admins can approve, block, reset, promote, and demote people from the access
@@ -25,14 +25,22 @@ Sessions last 30 days, refresh daily while active, and are stored in the
 persistent SQLite volume. The cookie is HTTP-only, SameSite=Lax, and Secure in
 production.
 
+Signed-in users can explicitly connect additional providers from the portal.
+Implicit same-email linking is disabled, so a matching provider email never
+silently merges two identities. Explicit links may use different email
+addresses because a person's Microsoft/Xbox account often differs from their
+Google or Discord address.
+
 OAuth callback URLs:
 
 - `https://mc.xpr.im/api/auth/callback/google`
 - `https://mc.xpr.im/api/auth/callback/discord`
+- `https://mc.xpr.im/api/auth/callback/microsoft`
 
 Copy `.env.example` to `.env`, generate `BETTER_AUTH_SECRET` with
 `openssl rand -base64 48`, then fill in Google, the owner emails, and optionally
-Discord.
+Discord, and Microsoft. Register the Microsoft app for personal Microsoft
+accounts and configure the callback above as a Web redirect URI.
 
 ## Local development
 

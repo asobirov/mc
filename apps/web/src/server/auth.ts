@@ -23,6 +23,8 @@ database.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
 export const adminEmails = parseAdminEmails(env.AUTH_ADMIN_EMAILS);
 
 const accountLinking = {
+  allowDifferentEmails: true,
+  disableImplicitLinking: true,
   enabled: true,
   trustedProviders: ["google"],
   requireLocalEmailVerified: false,
@@ -41,6 +43,24 @@ if (env.DISCORD_CLIENT_ID && env.DISCORD_CLIENT_SECRET) {
   socialProviders.discord = {
     clientId: env.DISCORD_CLIENT_ID,
     clientSecret: env.DISCORD_CLIENT_SECRET,
+  };
+}
+
+if (env.MICROSOFT_CLIENT_ID && env.MICROSOFT_CLIENT_SECRET) {
+  socialProviders.microsoft = {
+    clientId: env.MICROSOFT_CLIENT_ID,
+    clientSecret: env.MICROSOFT_CLIENT_SECRET,
+    disableProfilePhoto: true,
+    tenantId: "consumers",
+    mapProfileToUser: (profile) => {
+      const email = profile.email ?? profile.preferred_username;
+      return {
+        email,
+        // Consumer Microsoft aliases are proven as part of the interactive
+        // sign-in, but Entra does not emit `email_verified` by default.
+        emailVerified: Boolean(email),
+      };
+    },
   };
 }
 
