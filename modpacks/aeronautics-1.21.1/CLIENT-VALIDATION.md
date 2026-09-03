@@ -73,8 +73,8 @@ Last run: September 3, 2026
 ## Follow-up watch items
 
 - Recheck join-time tick delay with several simultaneous players.
-- Review the 2,500-block idle Chunky run before deciding whether to expand the
-  generated radius or enable ServerCore's dynamic limits.
+- Keep the 1,000-block spawn-radius Chunky cache current after major worldgen
+  changes before deciding whether a larger generated radius is worthwhile.
 - Keep an eye on client heap use during long exploration sessions; 10 GB is the
   recommended setting for machines with at least 16 GB of total RAM.
 - Periodically test both local and off-site restores, not only archive
