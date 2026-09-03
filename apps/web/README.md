@@ -26,10 +26,11 @@ persistent SQLite volume. The cookie is HTTP-only, SameSite=Lax, and Secure in
 production.
 
 Signed-in users can explicitly connect additional providers from the portal.
-Implicit same-email linking is disabled, so a matching provider email never
-silently merges two identities. Explicit links may use different email
-addresses because a person's Microsoft/Xbox account often differs from their
-Google or Discord address.
+Google and Microsoft may also link automatically when their verified email
+matches an existing verified portal account, allowing either provider to be a
+single-step sign-in. Discord remains explicit-only. Explicit links may use
+different email addresses because a person's Microsoft/Xbox account often
+differs from their Google or Discord address.
 
 OAuth callback URLs:
 

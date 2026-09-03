@@ -24,10 +24,13 @@ export const adminEmails = parseAdminEmails(env.AUTH_ADMIN_EMAILS);
 
 const accountLinking = {
   allowDifferentEmails: true,
-  disableImplicitLinking: true,
+  // Google and Microsoft are trusted email authorities. Let either provider
+  // finish sign-in against an existing verified user with the same email so
+  // switching providers does not strand the user at `account_not_linked`.
+  disableImplicitLinking: false,
   enabled: true,
-  trustedProviders: ["google"],
-  requireLocalEmailVerified: false,
+  trustedProviders: ["google", "microsoft"],
+  requireLocalEmailVerified: true,
 };
 
 const socialProviders: NonNullable<
