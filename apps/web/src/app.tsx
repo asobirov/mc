@@ -242,16 +242,10 @@ function SignIn() {
           ) : null}
         </div>
 
-        <div className="login-notes">
-          <p className="login-note">
-            <ShieldCheck size={16} /> Sign in to request access from the server
-            owner.
-          </p>
-          <p className="login-note requirement-note">
-            <Gamepad2 size={16} /> A licensed copy of Minecraft: Java Edition is
-            required to join.
-          </p>
-        </div>
+        <p className="login-note">
+          <ShieldCheck size={16} /> Sign in to request access from the server
+          owner.
+        </p>
       </section>
     </main>
   );

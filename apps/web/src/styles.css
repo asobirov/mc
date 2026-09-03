@@ -203,17 +203,6 @@ a {
   color: #767d70;
   font-size: 12px;
 }
-.login-notes {
-  display: grid;
-  gap: 8px;
-  margin-top: 23px;
-}
-.login-notes .login-note {
-  margin: 0;
-}
-.requirement-note {
-  color: #a0a995;
-}
 
 .loading {
   display: grid;
