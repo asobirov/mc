@@ -16,6 +16,14 @@ const app = new Hono();
 
 app.use("*", secureHeaders());
 app.get("/api/health", (c) => c.json({ ok: true }));
+app.get("/api/config", (c) =>
+  c.json({
+    authProviders: {
+      discord: Boolean(env.DISCORD_CLIENT_ID && env.DISCORD_CLIENT_SECRET),
+      google: true,
+    },
+  }),
+);
 app.all("/api/auth/*", (c) => auth.handler(c.req.raw));
 
 app.get("/api/modpack", async (c) => {

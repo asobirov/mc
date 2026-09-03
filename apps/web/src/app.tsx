@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Check,
   ChevronRight,
@@ -63,6 +63,20 @@ function SignIn() {
       : error
         ? "Sign-in did not finish. Please try again."
         : null;
+  const [discordEnabled, setDiscordEnabled] = useState(false);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    void fetch("/api/config", { signal: controller.signal })
+      .then((response) => response.json())
+      .then((config: { authProviders?: { discord?: boolean } }) => {
+        setDiscordEnabled(config.authProviders?.discord === true);
+      })
+      .catch(() => undefined);
+
+    return () => controller.abort();
+  }, []);
 
   async function signIn(provider: "discord" | "google") {
     setBusyProvider(provider);
@@ -98,17 +112,19 @@ function SignIn() {
               ? "Opening Google…"
               : "Continue with Google"}
           </button>
-          <button
-            className="auth-button discord"
-            disabled={busyProvider !== null}
-            onClick={() => void signIn("discord")}
-            type="button"
-          >
-            <DiscordIcon />
-            {busyProvider === "discord"
-              ? "Opening Discord…"
-              : "Continue with Discord"}
-          </button>
+          {discordEnabled ? (
+            <button
+              className="auth-button discord"
+              disabled={busyProvider !== null}
+              onClick={() => void signIn("discord")}
+              type="button"
+            >
+              <DiscordIcon />
+              {busyProvider === "discord"
+                ? "Opening Discord…"
+                : "Continue with Discord"}
+            </button>
+          ) : null}
         </div>
 
         <p className="login-note">

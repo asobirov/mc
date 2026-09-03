@@ -29,6 +29,22 @@ const accountLinking = {
   requireLocalEmailVerified: false,
 };
 
+const socialProviders: NonNullable<
+  Parameters<typeof betterAuth>[0]["socialProviders"]
+> = {
+  google: {
+    clientId: env.GOOGLE_CLIENT_ID,
+    clientSecret: env.GOOGLE_CLIENT_SECRET,
+  },
+};
+
+if (env.DISCORD_CLIENT_ID && env.DISCORD_CLIENT_SECRET) {
+  socialProviders.discord = {
+    clientId: env.DISCORD_CLIENT_ID,
+    clientSecret: env.DISCORD_CLIENT_SECRET,
+  };
+}
+
 export const auth = betterAuth({
   appName: "Friends MC",
   database,
@@ -36,16 +52,7 @@ export const auth = betterAuth({
   secret: env.BETTER_AUTH_SECRET,
   trustedOrigins: [env.BETTER_AUTH_URL],
   emailAndPassword: { enabled: false },
-  socialProviders: {
-    google: {
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-    },
-    discord: {
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
-    },
-  },
+  socialProviders,
   account: { accountLinking },
   session: {
     expiresIn: 60 * 60 * 24 * 30,
