@@ -1,0 +1,10 @@
+[Unit]
+Description=Friends MC full-stack health check
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/friends-mc-healthcheck.env
+ExecStart=/usr/local/sbin/friends-mc-healthcheck
+User=root

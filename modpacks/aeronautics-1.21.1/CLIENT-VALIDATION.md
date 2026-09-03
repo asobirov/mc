@@ -51,6 +51,9 @@ Last run: September 3, 2026
   within 30 seconds of a join, and pauses again when its runtime window ends.
 - Changed local backups to archive an rsync-staged copy instead of the live data
   mount, preventing the recurring `world: file changed as we read it` failure.
+- Completed an isolated restore drill against a fresh production archive. The
+  restored world reached `Done`, responded through RCON, and completed a forced
+  save without touching the live server. See `RESTORE-DRILL.md`.
 
 ## Known, non-blocking warnings
 
@@ -77,5 +80,5 @@ Last run: September 3, 2026
   changes before deciding whether a larger generated radius is worthwhile.
 - Keep an eye on client heap use during long exploration sessions; 10 GB is the
   recommended setting for machines with at least 16 GB of total RAM.
-- Periodically test both local and off-site restores, not only archive
-  integrity.
+- Repeat the isolated restore drill after major pack or backup changes, and
+  periodically download an OCI copy for the same test.

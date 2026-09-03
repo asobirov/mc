@@ -31,10 +31,41 @@ friends server.
    ```
 
 Local backups run every six hours and retain four archives. Each job pauses
-Minecraft saves, incrementally stages the data, resumes saves, and archives the
-stable staged copy. This avoids inconsistent archives when a mod changes a file
-during compression. OCI lifecycle rules provide the separate short-retention
-cloud layer.
+Minecraft saves, incrementally stages the stateful data, resumes saves, and
+archives the stable staged copy. Reproducible runtime files such as mods,
+libraries, and NeoForge install markers are excluded together; the restore
+drill reinstalls them from the pinned modpack. This avoids inconsistent
+archives and half-installed restores while keeping archives compact. OCI
+lifecycle rules provide the separate short-retention cloud layer.
+
+## Restore drill
+
+The restore verifier extracts the newest backup into a temporary directory,
+performs a clean modpack and NeoForge install, boots the restored world in an
+isolated container with no published ports, checks RCON, flushes a save, then
+removes the temporary container and files. It does not stop or change the live
+server:
+
+```sh
+sudo ./scripts/verify-backup-restore.sh
+```
+
+## Monitoring
+
+`friends-mc-healthcheck.sh` checks the Minecraft container, portal HTTPS,
+Minecraft TCP, Voice Chat UDP listener, disk usage, local backup freshness, and
+off-site upload freshness. The systemd timer runs it every five minutes and
+reports start, success, or failure to an external Healthchecks.io heartbeat,
+which also detects a total VPS outage by noticing missed pings.
+
+Install the script and the two units under `systemd/`, store the private ping
+URL as `HEALTHCHECKS_PING_URL=...` in
+`/etc/friends-mc-healthcheck.env` with mode `0600`, then enable the timer:
+
+```sh
+sudo systemctl daemon-reload
+sudo systemctl enable --now friends-mc-healthcheck.timer
+```
 
 ## Idle chunk pre-generation
 

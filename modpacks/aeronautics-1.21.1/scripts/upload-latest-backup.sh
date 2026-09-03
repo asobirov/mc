@@ -11,9 +11,9 @@ marker_file=/state/last-uploaded
 sleep "$initial_delay"
 
 while true; do
-  latest_backup="$({
-    find /backups -maxdepth 1 -type f \( -name '*.tar.zst' -o -name '*.tgz' \) -print
-  } | sort | tail -n 1)"
+  # Backup names are usually timestamped, but manual safety snapshots may use
+  # descriptive suffixes. Select by modification time instead of filename.
+  latest_backup="$(ls -1t /backups/*.tar.zst /backups/*.tgz 2>/dev/null | head -n 1 || true)"
 
   if [ -n "$latest_backup" ]; then
     object_name="$(basename "$latest_backup")"

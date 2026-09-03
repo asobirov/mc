@@ -120,10 +120,18 @@ services:
       PRUNE_BACKUPS_DAYS: 7
       SRC_DIR: /staging
       PRE_BACKUP_SCRIPT: |
-        rsync -a --delete \
+        rsync -a --delete --delete-excluded \
           --exclude='*.jar' \
           --exclude='cache/' \
           --exclude='logs/' \
+          --exclude='libraries/' \
+          --exclude='versions/' \
+          --exclude='mods/' \
+          --exclude='run.sh' \
+          --exclude='run.bat' \
+          --exclude='.install-modrinth.env' \
+          --exclude='.modrinth-modpack-manifest.json' \
+          --exclude='.neoforge-manifest.json' \
           --exclude='*.tmp' \
           --exclude='tmp_*.dat' \
           /source/ /staging/
