@@ -32,12 +32,16 @@ Last run: September 3, 2026
   requiring Direct Connect.
 - Configured the local SKlauncher instance to honor an 8 GB maximum heap instead
   of its conservative 4 GB automatic limit.
+- Added a bounded idle-only Chunky runner. It waits for zero players, pauses
+  within 30 seconds of a join, and pauses again when its runtime window ends.
 
 ## Known, non-blocking warnings
 
-- The first world join can briefly push the server about three seconds behind
-  while it synchronizes a large registry and loads the player's chunks. This was
-  a single join-time warning, not sustained lag.
+- Initial login briefly pushed the server about three seconds behind. A later
+  live exploration check with one player also produced two 10–13 second tick
+  stalls while new terrain was being generated. The host retained CPU and
+  memory headroom, so chunk generation—not machine-wide resource pressure—is
+  the current performance watch item.
 - Several content/integration mods report missing optional models, textures,
   mixin targets, or an outdated Patchouli book. They did not prevent startup or
   connection.
@@ -52,6 +56,8 @@ Last run: September 3, 2026
 ## Follow-up watch items
 
 - Recheck join-time tick delay with several simultaneous players.
+- Review the 2,500-block idle Chunky run before deciding whether to expand the
+  generated radius or enable ServerCore's dynamic limits.
 - Keep an eye on client heap use during long exploration sessions; 8 GB is the
   recommended starting point for this pack.
 - Local backup archives validate structurally, but the live backup container can

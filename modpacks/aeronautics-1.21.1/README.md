@@ -33,6 +33,20 @@ friends server.
 Local backups run every six hours and retain four archives. OCI lifecycle
 rules provide the separate short-retention cloud layer.
 
+## Idle chunk pre-generation
+
+`scripts/chunky-idle-pregen.sh` runs the selection already configured in
+Chunky only while the server is empty. It checks every 30 seconds, pauses when
+a player joins, and also pauses when its runtime window ends. Run it as a
+bounded systemd service so it cannot overlap a planned backup window:
+
+```sh
+systemd-run \
+  --unit=friends-mc-idle-pregen \
+  --property=RuntimeMaxSec=2h50m \
+  /usr/local/sbin/friends-mc-idle-pregen
+```
+
 ## Deliberate compatibility changes
 
 The community `.mrpack` incorrectly marks client rendering/UI mods as required
