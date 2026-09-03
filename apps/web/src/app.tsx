@@ -542,7 +542,7 @@ function Portal({ user }: { user: AccessUser }) {
 
       <footer>
         <span>Friends MC</span>
-        <span>Private by design · {new Date().getFullYear()}</span>
+        <span>{new Date().getFullYear()}</span>
       </footer>
     </main>
   );
