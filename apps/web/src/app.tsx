@@ -23,6 +23,47 @@ import { authClient } from "./lib/auth-client";
 
 const SERVER_ADDRESS = "mc.xpr.im";
 
+const launchers = {
+  prism: {
+    name: "Prism Launcher",
+    optionLabel: "Prism Launcher — recommended",
+    downloadLabel: "Get Prism",
+    downloadUrl: "https://prismlauncher.org/download/",
+    install:
+      "Download Prism for your computer, install it, then sign in with your Microsoft account.",
+    import:
+      "Choose Add Instance → Import, then select the downloaded Friends MC .mrpack file.",
+    launch:
+      "Open the Friends MC instance settings, give it 6–8 GB of memory, then launch.",
+  },
+  modrinth: {
+    name: "Modrinth App",
+    optionLabel: "Modrinth App",
+    downloadLabel: "Get Modrinth",
+    downloadUrl: "https://modrinth.com/app",
+    install:
+      "Download the official Modrinth App, install it, then sign in with your Microsoft account.",
+    import:
+      "Click + to create an instance, choose From file / Import, then select the Friends MC .mrpack file.",
+    launch:
+      "Open the imported Friends MC profile, set its memory to 6–8 GB, then press Play.",
+  },
+  sklauncher: {
+    name: "SKlauncher 4",
+    optionLabel: "SKlauncher 4",
+    downloadLabel: "Get SKlauncher",
+    downloadUrl: "https://next.skmedix.pl/downloads",
+    install:
+      "Download SKlauncher 4 only from the official skmedix.pl site, install it, then add your Microsoft account.",
+    import:
+      "Drag the Friends MC .mrpack onto SKlauncher, or choose Import Modpack and select the file.",
+    launch:
+      "Open the imported Friends MC instance, set maximum memory to 6–8 GB, then launch.",
+  },
+} as const;
+
+type LauncherId = keyof typeof launchers;
+
 type AccessRole = "admin" | "member";
 type AccessStatus = "approved" | "blocked" | "pending";
 type AccessAction = "approve" | "block" | "reset" | "promote" | "demote";
@@ -315,6 +356,11 @@ function AccessAdmin({ currentUserId }: { currentUserId: string }) {
 
 function Portal({ user }: { user: AccessUser }) {
   const [copied, setCopied] = useState(false);
+  const [launcherId, setLauncherId] = useState<LauncherId>(() => {
+    const saved = window.localStorage.getItem("friends-mc-launcher");
+    return saved && saved in launchers ? (saved as LauncherId) : "prism";
+  });
+  const launcher = launchers[launcherId];
   const fallbackName = user.email.split("@")[0] ?? "Friend";
   const displayName = user.name.trim().length > 0 ? user.name : fallbackName;
 
@@ -322,6 +368,11 @@ function Portal({ user }: { user: AccessUser }) {
     await navigator.clipboard.writeText(SERVER_ADDRESS);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1800);
+  }
+
+  function selectLauncher(id: LauncherId) {
+    setLauncherId(id);
+    window.localStorage.setItem("friends-mc-launcher", id);
   }
 
   return (
@@ -362,7 +413,7 @@ function Portal({ user }: { user: AccessUser }) {
           </h1>
           <p>
             One download gets you the exact mods and settings the server
-            expects. Prism Launcher handles the rest.
+            expects. {launcher.name} handles the rest.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="/api/modpack">
@@ -417,34 +468,41 @@ function Portal({ user }: { user: AccessUser }) {
             <p className="eyebrow">Three short steps</p>
             <h2>Get into the server</h2>
           </div>
-          <span>Usually 5–10 minutes</span>
+          <div className="launcher-controls">
+            <label className="launcher-picker">
+              <span>Your launcher</span>
+              <select
+                onChange={(event) =>
+                  selectLauncher(event.target.value as LauncherId)
+                }
+                value={launcherId}
+              >
+                {Object.entries(launchers).map(([id, option]) => (
+                  <option key={id} value={id}>
+                    {option.optionLabel}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <span className="setup-time">Usually 5–10 minutes</span>
+          </div>
         </div>
         <ol className="steps">
           <li>
             <span className="step-number">01</span>
             <div>
-              <h3>Install Prism Launcher</h3>
-              <p>
-                Use Prism or another launcher that can import Modrinth{" "}
-                <code>.mrpack</code> files.
-              </p>
+              <h3>Install {launcher.name}</h3>
+              <p>{launcher.install}</p>
             </div>
-            <a
-              href="https://prismlauncher.org/download/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Get Prism <ChevronRight />
+            <a href={launcher.downloadUrl} rel="noreferrer" target="_blank">
+              {launcher.downloadLabel} <ChevronRight />
             </a>
           </li>
           <li>
             <span className="step-number">02</span>
             <div>
               <h3>Import the modpack</h3>
-              <p>
-                Choose <b>Add Instance → Import</b>, then select the downloaded
-                Friends MC file.
-              </p>
+              <p>{launcher.import}</p>
             </div>
             <a href="/api/modpack">
               Download <Download />
@@ -455,8 +513,8 @@ function Portal({ user }: { user: AccessUser }) {
             <div>
               <h3>Launch and join</h3>
               <p>
-                Give Minecraft 6–8 GB of memory. The multiplayer server is
-                already saved in the pack.
+                {launcher.launch} The multiplayer server is already saved in the
+                pack.
               </p>
             </div>
             <button onClick={() => void copyAddress()} type="button">
