@@ -40,8 +40,8 @@ import { MOD_CATEGORIES } from "./lib/mod-catalog";
 import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
-const PACK_RELEASE_DATE = "September 3, 2026";
-const PACK_VERSION = "1.1.1";
+const PACK_RELEASE_DATE = "September 4, 2026";
+const PACK_VERSION = "1.1.2";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
@@ -842,15 +842,25 @@ function PackUpdates() {
           </div>
           <div className="release-meta">
             <span>Latest</span>
-            <time dateTime="2026-09-03">{PACK_RELEASE_DATE}</time>
+            <time dateTime="2026-09-04">{PACK_RELEASE_DATE}</time>
           </div>
         </header>
         <p className="release-summary">
-          A bigger adventure update with Twilight Forest, new food integrations,
-          and safer world generation. This is the version the live server
-          expects.
+          A navigation update that enables the corner minimap alongside the
+          existing full-screen world map. It includes the Twilight Forest,
+          cooking integrations, and stability work from 1.1.1.
         </p>
         <ul className="change-list">
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Enabled Xaero&apos;s Minimap 26.4.2</strong>
+              <p>
+                Adds the corner minimap, nearby terrain, waypoints, and a clear
+                handoff to the full-screen map on M.
+              </p>
+            </div>
+          </li>
           <li>
             <Check aria-hidden="true" />
             <div>
@@ -896,8 +906,10 @@ function PackUpdates() {
             <div>
               <strong>Validated the full client and server</strong>
               <p>
-                Clean-launch tested with all 199 client mods, then checked
-                against a fresh server install and Twilight-generated chunks.
+                Version 1.1.1 was clean-launch tested with 199 client mods, then
+                checked against a fresh server install and Twilight-generated
+                chunks. Version 1.1.2 enables the bundled minimap as client mod
+                200.
               </p>
             </div>
           </li>

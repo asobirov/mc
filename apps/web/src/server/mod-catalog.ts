@@ -61,6 +61,13 @@ type BundledMetadata = {
 
 const bundledMetadata: BundledMetadata[] = [
   {
+    category: "navigation",
+    description:
+      "Adds a configurable corner minimap with terrain, nearby entities, waypoints, and integration with Xaero's full-screen world map.",
+    matches: /^xaerominimap-/i,
+    name: "Xaero's Minimap",
+  },
+  {
     category: "food",
     description:
       "Connects Twilight Forest with Farmer's Delight through 35 foods, four material knives, a faster maze stove, and useful exploration effects.",

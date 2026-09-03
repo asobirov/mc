@@ -32,10 +32,11 @@ services:
       GID: "${HOST_GID:-1000}"
 
       MODPACK_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: /modpacks/Friends-MC-1.1.1.mrpack
+      MODRINTH_MODPACK: /modpacks/Friends-MC-1.1.2.mrpack
       MODRINTH_LOADER: neoforge
       MODRINTH_FORCE_SYNCHRONIZE: "true"
       VERSION: "1.21.1"
+      SEED: "-6489917970872425602"
 
       # The source pack marks every mod as server-required, including client-only
       # rendering/UI mods. Exclude those plus YUNG's Better End Island, which
