@@ -30,8 +30,11 @@ friends server.
    docker compose --profile offsite up -d
    ```
 
-Local backups run every six hours and retain four archives. OCI lifecycle
-rules provide the separate short-retention cloud layer.
+Local backups run every six hours and retain four archives. Each job pauses
+Minecraft saves, incrementally stages the data, resumes saves, and archives the
+stable staged copy. This avoids inconsistent archives when a mod changes a file
+during compression. OCI lifecycle rules provide the separate short-retention
+cloud layer.
 
 ## Idle chunk pre-generation
 

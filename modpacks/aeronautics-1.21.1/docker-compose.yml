@@ -115,8 +115,18 @@ services:
       BACKUP_ON_STARTUP: "true"
       PRUNE_BACKUPS_COUNT: 4
       PRUNE_BACKUPS_DAYS: 7
+      SRC_DIR: /staging
+      PRE_BACKUP_SCRIPT: |
+        rsync -a --delete \
+          --exclude='*.jar' \
+          --exclude='cache/' \
+          --exclude='logs/' \
+          --exclude='*.tmp' \
+          --exclude='tmp_*.dat' \
+          /source/ /staging/
     volumes:
-      - ./data:/data:ro
+      - ./data:/source:ro
+      - ./backup-staging:/staging
       - ./backups:/backups
 
   offsite-backup:

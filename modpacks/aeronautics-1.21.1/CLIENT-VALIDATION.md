@@ -34,6 +34,8 @@ Last run: September 3, 2026
   of its conservative 4 GB automatic limit.
 - Added a bounded idle-only Chunky runner. It waits for zero players, pauses
   within 30 seconds of a join, and pauses again when its runtime window ends.
+- Changed local backups to archive an rsync-staged copy instead of the live data
+  mount, preventing the recurring `world: file changed as we read it` failure.
 
 ## Known, non-blocking warnings
 
@@ -60,7 +62,5 @@ Last run: September 3, 2026
   generated radius or enable ServerCore's dynamic limits.
 - Keep an eye on client heap use during long exploration sessions; 8 GB is the
   recommended starting point for this pack.
-- Local backup archives validate structurally, but the live backup container can
-  return a `world: file changed as we read it` warning. Move to a staged-copy or
-  snapshot-based backup flow before treating every archive as transactionally
-  consistent.
+- Periodically test both local and off-site restores, not only archive
+  integrity.
