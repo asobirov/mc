@@ -17,8 +17,10 @@ import {
   LogOut,
   MessageCircle,
   Mic2,
+  MoreHorizontal,
   Pickaxe,
   RefreshCw,
+  ScrollText,
   Search,
   Send,
   Shield,
@@ -38,6 +40,8 @@ import { MOD_CATEGORIES } from "./lib/mod-catalog";
 import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
+const PACK_RELEASE_DATE = "September 3, 2026";
+const PACK_VERSION = "1.1.1";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
@@ -46,6 +50,7 @@ const PAGE_TITLES: Record<PortalPage, string> = {
   home: "Home",
   mods: "Mods",
   setup: "Setup",
+  updates: "Updates",
 };
 
 const launchers = {
@@ -802,10 +807,100 @@ function FrequentlyAskedQuestions({
             </li>
           </ol>
           <a className="primary-button" href="/api/modpack">
-            <Download size={18} /> Download latest pack
+            <Download size={18} /> Download v{PACK_VERSION} (latest)
           </a>
         </div>
       </article>
+    </section>
+  );
+}
+
+function PackUpdates() {
+  return (
+    <section className="updates-section">
+      <article className="release-card current-release">
+        <header>
+          <div>
+            <p className="eyebrow">Current release</p>
+            <h2>Friends MC {PACK_VERSION}</h2>
+          </div>
+          <div className="release-meta">
+            <span>Latest</span>
+            <time dateTime="2026-09-03">{PACK_RELEASE_DATE}</time>
+          </div>
+        </header>
+        <p className="release-summary">
+          A bigger adventure update with Twilight Forest, new food integrations,
+          and safer world generation. This is the version the live server
+          expects.
+        </p>
+        <ul className="change-list">
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Added The Twilight Forest 4.8.3345</strong>
+              <p>
+                A full new dimension with biomes, dungeons, progression, loot,
+                and bosses.
+              </p>
+            </div>
+          </li>
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Added Twilight Flavors &amp; Delight 3.2.2</strong>
+              <p>
+                Connects the new dimension to Farmer&apos;s Delight with 35
+                foods, four knives, and more cooking utility.
+              </p>
+            </div>
+          </li>
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Improved Twilight world-generation stability</strong>
+              <p>
+                Added the maintained thread-safety integration so Twilight
+                generation works cleanly with the pack&apos;s performance stack.
+              </p>
+            </div>
+          </li>
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Fixed the bundled multiplayer server</strong>
+              <p>
+                The server now appears correctly in a newly imported instance,
+                ready to join at {SERVER_ADDRESS}.
+              </p>
+            </div>
+          </li>
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Validated the full client and server</strong>
+              <p>
+                Clean-launch tested with all 199 client mods, then checked
+                against a fresh server install and Twilight-generated chunks.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <div className="release-actions">
+          <a className="primary-button" href="/api/modpack">
+            <Download size={18} /> Download version {PACK_VERSION}
+          </a>
+          <span>Minecraft 1.21.1 · NeoForge 21.1.248</span>
+        </div>
+      </article>
+
+      <aside className="update-note">
+        <strong>Updating from an older pack?</strong>
+        <p>
+          Import this download as a new instance. Don&apos;t copy the old mods
+          or config folders over; the FAQ has the short upgrade walkthrough.
+        </p>
+      </aside>
     </section>
   );
 }
@@ -1010,6 +1105,12 @@ function Portal({ user }: { user: AccessUser }) {
       page: "faq" as PortalPage,
     },
     {
+      href: PORTAL_PATHS.updates,
+      icon: <ScrollText aria-hidden="true" />,
+      label: "Updates",
+      page: "updates" as PortalPage,
+    },
+    {
       href: PORTAL_PATHS.account,
       icon: <CircleUserRound aria-hidden="true" />,
       label: "Account",
@@ -1026,6 +1127,13 @@ function Portal({ user }: { user: AccessUser }) {
         ]
       : []),
   ];
+  const primaryNavigationItems = navigationItems.filter((item) =>
+    (["home", "setup", "mods", "chat"] as PortalPage[]).includes(item.page),
+  );
+  const moreNavigationItems = navigationItems.filter(
+    (item) => !primaryNavigationItems.includes(item),
+  );
+  const moreIsActive = moreNavigationItems.some((item) => item.page === page);
 
   useEffect(() => {
     const handlePopState = () => setPathname(window.location.pathname);
@@ -1049,6 +1157,7 @@ function Portal({ user }: { user: AccessUser }) {
     }
 
     event.preventDefault();
+    event.currentTarget.closest("details")?.removeAttribute("open");
     window.history.pushState({}, "", href);
     setPathname(href);
     window.scrollTo({ behavior: "smooth", top: 0 });
@@ -1079,7 +1188,7 @@ function Portal({ user }: { user: AccessUser }) {
           Friends MC
         </a>
         <nav aria-label="Main navigation" className="desktop-nav">
-          {navigationItems.map((item) => (
+          {primaryNavigationItems.map((item) => (
             <a
               aria-current={page === item.page ? "page" : undefined}
               className={page === item.page ? "active" : undefined}
@@ -1090,6 +1199,25 @@ function Portal({ user }: { user: AccessUser }) {
               {item.label}
             </a>
           ))}
+          <details className="more-menu">
+            <summary className={moreIsActive ? "active" : undefined}>
+              More <MoreHorizontal aria-hidden="true" />
+            </summary>
+            <div className="more-menu-panel">
+              {moreNavigationItems.map((item) => (
+                <a
+                  aria-current={page === item.page ? "page" : undefined}
+                  className={page === item.page ? "active" : undefined}
+                  href={item.href}
+                  key={item.page}
+                  onClick={(event) => navigate(event, item.href)}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </a>
+              ))}
+            </div>
+          </details>
         </nav>
         <div className="account">
           <div>
@@ -1114,7 +1242,9 @@ function Portal({ user }: { user: AccessUser }) {
               <div className="status-pill">
                 <span /> Server online
               </div>
-              <p className="eyebrow">Aeronautics · Minecraft 1.21.1</p>
+              <p className="eyebrow">
+                Aeronautics · Minecraft 1.21.1 · Pack {PACK_VERSION}
+              </p>
               <h1>
                 Build strange things.
                 <br />
@@ -1126,7 +1256,7 @@ function Portal({ user }: { user: AccessUser }) {
               </p>
               <div className="hero-actions">
                 <a className="primary-button" href="/api/modpack">
-                  <Download size={19} /> Download modpack
+                  <Download size={19} /> Download v{PACK_VERSION}
                 </a>
                 <button
                   className="server-button"
@@ -1171,6 +1301,24 @@ function Portal({ user }: { user: AccessUser }) {
             </article>
           </section>
 
+          <a
+            className="release-banner"
+            href={PORTAL_PATHS.updates}
+            onClick={(event) => navigate(event, PORTAL_PATHS.updates)}
+          >
+            <div className="release-banner-version">
+              <span>Latest modpack</span>
+              <strong>v{PACK_VERSION}</strong>
+            </div>
+            <div>
+              <strong>Twilight Forest update</strong>
+              <p>See what changed and confirm you have the current pack.</p>
+            </div>
+            <span className="release-banner-link">
+              Changelog <ChevronRight aria-hidden="true" />
+            </span>
+          </a>
+
           <section className="portal-links">
             <div className="section-heading">
               <div>
@@ -1201,6 +1349,8 @@ function Portal({ user }: { user: AccessUser }) {
                             home: "See the server overview and quick links.",
                             mods: "Browse the full modpack by category.",
                             setup: "Install the pack and join in three steps.",
+                            updates:
+                              "Check the latest version and see what changed.",
                           }[item.page]
                         }
                       </p>
@@ -1241,6 +1391,7 @@ function Portal({ user }: { user: AccessUser }) {
                 faq: "Quick answers",
                 mods: "Inside the pack",
                 setup: "Player guide",
+                updates: "Latest release",
               }[page]
             }
           </p>
@@ -1253,6 +1404,7 @@ function Portal({ user }: { user: AccessUser }) {
                 faq: "Frequently asked questions",
                 mods: "Browse the modpack",
                 setup: "Join without the guesswork",
+                updates: `Friends MC ${PACK_VERSION}`,
               }[page]
             }
           </h1>
@@ -1268,6 +1420,8 @@ function Portal({ user }: { user: AccessUser }) {
                 mods: "Search every included mod and see what it adds before you play.",
                 setup:
                   "Pick your launcher, import one file, and use the settings that work well with this server.",
+                updates:
+                  "See the current pack version, its changes, and the exact Minecraft and NeoForge versions it uses.",
               }[page]
             }
           </p>
@@ -1318,7 +1472,7 @@ function Portal({ user }: { user: AccessUser }) {
                 <p>{launcher.import}</p>
               </div>
               <a href="/api/modpack">
-                Download <Download />
+                Download v{PACK_VERSION} <Download />
               </a>
             </li>
             <li>
@@ -1350,6 +1504,8 @@ function Portal({ user }: { user: AccessUser }) {
         />
       ) : null}
 
+      {page === "updates" ? <PackUpdates /> : null}
+
       {page === "account" ? <ConnectedAccounts /> : null}
 
       {page === "admin" && isAdmin ? (
@@ -1357,7 +1513,7 @@ function Portal({ user }: { user: AccessUser }) {
       ) : null}
 
       <nav aria-label="Mobile navigation" className="mobile-nav">
-        {navigationItems.map((item) => (
+        {primaryNavigationItems.map((item) => (
           <a
             aria-current={page === item.page ? "page" : undefined}
             className={page === item.page ? "active" : undefined}
@@ -1369,6 +1525,26 @@ function Portal({ user }: { user: AccessUser }) {
             <span>{item.label}</span>
           </a>
         ))}
+        <details className="more-menu mobile-more-menu">
+          <summary className={moreIsActive ? "active" : undefined}>
+            <MoreHorizontal aria-hidden="true" />
+            <span>More</span>
+          </summary>
+          <div className="more-menu-panel">
+            {moreNavigationItems.map((item) => (
+              <a
+                aria-current={page === item.page ? "page" : undefined}
+                className={page === item.page ? "active" : undefined}
+                href={item.href}
+                key={item.page}
+                onClick={(event) => navigate(event, item.href)}
+              >
+                {item.icon}
+                <span>{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </details>
       </nav>
 
       <footer>

@@ -9,6 +9,7 @@ describe("portal navigation", () => {
     expect(portalPageFromPath(PORTAL_PATHS.mods, false)).toBe("mods");
     expect(portalPageFromPath(PORTAL_PATHS.chat, false)).toBe("chat");
     expect(portalPageFromPath(PORTAL_PATHS.faq, false)).toBe("faq");
+    expect(portalPageFromPath(PORTAL_PATHS.updates, false)).toBe("updates");
     expect(portalPageFromPath(PORTAL_PATHS.account, false)).toBe("account");
   });
 

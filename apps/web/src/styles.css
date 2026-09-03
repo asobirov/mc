@@ -250,22 +250,79 @@ a {
   border-radius: 12px;
   background: #11130f;
 }
-.desktop-nav a {
+.desktop-nav > a,
+.desktop-nav > .more-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   padding: 9px 13px;
   border-radius: 8px;
   color: #7f8679;
   font-size: 12px;
   font-weight: 750;
+  cursor: pointer;
   transition:
     color 0.15s ease,
     background 0.15s ease;
 }
-.desktop-nav a:hover {
+.desktop-nav > a:hover,
+.desktop-nav > .more-menu > summary:hover {
   color: #d8ddcf;
 }
-.desktop-nav a.active {
+.desktop-nav > a.active,
+.desktop-nav > .more-menu > summary.active {
   color: #dff2b2;
   background: #202817;
+}
+.desktop-nav > .more-menu > summary svg {
+  width: 15px;
+  height: 15px;
+}
+.more-menu {
+  position: relative;
+}
+.more-menu summary {
+  list-style: none;
+}
+.more-menu summary::-webkit-details-marker {
+  display: none;
+}
+.more-menu-panel {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 12px);
+  right: 0;
+  display: grid;
+  width: 200px;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid #30362c;
+  border-radius: 14px;
+  background: rgba(17, 20, 15, 0.98);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(18px);
+}
+.more-menu-panel a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 9px;
+  color: #8f9788;
+  font-size: 12px;
+  font-weight: 750;
+}
+.more-menu-panel a:hover {
+  color: #e0e6d7;
+  background: #1a1f17;
+}
+.more-menu-panel a.active {
+  color: #dff2b2;
+  background: #202817;
+}
+.more-menu-panel svg {
+  width: 17px;
+  height: 17px;
 }
 .mobile-nav {
   display: none;
@@ -480,13 +537,77 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: min(1040px, calc(100% - 48px));
-  margin: -34px auto 110px;
+  margin: -34px auto 24px;
   position: relative;
   z-index: 3;
   border: 1px solid #292e26;
   border-radius: 18px;
   background: #121411;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+}
+
+.release-banner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  width: min(1040px, calc(100% - 48px));
+  min-height: 92px;
+  align-items: center;
+  gap: 22px;
+  margin: 0 auto 110px;
+  padding: 17px 21px;
+  border: 1px solid #344229;
+  border-radius: 17px;
+  background: linear-gradient(115deg, #171d13, #11140f);
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.release-banner:hover {
+  border-color: #647c45;
+  transform: translateY(-2px);
+}
+.release-banner-version {
+  display: grid;
+  min-width: 116px;
+  gap: 2px;
+  padding: 11px 15px;
+  border: 1px solid #415431;
+  border-radius: 11px;
+  background: #1d2617;
+}
+.release-banner-version span {
+  color: #89977c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.release-banner-version strong {
+  color: #c9ef70;
+  font-size: 21px;
+}
+.release-banner > div:nth-child(2) {
+  display: grid;
+  gap: 4px;
+}
+.release-banner > div:nth-child(2) > strong {
+  font-size: 15px;
+}
+.release-banner p {
+  margin: 0;
+  color: #777f72;
+  font-size: 12px;
+}
+.release-banner-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #bde365;
+  font-size: 12px;
+  font-weight: 800;
+}
+.release-banner-link svg {
+  width: 16px;
 }
 .quick-grid article {
   display: flex;
@@ -594,6 +715,115 @@ a {
 .setup-section {
   width: min(1040px, calc(100% - 48px));
   margin: 0 auto 110px;
+}
+
+.updates-section {
+  display: grid;
+  width: min(1040px, calc(100% - 48px));
+  gap: 14px;
+  margin: 0 auto 110px;
+}
+.release-card {
+  padding: 34px;
+  border: 1px solid #2c3428;
+  border-radius: 21px;
+  background: #121411;
+}
+.release-card > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.release-card h2 {
+  margin: 5px 0 0;
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -0.045em;
+}
+.release-meta {
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+}
+.release-meta span {
+  padding: 5px 9px;
+  border: 1px solid #445a30;
+  border-radius: 999px;
+  color: #c6eb6b;
+  background: #1b2415;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.release-meta time,
+.release-actions > span {
+  color: #737b6d;
+  font-size: 11px;
+}
+.release-summary {
+  max-width: 700px;
+  margin: 24px 0 30px;
+  color: #a0a797;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.change-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #292e26;
+  list-style: none;
+}
+.change-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid #292e26;
+}
+.change-list li > svg {
+  width: 19px;
+  color: #bce360;
+}
+.change-list li > div {
+  display: grid;
+  gap: 6px;
+}
+.change-list strong {
+  font-size: 14px;
+}
+.change-list p {
+  margin: 0;
+  color: #7f8778;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.release-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 27px;
+}
+.update-note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  padding: 22px 25px;
+  border: 1px solid #2c3329;
+  border-radius: 15px;
+  background: #10120f;
+}
+.update-note strong {
+  color: #d6ddcc;
+  font-size: 13px;
+}
+.update-note p {
+  margin: 0;
+  color: #7f8778;
+  font-size: 12px;
+  line-height: 1.55;
 }
 .section-heading {
   display: flex;
@@ -1487,7 +1717,8 @@ a {
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(20px);
   }
-  .mobile-nav a {
+  .mobile-nav > a,
+  .mobile-nav > .more-menu > summary {
     display: grid;
     min-width: 0;
     place-content: center;
@@ -1497,14 +1728,34 @@ a {
     color: #747d6e;
     font-size: 9px;
     font-weight: 750;
+    cursor: pointer;
   }
-  .mobile-nav a.active {
+  .mobile-nav > a.active,
+  .mobile-nav > .more-menu > summary.active {
     color: #d9efa6;
     background: #222a19;
   }
-  .mobile-nav svg {
+  .mobile-nav > a > svg,
+  .mobile-nav > .more-menu > summary > svg {
     width: 19px;
     height: 19px;
+  }
+  .mobile-more-menu {
+    position: static;
+    min-width: 0;
+  }
+  .mobile-more-menu > summary {
+    height: 100%;
+  }
+  .mobile-more-menu .more-menu-panel {
+    top: auto;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: min(286px, calc(100vw - 24px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mobile-more-menu .more-menu-panel a {
+    min-height: 48px;
   }
   .account div {
     display: none;
@@ -1521,6 +1772,7 @@ a {
   .quick-grid {
     grid-template-columns: 1fr;
     margin-top: 24px;
+    margin-bottom: 24px;
   }
   .quick-grid article + article {
     border-top: 1px solid #292e26;
@@ -1528,6 +1780,12 @@ a {
   }
   .portal-link-grid {
     grid-template-columns: 1fr;
+  }
+  .release-card > header {
+    display: grid;
+  }
+  .release-meta {
+    justify-items: start;
   }
   .steps li {
     grid-template-columns: 45px 1fr;
@@ -1553,6 +1811,7 @@ a {
   .topbar,
   .hero,
   .quick-grid,
+  .release-banner,
   .portal-links,
   .page-intro,
   .setup-section,
@@ -1560,6 +1819,7 @@ a {
   .connections-section,
   .chat-section,
   .faq-section,
+  .updates-section,
   .chat-card,
   .admin-section,
   .portal-shell footer {
@@ -1575,7 +1835,23 @@ a {
     display: grid;
   }
   .quick-grid {
+    margin-bottom: 18px;
+  }
+  .release-banner {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
     margin-bottom: 78px;
+    padding: 15px;
+  }
+  .release-banner-version {
+    min-width: 100px;
+    padding: 10px 12px;
+  }
+  .release-banner-link {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    padding: 12px 2px 0;
+    border-top: 1px solid #303a2a;
   }
   .portal-links,
   .setup-section,
@@ -1583,9 +1859,21 @@ a {
   .connections-section,
   .chat-section,
   .faq-section,
+  .updates-section,
   .admin-section,
   .chat-card {
     margin-bottom: 78px;
+  }
+  .release-card {
+    padding: 25px 21px;
+  }
+  .release-actions {
+    display: grid;
+    justify-items: start;
+  }
+  .update-note {
+    grid-template-columns: 1fr;
+    gap: 7px;
   }
   .page-intro {
     margin-top: 38px;
