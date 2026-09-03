@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import {
+  Box,
   Check,
   ChevronRight,
   Copy,
   Crown,
   Download,
+  ExternalLink,
   Gamepad2,
   Link2,
   LogOut,
@@ -12,6 +14,7 @@ import {
   Mic2,
   Pickaxe,
   RefreshCw,
+  Search,
   Shield,
   ShieldCheck,
   Sparkles,
@@ -88,6 +91,21 @@ type AccessUser = {
   protectedAdmin: boolean;
   role: AccessRole;
   verified: boolean;
+};
+
+type ModCatalogItem = {
+  fileName: string;
+  name: string;
+  projectId: string | null;
+  source: "bundled" | "modrinth";
+};
+
+type ModCatalogResponse = {
+  loader: string;
+  minecraft: string;
+  mods: ModCatalogItem[];
+  name: string;
+  version: string;
 };
 
 function GoogleIcon() {
@@ -376,6 +394,102 @@ function ConnectedAccounts() {
         Linking Microsoft identifies your account here. Automatic Minecraft
         whitelist syncing will be added separately.
       </p>
+    </section>
+  );
+}
+
+function ModsCatalog() {
+  const [catalog, setCatalog] = useState<ModCatalogResponse | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void fetch("/api/mods", { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Could not load the mod list");
+        return (await response.json()) as ModCatalogResponse;
+      })
+      .then(setCatalog)
+      .catch((reason: unknown) => {
+        if (controller.signal.aborted) return;
+        setError(
+          reason instanceof Error ? reason.message : "Could not load mods",
+        );
+      });
+    return () => controller.abort();
+  }, []);
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleMods =
+    catalog?.mods.filter(
+      (mod) =>
+        normalizedQuery.length === 0 ||
+        mod.name.toLowerCase().includes(normalizedQuery) ||
+        mod.fileName.toLowerCase().includes(normalizedQuery),
+    ) ?? [];
+
+  return (
+    <section className="mods-section">
+      <div className="section-heading mods-heading">
+        <div>
+          <p className="eyebrow">Inside the pack</p>
+          <h2>The full mod list</h2>
+        </div>
+        {catalog ? (
+          <span>
+            {catalog.mods.length} mods · Pack {catalog.version}
+          </span>
+        ) : null}
+      </div>
+
+      <label className="mods-search">
+        <Search aria-hidden="true" size={18} />
+        <span className="sr-only">Search mods</span>
+        <input
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search Create, cooking, voice chat…"
+          type="search"
+          value={query}
+        />
+        {catalog ? <span>{visibleMods.length} shown</span> : null}
+      </label>
+
+      {error ? <p className="mods-state error">{error}</p> : null}
+      {!catalog && !error ? (
+        <p className="mods-state">Reading the modpack…</p>
+      ) : null}
+      {catalog && visibleMods.length === 0 ? (
+        <p className="mods-state">No mods match “{query}”.</p>
+      ) : null}
+
+      {catalog && visibleMods.length > 0 ? (
+        <div className="mods-list">
+          {visibleMods.map((mod) => (
+            <article className="mod-row" key={mod.fileName}>
+              <span className="mod-icon">
+                <Box aria-hidden="true" size={17} />
+              </span>
+              <div>
+                <strong>{mod.name}</strong>
+                <span title={mod.fileName}>{mod.fileName}</span>
+              </div>
+              {mod.projectId ? (
+                <a
+                  aria-label={`Open ${mod.name} on Modrinth`}
+                  href={`https://modrinth.com/project/${mod.projectId}`}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <ExternalLink size={15} />
+                </a>
+              ) : (
+                <span className="bundled-label">Bundled</span>
+              )}
+            </article>
+          ))}
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -705,6 +819,8 @@ function Portal({ user }: { user: AccessUser }) {
           </li>
         </ol>
       </section>
+
+      <ModsCatalog />
 
       <ConnectedAccounts />
 

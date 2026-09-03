@@ -18,6 +18,7 @@ import {
 } from "./access-store";
 import { auth } from "./auth";
 import { env } from "./env";
+import { readModCatalog } from "./mod-catalog";
 
 const app = new Hono();
 const accessActionSchema = z.object({ action: z.enum(accessActions) });
@@ -110,6 +111,28 @@ app.get("/api/modpack", async (c) => {
     ) as ReadableStream<Uint8Array>;
     await output.pipe(input);
   });
+});
+
+let modCatalog: ReturnType<typeof readModCatalog> | null = null;
+
+app.get("/api/mods", async (c) => {
+  const user = await authenticatedUser(c.req.raw.headers);
+  if (!user || !canAccessPortal(user)) {
+    return c.json({ error: "Unauthorized" }, 401);
+  }
+
+  if (!existsSync(env.MODPACK_PATH)) {
+    return c.json({ error: "Modpack is not available yet" }, 503);
+  }
+
+  try {
+    modCatalog ??= readModCatalog(env.MODPACK_PATH);
+    c.header("Cache-Control", "private, max-age=300");
+    return c.json(modCatalog);
+  } catch (error) {
+    console.error("Could not read the mod catalog", error);
+    return c.json({ error: "Mod list is temporarily unavailable" }, 503);
+  }
 });
 
 app.use("/*", serveStatic({ root: "./dist" }));

@@ -25,6 +25,10 @@ Sessions last 30 days, refresh daily while active, and are stored in the
 persistent SQLite volume. The cookie is HTTP-only, SameSite=Lax, and Secure in
 production.
 
+Approved users can browse and search the complete mod catalog extracted from
+the mounted `.mrpack`. Both the catalog API and modpack download require portal
+access; the list is not included in the public sign-in bundle.
+
 Signed-in users can explicitly connect additional providers from the portal.
 Google and Microsoft may also link automatically when their verified email
 matches an existing verified portal account, allowing either provider to be a
