@@ -131,12 +131,49 @@ Set:
 
 Do not copy an older instance's `mods`, `libraries`, or entire `config` folder
 over the new import. That defeats the pack manifest and commonly leaves stale
-mods. The pack supplies all declared files and verifies 186 downloads.
+mods. The pack declares 186 files. Nothing verifies that they all arrived,
+so check the import yourself before launching.
 
 The imported client should include Xaero's Minimap and Xaero's World Map,
 Simple Voice Chat, the cooking/fishing content, Create/Aeronautics content, and
 Twilight Forest additions. BlueMap must not appear in the client mod directory;
 it is server-side and viewed at `https://mc.xpr.im/map/`.
+
+### Verify the import before first launch
+
+SKlauncher 3.2 does not hash-check what it downloads. A failed or truncated
+download is written to disk and the import still reports success. The player
+then hits a `The server send registries with unknown keys` disconnect naming
+mods the client cannot resolve, which reads like a server or pack-version
+mismatch rather than a bad download. Seen on 2026-09-04, across three imports of
+the same pack on one machine: the first silently omitted four mods, the
+second truncated `twilightforest` to 21.8 MB of an expected 27.2 MB, and the
+third produced an empty instance and repointed the launcher profile at it,
+leaving the working instance orphaned.
+
+First confirm which directory the profile actually launches. A reimport can
+create a new instance directory and move the profile to it, so the directory
+you verified may not be the one that starts. Check the profile's game
+directory in the launcher, then verify that exact path.
+
+Always run, against the directory the profile launches:
+
+```bash
+python3 scripts/verify-client-instance.py "<instance-dir>"
+```
+
+It checks every declared file against the manifest SHA-1 and exits non-zero on
+any mismatch. Add `--repair` to refetch bad files from the manifest URLs; each
+replacement is verified against both SHA-1 and SHA-512 before it is trusted,
+and discarded if verification fails.
+
+If the script reports no `modrinth.index.json`, the import never populated
+that instance at all; do not launch it, and reimport or repoint the profile
+at a directory that verifies clean.
+
+Treat a non-clean result as blocking and do not launch until it passes. If
+`--repair` cannot fix a file, redownload the pack and reimport rather than
+substituting your own copy of a mod.
 
 ## 6. Preserve player settings during an update
 
