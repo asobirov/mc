@@ -15,6 +15,7 @@ services:
       MODPACK_PATH: /packs/Friends-MC.mrpack
       MINECRAFT_DATA_PATH: /minecraft-data
       MINECRAFT_LOG_PATH: /minecraft-logs/latest.log
+      BLUEMAP_URL: http://friends-mc:8100
     volumes:
       - auth_data:/data
       - ${MODPACK_FILE:?Set MODPACK_FILE in .env}:/packs/Friends-MC.mrpack:ro

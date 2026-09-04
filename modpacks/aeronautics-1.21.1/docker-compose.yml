@@ -25,6 +25,8 @@ services:
     ports:
       - "25565:25565/tcp"
       - "24454:24454/udp"
+    expose:
+      - "8100"
     environment:
       EULA: "TRUE"
       TZ: Europe/London
@@ -34,6 +36,9 @@ services:
       MODPACK_PLATFORM: MODRINTH
       MODRINTH_MODPACK: /modpacks/Friends-MC-1.1.2.mrpack
       MODRINTH_LOADER: neoforge
+      # BlueMap stays server-side; clients do not download it.
+      MODRINTH_PROJECTS: |
+        bluemap:5.7
       MODRINTH_FORCE_SYNCHRONIZE: "true"
       VERSION: "1.21.1"
       SEED: "-6489917970872425602"

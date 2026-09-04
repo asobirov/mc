@@ -29,6 +29,12 @@ Approved users can browse and search the complete mod catalog extracted from
 the mounted `.mrpack`. Both the catalog API and modpack download require portal
 access; the list is not included in the public sign-in bundle.
 
+The World map link proxies BlueMap at `/map/` through this same access check.
+The browser never connects to BlueMap's port directly, and the portal removes
+its own session cookie and authorization headers before forwarding a request on
+the private Docker network. Set `BLUEMAP_URL=http://friends-mc:8100` in
+production; do not publish port 8100 on the host.
+
 The authenticated Chat page bridges portal messages into Minecraft with RCON
 and tails the game log so normal in-game chat appears back on the site. Chat is
 stored in the same persistent SQLite volume as authentication data. The web

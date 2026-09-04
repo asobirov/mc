@@ -5,6 +5,7 @@ import { serve } from "@hono/node-server";
 import { serveStatic } from "@hono/node-server/serve-static";
 import { getMigrations } from "better-auth/db/migration";
 import { Hono } from "hono";
+import { proxy } from "hono/proxy";
 import { secureHeaders } from "hono/secure-headers";
 import { stream } from "hono/streaming";
 import { z } from "zod";
@@ -17,6 +18,7 @@ import {
   updateAccessUser,
 } from "./access-store";
 import { auth } from "./auth";
+import { blueMapLocation, blueMapTarget } from "./bluemap-proxy";
 import { listChatMessages, recordWebMessage } from "./chat-store";
 import { env } from "./env";
 import {
@@ -331,6 +333,46 @@ app.post("/api/chat", async (c) => {
   }
 
   return c.json({ message, relayError }, 201);
+});
+
+app.get("/map", async (c) => {
+  const user = await authenticatedUser(c.req.raw.headers);
+  if (!user || !canAccessPortal(user)) return c.redirect("/", 302);
+  return c.redirect("/map/", 308);
+});
+
+app.all("/map/*", async (c) => {
+  const user = await authenticatedUser(c.req.raw.headers);
+  if (!user || !canAccessPortal(user)) return c.redirect("/", 302);
+  if (!env.BLUEMAP_URL) return c.text("World map is not configured", 503);
+
+  try {
+    const headers = new Headers(c.req.raw.headers);
+    headers.delete("authorization");
+    headers.delete("cookie");
+    headers.delete("host");
+    headers.set("x-forwarded-host", c.req.header("host") ?? "mc.xpr.im");
+    headers.set("x-forwarded-prefix", "/map");
+    headers.set("x-forwarded-proto", "https");
+
+    const response = await proxy(blueMapTarget(env.BLUEMAP_URL, c.req.url), {
+      raw: c.req.raw,
+      headers,
+    });
+    const responseHeaders = new Headers(response.headers);
+    responseHeaders.delete("set-cookie");
+    const location = blueMapLocation(responseHeaders.get("location"));
+    if (location) responseHeaders.set("location", location);
+
+    return new Response(response.body, {
+      headers: responseHeaders,
+      status: response.status,
+      statusText: response.statusText,
+    });
+  } catch (error) {
+    console.error("Could not reach BlueMap", error);
+    return c.text("World map is temporarily unavailable", 502);
+  }
 });
 
 app.use("/*", serveStatic({ root: "./dist" }));

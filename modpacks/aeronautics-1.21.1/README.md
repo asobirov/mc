@@ -99,6 +99,15 @@ The live world uses seed `-6489917970872425602` with spawn moved to the scenic
 Tectonic/Terralith land around `305, 161, 875`, avoiding the ocean-heavy initial
 test world.
 
+BlueMap 5.7 is pinned as a server-only Modrinth project. It is not part of the
+client `.mrpack` and its port 8100 is exposed only to the private portal Docker
+network. On first boot, accept the Mojang client-resource download in
+`data/config/bluemap/core.conf`, set `render-thread-count: 1`, and set
+`player-render-limit: 1` in `plugin.conf`. The live deployment renders the
+Overworld and Twilight Forest only; the other generated map configs are kept in
+`config/bluemap/maps-disabled/` to avoid unnecessary CPU and storage use. Apply
+configuration changes with `docker exec friends-mc rcon-cli bluemap reload`.
+
 Reliquified Twilight Forest was evaluated but intentionally left out: it needs
 the separate original Relics mod, while this pack already includes the
 unrelated Relics (RPG Series). Installing both would add a second overlapping

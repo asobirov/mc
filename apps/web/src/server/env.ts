@@ -5,6 +5,10 @@ const schema = z
     AUTH_ADMIN_EMAILS: z.string().min(3),
     BETTER_AUTH_SECRET: z.string().min(32),
     BETTER_AUTH_URL: z.string().url().default("http://localhost:5173"),
+    BLUEMAP_URL: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.string().url().optional(),
+    ),
     DISCORD_CLIENT_ID: z.preprocess(
       (value) => (value === "" ? undefined : value),
       z.string().min(1).optional(),

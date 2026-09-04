@@ -15,6 +15,7 @@ import {
   House,
   Link2,
   LogOut,
+  Map as MapIcon,
   MessageCircle,
   Mic2,
   MoreHorizontal,
@@ -1476,6 +1477,10 @@ function Portal({ user }: { user: AccessUser }) {
               More <MoreHorizontal aria-hidden="true" />
             </summary>
             <div className="more-menu-panel">
+              <a href="/map/">
+                <MapIcon aria-hidden="true" />
+                <span>World map</span>
+              </a>
               {moreNavigationItems.map((item) => (
                 <a
                   aria-current={page === item.page ? "page" : undefined}
@@ -1630,6 +1635,16 @@ function Portal({ user }: { user: AccessUser }) {
                     <ChevronRight aria-hidden="true" />
                   </a>
                 ))}
+              <a href="/map/">
+                <span>
+                  <MapIcon aria-hidden="true" />
+                </span>
+                <div>
+                  <strong>World map</strong>
+                  <p>Explore the live server world in 3D.</p>
+                </div>
+                <ChevronRight aria-hidden="true" />
+              </a>
             </div>
           </section>
 
@@ -1803,6 +1818,10 @@ function Portal({ user }: { user: AccessUser }) {
             <span>More</span>
           </summary>
           <div className="more-menu-panel">
+            <a href="/map/">
+              <MapIcon aria-hidden="true" />
+              <span>World map</span>
+            </a>
             {moreNavigationItems.map((item) => (
               <a
                 aria-current={page === item.page ? "page" : undefined}
