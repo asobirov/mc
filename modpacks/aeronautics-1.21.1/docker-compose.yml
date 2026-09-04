@@ -38,8 +38,11 @@ services:
       MODRINTH_LOADER: neoforge
       # BlueMap stays server-side; clients do not download it.
       MODRINTH_PROJECTS: |
-        bluemap:5.7
+        bluemap:5.7-neoforge
       MODRINTH_FORCE_SYNCHRONIZE: "true"
+      # Keep the server-wide Xaero tracking policy separate from client defaults.
+      MODRINTH_OVERRIDES_EXCLUSIONS: config/xaero/lib/common.cfg
+      SYNC_SKIP_NEWER_IN_DESTINATION: "false"
       VERSION: "1.21.1"
       SEED: "-6489917970872425602"
 
@@ -95,6 +98,8 @@ services:
     volumes:
       - ./data:/data
       - ./pack:/modpacks:ro
+      # Applied after the Modrinth pack overrides so server tracking survives restarts.
+      - ./server-config/xaero/lib/common.cfg:/config/xaero/lib/common.cfg:ro
     logging:
       options:
         max-size: 10m
