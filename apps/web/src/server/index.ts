@@ -227,7 +227,10 @@ app.get("/api/modpack", async (c) => {
   }
 
   const details = await stat(env.MODPACK_PATH);
-  c.header("Content-Disposition", 'attachment; filename="Friends-MC.mrpack"');
+  c.header(
+    "Content-Disposition",
+    'attachment; filename="Friends-MC-1.1.3.mrpack"',
+  );
   c.header("Content-Length", details.size.toString());
   c.header("Content-Type", "application/octet-stream");
   c.header("Cache-Control", "private, no-store");
