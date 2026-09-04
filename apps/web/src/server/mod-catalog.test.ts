@@ -46,12 +46,12 @@ describe("mod catalog", () => {
     const catalog = readModCatalog(
       resolve(
         process.cwd(),
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.2.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.3.mrpack",
       ),
     );
 
     expect(catalog.minecraft).toBe("1.21.1");
-    expect(catalog.version).toBe("1.1.2");
+    expect(catalog.version).toBe("1.1.3");
     expect(catalog.mods.length).toBe(200);
     expect(catalog.mods.some((mod) => mod.name === "Farmers Delight")).toBe(
       true,
@@ -82,7 +82,7 @@ describe("mod catalog", () => {
     const catalog = readModCatalog(
       resolve(
         process.cwd(),
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.2.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.3.mrpack",
       ),
     );
     const farmersDelight = catalog.mods.find(

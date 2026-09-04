@@ -7,10 +7,10 @@ sign-in/MFA.
 
 ## Target state
 
-- Launcher: SKlauncher, in a dedicated instance named `Friends MC 1.1.2`.
-- Pack: `Friends-MC-1.1.2.mrpack`.
+- Launcher: SKlauncher, in a dedicated instance named `Friends MC 1.1.3`.
+- Pack: `Friends-MC-1.1.3.mrpack`.
 - Pack SHA-256:
-  `21092270897b3a9e42d98297d6709c4722c6fe35986286698e0661254391a4fa`.
+  `3fd930f1cc059a63334acb750b8d1f4bcf35711be59427afc4cda1e630efda3b`.
 - Minecraft: 1.21.1.
 - NeoForge: 21.1.248.
 - Java: 64-bit Java 21, preferably SKlauncher's managed runtime.
@@ -75,7 +75,7 @@ Preferred source for a player is the Download button at
 from this repository may instead run `git lfs pull` and use:
 
 ```text
-modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.2.mrpack
+modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.3.mrpack
 ```
 
 Verify before import:
@@ -117,13 +117,13 @@ Do not inspect how its token is stored.
 ## 5. Import the modpack
 
 Create a new isolated instance by importing the verified
-`Friends-MC-1.1.2.mrpack` file. Depending on the SKlauncher version, use
+`Friends-MC-1.1.3.mrpack` file. Depending on the SKlauncher version, use
 **Import**, **Import Modpack**, drag the `.mrpack` into the Library, or use the
 Installations Manager's local-file import.
 
 Set:
 
-- Name: `Friends MC 1.1.2`.
+- Name: `Friends MC 1.1.3`.
 - Dedicated game/instance directory: enabled.
 - Java: managed Java 21 or a known 64-bit Java 21 executable.
 - Initial heap: 1 GB.

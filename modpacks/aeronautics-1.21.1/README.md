@@ -13,7 +13,7 @@ friends server.
 ## Start
 
 1. Copy `.env.example` to `.env` and replace the RCON secret.
-2. Pull Git LFS content so `pack/Friends-MC-1.1.2.mrpack` is present, then
+2. Pull Git LFS content so `pack/Friends-MC-1.1.3.mrpack` is present, then
    verify its SHA-256 against `pack/README.md`.
 3. Set `HOST_UID` and `HOST_GID` to the host account's IDs, then create writable
    `data/` and `backups/` directories owned by that account.
@@ -88,8 +88,9 @@ on the server. The Compose file excludes those. It also excludes YUNG's Better
 End Island because that mod and BetterEnd conflict during End generation in
 the original pack.
 
-Friends MC `1.1.2` enables Xaero's Minimap `26.4.2` alongside the existing
-world map. It retains the Friends MC `1.1.1` additions: The Twilight Forest
+Friends MC `1.1.3` enables Xaero's Minimap `26.4.2` alongside the existing
+world map and renders MCA entities as radar dots instead of incompatible
+magenta icons. It retains the Friends MC `1.1.1` additions: The Twilight Forest
 `4.8.3345`, Twilight Flavors &
 Delight `3.2.2`, and the TwilightForest Thread Safety Addon `0.1.3`. The
 thread-safety add-on is maintained by C2ME's author and keeps Twilight

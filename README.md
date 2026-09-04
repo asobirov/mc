@@ -21,7 +21,7 @@ MC Minecraft 1.21.1 server.
 | Authenticated portal          | `apps/web`                    | `https://mc.xpr.im`      |
 | Private browser map           | BlueMap through the portal    | `https://mc.xpr.im/map/` |
 
-The current client/server pack is Friends MC 1.1.2. The client `.mrpack` is
+The current client/server pack is Friends MC 1.1.3. The client `.mrpack` is
 stored with Git LFS. BlueMap is intentionally server-only and the browser map is
 available only to approved portal users.
 

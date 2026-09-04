@@ -42,7 +42,7 @@ import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
 const PACK_RELEASE_DATE = "September 4, 2026";
-const PACK_VERSION = "1.1.2";
+const PACK_VERSION = "1.1.3";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
@@ -853,11 +853,22 @@ function PackUpdates() {
           </div>
         </header>
         <p className="release-summary">
-          A navigation update that enables the corner minimap alongside the
-          existing full-screen world map. It includes the Twilight Forest,
-          cooking integrations, and stability work from 1.1.1.
+          A small client polish update that replaces Xaero&apos;s broken purple
+          icons for MCA villagers with clean radar dots. It retains the minimap,
+          Twilight Forest, cooking integrations, and stability work from 1.1.2.
         </p>
         <ul className="change-list">
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Clean MCA markers on Xaero&apos;s radar</strong>
+              <p>
+                MCA villagers, zombie villagers, the Grim Reaper, and cribs use
+                readable dots instead of unsupported magenta fallback icons.
+                Player tracking and supported mob icons are unchanged.
+              </p>
+            </div>
+          </li>
           <li>
             <Check aria-hidden="true" />
             <div>
