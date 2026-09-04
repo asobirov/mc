@@ -715,12 +715,18 @@ function ChatRoom() {
           ) : (
             messages.map((message) => (
               <article
-                className={`chat-message ${message.source}`}
+                className={`chat-message ${message.source} ${message.kind}`}
                 key={message.id}
               >
                 <div>
                   <strong>{message.authorName}</strong>
-                  <span>{message.source === "game" ? "In game" : "Web"}</span>
+                  <span>
+                    {message.kind === "system"
+                      ? "System"
+                      : message.source === "game"
+                        ? "In game"
+                        : "Web"}
+                  </span>
                   <time dateTime={new Date(message.createdAt).toISOString()}>
                     {new Date(message.createdAt).toLocaleTimeString([], {
                       hour: "2-digit",

@@ -1401,6 +1401,17 @@ a {
   color: #74c0db;
   background: #132126;
 }
+.chat-message.system {
+  padding-left: 12px;
+  border-left: 2px solid rgba(223, 175, 77, 0.5);
+}
+.chat-message.system > div span {
+  color: #e1b45e;
+  background: #2b2314;
+}
+.chat-message.system p {
+  color: #c7bea9;
+}
 .chat-message time {
   margin-left: auto;
   color: #565e51;

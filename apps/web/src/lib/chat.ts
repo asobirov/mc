@@ -3,6 +3,7 @@ export type ChatMessage = {
   body: string;
   createdAt: number;
   id: number;
+  kind: "chat" | "system";
   source: "game" | "web";
 };
 

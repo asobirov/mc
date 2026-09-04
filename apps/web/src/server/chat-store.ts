@@ -8,6 +8,7 @@ type StoredChatRow = {
   body: string;
   createdAt: number | bigint;
   id: number | bigint;
+  kind: "chat" | "system";
   source: "game" | "web";
 };
 
@@ -19,11 +20,23 @@ database.exec(`
     authorName TEXT NOT NULL,
     body TEXT NOT NULL,
     externalKey TEXT UNIQUE,
+    kind TEXT NOT NULL DEFAULT 'chat' CHECK (kind IN ('chat', 'system')),
     createdAt INTEGER NOT NULL
   );
   CREATE INDEX IF NOT EXISTS portal_chat_message_created_at
     ON portal_chat_message(createdAt);
 `);
+
+const chatColumns = database
+  .prepare("PRAGMA table_info(portal_chat_message)")
+  .all() as { name: string }[];
+if (!chatColumns.some((column) => column.name === "kind")) {
+  database.exec(`
+    ALTER TABLE portal_chat_message
+      ADD COLUMN kind TEXT NOT NULL DEFAULT 'chat'
+      CHECK (kind IN ('chat', 'system'));
+  `);
+}
 
 function publicMessage(row: StoredChatRow): ChatMessage {
   return {
@@ -31,6 +44,7 @@ function publicMessage(row: StoredChatRow): ChatMessage {
     body: row.body,
     createdAt: Number(row.createdAt),
     id: Number(row.id),
+    kind: row.kind,
     source: row.source,
   };
 }
@@ -40,7 +54,7 @@ export function listChatMessages(after = 0, limit = 100): ChatMessage[] {
   const safeLimit = Math.min(200, Math.max(1, Math.trunc(limit)));
   const rows = database
     .prepare(
-      `SELECT id, source, authorName, body, createdAt
+      `SELECT id, source, authorName, body, kind, createdAt
        FROM portal_chat_message
        WHERE id > ?
        ORDER BY id ASC
@@ -68,6 +82,7 @@ export function recordWebMessage(input: {
     body: input.body,
     createdAt,
     id: result.lastInsertRowid,
+    kind: "chat",
     source: "web",
   });
 }
@@ -75,6 +90,7 @@ export function recordWebMessage(input: {
 export function recordGameMessage(input: {
   authorName: string;
   body: string;
+  kind: "chat" | "system";
   rawLine: string;
 }): ChatMessage | null {
   const createdAt = Date.now();
@@ -82,16 +98,17 @@ export function recordGameMessage(input: {
   const result = database
     .prepare(
       `INSERT OR IGNORE INTO portal_chat_message
-         (source, authorName, body, externalKey, createdAt)
-       VALUES ('game', ?, ?, ?, ?)`,
+         (source, authorName, body, externalKey, kind, createdAt)
+       VALUES ('game', ?, ?, ?, ?, ?)`,
     )
-    .run(input.authorName, input.body, externalKey, createdAt);
+    .run(input.authorName, input.body, externalKey, input.kind, createdAt);
   if (Number(result.changes) === 0) return null;
   return publicMessage({
     authorName: input.authorName,
     body: input.body,
     createdAt,
     id: result.lastInsertRowid,
+    kind: input.kind,
     source: "game",
   });
 }

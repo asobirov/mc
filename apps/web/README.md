@@ -36,10 +36,14 @@ the private Docker network. Set `BLUEMAP_URL=http://friends-mc:8100` in
 production; do not publish port 8100 on the host.
 
 The authenticated Chat page bridges portal messages into Minecraft with RCON
-and tails the game log so normal in-game chat appears back on the site. Chat is
-stored in the same persistent SQLite volume as authentication data. The web
-container only receives read-only access to Minecraft logs and reaches RCON on
-the private `friends_mc_bridge` Docker network; RCON is not published publicly.
+and tails the game log so normal in-game chat appears back on the site. It also
+shows a strict allowlist of public server events: joins, leaves, deaths,
+advancements, and explicit `[Server]` announcements. Commands, operator and
+whitelist changes, RCON feedback, saves, diagnostics, warnings, and other
+console output are excluded. Chat is stored in the same persistent SQLite
+volume as authentication data. The web container only receives read-only
+access to Minecraft logs and reaches RCON on the private `friends_mc_bridge`
+Docker network; RCON is not published publicly.
 
 Signed-in users can explicitly connect additional providers from the portal.
 Google and Microsoft may also link automatically when their verified email
