@@ -31,9 +31,11 @@ describe("Minecraft chat bridge", () => {
     });
   });
 
-  it("parses explicit server announcements", () => {
+  it.each(["Server", "Rcon"])("parses explicit %s announcements", (origin) => {
     expect(
-      parseMinecraftLogLine(serverLine("[Server] Maintenance in 10 minutes")),
+      parseMinecraftLogLine(
+        serverLine(`[${origin}] Maintenance in 10 minutes`),
+      ),
     ).toEqual({
       authorName: "Server",
       body: "Maintenance in 10 minutes",

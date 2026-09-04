@@ -18,7 +18,9 @@ const PLAYER_ADVANCEMENT = new RegExp(
 const PLAYER_DEATH = new RegExp(
   String.raw`^${PLAYER_NAME} (?:blew up|burned to death|discovered the floor was lava|didn't want to live in the same world as .+|died(?: because of .+)?|drowned(?: whilst trying to escape .+)?|experienced kinetic energy(?: whilst trying to escape .+)?|fell (?:from a high place|off .+|out of the world|too far and was finished by .+)|froze to death|hit the ground too hard|left the confines of this world|starved to death|suffocated in a wall|tried to swim in lava|walked into (?:a cactus(?: whilst trying to escape .+)?|danger zone due to .+)|was (?:blown (?:from a high place|up) by .+|burned to a crisp whilst fighting .+|doomed to fall(?: by .+)?|fireballed by .+|frozen to death by .+|impaled (?:by .+|on a stalagmite)|killed (?:by .+|trying to hurt .+)|obliterated by a sonically-charged shriek|poked to death by .+|pricked to death|pummeled by .+|roasted in dragon breath|shot (?:by|off by) .+|skewered by .+|slain by .+|squashed by .+|squished too much|struck by lightning|stung to death|withered away)|went (?:off with a bang|up in flames))$`,
 );
-const SERVER_ANNOUNCEMENT = /^\[Server\] (.+)$/;
+// NeoForge labels `/say` by its origin (`Server` for console, `Rcon` for the
+// private RCON bridge). Command feedback uses `[Rcon: ...]` and does not match.
+const SERVER_ANNOUNCEMENT = /^\[(?:Rcon|Server)\] (.+)$/;
 const MAX_READ_BYTES = 1024 * 1024;
 
 export type MinecraftLogMessage = {
