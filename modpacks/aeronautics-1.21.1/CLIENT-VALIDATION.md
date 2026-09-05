@@ -2,6 +2,19 @@
 
 Last run: September 3, 2026
 
+## Pack 1.2.0 compatibility validation — September 5, 2026
+
+- All six changed Modrinth downloads were fetched and matched their pinned
+  SHA-512 hashes.
+- The 1.2.0 pack contains 205 client mods and a single JEI version.
+- A fresh production backup was restored and booted against 1.2.0 in an
+  isolated container without stopping the live server.
+- The restored production world reached `Done` in 33.995 seconds, responded to
+  RCON, and completed `save-all flush` with Sophisticated Backpacks, its Create
+  integration, Waystones, Sophisticated Core, Balm, and updated JEI installed.
+- A fresh client instance should still be imported rather than copying the new
+  JARs into an existing instance manually.
+
 ## Tested configuration
 
 - Apple Silicon Mac mini (M4, 24 GB RAM)

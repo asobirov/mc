@@ -7,10 +7,10 @@ sign-in/MFA.
 
 ## Target state
 
-- Launcher: SKlauncher, in a dedicated instance named `Friends MC 1.1.3`.
-- Pack: `Friends-MC-1.1.3.mrpack`.
+- Launcher: SKlauncher, in a dedicated instance named `Friends MC 1.2.0`.
+- Pack: `Friends-MC-1.2.0.mrpack`.
 - Pack SHA-256:
-  `3fd930f1cc059a63334acb750b8d1f4bcf35711be59427afc4cda1e630efda3b`.
+  `ee30130d1f384b82264113d117b25fb80429c9e9b910d83a6f3d6db127f7f587`.
 - Minecraft: 1.21.1.
 - NeoForge: 21.1.248.
 - Java: 64-bit Java 21, preferably SKlauncher's managed runtime.
@@ -75,7 +75,7 @@ Preferred source for a player is the Download button at
 from this repository may instead run `git lfs pull` and use:
 
 ```text
-modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.3.mrpack
+modpacks/aeronautics-1.21.1/pack/Friends-MC-1.2.0.mrpack
 ```
 
 Verify before import:
@@ -117,13 +117,13 @@ Do not inspect how its token is stored.
 ## 5. Import the modpack
 
 Create a new isolated instance by importing the verified
-`Friends-MC-1.1.3.mrpack` file. Depending on the SKlauncher version, use
+`Friends-MC-1.2.0.mrpack` file. Depending on the SKlauncher version, use
 **Import**, **Import Modpack**, drag the `.mrpack` into the Library, or use the
 Installations Manager's local-file import.
 
 Set:
 
-- Name: `Friends MC 1.1.3`.
+- Name: `Friends MC 1.2.0`.
 - Dedicated game/instance directory: enabled.
 - Java: managed Java 21 or a known 64-bit Java 21 executable.
 - Initial heap: 1 GB.
@@ -131,7 +131,7 @@ Set:
 
 Do not copy an older instance's `mods`, `libraries`, or entire `config` folder
 over the new import. That defeats the pack manifest and commonly leaves stale
-mods. The pack supplies all declared files and verifies 186 downloads.
+mods. The pack supplies all declared files and verifies 191 downloads.
 
 The imported client should include Xaero's Minimap and Xaero's World Map,
 Simple Voice Chat, the cooking/fishing content, Create/Aeronautics content, and

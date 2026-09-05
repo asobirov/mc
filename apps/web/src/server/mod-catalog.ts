@@ -61,6 +61,40 @@ type BundledMetadata = {
 
 const bundledMetadata: BundledMetadata[] = [
   {
+    category: "quality-of-life",
+    description:
+      "Adds tiered portable backpacks with configurable storage, filters, pickup, feeding, crafting, and other utility upgrades.",
+    matches: /^sophisticatedbackpacks-/i,
+    name: "Sophisticated Backpacks",
+  },
+  {
+    category: "technology",
+    description:
+      "Keeps Sophisticated Backpack contents, settings, and upgrades working while the backpack moves on a Create contraption.",
+    matches: /^sophisticatedbackpackscreateintegration-/i,
+    name: "Sophisticated Backpacks Create Integration",
+  },
+  {
+    category: "navigation",
+    description:
+      "Adds discoverable and craftable teleport destinations, warp stones, and scrolls for repeat travel between established locations.",
+    matches: /^waystones-/i,
+    name: "Waystones",
+  },
+  {
+    category: "libraries",
+    description:
+      "Shared inventory, rendering, and configuration systems required by Sophisticated Backpacks and its integrations.",
+    matches: /^sophisticatedcore-/i,
+    name: "Sophisticated Core",
+  },
+  {
+    category: "libraries",
+    description: "Shared cross-platform library required by Waystones.",
+    matches: /^balm-/i,
+    name: "Balm",
+  },
+  {
     category: "navigation",
     description:
       "Adds a configurable corner minimap with terrain, nearby entities, waypoints, and integration with Xaero's full-screen world map.",

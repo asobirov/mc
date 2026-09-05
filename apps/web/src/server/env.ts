@@ -47,7 +47,7 @@ const schema = z
     MODPACK_PATH: z
       .string()
       .default(
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.3.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.2.0.mrpack",
       ),
     NODE_ENV: z
       .enum(["development", "test", "production"])

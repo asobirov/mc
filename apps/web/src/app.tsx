@@ -41,8 +41,8 @@ import { MOD_CATEGORIES } from "./lib/mod-catalog";
 import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
-const PACK_RELEASE_DATE = "September 4, 2026";
-const PACK_VERSION = "1.1.3";
+const PACK_RELEASE_DATE = "September 5, 2026";
+const PACK_VERSION = "1.2.0";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
@@ -849,15 +849,44 @@ function PackUpdates() {
           </div>
           <div className="release-meta">
             <span>Latest</span>
-            <time dateTime="2026-09-04">{PACK_RELEASE_DATE}</time>
+            <time dateTime="2026-09-05">{PACK_RELEASE_DATE}</time>
           </div>
         </header>
         <p className="release-summary">
-          A small client polish update that replaces Xaero&apos;s broken purple
-          icons for MCA villagers with clean radar dots. It retains the minimap,
-          Twilight Forest, cooking integrations, and stability work from 1.1.2.
+          Portable storage and fast travel arrive together, with native map
+          support and a Create integration built for moving contraptions.
         </p>
         <ul className="change-list">
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Added Sophisticated Backpacks 3.25.78</strong>
+              <p>
+                Adds tiered portable storage with filters, stacking, pickup,
+                feeding, crafting, and other configurable upgrades.
+              </p>
+            </div>
+          </li>
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Backpacks now work on Create contraptions</strong>
+              <p>
+                Placed backpacks keep their contents, settings, and functional
+                upgrades when assembled into moving machines.
+              </p>
+            </div>
+          </li>
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Added Waystones 21.1.42</strong>
+              <p>
+                Activate crafted or discovered waystones for repeat travel, with
+                warp items and native Xaero and BlueMap support.
+              </p>
+            </div>
+          </li>
           <li>
             <Check aria-hidden="true" />
             <div>
@@ -922,12 +951,12 @@ function PackUpdates() {
           <li>
             <Check aria-hidden="true" />
             <div>
-              <strong>Validated the full client and server</strong>
+              <strong>Kept the existing client and server foundation</strong>
               <p>
                 Version 1.1.1 was clean-launch tested with 199 client mods, then
                 checked against a fresh server install and Twilight-generated
-                chunks. Version 1.1.2 enables the bundled minimap as client mod
-                200.
+                chunks. Version 1.2.0 contains 205 client mods after the storage
+                and travel additions.
               </p>
             </div>
           </li>
@@ -1605,8 +1634,8 @@ function Portal({ user }: { user: AccessUser }) {
               <strong>v{PACK_VERSION}</strong>
             </div>
             <div>
-              <strong>Twilight Forest update</strong>
-              <p>See what changed and confirm you have the current pack.</p>
+              <strong>Backpacks and waystones</strong>
+              <p>See the new storage, travel, and Create integration.</p>
             </div>
             <span className="release-banner-link">
               Changelog <ChevronRight aria-hidden="true" />

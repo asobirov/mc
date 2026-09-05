@@ -13,7 +13,7 @@ friends server.
 ## Start
 
 1. Copy `.env.example` to `.env` and replace the RCON secret.
-2. Pull Git LFS content so `pack/Friends-MC-1.1.3.mrpack` is present, then
+2. Pull Git LFS content so `pack/Friends-MC-1.2.0.mrpack` is present, then
    verify its SHA-256 against `pack/README.md`.
 3. Set `HOST_UID` and `HOST_GID` to the host account's IDs, then create writable
    `data/` and `backups/` directories owned by that account.
@@ -87,7 +87,13 @@ on the server. The Compose file excludes those. It also excludes YUNG's Better
 End Island because that mod and BetterEnd conflict during End generation in
 the original pack.
 
-Friends MC `1.1.3` enables Xaero's Minimap `26.4.2` alongside the existing
+Friends MC `1.2.0` adds Sophisticated Backpacks `3.25.78`, Waystones `21.1.42`,
+and the maintained Create integration for backpacks on moving contraptions.
+Sophisticated Core and Balm provide their required shared code, and JEI is
+updated to `19.51.0.418` for compatibility. Xaero's Minimap `26.4.2` already
+supports Waystones directly, while Waystones supplies its own BlueMap
+integration, so no redundant map compatibility add-on is installed. The
+release retains the `1.1.3` Xaero radar configuration alongside the existing
 world map and renders MCA entities as radar dots instead of incompatible
 magenta icons. It retains the Friends MC `1.1.1` additions: The Twilight Forest
 `4.8.3345`, Twilight Flavors &

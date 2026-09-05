@@ -61,7 +61,7 @@ docker run -d \
   -e EULA=TRUE \
   -e TZ=Europe/London \
   -e MODPACK_PLATFORM=MODRINTH \
-  -e MODRINTH_MODPACK=/modpacks/Friends-MC-1.1.3.mrpack \
+  -e MODRINTH_MODPACK=/modpacks/Friends-MC-1.2.0.mrpack \
   -e MODRINTH_LOADER=neoforge \
   -e MODRINTH_FORCE_SYNCHRONIZE=true \
   -e MODRINTH_EXCLUDE_FILES="$exclude_files" \

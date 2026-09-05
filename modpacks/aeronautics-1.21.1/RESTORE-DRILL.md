@@ -1,5 +1,20 @@
 # Restore drill record
 
+## September 5, 2026 — pack 1.2.0
+
+The newest production backup was restored with Friends MC 1.2.0 in an isolated
+container while the live server remained online.
+
+- Archive: `friends-mc-20260905-211752.tar.zst`
+- SHA-256: `46f03f47bb8ea18d9dcc2a11a7d7cb55039a27a0e6c93b6cba95fb70eb09f630`
+- Restored world size: `806164454` bytes
+- `world/level.dat`: present
+- Minecraft startup: reached `Done` in 33.995 seconds
+- Sophisticated Backpacks, its Create integration, and Waystones: loaded
+- RCON: responsive
+- Forced save flush: passed
+- Live server: not stopped or changed during validation
+
 ## September 3, 2026
 
 The newest production backup was restored and booted in an isolated temporary

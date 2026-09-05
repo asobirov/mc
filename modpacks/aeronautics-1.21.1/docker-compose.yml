@@ -34,7 +34,7 @@ services:
       GID: "${HOST_GID:-1000}"
 
       MODPACK_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: /modpacks/Friends-MC-1.1.3.mrpack
+      MODRINTH_MODPACK: /modpacks/Friends-MC-1.2.0.mrpack
       MODRINTH_LOADER: neoforge
       # BlueMap stays server-side; clients do not download it.
       MODRINTH_PROJECTS: |

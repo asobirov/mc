@@ -20,7 +20,7 @@ changing anything:
 
 ## Production scope and source of truth
 
-- Minecraft: NeoForge 1.21.1, Friends MC pack 1.1.3.
+- Minecraft: NeoForge 1.21.1, Friends MC pack 1.2.0.
 - Game stack: `modpacks/aeronautics-1.21.1/`.
 - Private portal: `apps/web/`, served at `https://mc.xpr.im`.
 - Game address: `mc.xpr.im:25565`.
@@ -129,7 +129,7 @@ steps on another distribution; do not blindly run an Ubuntu script there.
 ### 2. Prepare the repository and directories
 
 Install `git-lfs`, run `git lfs pull`, and verify that
-`modpacks/aeronautics-1.21.1/pack/Friends-MC-1.1.3.mrpack` is a real ZIP archive,
+`modpacks/aeronautics-1.21.1/pack/Friends-MC-1.2.0.mrpack` is a real ZIP archive,
 not a Git LFS pointer. Verify its SHA-256 against `pack/README.md`.
 
 Create persistent directories owned by the chosen Minecraft service UID/GID:
@@ -281,9 +281,9 @@ If the user asks to install or validate the client on the current computer:
    stable channel unless the user asks for SKlauncher 4 beta or the stable build
    cannot import the pack. Use normal OS installation/approval flows; do not
    bypass Gatekeeper, SmartScreen, signatures, or malware protections.
-4. Obtain `Friends-MC-1.1.3.mrpack` from the authenticated portal or Git LFS,
+4. Obtain `Friends-MC-1.2.0.mrpack` from the authenticated portal or Git LFS,
    verify the SHA-256 from `pack/README.md`, and import it into an isolated
-   instance named `Friends MC 1.1.3`.
+   instance named `Friends MC 1.2.0`.
 5. Use 64-bit Java 21 (SKlauncher may manage it), 1 GB initial heap and 10 GB
    maximum heap on computers with at least 16 GB RAM. Follow the lower-memory
    limits and update procedure in `CLIENT-SETUP.md` on smaller machines.
