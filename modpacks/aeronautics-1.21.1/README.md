@@ -80,6 +80,21 @@ systemd-run \
   /usr/local/sbin/friends-mc-idle-pregen
 ```
 
+## Empty-server pack deployment
+
+For a production pack update, `deploy-pack-when-empty.sh` waits for two
+consecutive empty-player checks, flushes the world, checks again for a joining
+player, and only then recreates the Minecraft container. Run it through a
+bounded transient systemd unit so an available maintenance window can be used
+without interrupting an active session:
+
+```sh
+systemd-run \
+  --unit=friends-mc-pack-deploy \
+  --property=RuntimeMaxSec=12h \
+  /usr/local/sbin/deploy-pack-when-empty Friends-MC-1.2.0.mrpack
+```
+
 ## Deliberate compatibility changes
 
 The community `.mrpack` incorrectly marks client rendering/UI mods as required
