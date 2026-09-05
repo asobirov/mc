@@ -70,6 +70,10 @@ directory.
    cookies, process command lines, Microsoft tokens, or full unredacted debug
    logs. The player completes Microsoft credentials and MFA in the official
    browser flow.
+10. Do not provision, connect, or send operational data to a third-party
+    monitoring, analytics, alerting, or observability service without the
+    owner's explicit approval for that specific service. Prefer local checks
+    and system logs by default.
 
 ## Inputs and external gates
 
@@ -84,7 +88,7 @@ Only ask the user for inputs that cannot be discovered or generated:
 - At least one owner email for `AUTH_ADMIN_EMAILS`.
 - Google OAuth client ID and secret. Discord and Microsoft are optional but
   should be configured when credentials already exist.
-- Optional Healthchecks.io ping URL and OCI Object Storage write-only PAR URL.
+- Optional OCI Object Storage write-only PAR URL.
 
 OAuth Web redirect URIs are:
 
@@ -239,10 +243,11 @@ a recent `.tar.zst` exists. Run `scripts/verify-backup-restore.sh` after the
 first archive is available.
 
 If an OCI PAR URL exists, enable the `offsite` Compose profile and confirm the
-upload marker updates without printing the URL. If a Healthchecks.io URL exists,
-install the healthcheck script and systemd units described in the game README,
-then confirm the timer and last run. Missing optional URLs are explicit follow-
-ups, not reasons to leave the base server unfinished.
+upload marker updates without printing the URL. Install the local healthcheck
+script and systemd units described in the game README, then confirm the timer
+and last run in the system journal. Do not add external heartbeat or alerting
+services unless the owner explicitly requests one. A missing optional backup
+URL is an explicit follow-up, not a reason to leave the base server unfinished.
 
 Chunky pre-generation must run only while the server is empty. Use the included
 `chunky-idle-pregen.sh` with a bounded systemd runtime and pause immediately when

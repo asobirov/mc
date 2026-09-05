@@ -1,5 +1,5 @@
 [Unit]
-Description=Run the Friends MC health check every five minutes
+Description=Run the local Friends MC health check every five minutes
 
 [Timer]
 OnBootSec=2min

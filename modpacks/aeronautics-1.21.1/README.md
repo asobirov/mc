@@ -55,16 +55,15 @@ sudo ./scripts/verify-backup-restore.sh
 `friends-mc-healthcheck.sh` checks the Minecraft container, portal HTTPS,
 Minecraft TCP, Voice Chat UDP listener, disk usage, local backup freshness, and
 off-site upload freshness. The systemd timer runs it every five minutes and
-reports start, success, or failure to an external Healthchecks.io heartbeat,
-which also detects a total VPS outage by noticing missed pings.
+records success or failure in the local system journal. It does not send data
+to a third-party monitoring service.
 
-Install the script and the two units under `systemd/`, store the private ping
-URL as `HEALTHCHECKS_PING_URL=...` in
-`/etc/friends-mc-healthcheck.env` with mode `0600`, then enable the timer:
+Install the script and the two units under `systemd/`, then enable the timer:
 
 ```sh
 sudo systemctl daemon-reload
 sudo systemctl enable --now friends-mc-healthcheck.timer
+journalctl -u friends-mc-healthcheck.service --no-pager -n 20
 ```
 
 ## Idle chunk pre-generation

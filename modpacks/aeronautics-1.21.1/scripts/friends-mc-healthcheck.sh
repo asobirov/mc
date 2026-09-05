@@ -2,25 +2,12 @@
 
 set -uo pipefail
 
-: "${HEALTHCHECKS_PING_URL:?HEALTHCHECKS_PING_URL is required}"
-
 readonly stack_dir="${FRIENDS_MC_STACK_DIR:-/srv/minecraft/aeronautics}"
 readonly max_disk_percent="${MAX_DISK_PERCENT:-85}"
 readonly max_local_backup_age="${MAX_LOCAL_BACKUP_AGE_SECONDS:-28800}"
 readonly max_offsite_backup_age="${MAX_OFFSITE_BACKUP_AGE_SECONDS:-108000}"
 
-case "$HEALTHCHECKS_PING_URL" in
-  https://hc-ping.com/*) ;;
-  *)
-    echo "HEALTHCHECKS_PING_URL must use https://hc-ping.com" >&2
-    exit 2
-    ;;
-esac
-
 failures=()
-
-curl --fail --silent --show-error --max-time 10 \
-  "$HEALTHCHECKS_PING_URL/start" >/dev/null || true
 
 container_health="$({
   docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' \
@@ -83,13 +70,9 @@ fi
 
 if ((${#failures[@]} > 0)); then
   report="$(IFS='; '; echo "${failures[*]}")"
-  curl --fail --silent --show-error --max-time 15 \
-    --data-binary "$report" "$HEALTHCHECKS_PING_URL/fail" >/dev/null || true
   echo "$report" >&2
   exit 1
 fi
 
 summary="healthy; disk=${disk_percent}%; local_backup=$(basename "$latest_backup")"
-curl --fail --silent --show-error --max-time 15 \
-  --data-binary "$summary" "$HEALTHCHECKS_PING_URL" >/dev/null
 echo "$summary"
