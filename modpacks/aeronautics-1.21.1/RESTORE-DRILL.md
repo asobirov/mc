@@ -1,5 +1,20 @@
 # Restore drill record
 
+## September 6, 2026 — pack 1.3.1
+
+The newest production backup was restored with Friends MC 1.3.1 and Create
+Aeronautics 1.3.2 in an isolated container before the live update.
+
+- Archive: `friends-mc-20260906-163841.tar.zst`
+- SHA-256: `d0d4d7427887fe272ebcc826d4563d96408016f1a96c9856cbfdbb3e544d1b53`
+- Restored world size: `846338972` bytes
+- `world/level.dat`: present
+- Minecraft startup: reached `Done` in 27.824 seconds
+- AutoModpack: hosted the generated payload on the Minecraft port
+- RCON: responsive
+- Forced save flush: passed
+- Live server: remained online and unchanged during the drill
+
 ## September 6, 2026 — pack 1.3.0
 
 The newest production backup was restored with Friends MC 1.3.0 and its

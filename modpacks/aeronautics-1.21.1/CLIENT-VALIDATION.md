@@ -1,6 +1,22 @@
 # Client validation
 
-Last run: September 3, 2026
+Last run: September 6, 2026
+
+## Pack 1.3.1 JEI compatibility validation — September 6, 2026
+
+- A Windows client crash after joining was traced to Create Simulated `1.3.0`'s
+  obsolete `silence_jei.ItemStackListFactoryMixin` targeting JEI internals that
+  changed in JEI `19.51.0.418`; AutoModpack had completed normally.
+- Friends MC `1.3.1` updates the bundled Create Aeronautics release to `1.3.2`.
+  Its official changelog identifies JEI integration compatibility as fixed, and
+  inspection confirms the failing mixin is no longer present in the bundle.
+- The pack still contains 206 client mods and 192 manifest downloads; the only
+  JAR delta is Create Aeronautics `1.3.0` to `1.3.2`.
+- The newest production backup was restored against 1.3.1 in an isolated
+  container. The 846 MB world reached `Done` in 27.824 seconds, RCON responded,
+  and `save-all flush` completed with the updated bundle.
+- A post-update Windows production join is still required to close the original
+  client crash report; the server-side and bytecode checks pass.
 
 ## Pack 1.3.0 updater validation — September 6, 2026
 

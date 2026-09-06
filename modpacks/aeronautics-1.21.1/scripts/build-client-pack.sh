@@ -3,9 +3,9 @@ set -eu
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 PACK_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
-BASE_PACK="$PACK_ROOT/pack/Friends-MC-1.2.0.mrpack"
-OUTPUT_PACK="$PACK_ROOT/pack/Friends-MC-1.3.0.mrpack"
-RELEASE_FILES="$PACK_ROOT/pack/release-files-1.3.0.json"
+BASE_PACK="$PACK_ROOT/pack/Friends-MC-1.3.0.mrpack"
+OUTPUT_PACK="$PACK_ROOT/pack/Friends-MC-1.3.1.mrpack"
+RELEASE_FILES="$PACK_ROOT/pack/release-files-1.3.1.json"
 RADAR_CONFIG="$PACK_ROOT/client-config/xaero/minimap/default_radar_categories_client.json"
 
 for command_name in jq unzip zip; do
@@ -29,9 +29,9 @@ mkdir -p "$WORK_DIR/overrides/config/xaero/minimap"
 install -m 0644 "$RADAR_CONFIG" \
   "$WORK_DIR/overrides/config/xaero/minimap/default_radar_categories_client.json"
 jq --slurpfile release_files "$RELEASE_FILES" '
-  .versionId = "1.3.0"
+  .versionId = "1.3.1"
   | .files = (
-      [.files[] | select(.path != "mods/jei-1.21.1-neoforge-19.27.0.340.jar")]
+      [.files[] | select(.path != "mods/create-aeronautics-bundled-1.21.1-1.3.0.jar")]
       + $release_files[0]
     )
   | .files |= sort_by(.path)

@@ -44,7 +44,7 @@ services:
     entrypoint: /bin/bash
     command: /scripts/prepare-automodpack-host.sh
     environment:
-      AUTOMODPACK_PACK_FILE: Friends-MC-1.3.0.mrpack
+      AUTOMODPACK_PACK_FILE: Friends-MC-1.3.1.mrpack
       AUTOMODPACK_CLIENT_ONLY_PATTERNS: *client-only-patterns
     depends_on:
       restore-backup:
@@ -79,7 +79,7 @@ services:
       GID: "${HOST_GID:-1000}"
 
       MODPACK_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: /modpacks/Friends-MC-1.3.0.mrpack
+      MODRINTH_MODPACK: /modpacks/Friends-MC-1.3.1.mrpack
       MODRINTH_LOADER: neoforge
       # BlueMap stays server-side; clients do not download it.
       MODRINTH_PROJECTS: |

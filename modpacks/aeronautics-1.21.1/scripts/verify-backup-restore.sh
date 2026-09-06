@@ -56,7 +56,7 @@ exclude_files='AmbientSounds appleskin BetterAdvancements DistantHorizons emi- e
 
 docker run --rm \
   --entrypoint /bin/bash \
-  -e AUTOMODPACK_PACK_FILE=Friends-MC-1.3.0.mrpack \
+  -e AUTOMODPACK_PACK_FILE=Friends-MC-1.3.1.mrpack \
   -e AUTOMODPACK_CLIENT_ONLY_PATTERNS="$exclude_files" \
   -v "$data_dir:/data" \
   -v "$stack_dir/pack:/modpacks:ro" \
@@ -72,7 +72,7 @@ docker run -d \
   -e EULA=TRUE \
   -e TZ=Europe/London \
   -e MODPACK_PLATFORM=MODRINTH \
-  -e MODRINTH_MODPACK=/modpacks/Friends-MC-1.3.0.mrpack \
+  -e MODRINTH_MODPACK=/modpacks/Friends-MC-1.3.1.mrpack \
   -e MODRINTH_LOADER=neoforge \
   -e MODRINTH_FORCE_SYNCHRONIZE=true \
   -e MODRINTH_EXCLUDE_FILES="$exclude_files" \

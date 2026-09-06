@@ -7,10 +7,10 @@ sign-in/MFA.
 
 ## Target state
 
-- Launcher: SKlauncher, in a dedicated instance named `Friends MC 1.3.0`.
-- Pack: `Friends-MC-1.3.0.mrpack`.
+- Launcher: SKlauncher, in a dedicated instance named `Friends MC 1.3.1`.
+- Pack: `Friends-MC-1.3.1.mrpack`.
 - Pack SHA-256:
-  `c2aefc0344ec8231e9443b2598f689bb2350c9e247494a3ce3064e07457257c7`.
+  `45efd82f750220b845e2eb1d9f310969706583100b7c9deaecb0d7cf3110186e`.
 - Minecraft: 1.21.1.
 - NeoForge: 21.1.248.
 - Java: 64-bit Java 21, preferably SKlauncher's managed runtime.
@@ -75,7 +75,7 @@ Preferred source for a player is the Download button at
 from this repository may instead run `git lfs pull` and use:
 
 ```text
-modpacks/aeronautics-1.21.1/pack/Friends-MC-1.3.0.mrpack
+modpacks/aeronautics-1.21.1/pack/Friends-MC-1.3.1.mrpack
 ```
 
 Verify before import:
@@ -117,13 +117,13 @@ Do not inspect how its token is stored.
 ## 5. Import the modpack
 
 Create a new isolated instance by importing the verified
-`Friends-MC-1.3.0.mrpack` file. Depending on the SKlauncher version, use
+`Friends-MC-1.3.1.mrpack` file. Depending on the SKlauncher version, use
 **Import**, **Import Modpack**, drag the `.mrpack` into the Library, or use the
 Installations Manager's local-file import.
 
 Set:
 
-- Name: `Friends MC 1.3.0`.
+- Name: `Friends MC 1.3.1`.
 - Dedicated game/instance directory: enabled.
 - Java: managed Java 21 or a known 64-bit Java 21 executable.
 - Initial heap: 1 GB.
@@ -169,7 +169,7 @@ Confirm from the UI or sanitized log lines:
 
 ## 7a. Enable automatic updates once
 
-Friends MC 1.3.0 includes AutoModpack 4.0.6. Join `mc.xpr.im` after the first
+Friends MC 1.3.0 and newer include AutoModpack 4.0.6. Join `mc.xpr.im` after the first
 launch. AutoModpack will present a one-time certificate fingerprint and ask to
 install the server-managed pack. Confirm that the address is exactly
 `mc.xpr.im`, accept the prompt, and restart Minecraft if requested.

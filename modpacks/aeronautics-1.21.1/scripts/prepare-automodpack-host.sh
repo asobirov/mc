@@ -2,7 +2,7 @@
 
 set -Eeuo pipefail
 
-readonly pack="/modpacks/${AUTOMODPACK_PACK_FILE:-Friends-MC-1.3.0.mrpack}"
+readonly pack="/modpacks/${AUTOMODPACK_PACK_FILE:-Friends-MC-1.3.1.mrpack}"
 readonly automodpack_root=/data/automodpack
 readonly host_root="$automodpack_root/host-modpack"
 readonly target="$host_root/main"

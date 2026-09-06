@@ -44,7 +44,7 @@ const SERVER_ADDRESS = "mc.xpr.im";
 const SERVER_CERTIFICATE_FINGERPRINT =
   "6bee8a83f5e75d3297d14292b4f5292630549df628fe4eb90f18acb1c1a4ddf1";
 const PACK_RELEASE_DATE = "September 6, 2026";
-const PACK_VERSION = "1.3.0";
+const PACK_VERSION = "1.3.1";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
@@ -804,8 +804,8 @@ function FrequentlyAskedQuestions({
             <li>
               <strong>Download the newest pack</strong>
               <p>
-                Version 1.3.0 is the final update that needs a normal pack
-                download. It installs the trusted Friends MC updater.
+                Download the latest pack for a new installation. Existing 1.3.0
+                players receive this patch automatically.
               </p>
             </li>
             <li>
@@ -830,7 +830,7 @@ function FrequentlyAskedQuestions({
               <p>
                 Launch the same instance normally. Only changed files download;
                 you no longer need to import another full pack. You may delete
-                the old instance after 1.3.0 successfully joins.
+                the old instance after the updated game successfully joins.
               </p>
             </li>
           </ol>
@@ -854,14 +854,25 @@ function PackUpdates() {
           </div>
           <div className="release-meta">
             <span>Latest</span>
-            <time dateTime="2026-09-05">{PACK_RELEASE_DATE}</time>
+            <time dateTime="2026-09-06">{PACK_RELEASE_DATE}</time>
           </div>
         </header>
         <p className="release-summary">
-          One final manual pack import enables private, incremental mod and
-          configuration updates directly from Friends MC.
+          Fixes the client crash after joining while preserving automatic,
+          incremental updates from Friends MC.
         </p>
         <ul className="change-list">
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Fixed the join-time JEI crash</strong>
+              <p>
+                Create Aeronautics is updated from 1.3.0 to 1.3.2, removing an
+                obsolete JEI compatibility hook that could crash the client
+                shortly after entering the world.
+              </p>
+            </div>
+          </li>
           <li>
             <Check aria-hidden="true" />
             <div>
@@ -971,7 +982,7 @@ function PackUpdates() {
               <p>
                 Version 1.1.1 was clean-launch tested with 199 client mods, then
                 checked against a fresh server install and Twilight-generated
-                chunks. Version 1.3.0 contains 206 client mods and keeps the
+                chunks. Version 1.3.1 contains 206 client mods and keeps the
                 1.2.0 storage and travel additions unchanged.
               </p>
             </div>
@@ -988,9 +999,9 @@ function PackUpdates() {
       <aside className="update-note">
         <strong>Updating from an older pack?</strong>
         <p>
-          Import 1.3.0 as a new instance once. After its first successful
-          AutoModpack connection, future releases update that same instance
-          automatically; the FAQ has the short walkthrough.
+          Import the latest pack as a new instance once. After its first
+          successful AutoModpack connection, future releases update that same
+          instance automatically; the FAQ has the short walkthrough.
         </p>
       </aside>
     </section>
@@ -1598,7 +1609,7 @@ function Portal({ user }: { user: AccessUser }) {
                 Bring snacks.
               </h1>
               <p>
-                Import 1.3.0 once to get the exact pack. Future changes download
+                Import the latest pack once. Future changes download
                 automatically when you launch.
               </p>
               <div className="hero-actions">

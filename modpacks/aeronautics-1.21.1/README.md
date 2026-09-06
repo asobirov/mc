@@ -13,7 +13,7 @@ friends server.
 ## Start
 
 1. Copy `.env.example` to `.env` and replace the RCON secret.
-2. Pull Git LFS content so `pack/Friends-MC-1.3.0.mrpack` is present, then
+2. Pull Git LFS content so `pack/Friends-MC-1.3.1.mrpack` is present, then
    verify its SHA-256 against `pack/README.md`.
 3. Set `HOST_UID` and `HOST_GID` to the host account's IDs, then create writable
    `data/` and `backups/` directories owned by that account.
@@ -92,7 +92,7 @@ without interrupting an active session:
 systemd-run \
   --unit=friends-mc-pack-deploy \
   --property=RuntimeMaxSec=12h \
-  /usr/local/sbin/deploy-pack-when-empty Friends-MC-1.3.0.mrpack
+  /usr/local/sbin/deploy-pack-when-empty Friends-MC-1.3.1.mrpack
 ```
 
 ## Deliberate compatibility changes
@@ -101,6 +101,11 @@ The community `.mrpack` incorrectly marks client rendering/UI mods as required
 on the server. The Compose file excludes those. It also excludes YUNG's Better
 End Island because that mod and BetterEnd conflict during End generation in
 the original pack.
+
+Friends MC `1.3.1` updates the bundled Create Aeronautics release from `1.3.0`
+to `1.3.2`. Aeronautics `1.3.2` removes its obsolete JEI mixin and fixes the
+join-time client crash introduced when Friends MC updated JEI to `19.51.0.418`.
+The update does not change the world seed or remove any content mods.
 
 Friends MC `1.3.0` adds AutoModpack `4.0.6` as the one-time migration to
 incremental client updates. The prepare service reconstructs the complete
