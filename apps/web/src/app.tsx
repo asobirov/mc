@@ -41,6 +41,8 @@ import { MOD_CATEGORIES } from "./lib/mod-catalog";
 import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
+const SERVER_CERTIFICATE_FINGERPRINT =
+  "6bee8a83f5e75d3297d14292b4f5292630549df628fe4eb90f18acb1c1a4ddf1";
 const PACK_RELEASE_DATE = "September 6, 2026";
 const PACK_VERSION = "1.3.0";
 const PAGE_TITLES: Record<PortalPage, string> = {
@@ -1397,6 +1399,7 @@ function AccessAdmin({ currentUserId }: { currentUserId: string }) {
 
 function Portal({ user }: { user: AccessUser }) {
   const [copied, setCopied] = useState(false);
+  const [fingerprintCopied, setFingerprintCopied] = useState(false);
   const [pathname, setPathname] = useState(() => window.location.pathname);
   const [launcherId, setLauncherId] = useState<LauncherId>(() => {
     const saved = window.localStorage.getItem("friends-mc-launcher");
@@ -1501,6 +1504,12 @@ function Portal({ user }: { user: AccessUser }) {
     await navigator.clipboard.writeText(SERVER_ADDRESS);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1800);
+  }
+
+  async function copyFingerprint() {
+    await navigator.clipboard.writeText(SERVER_CERTIFICATE_FINGERPRINT);
+    setFingerprintCopied(true);
+    window.setTimeout(() => setFingerprintCopied(false), 1800);
   }
 
   function selectLauncher(id: LauncherId) {
@@ -1837,6 +1846,31 @@ function Portal({ user }: { user: AccessUser }) {
               </button>
             </li>
           </ol>
+          <aside className="certificate-check">
+            <div className="certificate-check-copy">
+              <p className="eyebrow">First connection only</p>
+              <h3>Verify the server certificate</h3>
+              <p>
+                AutoModpack will ask for this once when you first join. Check
+                that the server says <strong>{SERVER_ADDRESS}</strong> and that
+                the shortened fingerprint starts with{" "}
+                <code>6bee8a83f5e75d32</code> and ends with{" "}
+                <code>0f18acb1c1a4ddf1</code>.
+              </p>
+            </div>
+            <div className="certificate-fingerprint">
+              <code>{SERVER_CERTIFICATE_FINGERPRINT}</code>
+              <button onClick={() => void copyFingerprint()} type="button">
+                {fingerprintCopied ? "Copied" : "Copy fingerprint"}
+                {fingerprintCopied ? <Check /> : <Copy />}
+              </button>
+            </div>
+            <p className="certificate-warning">
+              Press <strong>Verify</strong>, not Skip. If the fingerprint shown
+              in Minecraft is different, stop and ask a server admin before
+              continuing.
+            </p>
+          </aside>
         </section>
       ) : null}
 

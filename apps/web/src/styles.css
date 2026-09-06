@@ -928,6 +928,83 @@ a {
   width: 16px;
 }
 
+.certificate-check {
+  display: grid;
+  gap: 20px;
+  margin-top: 34px;
+  padding: 28px;
+  border: 1px solid #35402f;
+  border-radius: 18px;
+  background: #121611;
+}
+.certificate-check-copy {
+  display: grid;
+  gap: 8px;
+}
+.certificate-check h3 {
+  margin: 0;
+  font-size: 20px;
+}
+.certificate-check-copy > p:last-child,
+.certificate-warning {
+  margin: 0;
+  color: #8a9284;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.certificate-check strong {
+  color: #dce3d3;
+}
+.certificate-check code {
+  color: #c8e980;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.certificate-fingerprint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 18px;
+  border: 1px solid #2d3629;
+  border-radius: 12px;
+  background: #0c0e0b;
+}
+.certificate-fingerprint > code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.certificate-fingerprint button {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 11px;
+  border: 1px solid #45553d;
+  border-radius: 9px;
+  color: #d9e9bb;
+  background: #1b2218;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 750;
+}
+.certificate-fingerprint button:hover {
+  border-color: #75934e;
+  background: #222c1d;
+}
+.certificate-fingerprint button:focus-visible {
+  outline: 3px solid rgba(156, 200, 75, 0.2);
+  outline-offset: 2px;
+}
+.certificate-fingerprint svg {
+  width: 15px;
+}
+.certificate-warning {
+  padding-left: 13px;
+  border-left: 2px solid #b4d761;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2112,6 +2189,15 @@ a {
   .steps li > button {
     grid-column: 1;
     margin-top: 7px;
+  }
+  .certificate-check {
+    padding: 22px;
+  }
+  .certificate-fingerprint {
+    display: grid;
+  }
+  .certificate-fingerprint button {
+    justify-self: start;
   }
   .chat-card {
     grid-template-columns: 1fr;
