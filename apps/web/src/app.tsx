@@ -57,7 +57,7 @@ const PAGE_TITLES: Record<PortalPage, string> = {
 const launchers = {
   prism: {
     name: "Prism Launcher",
-    optionLabel: "Prism Launcher — recommended",
+    optionLabel: "Prism Launcher",
     downloadLabel: "Get Prism",
     downloadUrl: "https://prismlauncher.org/download/",
     install:
@@ -81,7 +81,7 @@ const launchers = {
   },
   sklauncher: {
     name: "SKlauncher 4",
-    optionLabel: "SKlauncher 4",
+    optionLabel: "SKlauncher 4 — recommended",
     downloadLabel: "Get SKlauncher",
     downloadUrl: "https://next.skmedix.pl/downloads",
     install:
@@ -1400,7 +1400,7 @@ function Portal({ user }: { user: AccessUser }) {
   const [pathname, setPathname] = useState(() => window.location.pathname);
   const [launcherId, setLauncherId] = useState<LauncherId>(() => {
     const saved = window.localStorage.getItem("friends-mc-launcher");
-    return saved && saved in launchers ? (saved as LauncherId) : "prism";
+    return saved && saved in launchers ? (saved as LauncherId) : "sklauncher";
   });
   const launcher = launchers[launcherId];
   const fallbackName = user.email.split("@")[0] ?? "Friend";
@@ -1589,8 +1589,8 @@ function Portal({ user }: { user: AccessUser }) {
                 Bring snacks.
               </h1>
               <p>
-                One download gets you the exact mods and settings the server
-                expects. {launcher.name} handles the rest.
+                Import 1.3.0 once to get the exact pack. Future changes download
+                automatically when you launch.
               </p>
               <div className="hero-actions">
                 <a className="primary-button" href="/api/modpack">
@@ -1649,8 +1649,8 @@ function Portal({ user }: { user: AccessUser }) {
               <strong>v{PACK_VERSION}</strong>
             </div>
             <div>
-              <strong>Backpacks and waystones</strong>
-              <p>See the new storage, travel, and Create integration.</p>
+              <strong>Automatic modpack updates</strong>
+              <p>One final import; only changed files download after that.</p>
             </div>
             <span className="release-banner-link">
               Changelog <ChevronRight aria-hidden="true" />
