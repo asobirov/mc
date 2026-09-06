@@ -41,8 +41,8 @@ import { MOD_CATEGORIES } from "./lib/mod-catalog";
 import { PORTAL_PATHS, portalPageFromPath } from "./lib/portal-navigation";
 
 const SERVER_ADDRESS = "mc.xpr.im";
-const PACK_RELEASE_DATE = "September 5, 2026";
-const PACK_VERSION = "1.2.0";
+const PACK_RELEASE_DATE = "September 6, 2026";
+const PACK_VERSION = "1.3.0";
 const PAGE_TITLES: Record<PortalPage, string> = {
   account: "Account",
   admin: "Admin",
@@ -802,30 +802,33 @@ function FrequentlyAskedQuestions({
             <li>
               <strong>Download the newest pack</strong>
               <p>
-                Use the button below so your client matches the live server.
+                Version 1.3.0 is the final update that needs a normal pack
+                download. It installs the trusted Friends MC updater.
               </p>
             </li>
             <li>
               <strong>Import it as a new Friends MC instance</strong>
               <p>
                 In {launcher.name}, choose Import / From file and select the new
-                <code> .mrpack</code>. A fresh instance prevents removed mods
-                from lingering and causing a mismatch.
+                <code> .mrpack</code>. Keep your old instance until this one
+                successfully joins.
               </p>
             </li>
             <li>
-              <strong>Set 8–10 GB of memory, then launch</strong>
+              <strong>Launch, join Friends MC, and approve the updater</strong>
               <p>
-                Sign in with the licensed Microsoft account you normally use.
-                The server address is already included.
+                Sign in with your licensed Microsoft account. On the first
+                connection, AutoModpack will ask you to trust the certificate
+                for <code>mc.xpr.im</code> and install Friends MC. Accept only
+                that server, then restart Minecraft if prompted.
               </p>
             </li>
             <li>
-              <strong>Delete the old instance after the new one works</strong>
+              <strong>Future updates are automatic</strong>
               <p>
-                Screenshots and personal map data can be copied first. Do not
-                copy the old <code>mods</code> or <code>config</code> folders
-                over.
+                Launch the same instance normally. Only changed files download;
+                you no longer need to import another full pack. You may delete
+                the old instance after 1.3.0 successfully joins.
               </p>
             </li>
           </ol>
@@ -853,10 +856,21 @@ function PackUpdates() {
           </div>
         </header>
         <p className="release-summary">
-          Portable storage and fast travel arrive together, with native map
-          support and a Create integration built for moving contraptions.
+          One final manual pack import enables private, incremental mod and
+          configuration updates directly from Friends MC.
         </p>
         <ul className="change-list">
+          <li>
+            <Check aria-hidden="true" />
+            <div>
+              <strong>Added automatic incremental updates</strong>
+              <p>
+                AutoModpack 4.0.6 securely compares file hashes and downloads
+                only changed pack files from Friends MC or their original mod
+                hosts. The first connection requires a one-time trust prompt.
+              </p>
+            </div>
+          </li>
           <li>
             <Check aria-hidden="true" />
             <div>
@@ -955,8 +969,8 @@ function PackUpdates() {
               <p>
                 Version 1.1.1 was clean-launch tested with 199 client mods, then
                 checked against a fresh server install and Twilight-generated
-                chunks. Version 1.2.0 contains 205 client mods after the storage
-                and travel additions.
+                chunks. Version 1.3.0 contains 206 client mods and keeps the
+                1.2.0 storage and travel additions unchanged.
               </p>
             </div>
           </li>
@@ -972,8 +986,9 @@ function PackUpdates() {
       <aside className="update-note">
         <strong>Updating from an older pack?</strong>
         <p>
-          Import this download as a new instance. Don&apos;t copy the old mods
-          or config folders over; the FAQ has the short upgrade walkthrough.
+          Import 1.3.0 as a new instance once. After its first successful
+          AutoModpack connection, future releases update that same instance
+          automatically; the FAQ has the short walkthrough.
         </p>
       </aside>
     </section>

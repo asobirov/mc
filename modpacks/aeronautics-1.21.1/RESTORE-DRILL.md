@@ -1,5 +1,21 @@
 # Restore drill record
 
+## September 6, 2026 — pack 1.3.0
+
+The newest production backup was restored with Friends MC 1.3.0 and its
+prepared AutoModpack client payload in an isolated container while the live
+server remained online.
+
+- Archive: `friends-mc-20260905-224049.tar.zst`
+- SHA-256: `ee5179f0d6c02b62767c63cb7751c1a8443ab33558e3b230a49e49ac1cb85861`
+- Restored world size: `840451838` bytes
+- `world/level.dat`: present
+- Minecraft startup: reached `Done`
+- AutoModpack: hosted the generated payload on the Minecraft port
+- RCON: responsive
+- Forced save flush: passed
+- Live server: not stopped or changed during validation
+
 ## September 5, 2026 — pack 1.2.0
 
 The newest production backup was restored with Friends MC 1.2.0 in an isolated

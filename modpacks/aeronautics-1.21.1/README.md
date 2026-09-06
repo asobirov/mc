@@ -13,7 +13,7 @@ friends server.
 ## Start
 
 1. Copy `.env.example` to `.env` and replace the RCON secret.
-2. Pull Git LFS content so `pack/Friends-MC-1.2.0.mrpack` is present, then
+2. Pull Git LFS content so `pack/Friends-MC-1.3.0.mrpack` is present, then
    verify its SHA-256 against `pack/README.md`.
 3. Set `HOST_UID` and `HOST_GID` to the host account's IDs, then create writable
    `data/` and `backups/` directories owned by that account.
@@ -92,7 +92,7 @@ without interrupting an active session:
 systemd-run \
   --unit=friends-mc-pack-deploy \
   --property=RuntimeMaxSec=12h \
-  /usr/local/sbin/deploy-pack-when-empty Friends-MC-1.2.0.mrpack
+  /usr/local/sbin/deploy-pack-when-empty Friends-MC-1.3.0.mrpack
 ```
 
 ## Deliberate compatibility changes
@@ -102,7 +102,19 @@ on the server. The Compose file excludes those. It also excludes YUNG's Better
 End Island because that mod and BetterEnd conflict during End generation in
 the original pack.
 
-Friends MC `1.2.0` adds Sophisticated Backpacks `3.25.78`, Waystones `21.1.42`,
+Friends MC `1.3.0` adds AutoModpack `4.0.6` as the one-time migration to
+incremental client updates. The prepare service reconstructs the complete
+client payload from the pinned `.mrpack`: common mods are reused from the live
+server, while client-only mods and pack overrides are staged under
+`data/automodpack/host-modpack/main`. AutoModpack shares TCP 25565 with
+Minecraft, validates per-player download secrets, and keeps its own updater
+disabled so version changes remain reviewed and pinned in this repository.
+BlueMap is explicitly excluded from the client payload. During the adoption
+window, older clients are allowed to join and receive a clickable upgrade
+notice; set `requireAutoModpackOnClient` to `true` only after regular players
+have migrated.
+
+Friends MC `1.2.0` added Sophisticated Backpacks `3.25.78`, Waystones `21.1.42`,
 and the maintained Create integration for backpacks on moving contraptions.
 Sophisticated Core and Balm provide their required shared code, and JEI is
 updated to `19.51.0.418` for compatibility. Xaero's Minimap `26.4.2` already

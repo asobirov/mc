@@ -2,6 +2,21 @@
 
 Last run: September 3, 2026
 
+## Pack 1.3.0 updater validation — September 6, 2026
+
+- AutoModpack `4.0.6` was fetched from Modrinth and matched its pinned SHA-1
+  and SHA-512 hashes.
+- The 1.3.0 pack contains 206 client mods and 192 manifest downloads.
+- A clean NeoForge server boot with the new pack reached `Done`, generated the
+  AutoModpack metadata, and hosted the payload on the existing Minecraft port.
+- The deterministic prepare step reconstructed 544 override/client-only files
+  and verified every downloaded JAR against its manifest SHA-1.
+- The newest 1.3 GB production backup was restored against 1.3.0 in an isolated
+  container. The real world reached `Done`, AutoModpack hosted the payload on
+  the Minecraft port, RCON responded, and `save-all flush` completed.
+- Client prompt, incremental-delta, and production checks are recorded below as
+  they complete; they must not be inferred from the server-side tests.
+
 ## Pack 1.2.0 compatibility validation — September 5, 2026
 
 - All six changed Modrinth downloads were fetched and matched their pinned

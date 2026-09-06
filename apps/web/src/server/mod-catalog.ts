@@ -61,6 +61,13 @@ type BundledMetadata = {
 
 const bundledMetadata: BundledMetadata[] = [
   {
+    category: "multiplayer",
+    description:
+      "Keeps the private Friends MC client in sync by securely downloading only pack files that changed since the previous launch.",
+    matches: /^automodpack-/i,
+    name: "AutoModpack",
+  },
+  {
     category: "quality-of-life",
     description:
       "Adds tiered portable backpacks with configurable storage, filters, pickup, feeding, crafting, and other utility upgrades.",

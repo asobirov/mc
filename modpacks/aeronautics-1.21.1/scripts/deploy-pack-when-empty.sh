@@ -2,7 +2,7 @@
 set -eu
 
 STACK_DIR=${FRIENDS_MC_STACK_DIR:-/srv/minecraft/aeronautics}
-TARGET_PACK=${1:-Friends-MC-1.2.0.mrpack}
+TARGET_PACK=${1:-Friends-MC-1.3.0.mrpack}
 POLL_SECONDS=${POLL_SECONDS:-30}
 EMPTY_CHECKS_REQUIRED=${EMPTY_CHECKS_REQUIRED:-2}
 HEALTH_TIMEOUT_SECONDS=${HEALTH_TIMEOUT_SECONDS:-600}
@@ -37,6 +37,7 @@ while :; do
       continue
     fi
 
+    docker compose run --rm --no-deps prepare-automodpack
     docker compose up -d --no-deps --force-recreate mc
     break
   fi

@@ -54,6 +54,17 @@ world_bytes="$(du -sb "$data_dir/world" | awk '{print $1}')"
 rcon_secret="$(openssl rand -hex 24)"
 exclude_files='AmbientSounds appleskin BetterAdvancements DistantHorizons emi- emi_ EMIProfessions entityculling extra-mod-integrations ImmediatelyFast iris- irisflw justzoom lambdynamiclights modelfix MouseTweaks notenoughanimations OverflowingBars reeses-sodium-options SimpleBackups sodium-neoforge sound-physics-remastered xaerominimap xaeroworldmap YungsBetterEndIsland'
 
+docker run --rm \
+  --entrypoint /bin/bash \
+  -e AUTOMODPACK_PACK_FILE=Friends-MC-1.3.0.mrpack \
+  -e AUTOMODPACK_CLIENT_ONLY_PATTERNS="$exclude_files" \
+  -v "$data_dir:/data" \
+  -v "$stack_dir/pack:/modpacks:ro" \
+  -v "$stack_dir/server-config/automodpack:/automodpack-config:ro" \
+  -v "$stack_dir/scripts:/scripts:ro" \
+  itzg/minecraft-server:java21 \
+  /scripts/prepare-automodpack-host.sh >/dev/null
+
 docker run -d \
   --name "$container" \
   --cpus 3 \
@@ -61,7 +72,7 @@ docker run -d \
   -e EULA=TRUE \
   -e TZ=Europe/London \
   -e MODPACK_PLATFORM=MODRINTH \
-  -e MODRINTH_MODPACK=/modpacks/Friends-MC-1.2.0.mrpack \
+  -e MODRINTH_MODPACK=/modpacks/Friends-MC-1.3.0.mrpack \
   -e MODRINTH_LOADER=neoforge \
   -e MODRINTH_FORCE_SYNCHRONIZE=true \
   -e MODRINTH_EXCLUDE_FILES="$exclude_files" \

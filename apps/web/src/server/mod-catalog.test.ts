@@ -46,13 +46,13 @@ describe("mod catalog", () => {
     const catalog = readModCatalog(
       resolve(
         process.cwd(),
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.2.0.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.3.0.mrpack",
       ),
     );
 
     expect(catalog.minecraft).toBe("1.21.1");
-    expect(catalog.version).toBe("1.2.0");
-    expect(catalog.mods.length).toBe(205);
+    expect(catalog.version).toBe("1.3.0");
+    expect(catalog.mods.length).toBe(206);
     expect(catalog.mods.some((mod) => mod.name === "Farmers Delight")).toBe(
       true,
     );
@@ -80,6 +80,7 @@ describe("mod catalog", () => {
         (mod) => mod.name === "Sophisticated Backpacks Create Integration",
       ),
     ).toBe(true);
+    expect(catalog.mods.some((mod) => mod.name === "AutoModpack")).toBe(true);
     const refurbishedFurniture = catalog.mods.find((mod) =>
       mod.fileName.startsWith("refurbished_furniture-"),
     );
@@ -91,7 +92,7 @@ describe("mod catalog", () => {
     const catalog = readModCatalog(
       resolve(
         process.cwd(),
-        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.2.0.mrpack",
+        "../../modpacks/aeronautics-1.21.1/pack/Friends-MC-1.3.0.mrpack",
       ),
     );
     const farmersDelight = catalog.mods.find(
